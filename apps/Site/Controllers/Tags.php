@@ -61,7 +61,7 @@ class Tags extends BaseAuth
     	if(empty($tag->attendee)) {
     		\Base::instance()->reroute('/attendee/create/'.$tag->_id);
     	} else {
-    		\Base::instance()->reroute('/attendee/edit/'.$tag->_id);	
+    		\Base::instance()->reroute('/attendee/edit/'.$tag->attendee['id']);	
     	}
     	
     }
