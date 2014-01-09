@@ -33,7 +33,7 @@ switch ($global_app_name)
         $f3->route('GET /attendee', '\Site\Controllers\Attendees->display');
         $f3->route('GET /attendee/create/@tagid', '\Site\Controllers\Attendee->create');
         $f3->route('POST /attendee/create/@tagid', '\Site\Controllers\Attendee->add');
-        $f3->route('GET /attendee/edit/@tagid', '\Site\Controllers\Attendee->edit');
+        $f3->route('GET /attendee/edit/@id', '\Site\Controllers\Attendee->edit');
         $f3->route('GET /attendee/customer/@tagid', '\Site\Controllers\Attendee->attendee');
         $f3->route('POST /attendee/customer/update/@id', '\Site\Controllers\Attendee->update');
         $f3->route('GET /attendee/confirm/@id', '\Site\Controllers\Attendee->confirm');
@@ -45,7 +45,7 @@ switch ($global_app_name)
         $f3->route('GET /ticketing/edit/@id', '\Site\Controllers\Ticketing->edit');
         $f3->route('GET /ticketing/confirm/@id', '\Site\Controllers\Ticketing->confirm');
         
-        
+
         
         // append this app's UI folder to the path
         $ui = $f3->get('UI');

@@ -11,7 +11,7 @@
 	  <div class="row">
 	    <div class="span12 text-center">
 <div class="notice marker-on-top bg-green">
-    <h1> <?php echo $item['name']; ?> <small>#5004</small> </h1>
+    <h1> <?php echo $item['first_name']; ?> <?php echo $item['last_name']; ?> </h1>
     <h2> Activated </h2>
 </div>
 	    </div>
