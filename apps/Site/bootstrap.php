@@ -40,17 +40,12 @@ switch ($global_app_name)
         // TODO set some app-specific settings, if desired
         //Ticketing pages
         $f3->route('GET /ticketing', '\Site\Controllers\Ticketing->display');
-        $f3->route('GET /ticketing/create/@tagid', '\Site\Controllers\Ticketing->create');
-        $f3->route('POST /ticketing/create/@tagid', '\Site\Controllers\Ticketing->add');
-        $f3->route('GET /ticketing/edit/@tagid', '\Site\Controllers\Ticketing->edit');
-        $f3->route('GET /ticketing/customer/@tagid', '\Site\Controllers\Ticketing->attendee');
-        $f3->route('POST /ticketing/customer/update/@id', '\Site\Controllers\Ticketing->update');
+        $f3->route('GET /ticketing/create/@id', '\Site\Controllers\Ticketing->create');
+        $f3->route('POST /ticketing/create/@id', '\Site\Controllers\Ticketing->add');
+        $f3->route('GET /ticketing/edit/@id', '\Site\Controllers\Ticketing->edit');
         $f3->route('GET /ticketing/confirm/@id', '\Site\Controllers\Ticketing->confirm');
-   
-
         
-
-
+        
         
         // append this app's UI folder to the path
         $ui = $f3->get('UI');

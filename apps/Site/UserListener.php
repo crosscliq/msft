@@ -10,7 +10,7 @@ class UserListener extends \Prefab
         $user = $event->getArgument('user');
 
         $model = new \Site\Models\Roles;
-        $roles = $model->emptyState()->setState('default', '1')->getList();
+        $roles = $model->emptyState()->setState('filter.type', 'default')->getList();
         $userroles = array();
 
         foreach($roles as $role) {

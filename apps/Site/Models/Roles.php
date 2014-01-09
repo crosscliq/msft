@@ -40,7 +40,12 @@ class Roles extends \Dsc\Models\Db\Mongo
         {
             $this->filters['_id'] = new \MongoId((string) $filter_id);
         }
-        
+        $filter_type = $this->getState('filter.type'); 
+        if (strlen($filter_type))
+        {
+            $this->filters['type'] = $filter_type;
+        }    
+
         $filter_name_contains = $this->getState('filter.name-contains', null, 'name');
         if (strlen($filter_name_contains))
         {

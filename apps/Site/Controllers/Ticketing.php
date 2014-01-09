@@ -276,14 +276,10 @@ class Ticketing extends BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Ticket');
         
-       
-
         $model = $this->getModel();
    
         $item = $this->getItem();
         $f3->set('item',$item);
-
-        
 
         $view = new \Dsc\Template;
         echo $view->render('Site/Views::ticketing/confirm.php');
