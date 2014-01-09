@@ -285,12 +285,19 @@ class Attendee extends BaseAuth
         $f3->set('tagid',$f3->get('PARAMS.tagid'));
 
         $model = $this->getModel();
-   
-        $item = $this->getItem();
-        $f3->set('item',$item);
-        
-        $selected = array();
         $flash = \Dsc\Flash::instance();
+        $item = $this->getItem();
+
+        $f3->set('item',$item);
+        if (method_exists($item, 'cast')) {
+            $item_data = $item->cast();
+        } else {
+            $item_data = \Joomla\Utilities\ArrayHelper::fromObject($item);
+        }
+
+        $flash->store($item_data);
+        
+        $f3->set('flash', $flash );
 
         $view = new \Dsc\Template;
         echo $view->render('Site/Views::attendee/attendee.php');
