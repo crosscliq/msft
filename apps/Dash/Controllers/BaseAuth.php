@@ -1,5 +1,5 @@
 <?php 
-namespace Msft\Controllers;
+namespace Dash\Controllers;
 
 class BaseAuth extends Base 
 {

@@ -1,7 +1,7 @@
 <?php 
 namespace Site\Models;
 
-class Roles extends \Dsc\Models\Db\Mongo 
+class Roles extends Eventbase 
 {
     protected $collection = 'users.roles';
     protected $default_ordering_direction = '1';

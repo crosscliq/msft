@@ -1,7 +1,7 @@
 <?php 
 namespace Site\Models;
 
-class Attendees extends Base 
+class Attendees extends Eventbase 
 {
     protected $collection = 'attendees';
     protected $default_ordering_direction = '1';

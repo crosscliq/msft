@@ -1,0 +1,564 @@
+
+<html>
+<head>
+<title>MSFT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="css/thin-admin.css" rel="stylesheet" media="screen">
+<link href="css/font-awesome.css" rel="stylesheet" media="screen">
+<link href="style/style.css" rel="stylesheet">
+<link href="style/dashboard.css" rel="stylesheet">
+<link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="container">
+  <div class="top-navbar header b-b"> <a data-original-title="Toggle navigation" class="toggle-side-nav pull-left" href="#"><i class="icon-reorder"></i> </a>
+    <div class="brand pull-left"> <a href="/dash"><img src="images/logo.png"></a></div>
+    <!--
+    <ul class="nav navbar-nav navbar-right  hidden-xs">
+      <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-warning-sign"></i> <span class="badge">5</span> </a>
+        <ul class="dropdown-menu extended notification">
+          <li class="title">
+            <p>You have 5 new notifications</p>
+          </li>
+          <li> <a href="#"> <span class="label label-success"><i class="icon-plus"></i></span> <span class="message">New user registration.</span> <span class="time">1 mins</span> </a> </li>
+          <li> <a href="#"> <span class="label label-danger"><i class="icon-warning-sign"></i></span> <span class="message">High CPU load on cluster #2.</span> <span class="time">5 mins</span> </a> </li>
+          <li> <a href="#"> <span class="label label-success"><i class="icon-plus"></i></span> <span class="message">New user registration.</span> <span class="time">10 mins</span> </a> </li>
+          <li> <a href="#"> <span class="label label-info"><i class="icon-bullhorn"></i></span> <span class="message">New items are in queue.</span> <span class="time">25 mins</span> </a> </li>
+          <li> <a href="#"> <span class="label label-warning"><i class="icon-bolt"></i></span> <span class="message">Disk space to 85% full.</span> <span class="time">35 mins</span> </a> </li>
+          <li class="footer"> <a href="#">View all notifications</a> </li>
+        </ul>
+      </li>
+      <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-tasks"></i> <span class="badge">7</span> </a>
+        <ul class="dropdown-menu extended notification">
+          <li class="title"> 
+            <p>You have 7 pending tasks</p>
+          </li>
+          <li> <a href="#"> <span class="task"> <span class="desc">Preparing new release</span> <span class="percent">30%</span> </span>
+            <div class="progress progress-small">
+              <div class="progress-bar progress-bar-info" style="width: 30%;"></div>
+            </div>
+            </a> </li>
+          <li> <a href="#"> <span class="task"> <span class="desc">Change management</span> <span class="percent">80%</span> </span>
+            <div class="progress progress-small progress-striped active">
+              <div class="progress-bar progress-bar-danger" style="width: 80%;"></div>
+            </div>
+            </a> </li>
+          <li> <a href="#"> <span class="task"> <span class="desc">Mobile development</span> <span class="percent">60%</span> </span>
+            <div class="progress progress-small">
+              <div class="progress-bar progress-bar-success" style="width: 60%;"></div>
+            </div>
+            </a> </li>
+          <li> <a href="#"> <span class="task"> <span class="desc">Database migration</span> <span class="percent">20%</span> </span>
+            <div class="progress progress-small">
+              <div class="progress-bar progress-bar-warning" style="width: 20%;"></div>
+            </div>
+            </a> </li>
+          <li class="footer"> <a href="#">View all tasks</a> </li>
+        </ul>
+      </li>
+      <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-envelope"></i> <span class="badge">1</span> </a>
+        <ul class="dropdown-menu extended notification">
+          <li class="title">
+            <p>You have 3 new messages</p>
+          </li>
+          <li> <a href="#"> <span class="photo"> <img src="/ui/dash/images/profile.png" width="34" height="34"></span> <span class="subject"> <span class="from">John Doe</span> <span class="time">Just Now</span> </span> <span class="text"> Consetetur sadipscing elitr...</span> </a> </li>
+          <li> <a href="#"> <span class="photo"><img src="/ui/dash/images/profile.png" width="34" height="34"></span> <span class="subject"> <span class="from">John Doe</span> <span class="time">35 mins</span> </span> <span class="text"> Sed diam nonumy... </span> </a> </li>
+          <li> <a href="#"> <span class="photo"><img src="/ui/dash/images/profile.png" width="34" height="34"></span> <span class="subject"> <span class="from">John Doe</span> <span class="time">5 hours</span> </span> <span class="text"> No sea takimata sanctus... </span> </a> </li>
+          <li class="footer"> <a href="#">View all messages</a> </li>
+        </ul>
+      </li>
+      <li class="dropdown user  hidden-xs"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-male"></i> <span class="username">John Doe</span> <i class="icon-caret-down small"></i> </a>
+        <ul class="dropdown-menu">
+          <li><a href="user_profile.html"><i class="icon-user"></i> My Profile</a></li>
+          <li><a href="fullCalendar.html"><i class="icon-calendar"></i> My Calendar</a></li>
+          <li><a href="#"><i class="icon-tasks"></i> My Tasks</a></li>
+          <li class="divider"></li>
+          <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+    <form class="pull-right" >
+      <input type="search" placeholder="Search..." class="search" id="search-input">
+    </form>
+   -->
+  </div>
+</div>
+<div class="wrapper">
+  <div class="left-nav">
+    <div id="side-nav">
+      <ul id="nav">
+        <li class="current"> <a href="/dash"> <i class="icon-dashboard"></i> Dashboard </a> </li>
+        <li> <a href="/dash/admins"> <i class="icon-key"></i> Admins </a> </li>
+        <li> <a href="/dash/users"> <i class="icon-user"></i> Users </a> </li>
+        <li> <a href="/dash/events"> <i class="icon-calendar"></i> Events </a> </li>
+        <li> <a href="/dash/prizes"> <i class="icon-gift"></i> Prizes </a> </li>
+        <li> <a href="/dash/attendees"> <i class="icon-group"></i> Attendees </a> </li>
+        <li> <a href="/dash/tags"> <i class="icon-tag"></i> Wristbands </a> </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="page-title">EVENT MANAGEMENT <small>DASHBOARD</small></h2>
+        </div>
+      </div>
+        <div class="row">
+		<div class="tabbable tabs-right">
+                <ul class="nav nav-tabs" id="myTabright">
+                  <li><a data-toggle="tab" href="#home-right">All</a></li>
+                  <li class=""><a data-toggle="tab" href="#profile-right">NSO</a></li>
+                  <li class="active"><a data-toggle="tab" href="#dropdown3-right">Xbox</a></li>
+                </ul>
+                <div class="tab-content" id="myTabContentright">
+                  <div id="home-right" class="tab-pane fade">
+
+        <div class="col-md-12">
+          <div class="row">
+		<div class="col-md-3 col-xs-12 col-sm-6">
+			<div class="widget-container">
+				<div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
+				  <div class="padded text-center">
+					<a href="#" class=""><img src="images/utah.png"></a> 
+					<br style="clear:both;" />
+              			<div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+            			  </div>
+            			  <div class="widget-footer lt">
+              			<div class="row">
+						<div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>12/13/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>12/14/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>852</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>754</span> </div>
+  					</div>
+				  </div>
+				</div>
+			</div>
+           
+		<div class="col-md-3 col-xs-12 col-sm-6">
+			<div class="widget-container">
+				<div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
+				  <div class="padded text-center">
+					<a href="#" class=""><img src="images/utah.png"></a> 
+					<br style="clear:both;" />
+              			<div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+            			  </div>
+            			  <div class="widget-footer lt">
+              			<div class="row">
+						<div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>12/13/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>12/14/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>852</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>754</span> </div>
+  					</div>
+				  </div>
+				</div>
+			</div>
+
+		<div class="col-md-3 col-xs-12 col-sm-6">
+			<div class="widget-container">
+				<div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
+				  <div class="padded text-center">
+					<a href="#" class=""><img src="images/utah.png"></a> 
+					<br style="clear:both;" />
+              			<div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+            			  </div>
+            			  <div class="widget-footer lt">
+              			<div class="row">
+						<div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>12/13/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>12/14/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>852</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>754</span> </div>
+  					</div>
+				  </div>
+				</div>
+			</div>
+
+		<div class="col-md-3 col-xs-12 col-sm-6">
+			<div class="widget-container">
+				<div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
+				  <div class="padded text-center">
+					<a href="#" class=""><img src="images/utah.png"></a> 
+					<br style="clear:both;" />
+              			<div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+            			  </div>
+            			  <div class="widget-footer lt">
+              			<div class="row">
+						<div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>12/13/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>12/14/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>852</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>754</span> </div>
+  					</div>
+				  </div>
+				</div>
+			</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+
+
+          <div class="row">
+		<div class="col-md-3 col-xs-12 col-sm-6">
+			<div class="widget-container">
+				<div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
+				  <div class="padded text-center">
+					<a href="#" class=""><img src="images/utah.png"></a> 
+					<br style="clear:both;" />
+              			<div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+            			  </div>
+            			  <div class="widget-footer lt">
+              			<div class="row">
+						<div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>12/13/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>12/14/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>852</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>754</span> </div>
+  					</div>
+				  </div>
+				</div>
+			</div>
+           
+		<div class="col-md-3 col-xs-12 col-sm-6">
+			<div class="widget-container">
+				<div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
+				  <div class="padded text-center">
+					<a href="#" class=""><img src="images/utah.png"></a> 
+					<br style="clear:both;" />
+              			<div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+            			  </div>
+            			  <div class="widget-footer lt">
+              			<div class="row">
+						<div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>12/13/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>12/14/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>852</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>754</span> </div>
+  					</div>
+				  </div>
+				</div>
+			</div>
+
+		<div class="col-md-3 col-xs-12 col-sm-6">
+			<div class="widget-container">
+				<div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
+				  <div class="padded text-center">
+					<a href="#" class=""><img src="images/utah.png"></a> 
+					<br style="clear:both;" />
+              			<div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+            			  </div>
+            			  <div class="widget-footer lt">
+              			<div class="row">
+						<div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>12/13/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>12/14/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>852</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>754</span> </div>
+  					</div>
+				  </div>
+				</div>
+			</div>
+
+		<div class="col-md-3 col-xs-12 col-sm-6">
+			<div class="widget-container">
+				<div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
+				  <div class="padded text-center">
+					<a href="#" class=""><img src="images/utah.png"></a> 
+					<br style="clear:both;" />
+              			<div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+            			  </div>
+            			  <div class="widget-footer lt">
+              			<div class="row">
+						<div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>12/13/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>12/14/14</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>852</span> </div>
+						<div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>754</span> </div>
+  					</div>
+				  </div>
+				</div>
+			</div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+	         <div class="col-lg-6">
+	    <div class="widget">
+              <div class="widget-header"> <i class="icon-bookmark"></i>
+              <h3>Recent Activity</h3>
+            </div>
+              <!-- /widget-header -->
+		<div class="widget-content">
+              <div class="widget widget-tabs">
+                <div>
+                  <ul class="nav nav-tabs">
+                    <li class="active"> <a data-toggle="tab" href="#care">Staff</a> </li>
+                    <li class=""> <a data-toggle="tab" href="#sales">Managers</a> </li>
+                    <li class=""> <a data-toggle="tab" href="#admin">Admin</a> </li>
+
+                  </ul>
+                </div>
+                <div class="tab-content">
+
+                  <div class="tab-pane clearfix active" id="care">
+                    <ul class="users-list">
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">John Doe</a></div>
+                          <div class="position">Patient Visit: Aaron Schuest</div>
+                          <div class="time">Log Time: Dec 13, 14:56 - 15:45</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">James Harvey</a></div>
+                          <div class="position">Patient Visit: Aaron Schuest</div>
+                          <div class="time">Log Time: Dec 13, 14:56 - 15:45</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">James Harvey</a></div>
+                          <div class="position">Patient Visit: Aaron Schuest</div>
+                          <div class="time">Log Time: Dec 13, 14:56 - 15:45</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">James Harvey</a></div>
+                          <div class="position">Patient Visit: Aaron Schuest</div>
+                          <div class="time">Log Time: Dec 13, 14:56 - 15:45</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-pane clearfix" id="sales">
+                    <ul class="users-list">
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">Dale Steyn</a></div>
+                          <div class="position">Software Engineer</div>
+                          <div class="time">Last logged-in: Mar 15, 9:07</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">Dale Steyn</a></div>
+                          <div class="position">Software Engineer</div>
+                          <div class="time">Last logged-in: Mar 15, 9:07</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">Dale Steyn</a></div>
+                          <div class="position">Software Engineer</div>
+                          <div class="time">Last logged-in: Mar 15, 9:07</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">Dale Steyn</a></div>
+                          <div class="position">Software Engineer</div>
+                          <div class="time">Last logged-in: Mar 15, 9:07</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-pane clearfix" id="admin">
+                    <ul class="users-list">
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">James Harvey</a></div>
+                          <div class="position">Retailer</div>
+                          <div class="time">Last logged-in: Feb 20, 14:56</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">Dale Steyn</a></div>
+                          <div class="position">Software Engineer</div>
+                          <div class="time">Last logged-in: Mar 15, 9:07</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">Dale Steyn</a></div>
+                          <div class="position">Chief Officer</div>
+                          <div class="time">Last logged-in: Jun 15, 15:24</div>
+                        </div>
+                      </li>
+                      <li> <img class="pull-left img-circle" alt="" src="ui/dash/images/img1.jpg">
+                        <div class="user-info">
+                          <div class="name"><a href="#">James Harvey</a></div>
+                          <div class="position">Financial Assistant</div>
+                          <div class="time">Last logged-in: Jun 10, 13:20</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+              <!-- /widget-content --> 
+            </div>
+          </div>
+	
+          <div class="col-lg-6">
+	    <div class="widget">
+              <div class="widget-header"> <i class="icon-bookmark"></i>
+              <h3>Current Activity | Map</h3>
+            </div>
+              <!-- /widget-header -->
+              <div class="widget-content">
+                <div id="world-map-gdp"></div>
+              </div>
+              <!-- /widget-content --> 
+            </div>
+          </div>
+	  
+ 	  
+  
+        </div>
+      
+   
+ 
+   
+      
+<div class="row">   
+        <div class="col-lg-6">
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-file"></i>
+              <h3>Node Tree</h3>
+            </div>
+            <div class="widget-content">
+             
+	     <?php echo View::instance()->render('nodetree.htm'); ?>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+  
+    <div class="chart">
+          <div class="heading"> <span>June</span> <strong>18 Days | 55%</strong> </div>
+          <div id="barchart"></div>
+        </div>
+  
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in pretium dui. Cras commodo, neque non mollis tempor, dolor tellus ornare ipsum, eu luctus orci magna quis nibh. Donec luctus augue ac sem lacinia, at volutpat augue commodo. Duis aliquet rhoncus magna eu porttitor. Nulla sit amet justo lectus. Donec non tincidunt tellus, mollis venenatis lorem. Mauris sed commodo libero. Mauris interdum mollis enim, quis posuere erat rutrum sit amet. Curabitur at fermentum diam, nec bibendum risus. Mauris condimentum nibh ut gravida ornare. Morbi ornare, elit vitae vestibulum vehicula, neque nunc elementum tortor, vel pulvinar felis enim a neque. Donec malesuada congue orci in ornare.</p>
+                  </div>
+                  <div id="profile-right" class="tab-pane fade">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in pretium dui. Cras commodo, neque non mollis tempor, dolor tellus ornare ipsum, eu luctus orci magna quis nibh. Donec luctus augue ac sem lacinia, at volutpat augue commodo. Duis aliquet rhoncus magna eu porttitor. Nulla sit amet justo lectus. Donec non tincidunt tellus, mollis venenatis lorem. Mauris sed commodo libero. Mauris interdum mollis enim, quis posuere erat rutrum sit amet. Curabitur at fermentum diam, nec bibendum risus. Mauris condimentum nibh ut gravida ornare. Morbi ornare, elit vitae vestibulum vehicula, neque nunc elementum tortor, vel pulvinar felis enim a neque. Donec malesuada congue orci in ornare.</p>
+                  </div>
+                  <div id="dropdown3-right" class="tab-pane fade active in">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in pretium dui. Cras commodo, neque non mollis tempor, dolor tellus ornare ipsum, eu luctus orci magna quis nibh. Donec luctus augue ac sem lacinia, at volutpat augue commodo. Duis aliquet rhoncus magna eu porttitor. Nulla sit amet justo lectus. Donec non tincidunt tellus, mollis venenatis lorem. Mauris sed commodo libero. Mauris interdum mollis enim, quis posuere erat rutrum sit amet. Curabitur at fermentum diam, nec bibendum risus. Mauris condimentum nibh ut gravida ornare. Morbi ornare, elit vitae vestibulum vehicula, neque nunc elementum tortor, vel pulvinar felis enim a neque. Donec malesuada congue orci in ornare.</p>
+                  </div>
+                </div>
+              </div>
+
+<div class="bottom-nav footer"> 2013 &copy; CareTraq </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="/dash/js/jquery.js"></script> 
+<script src="/dash/js/bootstrap.min.js"></script> 
+
+
+<script src="/ui/dash/assets/sparkline/jquery.sparkline.js" type="text/javascript"></script>
+<script src="/ui/dash/assets/sparkline/jquery.customSelect.min.js" ></script>
+<script src="/ui/dash/assets/sparkline/sparkline-chart.js"></script>
+<script src="/ui/dash/assets/sparkline/easy-pie-chart.js"></script>
+<!-- maps --> 
+<script src="/ui/dash/js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="/ui/dash/js/jquery-jvectormap-us-aea-en.js"></script>
+<script src="/ui/dash/js/gdp-data.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('#world-map-gdp').vectorMap({
+    map: 'us_aea_en',
+    series: {
+      regions: [{
+        values: gdpData,
+        scale: ['#290933', '#fadab8'],
+        normalizeFunction: 'polynomial'
+      }]
+    },
+    onLabelShow: function(e, el, code){
+      el.html(el.html()+' (GDP - '+gdpData[code]+')');
+    },
+    onMarkerOver: function(e, code){
+            e.preventDefault();
+          },
+           onMarkerOut: function(e, code){
+             e.preventDefault();
+           },
+           onMarkerClick: function(e, code){
+            e.preventDefault();
+          },
+           onMarkerSelected: function(e, code){
+            e.preventDefault();
+          },
+          onMarkerLabelShow: function(e, code){
+            e.preventDefault();
+          },
+          onViewportChange: function(e, code){
+            e.preventDefault();
+          }
+  });
+
+  
+});
+
+//adding marker with push
+   var mapChannel = pusher.subscribe('trafficmap');
+    mapChannel.bind('addTraffic', function(data) {
+     
+      var mapObject = $('#world-map-gdp').vectorMap('get', 'mapObject');
+
+       mapObject.addMarker(data.name, { latLng: [data.lat, data.lng], name: data.name}  );
+   
+    });
+
+    mapChannel.bind('changeColor', function(data) {
+    
+    $('[data-index=' + data.name + ']').attr('fill',data.fill);
+
+    console.log('change color of ' + data.name + ' to: ' + data.fill );
+  });
+
+
+
+
+
+</script>
+
+
+
+
+</script>
+<!-- end of maps --> 
+
+<!--NODE TREE--> 
+<script src="/ui/arbor/arbor.js"></script>
+<script src="/ui/arbor/arbor-tween.js"></script>
+<script src="/ui/arbor/arbor-graphics.js"></script>
+<script src="/ui/arbor/main.js"></script>
+
+
+</body>
+
+</html>

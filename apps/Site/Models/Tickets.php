@@ -1,7 +1,7 @@
 <?php 
 namespace Site\Models;
 
-class Tickets extends Base 
+class Tickets extends Eventbase 
 {
     protected $collection = 'tickets';
     protected $default_ordering_direction = '1';

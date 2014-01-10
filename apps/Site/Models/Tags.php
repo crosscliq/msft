@@ -1,7 +1,7 @@
 <?php 
 namespace Site\Models;
 
-class Tags extends Base 
+class Tags extends Eventbase 
 {
     protected $collection = 'tags';
     protected $default_ordering_direction = '1';

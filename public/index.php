@@ -11,18 +11,23 @@ $app->set('AUTOLOAD',
 require $app->get('PATH_ROOT') . 'vendor/autoload.php';
 
 $app->set('APP_NAME', 'site');
+//TODO maybe we query the event model, and get the event object from the main DB and load it. so than we can  let the DB be controlled by the dash
+$app->set('event.db', explode(".",$_SERVER['HTTP_HOST'])[0]);
 
-if (strpos(strtolower($app->get('URI')), $app->get('BASE') . '/admin') !== false) {
+if ($app->get('event.db') == 'dashboard') {
+    $app->set('APP_NAME', 'dash');
+    $app->set('event.db', 'msft');
+}
+if ($app->get('event.db') == 'admin') {
     $app->set('APP_NAME', 'admin');
+     $app->set('event.db', 'msft');
+}
+if (empty($app->get('event.db'))) {
+    $app->set('event.db', 'msft');
 }
 
 // common config
 $app->config( $app->get('PATH_ROOT') . 'config/common.config.ini');
-
-// app-specific settings go in the app's config files 
-//$app->config( $app->get('PATH_ROOT') . 'config/' . $app->get('APP_NAME') . '.config.ini');
-//$app->config( $app->get('PATH_ROOT') . 'config/' . $app->get('APP_NAME') . '.maps.ini');
-//$app->config( $app->get('PATH_ROOT') . 'config/' . $app->get('APP_NAME') . '.routes.ini');
 
 $logger = new \Log( $app->get('application.logfile') );
 \Registry::set('logger', $logger);
@@ -35,6 +40,9 @@ if ($app->get('DEBUG')) {
 $custom = $app->get('PATH_ROOT').'apps/Custom/';
 
 \Dsc\Apps::instance()->bootstrap(null, array($custom ));
+
+//$db = new \DB\Mongo('mongodb://localhost:27017', $app->get('event.db'));
+//new \DB\Mongo\Session($db);
 
 $app->run();
 

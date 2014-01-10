@@ -8,7 +8,7 @@ class Users extends BaseAuth
         $model = new \Site\Models\Users;
         return $model;
     }
-
+    
 
 
    public function roles($f3) {
