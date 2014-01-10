@@ -7,7 +7,7 @@ class BaseAuth extends Base
 
         $user = $f3->get('SESSION.user');
         if(empty($user)){
-            $f3->reroute('/');
+            $f3->reroute('/login');
         }
 
     }    

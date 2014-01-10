@@ -1,7 +1,12 @@
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
 <?php //echo \Dsc\Debug::dump( $list, false ); ?>
 
-<form id="searchForm" action="./admin/blog/posts" method="post">
+
+<a class="btn btn-success pull-right" href="/event/create">Create Event</a>
+
+
+
+<form id="searchForm" action="/events" method="post">
 
     <div class="row datatable-header">
         <div class="col-sm-6">
