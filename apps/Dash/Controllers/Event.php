@@ -59,7 +59,7 @@ class Event extends BaseAuth
         echo $view->render('Dash/Views::events/edit.php');
     }
 
-
+    //reroute this to  the \Dash\
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method
      */
@@ -72,5 +72,12 @@ class Event extends BaseAuth
     }
 
     
-    protected function displayRead() {}
+    protected function displayRead() {
+
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'Edit Event');
+        
+        $view = new \Dsc\Template;
+        echo $view->render('Dash/Views::events/edit.php');
+    }
 }
