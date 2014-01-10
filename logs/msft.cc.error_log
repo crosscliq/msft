@@ -495,3 +495,11 @@ PHP message: - index.php:45 Base->run()" while reading response header from upst
 PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
 2014/01/10 23:11:46 [error] 31890#0: *552 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/js/jquery.min.map)
 PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /dash/js/jquery.min.map HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/events"
+2014/01/10 23:28:45 [error] 31890#0: *582 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/js/jquery.min.map)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /dash/js/jquery.min.map HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/login"
+2014/01/10 23:28:45 [error] 31890#0: *582 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/01/10 23:28:53 [error] 31890#0: *582 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/js/jquery.min.map)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /dash/js/jquery.min.map HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/"
+2014/01/10 23:28:56 [error] 31890#0: *582 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/js/jquery.min.map)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /dash/js/jquery.min.map HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/events"
