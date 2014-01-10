@@ -1,10 +1,19 @@
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
 <?php //echo \Dsc\Debug::dump( $list, false ); ?>
 
+
+
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-table"></i>
+              <h3>Events</h3>
+            </div>
+            <div class="widget-content">
+              <div class="body">
+
 <form id="searchForm" action="./admin/blog/posts" method="post">
 
     <div class="row datatable-header">
-        <div class="col-sm-6">
+        <div class="col-sm-6"> 
             <div class="row row-marginless">
                 <?php if (!empty($list['subset'])) { ?>
                 <div class="col-sm-4">
@@ -120,7 +129,9 @@
 
         </tbody>
     </table>
-    
+   </div>
+	</div>    
+
     </div>
     
     <div class="row datatable-footer">

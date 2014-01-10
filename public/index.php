@@ -25,7 +25,6 @@ if ($app->get('event.db') == 'admin') {
 if (empty($app->get('event.db'))) {
     $app->set('event.db', 'msft');
 }
-
 // common config
 $app->config( $app->get('PATH_ROOT') . 'config/common.config.ini');
 
@@ -35,7 +34,6 @@ $logger = new \Log( $app->get('application.logfile') );
 if ($app->get('DEBUG')) {
     ini_set('display_errors',1);
 }
-
 // bootstap each mini-app
 $custom = $app->get('PATH_ROOT').'apps/Custom/';
 

@@ -6,6 +6,13 @@ background-size: cover;
 background-image:url(../images/e.jpg);
 }
 .mix { display:none; opacity:0; }
+.mix small { font-size:.8em; }
+.mix .col-xs-3 {
+	border-right: 1px solid rgba(0,0,0,0.2)
+}
+.mix .col-xs-3:last-child {
+	border:none;
+}
 .header {
 	background-color: rgba(0, 0, 0, 0.25);
 	padding: 10px;

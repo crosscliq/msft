@@ -9,7 +9,7 @@
 
 <div class="container">
   <div class="top-navbar header b-b"> <a data-original-title="Toggle navigation" class="toggle-side-nav pull-left" href="#"><i class="icon-reorder"></i> </a>
-    <div class="brand pull-left"> <a href="/dash"><img src="/dash/images/logo.png"></a></div>
+    <div class="brand pull-left"> <a href="/"><img src="/dash/images/logo.png"></a></div>
   </div>
 </div>
   
@@ -17,7 +17,7 @@
   <div class="left-nav">
     <div id="side-nav">
       <ul id="nav">
-        <li class="current"> <a href="/dash"> <i class="icon-dashboard"></i> Dashboard </a> </li>
+        <li class="current"> <a href="/"> <i class="icon-dashboard"></i> Dashboard </a> </li>
         <li> <a href="/admins"> <i class="icon-key"></i> Admins </a> </li>
         <li> <a href="/users"> <i class="icon-user"></i> Users </a> </li>
         <li> <a href="/events"> <i class="icon-calendar"></i> Events </a> </li>
