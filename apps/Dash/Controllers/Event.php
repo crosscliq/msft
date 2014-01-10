@@ -5,7 +5,7 @@ class Event extends BaseAuth
 {
     use \Dsc\Traits\Controllers\CrudItem;
 
-    protected $list_route = '/event/list';
+    protected $list_route = '/events';
     protected $create_item_route = '/event/create';
     protected $get_item_route = '/event/view/{id}';    
     protected $edit_item_route = '/event/edit/{id}';
@@ -37,43 +37,28 @@ class Event extends BaseAuth
     protected function displayCreate() 
     {
         $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Create Post');
+        $f3->set('pagetitle', 'Create Event');
         
-        $model = new \Blog\Admin\Models\Categories;
-        $categories = $model->getList();
-        \Base::instance()->set('categories', $categories );
-        \Base::instance()->set('selected', 'null' );
-
         $selected = array();
         $flash = \Dsc\Flash::instance();
-        $input = $flash->old('category_ids');
-
-        if (!empty($input)) 
-        {
-            foreach ($input as $id)
-            {
-                $id = $this->inputfilter->clean( $id, 'alnum' );
-                $selected[] = array('id' => $id);
-            }
-        }
+       
         
-        $flash->store( $flash->get('old') + array('categories'=>$selected));        
+        $flash->store( $flash->get('old') );        
 
-        $all_tags = $this->getModel()->getTags();
-        \Base::instance()->set('all_tags', $all_tags );
         
         $view = new \Dsc\Template;
-        echo $view->render('Blog/Admin/Views::posts/create.php');
+        echo $view->render('Dash/Views::events/create.php');
     }
     
-    public function Tickets()
+     protected function displayEdit()
     {
         $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Edit Post');
-
+        $f3->set('pagetitle', 'Edit Event');
+        
         $view = new \Dsc\Template;
-        echo $view->render('Blog/Admin/Views::posts/edit.php');
+        echo $view->render('Dash/Views::events/edit.php');
     }
+
 
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method

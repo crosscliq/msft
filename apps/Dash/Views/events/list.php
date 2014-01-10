@@ -4,7 +4,8 @@
 
 <a class="btn btn-success pull-right" href="/event/create">Create Event</a>
 
-
+<br clear="both">
+<br clear="both">
 
 <form id="searchForm" action="/events" method="post">
 
@@ -55,11 +56,11 @@
 		<thead>
 			<tr>
 			    <th class="checkbox-column"><input type="checkbox" class="icheck-input"></th>
-				<th data-sortable="metadata.title">Title</th>
-				<th>Author</th>
-				<th>Categories</th>
-				<th>Tags</th>
-				<th data-sortable="publication.start_date">Publication</th>
+				<th data-sortable="name">Name</th>
+				<th> Sortable Value</th>
+				<th>Sortable Value</th>
+				<th>Sortable Value</th>
+				<th data-sortable="">Sortable Value</th>
 				<th class="col-md-1"></th>
 			</tr>
 		</thead>
@@ -75,40 +76,34 @@
                             
                 <td class="">
                     <h5>
-                    <a href="./admin/blog/post/edit/<?php echo $item->id; ?>">
-                    <?php echo $item->{'metadata.title'}; ?>
+                    <a href="/event/edit/<?php echo $item->id; ?>">
+                    <?php echo $item->name; ?>
                     </a>
                     </h5>
-                    
-                    <p class="help-block">
-                    /<?php echo $item->{'metadata.slug'}; ?>
-                    </p>                    
+                                 
                 </td>
                 
                 <td class="">
-                <?php echo $item->{'metadata.creator.name'}; ?>
+              
                 </td>
                 
                 <td class="">
-                <?php echo implode(", ", \Joomla\Utilities\ArrayHelper::getColumn( (array) $item->{'metadata.categories'}, 'title' ) ); ?>
+                
                 </td>
                 
                 <td class="">
-                <?php echo implode(", ", (array) $item->{'metadata.tags'} ); ?>
+      
                 </td>
                 
                 <td class="">
-                    <div><?php echo ucwords( $item->{'publication.status'} ); ?></div>
-                    <div><?php if ($item->{'publication.start_date'}) { echo "Up: " . $item->{'publication.start_date'}; } ?></div>
-                    <div><?php if ($item->{'publication.end_date'}) { echo "Down: " . $item->{'publication.end_date'}; } ?></div>
-                </td>
+                      </td>
                                 
                 <td class="text-center">
-                    <a class="btn btn-xs btn-secondary" href="./admin/blog/post/edit/<?php echo $item->id; ?>">
+                    <a class="btn btn-xs btn-secondary" href="/event/edit/<?php echo $item->id; ?>">
                         <i class="fa fa-pencil"></i>
                     </a>
                     &nbsp;
-                    <a class="btn btn-xs btn-danger" data-bootbox="confirm" href="./admin/blog/post/delete/<?php echo $item->id; ?>">
+                    <a class="btn btn-xs btn-danger" data-bootbox="confirm" href="/event/delete/<?php echo $item->id; ?>">
                         <i class="fa fa-times"></i>
                     </a>
                 </td>
@@ -142,3 +137,7 @@
     </div>
 
 </form>
+
+<pre>
+<?php echo __FILE__; ?>
+</pre>
