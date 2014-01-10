@@ -1,7 +1,7 @@
 <?php 
-namespace Dash\Controllers;
+namespace Dash\Controllers\Event;
 
-class Events extends BaseAuth 
+class Event extends \Dash\Controllers\BaseAuth 
 {
     
     public function display() {
@@ -19,7 +19,7 @@ class Events extends BaseAuth
         \Base::instance()->set('pagination', $pagination );
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::events/list.php');
+        echo $view->render('Dash/Views::event/dashboard.php');
     }
 
 }

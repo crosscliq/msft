@@ -10,8 +10,8 @@ class Bingmap
     var $imagerySet = '';
     var $width = '';
     var $height = '';
-    //http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/Salt%20Lake%20City%20utah?key=AuN2mkocyJhQ0_9RWY3yjrHQUFt9EU1zychBkiaEMucllNPV_OBul0OZPNbd8fyU
 
+    //http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/Salt%20Lake%20City%20utah?key=AuN2mkocyJhQ0_9RWY3yjrHQUFt9EU1zychBkiaEMucllNPV_OBul0OZPNbd8fyU
     public function __construct() {
 
      
@@ -40,7 +40,7 @@ class Bingmap
     }
 
     public function getImageURL() {
-        return $this->base.$this->location.'?mapSize='.$this->width.','.$this->height.'&key='.$this->key;
+        return $this->base.$this->location.'?mapSize='.$this->width.','.$this->height.'&key='.$this->key.'&dcl=1';
     }
 
     public function getJPEG() {

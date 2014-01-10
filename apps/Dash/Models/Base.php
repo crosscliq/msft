@@ -1,5 +1,5 @@
 <?php 
-namespace Msft\Models;
+namespace Dash\Models;
 
 class Base extends \Dsc\Models\Db\Mongo  
 {
