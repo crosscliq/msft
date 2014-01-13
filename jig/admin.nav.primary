@@ -1,6 +1,6 @@
 {
-    "52bf9443207a19.38122931": {
-        "id": "f3-assets",
+    "52d423e7bfd210.65029678": {
+        "key": "f3-assets",
         "title": "Media Assets",
         "route": "",
         "icon": "fa fa-picture-o",
@@ -17,8 +17,8 @@
             }
         ]
     },
-    "52bf944320b390.36751375": {
-        "id": "f3-blog",
+    "52d423e7bfff58.26692495": {
+        "key": "f3-blog",
         "title": "Blog",
         "route": "",
         "icon": "fa fa-ticket",
@@ -30,7 +30,7 @@
             },
             {
                 "title": "Add New",
-                "route": "\/admin\/blog\/post",
+                "route": "\/admin\/blog\/post\/create",
                 "icon": "fa fa-plus"
             },
             {
@@ -40,13 +40,31 @@
             },
             {
                 "title": "Add New",
-                "route": "\/admin\/blog\/category",
+                "route": "\/admin\/blog\/category\/create",
                 "hidden": true
             }
         ]
     },
-    "52bf944320e258.86687177": {
-        "id": "fa-user",
+    "52d423e7c02a72.57012899": {
+        "key": "f3-modules",
+        "title": "Modules",
+        "route": "",
+        "icon": "fa fa-building",
+        "children": [
+            {
+                "title": "List",
+                "route": "\/admin\/modules",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/module\/create",
+                "icon": "fa fa-plus"
+            }
+        ]
+    },
+    "52d423e7c05cf5.21852076": {
+        "key": "fa-user",
         "title": "Users",
         "route": "",
         "icon": "fa fa-user",
@@ -78,7 +96,7 @@
             }
         ]
     },
-    "52bf9443210cc6.56907658": {
+    "52d423e7c08dd1.82121322": {
         "title": "Navigation",
         "route": "",
         "icon": "fa fa-tasks",
@@ -108,7 +126,7 @@
             }
         ]
     },
-    "52bf9443212798.89253251": {
+    "52d423e7c0ab78.78480512": {
         "title": "System",
         "route": "",
         "icon": "fa fa-cogs",
