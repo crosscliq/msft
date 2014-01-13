@@ -14,20 +14,13 @@
 </div>
   
 <div class="wrapper">
+
   <div class="left-nav">
     <div id="side-nav">
-      <ul id="nav">
-        <li class="current"> <a href="/"> <i class="icon-dashboard"></i> Dashboard </a> </li>
-        <li> <a href="/admins"> <i class="icon-key"></i> Admins </a> </li>
-        <li> <a href="/users"> <i class="icon-user"></i> Users </a> </li>
-        <li> <a href="/events"> <i class="icon-calendar"></i> Events </a> </li>
-        <li> <a href="/prizes"> <i class="icon-gift"></i> Prizes </a> </li>
-        <li> <a href="/attendees"> <i class="icon-group"></i> Attendees </a> </li>
-        <li> <a href="/tags"> <i class="icon-tag"></i> Wristbands </a> </li>
-
-      </ul>
-    </div>
+  <tmpl type="modules" name="nav" />
   </div>
+  </div>
+
 
   <div class="page-content">
    	 <tmpl type="system.messages" />

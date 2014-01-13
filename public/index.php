@@ -39,6 +39,7 @@ $custom = $app->get('PATH_ROOT').'apps/Custom/';
 
 \Dsc\Apps::instance()->bootstrap(null, array($custom ));
 
+\Dsc\System::instance()->preflight();
 //$db = new \DB\Mongo('mongodb://localhost:27017', $app->get('event.db'));
 //new \DB\Mongo\Session($db);
 
