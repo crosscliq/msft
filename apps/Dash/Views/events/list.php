@@ -61,9 +61,9 @@
             <tr>
                 <th class="checkbox-column"><input type="checkbox" class="icheck-input"></th>
                 <th data-sortable="name">Name</th>
-                <th> Sortable Value</th>
-                <th>Sortable Value</th>
-                <th>Sortable Value</th>
+                <th data-sortable="category">Category</th>
+                <th data-sortable="dates.start_date">Start Date</th>
+                <th data-sortable="dates.end_date">End Date</th>
                 <th data-sortable="">Sortable Value</th>
                 <th class="col-md-1"></th>
             </tr>
@@ -80,23 +80,24 @@
                             
                 <td class="">
                     <h5>
-                    <a href="/event/edit/<?php echo $item->id; ?>">
+                    <a href="/<?php echo $item->event_id .'/dashboard'; ?>">
                     <?php echo $item->name; ?>
                     </a>
-                    </h5>
-                                 
+                    </h5><small>
+                    <?php echo $item->{'address.city'}; ?>, <?php echo $item->{'address.state'}; ?> 
+                    </small>            
                 </td>
                 
                 <td class="">
-              
+                    <?php echo $item->category; ?>
                 </td>
                 
                 <td class="">
-                
+                    <?php echo $item->{'dates.start_date'}; ?>
                 </td>
                 
                 <td class="">
-      
+                    <?php echo $item->{'dates.end_date'}; ?>
                 </td>
                 
                 <td class="">
