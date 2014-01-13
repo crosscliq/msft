@@ -25,9 +25,9 @@ $maps = new \Dash\Models\Bingmap;?>
                                   <div class="widget-container">
                                     <div class="stats-heading"><span class="pull-left"><small>NSO</small></span>City Creek Mall</div>
                                     <div class="padded text-center">
-                                      <a href="#123" class=""><img src="<?php echo $maps->width('200')->height('100')->location('Salt lake City, Utah')->getImageURL(); ?>"></a> 
+                                      <a href="id/dashboard/" class=""><img src="<?php echo $maps->width('200')->height('100')->location('Salt lake City, Utah')->getImageURL(); ?>"></a> 
                                       <br style="clear:both;" />
-                                                  <div class="text-center padder m-t"><small><a href="#" class="btn btn-default btn-xs">Event Details</a></small> </div>
+                                                  <div class="text-center padder m-t"><small><a href="id/dashboard/" class="btn btn-default btn-xs">Event Details</a></small> </div>
                                               </div>
                                               <div class="widget-footer lt">
                                                   <div class="row">
