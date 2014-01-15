@@ -14,7 +14,7 @@ class Auth extends \Users\Site\Controllers\Auth {
     
 
     function beforeRoute() {
-        $session = \Base::instance()->get('SESSION.user');
+        $session = \Base::instance()->get('SESSION.dash.user');
         
         if(@$session->_id) {
         \Base::instance()->reroute($this->default_loggedin_redirect);    
@@ -127,7 +127,7 @@ class Auth extends \Users\Site\Controllers\Auth {
             if ($authenticated) 
             {   
                    
-                \Base::instance()->set('SESSION.user', (object) $user->cast());
+                \Base::instance()->set('SESSION.dash.user', (object) $user->cast());
 
                 $redirect = $this->input->get('login-redirect','', 'string');
                 if($redirect) {

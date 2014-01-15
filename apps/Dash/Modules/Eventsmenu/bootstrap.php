@@ -4,7 +4,7 @@ $global_app_name = $f3->get('APP_NAME');
 
 switch ($global_app_name) 
 {
-    case "dash":
+    case "admin":
         // register event listener
         \Dsc\System::instance()->getDispatcher()->addListener(\Modules\Listener::instance());
         
