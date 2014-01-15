@@ -1,5 +1,5 @@
 <?php 
-namespace Dash\Modules\Nav;
+namespace Dash\Modules\Eventsmenu;
 
 class Module extends \Modules\Abstracts\Module
 {
@@ -12,14 +12,11 @@ class Module extends \Modules\Abstracts\Module
         $f3->set('UI', $temp_ui);
         
         $f3->set('module', $this);
-        
-        $string = \Dsc\Template::instance()->renderLayout('Dash/Modules/Views::default.php');
+      
+        $string = \Dsc\Template::instance()->renderLayout('Dash/Modules/Eventsmenu/Views::default.php');
         
         $f3->set('UI', $old_ui);
         
         return $string;
     }
-
-    
-
 }

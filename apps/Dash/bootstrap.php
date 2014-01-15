@@ -57,7 +57,19 @@ switch ($global_app_name)
         $f3->route('GET /@eventid/prize/edit/@id', '\Dash\Controllers\Event\Prize->edit');
         $f3->route('POST /@eventid/prize/update/@id', '\Dash\Controllers\Event\Prize->update');
 
+
+        $f3->route('GET|POST /users', '\Dash\Controllers\Users->display');
+        $f3->route('GET|POST /users/@page', '\Dash\Controllers\Users->display');
+        $f3->route('GET|POST /users/delete', '\Dash\Controllers\Users->delete');
+        $f3->route('GET /user', '\Dash\Controllers\User->create');
+        $f3->route('POST /user', '\Dash\Controllers\User->add');
+        $f3->route('GET /user/@id', '\Dash\Controllers\User->read');
+        $f3->route('GET /user/@id/edit', '\Dash\Controllers\User->edit');
+        $f3->route('POST /user/@id', '\Dash\Controllers\User->update');
+        $f3->route('DELETE /user/@id', '\Dash\Controllers\User->delete');
+        $f3->route('GET /user/@id/delete', '\Dash\Controllers\User->delete');    
         
+         $f3->route('GET|POST /logout', '\Dash\Controllers\Auth->logout');  
         // TODO set some app-specific settings, if desired
         // append this app's UI folder to the path
         $ui = $f3->get('UI');
