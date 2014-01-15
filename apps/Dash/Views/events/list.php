@@ -3,8 +3,11 @@
 <div class="toolbar">
 <a class="btn btn-success pull-right" href="/event/create">Create Event</a>
 </div>
-<br clear="both"><br clear="both">
-
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <h2 class="page-title">Events</h2>
+                                </div>
+                              </div>
           <div class="widget">
             <div class="widget-header"> <i class="icon-table"></i>
               <h3>Events</h3>
@@ -17,7 +20,7 @@
         <div class="col-sm-6">
             <div class="row row-marginless">
                 <?php if (!empty($list['subset'])) { ?>
-                <div class="col-sm-4">
+                <div class="col-sm-2">
                     <?php echo $pagination->getLimitBox( $state->get('list.limit') ); ?>
                 </div>
                 <?php } ?>
@@ -33,7 +36,7 @@
                 <input class="form-control" type="text" name="filter[keyword]" placeholder="Keyword" maxlength="200" value="<?php echo $state->get('filter.keyword'); ?>"> 
                 <span class="input-group-btn">
                     <input class="btn btn-primary" type="submit" onclick="this.form.submit();" value="Search" />
-                    <button class="btn btn-danger" type="button" onclick="Dsc.resetFormFilters(this.form);">Reset</button>
+                   <!-- <button class="btn btn-danger" type="button" onclick="Dsc.resetFormFilters(this.form);">Reset</button> -->
                 </span>
             </div>
         </div>
@@ -43,7 +46,7 @@
     <input type="hidden" name="list[direction]" value="<?php echo $state->get('list.direction'); ?>" />
     
     <div class="row table-actions">
-        <div class="col-md-6 col-lg-4 input-group">
+        <div class="col-md-6 col-lg-3 input-group">
             <select id="bulk-actions" name="bulk_action" class="form-control">
                 <option value="null">-Bulk Actions-</option>
                 <option value="delete" data-action="./admin/blog/posts/delete">Delete</option>
@@ -61,9 +64,9 @@
             <tr>
                 <th class="checkbox-column"><input type="checkbox" class="icheck-input"></th>
                 <th data-sortable="name">Name</th>
-                <th> Sortable Value</th>
-                <th>Sortable Value</th>
-                <th>Sortable Value</th>
+                <th data-sortable="category">Category</th>
+                <th data-sortable="dates.start_date">Start Date</th>
+                <th data-sortable="dates.end_date">End Date</th>
                 <th data-sortable="">Sortable Value</th>
                 <th class="col-md-1"></th>
             </tr>
@@ -80,23 +83,24 @@
                             
                 <td class="">
                     <h5>
-                    <a href="/event/edit/<?php echo $item->id; ?>">
+                    <a href="/<?php echo $item->event_id .'/dashboard'; ?>">
                     <?php echo $item->name; ?>
                     </a>
-                    </h5>
-                                 
+                    </h5><small>
+                    <?php echo $item->{'address.city'}; ?>, <?php echo $item->{'address.state'}; ?> 
+                    </small>            
                 </td>
                 
                 <td class="">
-              
+                    <?php echo $item->category; ?>
                 </td>
                 
                 <td class="">
-                
+                    <?php echo $item->{'dates.start_date'}; ?>
                 </td>
                 
                 <td class="">
-      
+                    <?php echo $item->{'dates.end_date'}; ?>
                 </td>
                 
                 <td class="">
@@ -105,9 +109,7 @@
                 <td class="text-center">
                     <a class="btn btn-small btn-success" href="/event/edit/<?php echo $item->id; ?>">
                         <i class="btn-icon-only icon-edit"></i>
-                    </a>
-                    &nbsp;
-                    <a class="btn btn-small btn-danger" data-bootbox="confirm" href="/event/delete/<?php echo $item->id; ?>">
+                    </a> <a class="btn btn-small btn-danger" data-bootbox="confirm" href="/event/delete/<?php echo $item->id; ?>">
                         <i class="btn-icon-only icon-remove"></i>
                     </a>
                 </td>

@@ -12,12 +12,14 @@
         "dioscouri/f3-blog": "dev-master",
         "dioscouri/f3-users": "dev-master",
         "dioscouri/f3-modules": "dev-master",
+        "dioscouri/f3-mailer": "dev-master",
         "firephp/firephp-core": "dev-master",
         "joomla/framework": ">=1.0",
         "bcosca/fatfree": "dev-master",
         "leafo/lessphp": "0.4.0",
         "twbs/bootstrap": "<=3.0.0",
         "aws/aws-sdk-php": "dev-master",
-	    "pusher/pusher-php-server": "dev-master" 
+	    "pusher/pusher-php-server": "dev-master",
+        "mandrill/mandrill": "dev-master"
     }
 }
