@@ -14,29 +14,22 @@
             <div class="col-md-6 col-md-offset-3">
               <div id="filters" class="text-center btn-group">
             
-                  <div  class="hidden-xs btn-group btn-group-justified">
-                    <a class="filter btn btn-primary active" data-filter="*" href="#">All</a>
-                    <a class="filter btn btn-primary" data-filter=".NSO" href="#">NSO</a>
-                    <a class="filter btn btn-primary" data-filter=".XBOX" href="#">Xbox</a>
-                    <a class="filter btn btn-primary" data-filter=".HR" href="#">HR</a>
+                  <div  class=" btn-group btn-group-justified">
+                    <a class="filter btn btn-primary active" data-filter="all" href="#">All</a>
+                    <a class="filter btn btn-primary" data-filter="NSO" href="#">NSO</a>
+                    <a class="filter btn btn-primary" data-filter="XBOX" href="#">Xbox</a>
+                    <a class="filter btn btn-primary" data-filter="HR" href="#">HR</a>
                   </div>
-                  <div class="visible-xs">
-                     <select id="e1" class="form-control">
-                      <option value="*">All</option>
-                      <option value=".NSO">NSO</option>
-                      <option value=".XBOX">Xbox</option>
-                      <option value=".HR">HR</option>
-                    </select>
-                  </div>
+
               </div>
             </div>
           </div>
 
           <div class="container">
-            <div id="filter-items" class="row">
+            <ul id="grid" class="row">
               <?php foreach ($list as $item) :?>
 
-              <div class="col xs-12 col-sm-4 <?=$item['category'];?> item">
+              <li class="col xs-12 col-sm-4 mix <?=$item['category'];?>" data-cat="<?=$item['category'];?>">
                 <div class="filter-content">
                         <div class="widget-container">
                     
@@ -60,10 +53,10 @@
 
 
                 </div>
-              </div>
+              </li>
               <?php endforeach; ?>
 
-
+		</ul>
 
 
   

@@ -7,6 +7,8 @@ jQuery(document).ready(function(){
 });
 
 </script>
+<div class="row">
+<div class="col-lg-6">
     <div class="widget">
             <div class="widget-header"> <i class="icon-plus-sign"></i>
               <h3>Create Event</h3>
@@ -14,29 +16,66 @@ jQuery(document).ready(function(){
     <div class="widget-content">
    <div class="body">
 <form id="detail-form" action="/event/add" class="form" method="post">
-   <input type="text" name="name" placeholder="Event Name" value="<?php echo $flash->old('name'); ?>" > <br>
-   <input type="text" name="event_id" placeholder="Event ID" value="<?php echo $flash->old('event_id'); ?>" ><br>
-   <div class="form-group">
-                        <label>Dates:</label>
-                        <div class="row">
-                            <div class="col-md-6">
-                               Start Date <input name="dates[start_date]" value="<?php echo $flash->old('dates.start_date' ); ?>" class="form-control mask" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true" data-inputmask="'alias': 'date'"> 
-                            </div>
-                            <div class="input-group col-md-6">
-                              Start Time   <input name="dates[start_time]" value="<?php echo $flash->old('dates.start_time' ); ?>" type="text" class="ui-timepicker form-control" data-default-time="false" data-show-meridian="false" data-show-inputs="false">
-                                <span class="input-group-addon"><i class="icon-clock"></i></span>
-                            </div>
-                        </div>
-                    	<div class="row">
-                            <div class="col-md-6">
-                               End Date <input name="dates[end_date]" value="<?php echo $flash->old('dates.end_date' ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true">
-                            </div>
-                            <div class="input-group col-md-6">
-                              End Time   <input name="dates[end_time]" value="<?php echo $flash->old('dates.end_time' ); ?>" type="text" class="ui-timepicker form-control" data-default-time="false" data-show-meridian="false" data-show-inputs="false">
-                                <span class="input-group-addon"><i class="icon-clock"></i></span>
-                            </div>
-                        </div>
+<div class="control-group">
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Event Name</label>
                     </div>
+                    <div class="col-md-9">
+                    <div class="form-group">
+			 <input type="text" name="name" placeholder="Event Name" value="<?php echo $flash->old('name'); ?>" class="form-control"> 
+                    </div>
+                    </div>
+                  </div>
+
+                 <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Event ID</label>
+                    </div>
+                    <div class="col-md-9">
+                    <div class="form-group">
+			 <input type="text" name="event_id" placeholder="Event ID" value="<?php echo $flash->old('dates.start_date' ); ?>"  class="form-control"> 
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Start Date</label>
+                  </div>
+
+                  <div class="col-md-3">
+		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                    <input type="text" placeholder="Start Date" value="<?php echo $flash->old('dates.start_date' ); ?>" size="16" class="form-control mask" id="dates[start_date]">
+                   </div>
+                  </div>
+
+                  <div class="col-md-4">
+		     <div class="input-group"> <span class="input-group-addon"><i class="icon-time"></i></span>
+                        <input type="text" placeholder="Start time" value="<?php echo $flash->old('dates.start_time' ); ?>" size="16" class="form-control mask" id="dates[start_time]">
+                    </div>
+                   </div>
+
+
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">End Date</label>
+                  </div>
+
+                  <div class="col-md-3">
+		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                    <input type="text" placeholder="End Date" value="<?php echo $flash->old('dates.end_date' ); ?>" size="16" class="form-control mask" id="dates[end_date]">
+                   </div>
+                  </div>
+
+                  <div class="col-md-4">
+		     <div class="input-group"> <span class="input-group-addon"><i class="icon-time"></i></span>
+                        <input type="text" placeholder="End time" value="<?php echo $flash->old('dates.end_time' ); ?>" size="16" class="form-control mask" id="dates[end_time]">
+                    </div>
+                   </div>
+
+                  </div>
+
+
+
+   <div class="form-group">
+
    <?php $categories =  array('NSO'=> 'New Store Opening', 'XBOX'=> 'Xbox Event', 'HR'=> 'Human Resources', ); ?>
    <br>
    <label>Category</label><br>
@@ -70,8 +109,5 @@ jQuery(document).ready(function(){
 </div></div></div>
 
 
-
-<h2>Shae can you make this form</h2>
-<pre>
-<?php echo __FILE__; ?>
-</pre>
+</div>
+</div>
