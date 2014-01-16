@@ -1,10 +1,9 @@
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
 <?php //echo \Dsc\Debug::dump( $list, false ); ?>
-<div class="toolbar">
-<a class="btn btn-success pull-right" href="/event/create">Create Event</a>
-</div>
+
                               <div class="row">
                                 <div class="col-lg-12">
+<a class="btn btn-success pull-right" href="/event/create">Create Event</a>
                                   <h2 class="page-title">Events</h2>
                                 </div>
                               </div>

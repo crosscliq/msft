@@ -20,7 +20,7 @@ jQuery(document).ready(function(){
                         <label>Dates:</label>
                         <div class="row">
                             <div class="col-md-6">
-                               Start Date <input name="dates[start_date]" value="<?php echo $flash->old('dates.start_date' ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true">
+                               Start Date <input name="dates[start_date]" value="<?php echo $flash->old('dates.start_date' ); ?>" class="form-control mask" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true" data-inputmask="'alias': 'date'"> 
                             </div>
                             <div class="input-group col-md-6">
                               Start Time   <input name="dates[start_time]" value="<?php echo $flash->old('dates.start_time' ); ?>" type="text" class="ui-timepicker form-control" data-default-time="false" data-show-meridian="false" data-show-inputs="false">
