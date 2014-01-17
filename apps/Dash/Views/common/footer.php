@@ -9,10 +9,11 @@
 <script src="/dash/js/bootstrap.min.js"></script> 
 <script src="/dash/js/jquery.mixitup.min.js"></script>
 <script src="/dash/js/waypoint/waypoints.min.js"></script>
-
+<script src='/dash/assets/plugins/form-inputmask/jquery.inputmask.min.js' type='text/javascript'></script>
 <script src="/dash/js/isotope/imagesloaded.pkgd.min.js"></script>
 <script type="text/javascript">
 $(function(){
+  $('.mask').inputmask(); 
   $('#grid').mixitup();  
 });
 

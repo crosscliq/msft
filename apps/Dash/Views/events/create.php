@@ -1,12 +1,5 @@
 <?php //echo \Dsc\Debug::dump( $flash->get('old'), false ); ?>
 
-<script src="./ckeditor/ckeditor.js"></script>
-<script>
-jQuery(document).ready(function(){
-    CKEDITOR.replaceAll( 'wysiwyg' );    
-});
-
-</script>
 <div class="row">
 <div class="col-lg-6">
     <div class="widget">
@@ -26,7 +19,7 @@ jQuery(document).ready(function(){
                     </div>
                     </div>
                   </div>
-
+<div class="control-group">
                  <div class="col-md-3">
                     <label for="normal-field" class="control-label">Event ID</label>
                     </div>
@@ -36,55 +29,78 @@ jQuery(document).ready(function(){
                     </div>
                     </div>
                   </div>
-
+<div class="control-group">
                   <div class="col-md-3">
-                    <label for="normal-field" class="control-label">Start Date</label>
-                  </div>
-
-                  <div class="col-md-3">
-		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
-                    <input type="text" placeholder="Start Date" value="<?php echo $flash->old('dates.start_date' ); ?>" size="16" class="form-control mask" id="dates[start_date]">
-                   </div>
+                    <label for="normal-field" class="control-label">Dates</label>
                   </div>
 
                   <div class="col-md-4">
+		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                    <input type="text" placeholder="Start Date" value="<?php echo $flash->old('dates.start_date' ); ?>" size="16" class="form-control mask" id="dates[start_date]" data-inputmask="'alias': 'date'">
+                   </div>
+                  </div>
+                 <div class="col-md-4">
+		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                    <input type="text" placeholder="End Date" value="<?php echo $flash->old('dates.end_date' ); ?>" size="16" class="form-control mask" id="dates[end_date]" data-inputmask="'alias': 'date'">
+                   </div>
+                  </div>
+</div>
+
+<div class="control-group">
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Times</label>
+                  </div>
+
+                 <div class="col-md-4">
 		     <div class="input-group"> <span class="input-group-addon"><i class="icon-time"></i></span>
                         <input type="text" placeholder="Start time" value="<?php echo $flash->old('dates.start_time' ); ?>" size="16" class="form-control mask" id="dates[start_time]">
                     </div>
                    </div>
-
-
-                  <div class="col-md-3">
-                    <label for="normal-field" class="control-label">End Date</label>
-                  </div>
-
-                  <div class="col-md-3">
-		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
-                    <input type="text" placeholder="End Date" value="<?php echo $flash->old('dates.end_date' ); ?>" size="16" class="form-control mask" id="dates[end_date]">
-                   </div>
-                  </div>
 
                   <div class="col-md-4">
 		     <div class="input-group"> <span class="input-group-addon"><i class="icon-time"></i></span>
                         <input type="text" placeholder="End time" value="<?php echo $flash->old('dates.end_time' ); ?>" size="16" class="form-control mask" id="dates[end_time]">
                     </div>
                    </div>
-
+</div>
+<div class="control-group">		
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Category</label>
                   </div>
+
+                  <div class="col-md-4">
+		     <div class="input-group">
+				<?php $categories =  array('NSO'=> 'New Store Opening', 'XBOX'=> 'Xbox Event', 'HR'=> 'Human Resources', ); ?>
+				<select name="category" class="form-control">
+				  <?php foreach ($categories as $value => $text) : ?>
+				  <option value="<?=$value?>" <?php if($value == $flash->old('category')){ echo 'selected="selected"';} ;?> > <?=$text?>
+				  <?php endforeach; ?>
+				</select>
+                    </div>
+                   </div>
+</div>
+
+
+<div class="control-group">
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Normal field</label>
+                    </div>
+                    <div class="col-md-9">
+                    <div class="form-group">
+                      <input type="text" placeholder="May have placeholder" class="form-control" id="normal-field">
+                    </div>
+                    </div>
+</div>
+
+
+		</div>
+</div>
+         
 
 
 
    <div class="form-group">
 
-   <?php $categories =  array('NSO'=> 'New Store Opening', 'XBOX'=> 'Xbox Event', 'HR'=> 'Human Resources', ); ?>
-   <br>
-   <label>Category</label><br>
-   <select name="category">
-   <?php foreach ($categories as $value => $text) : ?>
-   <option value="<?=$value?>" <?php if($value == $flash->old('category')){ echo 'selected="selected"';} ;?> > <?=$text?>
-   <?php endforeach; ?>
-   </select>
-   <br>
    <label>Address</label><br>
    <input type="text" name="address[street]" placeholder="Street" value="<?php echo $flash->old('address.street') ?>" >
    <br>
