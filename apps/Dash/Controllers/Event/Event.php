@@ -8,6 +8,8 @@ class Event extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('pagetitle', 'Events');
         \Base::instance()->set('subtitle', '');
         
+       
+
         $model = new \Dash\Models\Events;
         $model->setFilter('event_id',$f3->get('PARAMS.eventid'));
         $event = $model->getItem();

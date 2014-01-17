@@ -17,12 +17,7 @@
 
     <div class="row datatable-header">
         <div class="col-sm-6">
-            <div class="row row-marginless">
-                <?php if (!empty($list['subset'])) { ?>
-                <div class="col-sm-2">
-                    <?php echo $pagination->getLimitBox( $state->get('list.limit') ); ?>
-                </div>
-                <?php } ?>
+            <di
                 <?php if (!empty($list['count']) && $list['count'] > 1) { ?>
                 <div class="col-sm-8">
                     <?php echo $pagination->serve(); ?>
@@ -44,18 +39,7 @@
     <input type="hidden" name="list[order]" value="<?php echo $state->get('list.order'); ?>" />
     <input type="hidden" name="list[direction]" value="<?php echo $state->get('list.direction'); ?>" />
     
-    <div class="row table-actions">
-        <div class="col-md-6 col-lg-3 input-group">
-            <select id="bulk-actions" name="bulk_action" class="form-control">
-                <option value="null">-Bulk Actions-</option>
-                <option value="delete" data-action="./admin/blog/posts/delete">Delete</option>
-            </select>
-            <span class="input-group-btn">
-                <button class="btn btn-default bulk-actions" type="button" data-target="bulk-actions">Apply</button>
-            </span>
-        </div>
-    </div>
-
+   
     <div class="table-responsive datatable">
     
     <table class="table table-striped table-bordered table-hover table-highlight table-checkable">
@@ -129,6 +113,18 @@
     </div>
     
     <div class="row datatable-footer">
+
+                <?php if (!empty($list['subset'])) { ?>
+                <div class="col-sm-2">
+                    <?php echo $pagination->getLimitBox( $state->get('list.limit') ); ?>
+                </div>
+                <?php } ?>
+                <?php if (!empty($list['count']) && $list['count'] > 1) { ?>
+                <div class="col-sm-8">
+                    <?php echo $pagination->serve(); ?>
+                </div>
+                <?php } ?>
+       
         <?php if (!empty($list['count']) && $list['count'] > 1) { ?>
         <div class="col-sm-10">
             <?php echo (!empty($list['count']) && $list['count'] > 1) ? $pagination->serve() : null; ?>
