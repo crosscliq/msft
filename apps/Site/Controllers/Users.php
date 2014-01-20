@@ -12,7 +12,7 @@ class Users extends BaseAuth
 
 
    public function roles($f3) {
-         $user = $f3->get('SESSION.user');
+        $user = $f3->get('SESSION.user');
          
         $user = $this->getModel()->setState('filter.id', $user->_id)->getItem();
 

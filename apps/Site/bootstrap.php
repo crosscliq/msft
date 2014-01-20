@@ -25,7 +25,7 @@ switch ($global_app_name)
         $f3->route('GET /roles', '\Site\Controllers\Users->roles');
         $f3->route('GET /active/role/@roleid', '\Site\Controllers\Users->role');
         //Tag Parser
-        $f3->route('GET /e/@eventid/@tagid', '\Site\Controllers\Tags->action');
+        $f3->route('GET /band/@tagid', '\Site\Controllers\Tags->action');
 
         $f3->route('GET /empty', '\Site\Controllers\Tags->displayEmpty');
 

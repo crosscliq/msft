@@ -4,7 +4,7 @@ namespace Dash\Models\Event;
 
 Class Roles Extends Eventbase {
 
-    protected $collection = 'user.roles';
+    protected $collection = 'users.roles';
     protected $default_ordering_direction = '1';
     protected $default_ordering_field = 'type';
 
