@@ -8,6 +8,7 @@ $primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-dashboard' , 
 $primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-dashboard' , 'details' => array('url' => $PARAMS[0]."#stats"), 'title' => 'Event Details' );
 $primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-calendar' , 'details' => array('url' => $PARAMS[0]."#attendees"), 'title' => 'Attendees' );
 $primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-user' , 'details' => array('url' => $PARAMS[0]."#users"), 'title' => 'Users' );
+$primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-user' , 'details' => array('url' => $PARAMS[0]."#roles"), 'title' => 'Roles' );
 
 
 ?>

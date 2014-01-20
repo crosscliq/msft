@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-md-9">
                     <div class="form-group">
-			 <input type="text" name="event_id" placeholder="Event ID" value="<?php echo $flash->old('dates.start_date' ); ?>"  class="form-control"> 
+			 <input type="text" name="event_id" placeholder="Event ID" value="<?php echo $flash->old('event_id'); ?>"  class="form-control"> 
                     </div>
                     </div>
                   </div>

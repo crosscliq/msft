@@ -1,7 +1,7 @@
 <?php 
 namespace Dash\Controllers\Event;
 
-class Attendees extends \Dash\Controllers\BaseAuth 
+class Roles extends \Dash\Controllers\BaseAuth 
 {
     
     public function display() {
