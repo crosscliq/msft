@@ -5,7 +5,7 @@ class Roles extends \Dash\Controllers\BaseAuth
 {
     
     public function display() {
-        \Base::instance()->set('pagetitle', 'Attendees');
+        \Base::instance()->set('pagetitle', 'Roles');
         \Base::instance()->set('subtitle', '');
         
         $model = new \Dash\Models\Event\Roles;
@@ -19,7 +19,7 @@ class Roles extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('pagination', $pagination );
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/attendees/list.php');
+        echo $view->render('Dash/Views::event/Roles/list.php');
     }
 
 }

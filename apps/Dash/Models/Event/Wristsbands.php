@@ -4,7 +4,7 @@ namespace Dash\Models\Event;
 
 Class Wristbands Extends Eventbase {
 
-    protected $collection = 'attendees';
+    protected $collection = 'wristbands';
     protected $default_ordering_direction = '1';
     protected $default_ordering_field = 'type';
 
@@ -18,16 +18,8 @@ Class Wristbands Extends Eventbase {
         parent::__construct($config);
     }
 
-    protected function createDb()
-    {
-        $db_name = \Base::instance()->get('event.db');
-        $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
-        
-        return $this;
-    }
-
     public function getPrefab() {
-        $prefab = New \Dash\Models\Prefabs\Event();
+        $prefab = New \Dash\Models\Prefabs\Wristband();
         return $prefab;
     }
     

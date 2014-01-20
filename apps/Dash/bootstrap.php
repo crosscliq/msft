@@ -52,7 +52,7 @@ switch ($global_app_name)
         $f3->route('GET /@eventid/wristband/read/@id', '\Dash\Controllers\Event\Wristband->add');
         $f3->route('GET /@eventid/wristband/edit/@id', '\Dash\Controllers\Event\Wristband->edit');
         $f3->route('POST /@eventid/wristband/update/@id', '\Dash\Controllers\Event\Wristband->update');
-        // EVENT WRISTBANDS ROUTES
+        // EVENT PRIZES ROUTES
         $f3->route('GET|POST /@eventid/prizes', '\Dash\Controllers\Event\Prizes->display');
         $f3->route('GET|POST /@eventid/prizes/page/@page', '\Dash\Controllers\Event\Prizes->display');
         $f3->route('GET|POST /@eventid/prizes/delete', '\Dash\Controllers\Event\Prizes->delete');
@@ -60,7 +60,14 @@ switch ($global_app_name)
         $f3->route('GET /@eventid/prize/read/@id', '\Dash\Controllers\Event\Prize->add');
         $f3->route('GET /@eventid/prize/edit/@id', '\Dash\Controllers\Event\Prize->edit');
         $f3->route('POST /@eventid/prize/update/@id', '\Dash\Controllers\Event\Prize->update');
-
+        // EVENT USERS ROUTES
+        $f3->route('GET|POST /@eventid/users', '\Dash\Controllers\Event\Users->display');
+        $f3->route('GET|POST /@eventid/users/page/@page', '\Dash\Controllers\Event\Users->display');
+        $f3->route('GET|POST /@eventid/users/delete', '\Dash\Controllers\Event\Users->delete');
+        $f3->route('GET /@eventid/user/create', '\Dash\Controllers\Event\User->create');
+        $f3->route('GET /@eventid/user/read/@id', '\Dash\Controllers\Event\User->add');
+        $f3->route('GET /@eventid/user/edit/@id', '\Dash\Controllers\Event\User->edit');
+        $f3->route('POST /@eventid/user/update/@id', '\Dash\Controllers\Event\User->update');
 
         $f3->route('GET|POST /users', '\Dash\Controllers\Users->display');
         $f3->route('GET|POST /users/@page', '\Dash\Controllers\Users->display');

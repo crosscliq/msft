@@ -1,18 +1,18 @@
 <?php 
 namespace Dash\Controllers\Event;
 
-class Prize extends BaseAuth 
+class User extends BaseAuth 
 {
     use \Dsc\Traits\Controllers\CrudItem;
 
     protected $list_route = '/';
-    protected $create_item_route = '/prize/create';
-    protected $get_item_route = '/prize/view/{id}';    
-    protected $edit_item_route = '/prize/edit/{id}';
+    protected $create_item_route = '/user/create';
+    protected $get_item_route = '/user/view/{id}';    
+    protected $edit_item_route = '/user/edit/{id}';
     
     protected function getModel() 
     {
-        $model = new \Dash\Models\Event\Prize;
+        $model = new \Dash\Models\Event\Users;
         return $model; 
     }
     
@@ -37,7 +37,7 @@ class Prize extends BaseAuth
     protected function displayCreate() 
     {
         $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Create Prize');
+        $f3->set('pagetitle', 'Create User');
         
         $selected = array();
         $flash = \Dsc\Flash::instance();
@@ -47,16 +47,16 @@ class Prize extends BaseAuth
 
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::prize/create.php');
+        echo $view->render('Dash/Views::user/create.php');
     }
     
      protected function displayEdit()
     {
         $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Edit Prize');
+        $f3->set('pagetitle', 'Edit User');
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::prize/edit.php');
+        echo $view->render('Dash/Views::user/edit.php');
     }
 
     //reroute this to  the \Dash\
@@ -75,9 +75,9 @@ class Prize extends BaseAuth
     protected function displayRead() {
 
         $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Edit Prize');
+        $f3->set('pagetitle', 'Edit User');
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::prize/edit.php');
+        echo $view->render('Dash/Views::user/edit.php');
     }
 }
