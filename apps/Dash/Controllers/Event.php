@@ -5,7 +5,7 @@ class Event extends BaseAuth
 {
     use \Dsc\Traits\Controllers\CrudItem;
 
-    protected $list_route = '/events';
+    protected $list_route = '/';
     protected $create_item_route = '/event/create';
     protected $get_item_route = '/event/view/{id}';    
     protected $edit_item_route = '/event/edit/{id}';

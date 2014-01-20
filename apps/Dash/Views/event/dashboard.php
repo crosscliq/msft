@@ -8,6 +8,7 @@ $maps = new \Dash\Models\Bingmap;?>
                                   <h2 class="page-title"><?php echo $event->name;?><small> <?php echo $event->category;?></small></h2>
                                 </div>
                               </div>
+<section id="stats">                           
 <div class="col-md-12">
           <div class="row">
 		<div class="col-lg-6">
@@ -47,4 +48,58 @@ $maps = new \Dash\Models\Bingmap;?>
           </div>
         </div>
     </div>
+</section>
+<section id="Activity">
+<h1>Activity</h1>
+<hr>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <hr>
+</section>
 
+<section id="attendees">
+<h1>Attendees</h1>
+<hr>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <hr>
+</section>
+<section id="users"> 
+<h1>Users</h1>
+<hr>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <hr>
+ <hr>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <hr>
+</section>

@@ -83,8 +83,8 @@ switch ($global_app_name)
         
 
         \Modules\Factory::registerPositions( array('nav', 'footer', 'above-content', 'below-content') );
-        
         \Modules\Factory::registerPath( $f3->get('PATH_ROOT') . "apps/Dash/Modules/" );
+        
         break;
 
          case "admin":

@@ -15,6 +15,13 @@
   
 <div class="wrapper">
 
+  <div class="left-nav">
+    <div id="side-nav">
+  <tmpl type="modules" name="nav" />
+  </div>
+  </div>
+
+
   <div class="page-content">
    	 <tmpl type="system.messages" />
      <tmpl type="view" />
@@ -22,5 +29,6 @@
  </div>
  </div>
 <?php echo $this->renderLayout('common/footer.php'); ?>
+<?php echo $this->renderLayout('common/pusher.php'); ?>
 </body>
 </html>
