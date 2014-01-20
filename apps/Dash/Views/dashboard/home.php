@@ -2,7 +2,6 @@
 <div class="content container">
                               <div class="row">
                                 <div class="col-lg-12">
-                                <a class="btn btn-success pull-right" href="/event/create">Create Event</a>
                                   <h2 class="page-title">EVENT MANAGEMENT <small>DASHBOARD</small></h2>
                                 </div>
                               </div>
@@ -12,7 +11,8 @@
     <section id="events" class="color-light text-center">     
         
           <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+	     <div class="col-sm-2"><a class="btn btn-success" href="/event/create">Create Event</a></div>
+            <div class="col-sm-4 col-md-offset-6">
               <div id="filters" class="text-center btn-group">
             
                   <div  class=" btn-group btn-group-justified">
@@ -21,11 +21,13 @@
                     <a class="filter btn btn-primary" data-filter="XBOX" href="#">Xbox</a>
                     <a class="filter btn btn-primary" data-filter="HR" href="#">HR</a>
                   </div>
-
+		    
               </div>
-            </div>
-          </div>
 
+            </div>
+
+          </div>
+	   <br/>
           <div class="container">
             <ul id="grid" class="row">
               <?php foreach ($list as $item) :?>
@@ -35,10 +37,8 @@
                         <div class="widget-container">
                     
                                   <div class="stats-heading"><span class="pull-left"><small><?=$item['category'];?></small></span><?=$item['name'];?></div>
-                                    <div class="padded text-center">
-                                      <a href="/<?=$item['event_id'];?>/dashboard/" class=""><img src="<?php echo $maps->width('200')->height('100')->location(@$item["address"]["city"].', '.@$item["address"]["state"])->getImageURL(); ?>"></a> 
-                                      <br style="clear:both;" />
-                                                  <div class="text-center padder m-t"><small><a href="/<?=$item['event_id'];?>/dashboard/" class="btn btn-default btn-xs">Event Details</a></small> </div>
+                                    <div class="text-center">
+                               <a href="/<?=$item['event_id'];?>/dashboard/" class="map" style="background:url('<?php echo $maps->width('400')->height('120')->location(@$item["address"]["city"].', '.@$item["address"]["state"])->getImageURL(); ?>');"></a> 
                                               </div>
                                               <div class="widget-footer lt">
                                                   <div class="row">
