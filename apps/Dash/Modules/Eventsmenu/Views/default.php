@@ -4,8 +4,8 @@
 
 
 $primary = array();
-$primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-dashboard' , 'details' => array('url' => '/'), 'title' => 'Main Dashboard' );
-$primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-dashboard' , 'details' => array('url' => "/{$PARAMS['eventid']}/dashboard"), 'title' => 'Dashboard' );
+$primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-dashboard' , 'details' => array('url' => '/'), 'title' => 'Dashboard' );
+$primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-dashboard' , 'details' => array('url' => "/{$PARAMS['eventid']}/dashboard"), 'title' => 'Event Details' );
 $primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-calendar' , 'details' => array('url' => "/{$PARAMS['eventid']}/attendees"), 'title' => 'Attendees' );
 $primary[] = array('published' => 1,'class' => '', 'icon' => 'icon-user' , 'details' => array('url' => "/{$PARAMS['eventid']}/users"), 'title' => 'Users' );
 

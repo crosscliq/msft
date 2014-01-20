@@ -8,6 +8,10 @@ class UserListener extends \Prefab
         $user = $event->getArgument('user');
         $model = new \Site\Models\Roles;
         $roles = $model->emptyState()->setState('filter.group', 'default')->getList();
+
+        if(empty($roles)) {
+          $roles = array();  
+        }
         $userroles = array();
         foreach($roles as $role) {
             $userroles[] =  array('id' => $role->_id, 'name'=> $role->name, 'type' => $role->type);

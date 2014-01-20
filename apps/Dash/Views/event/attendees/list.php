@@ -1,7 +1,7 @@
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
 <?php //echo \Dsc\Debug::dump( $list, false ); ?>
 
-<form id="searchForm" action="./admin/blog/posts" method="post">
+<form id="searchForm" action="" method="post">
 
     <div class="row datatable-header">
         <div class="col-sm-6">
@@ -32,18 +32,6 @@
     <input type="hidden" name="list[order]" value="<?php echo $state->get('list.order'); ?>" />
     <input type="hidden" name="list[direction]" value="<?php echo $state->get('list.direction'); ?>" />
     
-    <div class="row table-actions">
-        <div class="col-md-6 col-lg-4 input-group">
-            <select id="bulk-actions" name="bulk_action" class="form-control">
-                <option value="null">-Bulk Actions-</option>
-                <option value="delete" data-action="./admin/blog/posts/delete">Delete</option>
-            </select>
-            <span class="input-group-btn">
-                <button class="btn btn-default bulk-actions" type="button" data-target="bulk-actions">Apply</button>
-            </span>
-        </div>
-    </div>
-
     <div class="table-responsive datatable">
     
     <table class="table table-striped table-bordered table-hover table-highlight table-checkable">

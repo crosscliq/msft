@@ -1555,3 +1555,187 @@ PHP message: - index.php:45 Base->run()" while reading response header from upst
 PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /XBOX123/users HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/XBOX123/attendees"
 2014/01/17 17:08:07 [error] 25570#0: *1814 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /XBOX123/users)
 PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /XBOX123/users HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/XBOX123/dashboard"
+2014/01/17 18:17:55 [error] 25570#0: *1936 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 216.145.17.190, server: msft.cc, request: "GET /robots.txt HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "www.msft.cc"
+2014/01/18 06:09:24 [error] 25570#0: *1946 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 212.174.155.22, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/18 07:17:04 [error] 25570#0: *1948 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 200.98.142.221, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/18 08:28:22 [error] 25570#0: *1951 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /manager/html)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 182.18.141.168, server: msft.cc, request: "GET /manager/html HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 08:37:06 [error] 25570#0: *1953 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 66.249.64.20, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "www.msft.cc"
+2014/01/18 13:01:07 [error] 25570#0: *1957 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 77.50.56.30, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/18 13:14:17 [error] 25570#0: *1959 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 66.249.74.45, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "www.msft.cc"
+2014/01/18 16:12:32 [error] 25570#0: *1963 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 202.137.17.179, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/18 18:03:33 [error] 25570#0: *1965 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /proxy.txt)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 111.73.45.233, server: msft.cc, request: "GET http://www.daydaydata.com/proxy.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "www.daydaydata.com"
+2014/01/18 21:15:39 [error] 25570#0: *1970 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 89.248.160.175, server: msft.cc, request: "GET /cgi-bin/php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 21:15:39 [error] 25570#0: *1972 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php4)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 89.248.160.175, server: msft.cc, request: "GET /cgi-bin/php4 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 21:15:40 [error] 25570#0: *1974 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php5)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 89.248.160.175, server: msft.cc, request: "GET /cgi-bin/php5 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 21:15:40 [error] 25570#0: *1976 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php-cgi)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 89.248.160.175, server: msft.cc, request: "GET /cgi-bin/php-cgi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 21:15:40 [error] 25570#0: *1978 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php.cgi)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 89.248.160.175, server: msft.cc, request: "GET /cgi-bin/php.cgi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 22:54:23 [error] 25570#0: *1981 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 93.174.88.123, server: msft.cc, request: "GET /cgi-bin/php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 22:54:23 [error] 25570#0: *1983 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php4)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 93.174.88.123, server: msft.cc, request: "GET /cgi-bin/php4 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 22:54:24 [error] 25570#0: *1985 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php5)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 93.174.88.123, server: msft.cc, request: "GET /cgi-bin/php5 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 22:54:24 [error] 25570#0: *1987 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php-cgi)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 93.174.88.123, server: msft.cc, request: "GET /cgi-bin/php-cgi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/18 22:54:24 [error] 25570#0: *1989 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/php.cgi)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 93.174.88.123, server: msft.cc, request: "GET /cgi-bin/php.cgi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/19 00:27:30 [error] 25570#0: *1991 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 91.207.159.209, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/19 02:10:27 [error] 25570#0: *1993 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 192.163.248.84, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/19 06:53:18 [error] 25570#0: *1995 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 66.249.74.182, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/01/19 10:17:21 [error] 25570#0: *1999 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 113.6.228.140, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/19 11:55:51 [error] 25570#0: *2003 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 108.166.126.168, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/19 12:20:02 [error] 25570#0: *2005 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 208.43.138.186, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/19 13:32:17 [error] 25570#0: *2007 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 195.54.214.12, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/19 15:32:06 [error] 25570#0: *2009 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 200.40.198.42, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/19 16:22:23 [error] 25570#0: *2011 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 182.118.35.13, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc", referrer: "http://msft.cc/robots.txt"
+2014/01/19 17:33:47 [error] 25570#0: *2013 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /cgi-bin/php/%63%67%69%6E/%70%68%70)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 88.190.213.37, server: msft.cc, request: "POST /cgi-bin/php/%63%67%69%6E/%70%68%70?%2D%64+%61%6C%75%6F%6E+%2D%64+%6D%6F%64+%2D%64+%73%75%68%6F%6E%3D%6F%6E+%2D%64+%75%6E%63%74%73%3D%22%22+%2D%64+%64%6E%65+%2D%64+%61%75%74%6F%5F%70%72%%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%74%5F%3D%30+%2D%64+%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "localhost"
+2014/01/19 17:33:47 [error] 25570#0: *2013 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /cgi-bin/php5/%63%67%69%6E/%70%68%70)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 88.190.213.37, server: msft.cc, request: "POST /cgi-bin/php5/%63%67%69%6E/%70%68%70?%2D%64+%61%6C%75%6F%6E+%2D%64+%6D%6F%64+%2D%64+%73%75%68%6F%6E%3D%6F%6E+%2D%64+%75%6E%63%74%73%3D%22%22+%2D%64+%64%6E%65+%2D%64+%61%75%74%6F%5F%70%72%%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%74%5F%3D%30+%2D%64+%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "localhost"
+2014/01/19 17:33:47 [error] 25570#0: *2013 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /cgi-bin/php-cgi/%63%67%69%6E/%70%68%70)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 88.190.213.37, server: msft.cc, request: "POST /cgi-bin/php-cgi/%63%67%69%6E/%70%68%70?%2D%64+%61%6C%75%6F%6E+%2D%64+%6D%6F%64+%2D%64+%73%75%68%6F%6E%3D%6F%6E+%2D%64+%75%6E%63%74%73%3D%22%22+%2D%64+%64%6E%65+%2D%64+%61%75%74%6F%5F%70%72%%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%74%5F%3D%30+%2D%64+%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "localhost"
+2014/01/19 17:33:47 [error] 25570#0: *2013 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /cgi-bin/php.cgi/%63%67%69%6E/%70%68%70)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 88.190.213.37, server: msft.cc, request: "POST /cgi-bin/php.cgi/%63%67%69%6E/%70%68%70?%2D%64+%61%6C%75%6F%6E+%2D%64+%6D%6F%64+%2D%64+%73%75%68%6F%6E%3D%6F%6E+%2D%64+%75%6E%63%74%73%3D%22%22+%2D%64+%64%6E%65+%2D%64+%61%75%74%6F%5F%70%72%%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%74%5F%3D%30+%2D%64+%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "localhost"
+2014/01/19 17:33:47 [error] 25570#0: *2013 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /cgi-bin/php4/%63%67%69%6E/%70%68%70)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 88.190.213.37, server: msft.cc, request: "POST /cgi-bin/php4/%63%67%69%6E/%70%68%70?%2D%64+%61%6C%75%6F%6E+%2D%64+%6D%6F%64+%2D%64+%73%75%68%6F%6E%3D%6F%6E+%2D%64+%75%6E%63%74%73%3D%22%22+%2D%64+%64%6E%65+%2D%64+%61%75%74%6F%5F%70%72%%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%74%5F%3D%30+%2D%64+%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "localhost"
+2014/01/19 17:33:47 [error] 25570#0: *2019 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /%70%68%70)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 88.190.213.37, server: msft.cc, request: "POST //%63%67%69%2d%62%69%6e/%70%68%70?%2d%64+%61%6c%6c%6f%77%5f%75%72%6c%5f%69%6e%63%6c%75%64%65%3d%6f%6e+%2d%64+%73%61%66%65%5f%6d%6f%64%65%3d%6f%66%66+%2d%64+%73%75%68%6f%73%69%6e%2e%73%69%6d%75%6c%61%74%69%6f%6e%3d%6f%6e+%2d%64+%64%69%73%61%62%6c%65%5f%66%75%6e%63%74%69%6f%6e%73%3d%22%22+%2d%64+%6f%70%65%6e%5f%62%61%73%65%64%69%72%3d%6e%6f%6e%65+%2d%64+%61%75%74%6f%5f%70%72%65%70%65%6e%64%5f%66%69%6c%65%3d%70%68%70%3a%2f%2f%69%6e%70%75%74+%2d%64+%63%67%69%2e%66%6f%72%63%65%5f%72%65%64%69%72%65%63%74%3d%30+%2d%64+%63%67%69%2e%72%65%64%69%72%65%63%74%5f%73%74%61%74%75%73%5f%65%6e%76%3d%30+%2d%64+%61%75%74%6f%5f%70%72%65%70%65%6e%64%5f%66%69%6c%65%3d%70%68%70%3a%2f%2f%69%6e%70%75%74+%2d%6e HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "-h"
+2014/01/19 18:17:05 [error] 25570#0: *2021 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 150.214.76.79, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/20 00:38:45 [error] 25570#0: *2024 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /%70%68%70%70%61%74%68/%70%68%70)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 121.11.18.9, server: msft.cc, request: "POST /%70%68%70%70%61%74%68/%70%68%70?%2D%64+%61%6C%6C%6F%77%5F%75%72%6C%5F%69%6E%63%6C%75%64%65%3D%6F%6E+%2D%64+%73%61%66%65%5F%6D%6F%64%65%3D%6F%66%66+%2D%64+%73%75%68%6F%73%69%6E%2E%73%69%6D%75%6C%61%74%69%6F%6E%3D%6F%6E+%2D%64+%64%69%73%61%62%6C%65%5F%66%75%6E%63%74%69%6F%6E%73%3D%22%22+%2D%64+%6F%70%65%6E%5F%62%61%73%65%64%69%72%3D%6E%6F%6E%65+%2D%64+%61%75%74%6F%5F%70%72%65%70%65%6E%64%5F%66%69%6C%65%3D%70%68%70%3A%2F%2F%69%6E%70%75%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%63%67%69%2E%72%65%64%69%72%65%63%74%5F%73%74%61%74%75%73%5F%65%6E%76%3D%30+%2D%64+%61%75%74%6F%5F%70%72%65%70%65%6E%64%5F%66%69%6C%65%3D%70%68%70%3A%2F%2F%69%6E%70%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/20 00:38:45 [error] 25570#0: *2024 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /%63%67%69%2D%62%69%6E/%70%68%70)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 121.11.18.9, server: msft.cc, request: "POST /%63%67%69%2D%62%69%6E/%70%68%70?%2D%64+%61%6C%6C%6F%77%5F%75%72%6C%5F%69%6E%63%6C%75%64%65%3D%6F%6E+%2D%64+%73%61%66%65%5F%6D%6F%64%65%3D%6F%66%66+%2D%64+%73%75%68%6F%73%69%6E%2E%73%69%6D%75%6C%61%74%69%6F%6E%3D%6F%6E+%2D%64+%64%69%73%61%62%6C%65%5F%66%75%6E%63%74%69%6F%6E%73%3D%22%22+%2D%64+%6F%70%65%6E%5F%62%61%73%65%64%69%72%3D%6E%6F%6E%65+%2D%64+%61%75%74%6F%5F%70%72%65%70%65%6E%64%5F%66%69%6C%65%3D%70%68%70%3A%2F%2F%69%6E%70%75%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%63%67%69%2E%72%65%64%69%72%65%63%74%5F%73%74%61%74%75%73%5F%65%6E%76%3D%30+%2D%64+%61%75%74%6F%5F%70%72%65%70%65%6E%64%5F%66%69%6C%65%3D%70%68%70%3A%2F%2F%69%6E%70%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/20 00:38:46 [error] 25570#0: *2024 FastCGI sent in stderr: "PHP message: HTTP 404 (POST /%63%67%69%2D%62%69%6E/%70%68%70%35)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 121.11.18.9, server: msft.cc, request: "POST /%63%67%69%2D%62%69%6E/%70%68%70%35?%2D%64+%61%6C%6C%6F%77%5F%75%72%6C%5F%69%6E%63%6C%75%64%65%3D%6F%6E+%2D%64+%73%61%66%65%5F%6D%6F%64%65%3D%6F%66%66+%2D%64+%73%75%68%6F%73%69%6E%2E%73%69%6D%75%6C%61%74%69%6F%6E%3D%6F%6E+%2D%64+%64%69%73%61%62%6C%65%5F%66%75%6E%63%74%69%6F%6E%73%3D%22%22+%2D%64+%6F%70%65%6E%5F%62%61%73%65%64%69%72%3D%6E%6F%6E%65+%2D%64+%61%75%74%6F%5F%70%72%65%70%65%6E%64%5F%66%69%6C%65%3D%70%68%70%3A%2F%2F%69%6E%70%75%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%63%67%69%2E%72%65%64%69%72%65%63%74%5F%73%74%61%74%75%73%5F%65%6E%76%3D%30+%2D%64+%61%75%74%6F%5F%70%72%65%70%65%6E%64%5F%66%69%6C%65%3D%70%68%70%3A%2F%2F%69%6E%70%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/20 00:38:46 [error] 25570#0: *2024 FastCGI sent in stderr: "PHP message: HTTP 404 (POST )
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 121.11.18.9, server: msft.cc, request: "POST //%70%68%70?%2D%64+%61%6C%6C%6F%77%5F%75%72%6C%5F%69%6E%63%6C%75%64%65%3D%6F%6E+%2D%64+%73%61%66%65%5F%6D%6F%64%65%3D%6F%66%66+%2D%64+%73%75%68%6F%73%69%6E%2E%73%69%6D%75%6C%61%74%69%6F%6E%3D%6F%6E+%2D%64+%64%69%73%61%62%6C%65%5F%66%75%6E%63%74%69%6F%6E%73%3D%22%22+%2D%64+%6F%70%65%6E%5F%62%61%73%65%64%69%72%3D%6E%6F%6E%65+%2D%64+%61%75%74%6F%5F%70%72%65%70%65%6E%64%5F%66%69%6C%65%3D%70%68%70%3A%2F%2F%69%6E%70%75%74+%2D%64+%63%67%69%2E%66%6F%72%63%65%5F%72%65%64%69%72%65%63%74%3D%30+%2D%64+%63%67%69%2E%72%65%64%69%72%65%63%74%5F%73%74%61%74%75%73%5F%65%6E%76%3D%30+%2D%64+%61%75%74%6F%5F%70%72%65%70%65%6E%64%5F%66%69%6C%65%3D%70%68%70%3A%2F%2F%69%6E%70%75%74+%2D%6E HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/20 06:10:54 [error] 25570#0: *2030 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 91.121.202.66, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/20 06:16:19 [error] 25570#0: *2032 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 189.112.73.44, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/20 09:15:25 [error] 25570#0: *2034 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 95.76.222.106, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/20 10:02:39 [error] 25570#0: *2036 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 58.218.207.240, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/01/20 10:02:39 [error] 25570#0: *2036 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /admin/help/zh_cn/database.xml)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 58.218.207.240, server: msft.cc, request: "GET /admin/help/zh_cn/database.xml HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/01/20 10:02:40 [error] 25570#0: *2036 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /admin/ecshopfiles.md5)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 58.218.207.240, server: msft.cc, request: "GET /admin/ecshopfiles.md5 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/01/20 11:20:25 [error] 25570#0: *2042 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /manager/html)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 219.143.41.168, server: msft.cc, request: "GET /manager/html HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/01/20 15:54:34 [error] 25570#0: *2044 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:45 Base->run()" while reading response header from upstream, client: 66.249.75.111, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"

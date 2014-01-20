@@ -8,7 +8,7 @@ class Attendees extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('pagetitle', 'Attendees');
         \Base::instance()->set('subtitle', '');
         
-        $model = new \Dash\Models\Event\Attendees;
+        $model = new \Dash\Models\Event\Roles;
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         
