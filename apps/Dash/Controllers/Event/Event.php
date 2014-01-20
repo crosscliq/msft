@@ -8,7 +8,7 @@ class Event extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('pagetitle', 'Events');
         \Base::instance()->set('subtitle', '');
         
-       
+        \Base::instance()->set('eventid', strtolower($f3->get('PARAMS.eventid')));
 
         $model = new \Dash\Models\Events;
         $model->setFilter('event_id',$f3->get('PARAMS.eventid'));
@@ -17,6 +17,7 @@ class Event extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('event', $event );
         
         $view = new \Dsc\Template;
+        $view->setLayout('event.php');
         echo $view->render('Dash/Views::event/dashboard.php');
     }
 
