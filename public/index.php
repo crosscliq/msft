@@ -16,8 +16,6 @@ $app->set('event.db', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
 
 if ($app->get('event.db') == 'dashboard') {
     $app->set('APP_NAME', 'dash');
-    $app->set('event.db', strtolower($app->get('PARAMS.eventid')));
- 
 }
 if ($app->get('event.db') == 'admin') {
     $app->set('APP_NAME', 'admin');

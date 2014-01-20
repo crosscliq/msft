@@ -18,14 +18,6 @@ Class Roles Extends Eventbase {
         parent::__construct($config);
     }
 
-    protected function createDb()
-    {
-        $db_name = \Base::instance()->get('event.db');
-        $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
-        
-        return $this;
-    }
-
     public function getPrefab() {
         $prefab = New \Dash\Models\Prefabs\Role();
         return $prefab;

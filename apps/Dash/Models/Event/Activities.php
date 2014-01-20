@@ -2,7 +2,7 @@
 namespace Dash\Models\Event;
 
 
-Class Activities Extends Base {
+Class Activities Extends Eventbase {
 
     protected $collection = 'activities';
     protected $default_ordering_direction = '1';
@@ -18,16 +18,9 @@ Class Activities Extends Base {
         parent::__construct($config);
     }
 
-    protected function createDb()
-    {
-        $db_name = \Base::instance()->get('event.db');
-        $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
-        
-        return $this;
-    }
 
     public function getPrefab() {
-        $prefab = New \Dash\Models\Prefabs\Event();
+        $prefab = New \Dash\Models\Prefabs\Activity();
         return $prefab;
     }
     

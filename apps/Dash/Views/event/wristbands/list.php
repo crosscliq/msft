@@ -1,5 +1,9 @@
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
-<?php //echo \Dsc\Debug::dump( $list, false ); ?>
+<?php echo \Dsc\Debug::dump( $list, false ); ?>
+<pre>
+    
+    <?php echo __FILE__; ?>
+</pre>
 
 <form id="searchForm" action="./admin/blog/posts" method="post">
 

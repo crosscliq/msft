@@ -8,8 +8,10 @@ class Eventbase extends \Dsc\Models\Db\Mongo
     public function getDb()
     {
         if (empty($this->db))
-        {
-            $db_name = \Base::instance()->get('event.db');
+        {   
+            
+            $db_name = \Base::instance()->get('PARAMS.eventid');
+         
             $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
         }
     

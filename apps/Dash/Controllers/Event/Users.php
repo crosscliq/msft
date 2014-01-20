@@ -1,14 +1,14 @@
 <?php 
 namespace Dash\Controllers\Event;
 
-class Attendees extends \Dash\Controllers\BaseAuth 
+class Users extends \Dash\Controllers\BaseAuth 
 {
     
     public function display() {
-        \Base::instance()->set('pagetitle', 'Attendees');
+        \Base::instance()->set('pagetitle', 'Users');
         \Base::instance()->set('subtitle', '');
         
-        $model = new \Dash\Models\Event\Attendees;
+        $model = new \Dash\Models\Event\Users;
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         
@@ -20,7 +20,7 @@ class Attendees extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('pagination', $pagination );
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/attendees/list.php');
+        echo $view->render('Dash/Views::event/users/list.php');
     }
 
 }
