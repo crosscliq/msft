@@ -2,9 +2,9 @@
 namespace Dash\Models\Event;
 
 
-Class Wristbands Extends Eventbase {
+Class Activities Extends Base {
 
-    protected $collection = 'attendees';
+    protected $collection = 'activities';
     protected $default_ordering_direction = '1';
     protected $default_ordering_field = 'type';
 

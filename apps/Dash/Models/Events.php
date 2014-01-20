@@ -112,6 +112,21 @@ Class Events Extends Base {
         return $this->filters;
     }
 
+    //if all checks pass lets process values
+   /* public function processEventID(){
+
+    }
+
+      public function validate( $values, $options=array(), $mapper=null ) 
+    {   
+        if(empty($values['event_id'])){
+            $this->setError('Event ID is required, it is used as the collection name and as the sub domain');
+        }
+        
+
+        return $this->checkErrors();
+    }
+*/
 }
 
 ?>

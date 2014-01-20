@@ -152,8 +152,9 @@ class Auth extends \Users\Site\Controllers\Auth {
     }
 
     public function logout()
-    {
+    {   die('logout');
         \Base::instance()->clear('SESSION');
+        \Base::instance()->clear('SESSION.dash.user');
         \Base::instance()->reroute('/');
     }
     
