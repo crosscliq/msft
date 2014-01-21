@@ -19,7 +19,7 @@ class Event extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('event', $event );
         
         $view = new \Dsc\Template;
-        $view->setLayout('event.php');
+        $view->setLayout('dash.php');
         echo $view->render('Dash/Views::event/dashboard.php');
     }
 
