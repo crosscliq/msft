@@ -10,10 +10,12 @@ class Event extends \Dash\Controllers\BaseAuth
         
         \Base::instance()->set('eventid', strtolower($f3->get('PARAMS.eventid')));
 
-        $model = new \Dash\Models\Events;
-        $model->setFilter('event_id',$f3->get('PARAMS.eventid'));
-        $event = $model->getItem();
-     
+
+
+        $model = new \Dash\Models\Event\Event;
+        
+        $event = $model->getAllEventInfo($f3->get('PARAMS.eventid'));
+       
         \Base::instance()->set('event', $event );
         
         $view = new \Dsc\Template;

@@ -9,8 +9,13 @@ class Eventbase extends \Dsc\Models\Db\Mongo
     {
         if (empty($this->db))
         {   
-            
-            $db_name = \Base::instance()->get('PARAMS.eventid');
+            $f3 = \Base::instance();
+
+
+            if(empty($f3->get('eventid'))) {
+                $f3->set('eventid', $f3->get('PARAMS.eventid'));
+            }
+            $db_name = $f3->get('eventid');
          
             $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
         }

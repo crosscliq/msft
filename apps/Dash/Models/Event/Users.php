@@ -5,12 +5,22 @@ namespace Dash\Models\Event;
 Class Users Extends \Users\Admin\Models\Users {
 
 
-	protected function createDb()
+	public function getDb()
     {
-       $db_name = \Base::instance()->get('PARAMS.eventid');
-        $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
-        
-        return $this;
+        if (empty($this->db))
+        {   
+            $f3 = \Base::instance();
+
+
+            if(empty($f3->get('eventid'))) {
+                $f3->set('eventid', $f3->get('PARAMS.eventid'));
+            }
+            $db_name = $f3->get('eventid');
+         
+            $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
+        }
+    
+        return $this->db;
     }
 
 	

@@ -4,7 +4,7 @@ namespace Dash\Models\Event;
 
 Class Wristbands Extends Eventbase {
 
-    protected $collection = 'wristbands';
+    protected $collection = 'tags';
     protected $default_ordering_direction = '1';
     protected $default_ordering_field = 'type';
 
