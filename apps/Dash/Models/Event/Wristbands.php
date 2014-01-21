@@ -72,36 +72,100 @@ Class Wristbands Extends Eventbase {
             $this->filters['slug'] = $filter_slug;
         }
 
-        
-      /*  $filter_username_contains = $this->getState('filter.username-contains', null, 'username');
-        if (strlen($filter_username_contains))
+        $filter_keyword = $this->getState('filter.keyword');
+
+
+         if ($filter_keyword && is_string($filter_keyword))
         {
-            $key =  new \MongoRegex('/'. $filter_username_contains .'/i');
-            $this->filters['username'] = $key;
+            $key =  new \MongoRegex('/'. $filter_keyword .'/i');
+    
+            $where = array();
+            $where[] = array('name'=>$key);
+            $where[] = array('slug'=>$key);
+            $where[] = array('event_id'=>$key);
+            $where[] = array('start_date'=>$key);
+            $where[] = array('end_date'=>$key);
+  
+    
+            $this->filters['$or'] = $where;
         }
         
-        $filter_email_contains = $this->getState('filter.email-contains');
-        if (strlen($filter_email_contains))
-        {
-            $key =  new \MongoRegex('/'. $filter_email_contains .'/i');
-            $this->filters['email'] = $key;
-        }
-       
 
-        $filter_password = $this->getState('filter.password');
-        if (strlen($filter_password))
+        $filter_has_ticket = $this->getState('filter.has.ticket');
+        
+
+        if (strlen($filter_has_ticket))
         {
-            $this->filters['password'] = $filter_password;
+         $this->filters['ticket'] = array( '$exists' => true );
         }
 
-        $filter_group = $this->getState('filter.group');
+        $filter_has_attendee = $this->getState('filter.has.attendee');
 
-        if (strlen($filter_group))
+        if (strlen($filter_has_attendee))
         {
-            $this->filters['groups.id'] = new \MongoId((string) $filter_group);
-        }*/
+         $this->filters['attendee'] = array( '$exists' => true );
+
+        }
+
+        $filter_no_ticket = $this->getState('filter.no.ticket');
+        
+        if (strlen($filter_no_ticket))
+        {
+         $this->filters['ticket'] = null;
+        
+        }
+
+        $filter_no_attendee = $this->getState('filter.no.attendee');
+        
+        if (strlen($filter_no_attendee))
+        {
+         $this->filters['attendee'] = null;
+        
+        }
+
     
         return $this->filters;
+    }
+
+
+
+    function withTicketsOnly() {
+        $this->emptyState();
+        $this->setState('filter.no.attendee', '1');
+        $this->setState('filter.has.ticket', '1');
+        return $this->getTotal();
+    }
+
+    function withAttendeesOnly() {
+        $this->emptyState();
+        $this->setState('filter.has.attendee', '1');
+        $this->setState('filter.no.ticket', '1');
+        return $this->getTotal();
+    }
+
+    function withAttendeesAndTickets() {
+        $this->emptyState();
+        $this->setState('filter.has.attendee', '1');
+        $this->setState('filter.has.ticket', '1');
+        return $this->getTotal();
+    }
+
+    function withNOAttendeesAndTickets() {
+        $this->emptyState();
+        $this->setState('filter.no.attendee', '1');
+        $this->setState('filter.no.ticket', '1');
+        return $this->getTotal();
+    }
+
+
+     public function getTotal()
+    {
+        
+        $filters = $this->getFilters();
+        $mapper = $this->getMapper();
+        $count = $mapper->count($filters);
+    
+        return $count;
     }
 
 }

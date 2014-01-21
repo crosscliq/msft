@@ -21,10 +21,14 @@ Class Event {
         $list = $model->paginate();
         $event['attendees'] = $model->paginate();
 
-
         $model = new \Dash\Models\Event\Wristbands;
-        $list = $model->paginate();
-        $event['wristbands'] = $model->paginate();
+        $count = $model->withTicketsOnly();
+        $event['wristbands'] = array();
+
+        $event['wristbands']['withTicketsOnly'] = $model->withTicketsOnly();
+        $event['wristbands']['withAttendeesOnly'] = $model->withAttendeesOnly();
+        $event['wristbands']['withAttendeesAndTickets'] = $model->withAttendeesAndTickets();
+        $event['wristbands']['withNOAttendeesAndTickets'] = $model->withNOAttendeesAndTickets();
 
         $model = new \Dash\Models\Event\Prizes;
         $list = $model->paginate();

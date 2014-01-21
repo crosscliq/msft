@@ -105,6 +105,107 @@ Class Attendees Extends Eventbase {
         return $this->filters;
     }
 
+
+        public function prepareItem($item) {
+           
+            $item->tickets = $this->hydrateTickets($item->tagid);
+
+            return $item;
+
+        }
+
+
+    function hydrateTickets($tagid) {
+
+        $model = new \Dash\Models\Event\Tickets;
+        $model->setState('filter.tag.id',$tagid);
+        $tickets = $model->getList();
+
+        foreach ($tickets as $key => $ticket) {
+            $ticket = $ticket->cast();
+        }
+
+        if(empty( $tickets)){
+            $tickets = array();
+        }
+
+        return $tickets;
+
+
+
+    }
+
+
+
+       public function getList( $refresh=false )
+    {
+        $fields = $this->getFields();
+        $filters = $this->getFilters();
+        $options = $this->getOptions();
+    
+        $mapper = $this->getMapper();
+        if (!empty($fields) && method_exists($mapper, 'select')) 
+        {
+            if (is_a($mapper, '\DB\Mongo\Mapper')) {
+                $items = $mapper->select($fields, $filters, $options);
+            } else {
+                $f3 = \Base::instance();
+                $items = $mapper->select($f3->csv($fields), $filters, $options);
+            }            
+        }
+        else 
+        {
+            $items = $mapper->find($filters, $options);
+        }                
+        //TODO make the foreach conditional to avoid unneed preformance hog
+        if($items) {
+         
+            foreach ($items as $key => $item) {
+                $item = $this->prepareItem($item);
+            }
+        }
+        
+        return $items;
+    }
+    
+    public function getItem( $refresh=false )
+    {
+        $filters = $this->getFilters();
+        $options = $this->getOptions();
+    
+        $mapper = $this->getMapper();
+        $item = $mapper->findone($filters, $options);
+        
+        //TODO make this conditional to avoid unneed preformance hog
+        $item = $this->prepareItem($item);
+
+        return $item;
+    }
+
+     /**
+     *
+     * @return unknown
+     */
+    public function paginate()
+    {
+        $filters = $this->getFilters();
+        $options = $this->getOptions();
+        $pos = $this->getState('list.offset', 0, 'int');
+        $size = $this->getState('list.limit', 10, 'int');
+    
+        $pagination = $this->getMapper()->paginate($pos, $size, $filters, $options);
+        
+        //todo make this conditional
+        foreach ($pagination['subset'] as $key => $item) {
+        
+        $item = $this->prepareItem($item);
+        }
+       
+
+
+        return $pagination;
+    }
+
 }
 
 ?>
