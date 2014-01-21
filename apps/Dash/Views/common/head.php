@@ -16,6 +16,8 @@
 <link href="/dash/style/dashboard.css" rel="stylesheet">
 <link href="/dash/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="/dash/css/amimatecss/animate.min.css" media="screen"/>
+<link href="/dash/css/jquery.datetimepicker.css" rel="stylesheet">
+
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
