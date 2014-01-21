@@ -32,8 +32,9 @@ $maps = new \Dash\Models\Bingmap;?>
                 <!--i class="fa fa-bar-chart-o"></i-->
                 <div class="text-center"><span class="text-top"></span><?php echo $event['details']->wristbands['ordered']; ?></div>
                 <small> Activated:</small>
-                <pre><?php var_dump($event['wristbands']); ?></pre>
-                
+
+         
+                <div id="chart7" style="100px; height:250px;"></div>
                  </div>
               <div class="stats-footer"> &nbsp;</div>
               </a> </div>
@@ -54,6 +55,7 @@ $maps = new \Dash\Models\Bingmap;?>
 </section>
 <section id="Activity">
 <h1>Activity</h1>
+       <pre><?php var_dump($event['wristbands']); ?></pre>
 <pre><?php //var_dump($event['attendees']); ?></pre>
 </section>
 

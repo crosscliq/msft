@@ -1,14 +1,7 @@
-<?php //echo \Dsc\Debug::dump( $state, false ); ?>
-<?php echo \Dsc\Debug::dump( $list, false ); ?>
-<pre>
-    
-    <?php echo __FILE__; ?>
-</pre>
-
 <form id="searchForm" action="" method="post">
 
     <div class="row datatable-header">
-        <div class="col-sm-6">
+        <div class="col-sm-2">
             <div class="row row-marginless">
                 <?php if (!empty($list['subset'])) { ?>
                 <div class="col-sm-4">
@@ -22,12 +15,11 @@
                 <?php } ?>
             </div>
         </div>    
-        <div class="col-sm-6">
+        <div class="col-sm-4 pull-right">
             <div class="input-group">
                 <input class="form-control" type="text" name="filter[keyword]" placeholder="Keyword" maxlength="200" value="<?php echo $state->get('filter.keyword'); ?>"> 
                 <span class="input-group-btn">
                     <input class="btn btn-primary" type="submit" onclick="this.form.submit();" value="Search" />
-                    <button class="btn btn-danger" type="button" onclick="Dsc.resetFormFilters(this.form);">Reset</button>
                 </span>
             </div>
         </div>
@@ -42,11 +34,11 @@
 		<thead>
 			<tr>
 			    <th class="checkbox-column"><input type="checkbox" class="icheck-input"></th>
-				<th data-sortable="metadata.title">Title</th>
-				<th>Author</th>
-				<th>Categories</th>
-				<th>Tags</th>
-				<th data-sortable="publication.start_date">Publication</th>
+				<th data-sortable="metadata.title">First Name</th>
+				<th>Last Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th data-sortable="publication.start_date">Status</th>
 				<th class="col-md-1"></th>
 			</tr>
 		</thead>
@@ -55,33 +47,28 @@
         <?php if (!empty($list['subset'])) { ?>
     
         <?php foreach ($list['subset'] as $item) { ?>
+<?php echo \Dsc\Debug::dump( $item, false ); ?>
             <tr>
                 <td class="checkbox-column">
                     <input type="checkbox" class="icheck-input" name="ids[]" value="<?php echo $item->id; ?>">
                 </td>
                             
                 <td class="">
-                    <h5>
                     <a href="./admin/blog/post/edit/<?php echo $item->id; ?>">
-                    <?php echo $item->{'metadata.title'}; ?>
-                    </a>
-                    </h5>
-                    
-                    <p class="help-block">
-                    /<?php echo $item->{'metadata.slug'}; ?>
-                    </p>                    
+                    <?php echo $item->{'first_name'}; ?>
+                    </a>             
                 </td>
                 
                 <td class="">
-                <?php echo $item->{'metadata.creator.name'}; ?>
+                    <?php echo $item->{'last_name'}; ?>
                 </td>
                 
                 <td class="">
-                <?php echo implode(", ", \Joomla\Utilities\ArrayHelper::getColumn( (array) $item->{'metadata.categories'}, 'title' ) ); ?>
+                    <?php echo $item->{'phone'}; ?>
                 </td>
                 
                 <td class="">
-                <?php echo implode(", ", (array) $item->{'metadata.tags'} ); ?>
+                    <?php echo $item->{'email'}; ?>
                 </td>
                 
                 <td class="">
@@ -91,13 +78,13 @@
                 </td>
                                 
                 <td class="text-center">
-                    <a class="btn btn-xs btn-secondary" href="./admin/blog/post/edit/<?php echo $item->id; ?>">
-                        <i class="fa fa-pencil"></i>
+                    <a class="btn btn-s btn-success" href="./admin/blog/post/edit/<?php echo $item->id; ?>">
+                        <i class="icon-edit"></i>
                     </a>
                     &nbsp;
-                    <a class="btn btn-xs btn-danger" data-bootbox="confirm" href="./admin/blog/post/delete/<?php echo $item->id; ?>">
-                        <i class="fa fa-times"></i>
-                    </a>
+                   <!-- <a class="btn btn-s btn-danger" data-bootbox="confirm" href="./admin/blog/post/delete/<?php echo $item->id; ?>">
+                        <i class="icon-trash"></i>
+                    </a> -->
                 </td>
             </tr>
         <?php } ?>
@@ -106,7 +93,7 @@
             <tr>
             <td colspan="100">
                 <div class="">No items found.</div>
-            </td>
+            </td> 
             </tr>
         <?php } ?>
 

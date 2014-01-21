@@ -2,10 +2,6 @@
 
 <?php //echo \Dsc\Debug::dump( $this->app->hive(), false ); ?>
 
-<!-- JAVASCRIPTS -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="/site/js/hitua.js"></script>
-
     <script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
 <script>
   
