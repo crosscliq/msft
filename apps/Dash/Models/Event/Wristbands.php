@@ -96,14 +96,14 @@ Class Wristbands Extends Eventbase {
 
         if (strlen($filter_has_ticket))
         {
-         $this->filters['ticket'] = array( '$exists' => true );
+         $this->filters['ticket'] = array( '$ne' => array() );
         }
 
         $filter_has_attendee = $this->getState('filter.has.attendee');
 
         if (strlen($filter_has_attendee))
         {
-         $this->filters['attendee'] = array( '$exists' => true );
+        $this->filters['attendee'] = array( '$ne' => array() );
 
         }
 
@@ -111,7 +111,7 @@ Class Wristbands Extends Eventbase {
         
         if (strlen($filter_no_ticket))
         {
-         $this->filters['ticket'] = null;
+         $this->filters['ticket'] = array( '$size' => 0 );
         
         }
 
@@ -119,7 +119,7 @@ Class Wristbands Extends Eventbase {
         
         if (strlen($filter_no_attendee))
         {
-         $this->filters['attendee'] = null;
+         $this->filters['attendee'] =array( '$size' => 0 );
         
         }
 
