@@ -20,6 +20,7 @@ class Wristbands extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('pagination', $pagination );
         
         $view = new \Dsc\Template;
+        $view->setLayout('event.php');
         echo $view->render('Dash/Views::event/wristbands/list.php');
     }
 
