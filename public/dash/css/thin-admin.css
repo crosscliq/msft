@@ -1,5 +1,4 @@
 
-
 body {
 background-color: #54364a;
 background-size: cover;
@@ -1225,4 +1224,12 @@ h3.tl-title {
 	opacity:0.5;
 	background-position:center;
  	background-size:cover;
+}
+.chart-txt {
+	display:block;
+	position:absolute;
+	top:35%;
+	font-size:.8em;
+	left:45%;
+	text-align:center;
 }
