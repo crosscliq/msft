@@ -31,10 +31,13 @@ $maps = new \Dash\Models\Bingmap;?>
               <div class="stats-body-alt" style="height:170px;"> 
                 <!--i class="fa fa-bar-chart-o"></i-->
                 <div class="text-center"><span class="text-top"></span><?php echo $event['details']->wristbands['ordered']; ?></div>
-                <small> Activated:</small>
+		  <small>
+      		   <div class="col-sm-3 chart" data-percent="15"><span class="chart-txt">15%</span></div>
+		   <div class="col-sm-3 chart" data-percent="25"><span class="chart-txt">25%</span></div>
+		   <div class="col-sm-3 chart" data-percent="50"><span class="chart-txt">50%</span></div>
+		   <div class="col-sm-3 chart" data-percent="10"><span class="chart-txt">10%</span></div>
+                </small>
 
-         
-                <div id="chart7" style="100px; height:250px;"></div>
                  </div>
               <div class="stats-footer"> &nbsp;</div>
               </a> </div>
@@ -55,8 +58,8 @@ $maps = new \Dash\Models\Bingmap;?>
 </section>
 <section id="Activity">
 <h1>Activity</h1>
-       <pre><?php var_dump($event['wristbands']); ?></pre>
-<pre><?php //var_dump($event['attendees']); ?></pre>
+      
+<pre><?php var_dump($event['attendees']); ?></pre>
 </section>
 
 <section id="attendees">
