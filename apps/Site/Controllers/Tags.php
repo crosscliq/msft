@@ -51,14 +51,6 @@ class Tags extends BaseAuth
 
     		default:
            
-           $eventName = str_replace(' ', '',\Base::camelCase(str_replace('_',  , $role)));
-           echo $eventName;
-           $event = new \Joomla\Event\Event( 'onTagRoleAssign'.$eventName );
-           $event->addArgument('role', $role);
-           $result =  \Dsc\System::instance()->getDispatcher()->triggerEvent($event); 
-
-           var_dump($result);
-           die();
     			$this->attendeeTapper($tag, $tagid, $role);
     			break;
     	}

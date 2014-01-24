@@ -24,11 +24,17 @@ Class Event {
         $model = new \Dash\Models\Event\Wristbands;
         $count = $model->withTicketsOnly();
         $event['wristbands'] = array();
+	
+$event['wristbands'] = array();
+        $event['wristbands']['withTicketsOnly'] = (int) $model->withTicketsOnly();
+        $event['wristbands']['withAttendeesOnly'] = (int) $model->withAttendeesOnly();
+        $event['wristbands']['withAttendeesAndTickets'] = (int) $model->withAttendeesAndTickets();
+        $event['wristbands']['withNOAttendeesAndTickets'] = (int) $model->withNOAttendeesAndTickets();
 
-        $event['wristbands']['withTicketsOnly'] = $model->withTicketsOnly();
-        $event['wristbands']['withAttendeesOnly'] = $model->withAttendeesOnly();
-        $event['wristbands']['withAttendeesAndTickets'] = $model->withAttendeesAndTickets();
-        $event['wristbands']['withNOAttendeesAndTickets'] = $model->withNOAttendeesAndTickets();
+$event['wristbands']['total'] =  $event['details']->wristbands['ordered'];
+$event['wristbands']['used'] = $event['wristbands']['withTicketsOnly'] + $event['wristbands']['withAttendeesOnly'] + $event['wristbands']['withAttendeesAndTickets'] + $event['wristbands']['withNOAttendeesAndTickets'];
+
+$event['wristbands']['available'] = (int) $event['wristbands']['total'] - (int) $event['wristbands']['used'];
 
         $model = new \Dash\Models\Event\Prizes;
         $list = $model->paginate();
@@ -37,7 +43,11 @@ Class Event {
          $model = new \Dash\Models\Event\Users;
         $list = $model->paginate();
         $event['users'] = $model->paginate();
+	
 
+        $model = new \Dash\Models\Event\Tickets;
+        $list = $model->paginate();
+        $event['tickets'] = $model->paginate();
 
         return $event;
 
