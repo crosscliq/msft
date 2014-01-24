@@ -22,6 +22,15 @@ Class Roles Extends Eventbase {
         $prefab = New \Dash\Models\Prefabs\Role();
         return $prefab;
     }
+
+    public function setIndexes() {
+        $collection = $this->getCollection;
+
+        var_dump($collection); 
+        die();
+
+
+    }
     
     protected function fetchFilters()
     {   

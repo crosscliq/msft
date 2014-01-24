@@ -157,6 +157,10 @@ Class Wristbands Extends Eventbase {
         return $this->getTotal();
     }
 
+     function getTotalCount() {
+        $this->emptyState();
+        return $this->getTotal();
+    }
 
      public function getTotal()
     {

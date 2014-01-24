@@ -60,6 +60,7 @@ class Auth extends \Users\Site\Controllers\Auth {
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Login');
         
+
         $view = new \Dsc\Template;
         echo $view->render('Site/Views::auth/login.php');
     }
@@ -106,13 +107,14 @@ class Auth extends \Users\Site\Controllers\Auth {
         $username_input = $this->input->get('email','', 'string');
         $password_input = $this->input->get('password','', 'string');
         
+        echo  $username_input; 
         $model = new \Site\Models\Users;
 
         $model->setFilter('email', $username_input);
         
         $user = $model->getItem();
-       
 
+  
         //WHY USE AUTH
         //supporting 3rd login, instead of only using the users 
         //collection we could use smtp jig, or whatever
