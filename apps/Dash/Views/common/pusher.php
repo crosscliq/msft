@@ -55,5 +55,42 @@
 	});
 
 
+   // Activity
+
+    // Create Activity
+	channel.bind('createActivity', function(data) {
+		console.log('create new activity');
+		    $( "#blank-activity" ).attr('data-id',data.id).clone().prependTo( "#activity-log" ).attr('id','');
+		    $('[data-id='+ data.id +']').find('.msg').html(data.message);
+		    $('[data-id='+ data.id +']').find('.timestamp').html(data.timestamp);
+		    $('[data-id='+ data.id +']').find('.name').html(data.name);
+
+		switch(data.type) {
+
+		  case 'prize':
+		    $('[data-id='+ data.id +']').find('.message-img').addClass('icon-gift');
+		    $('[data-id='+ data.id +']').attr('data-type',data.type);
+		  break;
+
+		  case 'reg':
+		    $('[data-id='+ data.id +']').find('.message-img').addClass('icon-check');
+		    $('[data-id='+ data.id +']').attr('data-type',data.type);
+		  break;
+
+		  case 'user':
+		    $('[data-id='+ data.id +']').find('.message-img').addClass('icon-user');
+		    $('[data-id='+ data.id +']').attr('data-type',data.type);
+		  break;
+
+		  case 'ticket':
+		    $('[data-id='+ data.id +']').find('.message-img').addClass('icon-headphones');
+		    $('[data-id='+ data.id +']').attr('data-type',data.type);
+		  break;
+
+		}
+
+	});
+
+
 
 </script>

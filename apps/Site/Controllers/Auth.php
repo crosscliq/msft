@@ -14,8 +14,8 @@ class Auth extends \Users\Site\Controllers\Auth {
     
 
     function beforeRoute() {
-     
 
+	$f3 = \Base::instance();
 
         $session = \Base::instance()->get('SESSION.user');
         
@@ -63,7 +63,6 @@ class Auth extends \Users\Site\Controllers\Auth {
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Login');
         
-
         $view = new \Dsc\Template;
         echo $view->render('Site/Views::auth/login.php');
     }
@@ -110,14 +109,13 @@ class Auth extends \Users\Site\Controllers\Auth {
         $username_input = $this->input->get('email','', 'string');
         $password_input = $this->input->get('password','', 'string');
         
-        echo  $username_input; 
         $model = new \Site\Models\Users;
 
         $model->setFilter('email', $username_input);
         
         $user = $model->getItem();
+       
 
-  
         //WHY USE AUTH
         //supporting 3rd login, instead of only using the users 
         //collection we could use smtp jig, or whatever
@@ -131,10 +129,13 @@ class Auth extends \Users\Site\Controllers\Auth {
           
             if ($authenticated) 
             {   
+	session_set_cookie_params ( time()+3600, '/' , 'ontario.msft.cc' );
                    
-                \Base::instance()->set('SESSION.user', (object) $user->cast());
+                \Base::instance()->set('SESSION.user', (object) $user->cast());	 
+		setcookie("id", session_id(), time()+3600, '/', 'ontario.msft.cc');
 
-                $redirect = $this->input->get('login-redirect','', 'string');
+
+		$redirect = $this->input->get('login-redirect','', 'string');
                 if($redirect) {
                  $this->default_login_redirect = base64_decode($redirect);  
                 }
@@ -176,10 +177,5 @@ class Auth extends \Users\Site\Controllers\Auth {
     protected function displayRead() {}
 }
 
-
-
-
-
-
-
 ?> 
+

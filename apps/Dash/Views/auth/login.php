@@ -3,25 +3,48 @@
   
     <div class="grid">
       <div class="row">
-        <div class="span12">
-                 <br/>
-        <form method="post" action="/login">
+        <div class="col-lg-6">
+        <div class="widget">
+<div class="widget-header"> <i class="icon-align-left"></i>
+              <h3>Event Staff Log-In</h3>
+            </div>
+	<div class="widget-content">
+        <form method="post" action="/login" class="form-horizontal">
             <fieldset>
-                <legend>Employee Log-In</legend>
-                                        <label>&nbsp;</label>
-                                        <div class="input-control text" data-role="input-control">
-                                            <input type="text" name="email" placeholder="Email">
 
-                                        </div>
-                                        <label>&nbsp;</label>
-                                        <div class="input-control password" data-role="input-control">
-                                            <input type="password"  name="password" placeholder="Password" autofocus="">
-                                        </div>                  
-                        
+<div class="control-group">
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Email</label>
+                    </div>
+                    <div class="col-md-9">
+                    <div class="form-group">
+                      <input type="text" name="email" placeholder="Email" class="form-control">
+                    </div>
+                    </div>
+                  </div>
 
-                                        <input type="submit" value="Login">
+<div class="control-group">
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Password</label>
+                    </div>
+                    <div class="col-md-9">
+                    <div class="form-group">
+                      <input type="password"  name="password" placeholder="Password" autofocus="" class="form-control">
+                    </div>
+                    </div>
+                  </div>
+
+
+
                                     </fieldset>
+<div class="form-actions">
+                  <div>
+                                        <input type="submit" value="Login" class="btn btn-s-md btn-primary">
+                  </div>
+                </div>
                                 </form>
+	  </div>
+	  </div>
         </div>
       </div>
     </div>

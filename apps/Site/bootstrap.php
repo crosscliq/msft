@@ -48,13 +48,18 @@ switch ($global_app_name)
         $f3->route('GET /ticketing/edit/@id', '\Site\Controllers\Ticketing->edit');
         $f3->route('GET /ticketing/confirm/@id', '\Site\Controllers\Ticketing->confirm');
 
-         //Ticketing pages
+         //Transfer pages
         $f3->route('GET /transfer', '\Site\Controllers\Transfer->home');
         $f3->route('GET /transfer/origin/@id', '\Site\Controllers\Transfer->origin');
         $f3->route('GET /transfer/destination/@tagid', '\Site\Controllers\Transfer->destination');
         $f3->route('GET /transfer/notempty/@tagid', '\Site\Controllers\Transfer->notempty');
         
-
+	    $f3->route('GET|POST /logout', function() {
+        \Base::instance()->clear('SESSION');
+         \Base::instance()->clear('COOKIE');
+	       setcookie('id','',time()-3600);
+	       \Base::instance()->reroute('/');
+        });          
         
         // append this app's UI folder to the path
         $ui = $f3->get('UI');

@@ -7,19 +7,17 @@
                  <br/>
         <form method="post" action="/login">
             <fieldset>
-                <legend>Employee Log-In</legend>
+                <legend>Event Staff Log-In</legend>
                                         <label>&nbsp;</label>
                                         <div class="input-control text" data-role="input-control">
                                             <input type="text" name="email" placeholder="Email">
 
                                         </div>
                                         <label>&nbsp;</label>
-                                        <div class="input-control password" data-role="input-control">
+                                        <div class="input-control password" data-role="input-control" style="margin-bottom:20px;">
                                             <input type="password"  name="password" placeholder="Password" autofocus="">
                                         </div>                  
-                        
-
-                                        <input type="submit" value="Login">
+                                        <input type="submit" value="Login" class="inverse large">
                                     </fieldset>
                                 </form>
         </div>

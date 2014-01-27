@@ -5,6 +5,7 @@ $maps = new \Dash\Models\Bingmap;?>
 <div class="content container">
                               <div class="row">
                                 <div class="col-lg-12">
+				      <a href="#" class="btn btn-s btn-success pull-right"><i class="icon-edit"></i> Edit</a>
                                   <h1 class="page-title"><?php echo $event['details']->name;?><small> <?php echo $event['details']->category;?></small></h1>
                                 </div>
                               </div>
@@ -103,7 +104,7 @@ $maps = new \Dash\Models\Bingmap;?>
 <legend class="section"></legend>
 <div class="tab-content">
 	<div class="tab-pane active" id="activity-All">
-              <div class="timeline-messages"> 
+              <div class="timeline-messages" id="activity-log"> 
                 <!-- Comment -->
                 <div class="msg-time-chat"><i class="icon-user message-img" style="font-size:55px;"></i>
                   <div class="message-body msg-in"> <span class="arrow"></span>
@@ -135,6 +136,16 @@ $maps = new \Dash\Models\Bingmap;?>
                   </div>
                 </div>
                 <!-- /comment -->                 
+                
+                <div class="msg-time-chat" id="blank-activity"><i class="message-img" style="font-size:55px;"></i>
+                  <div class="message-body msg-in"> <span class="arrow"></span>
+                    <div class="text"> 
+                      <p class="attribution"><a href="#" class="name">hi</a> at <span class="timestamp">1:55pm, 13th April 2013</span></p>
+                      <p class="msg">Hello, How are you brother?</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 	</div>
 	<div class="tab-pane" id="activity-Tickets">
@@ -209,7 +220,7 @@ $maps = new \Dash\Models\Bingmap;?>
                       <p class="attribution"> <a href="#">Dale Steyn</a> at 2:01pm, 13th April 2013</p>
                       <p>I'm Fine, Thank you. What about you? How is going on?</p>
                     </div>
-                  </div>
+                  </div>  
                 </div>
                 <!-- /comment --> 
                 
@@ -220,9 +231,9 @@ $maps = new \Dash\Models\Bingmap;?>
                 <!-- Comment -->
                 <div class="msg-time-chat"><i class="icon-user message-img" style="font-size:55px;"></i>
                   <div class="message-body msg-in"> <span class="arrow"></span>
-                    <div class="text">
+                    <div class="text"> 
                       <p class="attribution"><a href="#">John Doe</a> at 1:55pm, 13th April 2013</p>
-                      <p>Hello, How are you brother?</p>
+                      <p class="msg">Hello, How are you brother?</p>
                     </div>
                   </div>
                 </div>
@@ -238,7 +249,8 @@ $maps = new \Dash\Models\Bingmap;?>
                   </div>
                 </div>
                 <!-- /comment --> 
-                
+
+
               </div>
 	</div>
 </div>
