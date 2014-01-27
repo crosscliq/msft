@@ -3660,3 +3660,11 @@ PHP message: - index.php:55 Base->run()" while reading response header from upst
 PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /prizepatrol HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
 2014/01/27 18:09:56 [error] 22736#0: *1123 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /roles/registration)
 PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /roles/registration HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 20:15:37 [error] 22736#0: *1193 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 173.236.123.99, server: ontario.msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
