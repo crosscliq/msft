@@ -70,14 +70,19 @@ switch ($global_app_name)
         $f3->route('GET /gatekeeper/ticket/bad/@ticketid', '\Msft\Controllers\Gatekeeper->bad');
        
 
+        $f3->route('GET /mc', '\Msft\Controllers\Mc->display');
+
+        $f3->route('GET /games/raffle', '\Msft\Controllers\Games\Raffle->display');
+        $f3->route('POST /games/raffle/play', '\Msft\Controllers\Games\Raffle->play');
+        $f3->route('GET /games/raffle/winners', '\Msft\Controllers\Games\Raffle->winners');
 
         $f3->route('GET /prizepatrol', '\Msft\Controllers\Prizepatrol->display');
 
 	    $f3->route('GET|POST /logout', function() {
-        \Base::instance()->clear('SESSION');
-         \Base::instance()->clear('COOKIE');
-	       setcookie('id','',time()-3600);
-	       \Base::instance()->reroute('/');
+            \Base::instance()->clear('SESSION');
+             \Base::instance()->clear('COOKIE');
+	        setcookie('id','',time()-3600);
+	         \Base::instance()->reroute('/');
         });          
         
         // append this app's UI folder to the path

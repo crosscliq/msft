@@ -6,20 +6,11 @@
         <div class="span12" style="padding-top:45px;">
 		<legend>MC Actions</legend>
                 <div id="role" style="text-align:center;">
-                    <a href="/game/raffle" class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(0,0,0,0.6)!important">
+                    <a href="/games/raffle" class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(0,0,0,0.6)!important">
                         Start Raffle
                     </a>
                 </div>
-                <div id="role" style="text-align:center;">
-                    <a href="/active/role/<?php echo $role['id'] ?>" class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(0,0,0,0.6)!important">
-                        <?php echo $role['name']; ?>
-                    </a>
-                </div>
-                <div id="role" style="text-align:center;">
-                    <a href="/active/role/<?php echo $role['id'] ?>" class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(0,0,0,0.6)!important">
-                        <?php echo $role['name']; ?>
-                    </a>
-                </div>
+              
         </div>
       </div>
     </div>
