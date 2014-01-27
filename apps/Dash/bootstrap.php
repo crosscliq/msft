@@ -7,7 +7,7 @@ switch ($global_app_name)
     case "dash":
          // register event listener
         \Dsc\System::instance()->getDispatcher()->addListener(\Dash\Eventlistener::instance());
-        
+        \Dsc\System::instance()->getDispatcher()->addListener(\Dash\Pusherlistener::instance());
 
 
         $f3->config( $f3->get('PATH_ROOT').'apps/Dash/config.ini');
