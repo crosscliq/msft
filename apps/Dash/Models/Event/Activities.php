@@ -73,37 +73,17 @@ Class Activities Extends Eventbase {
             $this->filters['slug'] = $filter_slug;
         }
 
-        
-      /*  $filter_username_contains = $this->getState('filter.username-contains', null, 'username');
-        if (strlen($filter_username_contains))
-        {
-            $key =  new \MongoRegex('/'. $filter_username_contains .'/i');
-            $this->filters['username'] = $key;
-        }
-        
-        $filter_email_contains = $this->getState('filter.email-contains');
-        if (strlen($filter_email_contains))
-        {
-            $key =  new \MongoRegex('/'. $filter_email_contains .'/i');
-            $this->filters['email'] = $key;
-        }
-       
-
-        $filter_password = $this->getState('filter.password');
-        if (strlen($filter_password))
-        {
-            $this->filters['password'] = $filter_password;
-        }
-
-        $filter_group = $this->getState('filter.group');
-
-        if (strlen($filter_group))
-        {
-            $this->filters['groups.id'] = new \MongoId((string) $filter_group);
-        }*/
-    
         return $this->filters;
     }
+
+
+
+    function addEvent() {
+
+    }
+
+    
+
 
 }
 

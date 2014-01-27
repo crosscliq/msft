@@ -48,12 +48,24 @@ class Tags extends BaseAuth
     		case 'gate_keeper':
     			$this->gateKeeper($tag, $tagid, $role);
     			break;
-
+            case 'band_transfer':
+                $this->bandTransfer($tag, $tagid, $role);
+                break;
     		default:
            
     			$this->attendeeTapper($tag, $tagid, $role);
     			break;
     	}
+    }
+   
+    protected function bandTransfer($tag,$tagid,$role) {
+
+        if(empty($tag->attendee)) {
+            \Base::instance()->reroute('/attendee/create/'.$tag->_id);
+        } else {
+            \Base::instance()->reroute('/attendee/edit/'.$tag->attendee['id']); 
+        }
+        
     }
 
     //Attendee Registration, we check to see if the tag is assigned to a user and bring up an new / edit form.

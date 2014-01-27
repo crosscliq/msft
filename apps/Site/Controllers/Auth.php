@@ -132,10 +132,7 @@ class Auth extends \Users\Site\Controllers\Auth {
 	session_set_cookie_params ( time()+3600, '/' , 'ontario.msft.cc' );
                    
                 \Base::instance()->set('SESSION.user', (object) $user->cast());	 
-              echo session_id(); 
-
 		setcookie("id", session_id(), time()+3600, '/', 'ontario.msft.cc');
-	//	setcookie("user", '', time()-3600, '/', 'ontario.msft.cc');
 
 
 		$redirect = $this->input->get('login-redirect','', 'string');
@@ -179,11 +176,5 @@ class Auth extends \Users\Site\Controllers\Auth {
     
     protected function displayRead() {}
 }
-
-
-
-
-
-
 
 ?> 

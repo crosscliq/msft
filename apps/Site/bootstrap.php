@@ -7,8 +7,10 @@ switch ($global_app_name)
     case "site":
         // register event listener
         \Dsc\System::instance()->getDispatcher()->addListener(\Site\UserListener::instance());
-        
-
+        //fixing a view bug where I shouldn't call my app Site
+        $ui_overrides = $f3->get('PATH_ROOT') . "apps/";
+        $f3->set('UI_OVERRIDES', $ui_overrides);
+        //
         $f3->config( $f3->get('PATH_ROOT').'apps/Site/config.ini');
         //HEADERS ROUTES, these are so JS can call the headers TODO maybe move to this php logic
         $f3->route('GET /header', '\Site\Controllers\Header->base');

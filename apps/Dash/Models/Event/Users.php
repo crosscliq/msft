@@ -4,6 +4,14 @@ namespace Dash\Models\Event;
 
 Class Users Extends \Users\Admin\Models\Users {
 
+    public function setIndexes() {
+        $collection = $this->getCollection;
+
+        var_dump($collection); 
+        die();
+
+
+    }
 
 	public function getDb()
     {

@@ -2,15 +2,18 @@
 namespace Dash;
 
 class Eventlistener extends \Prefab 
-{
-   
+{   
+
     public function onAfterSaveDashModelsEvents( $event )
     {   
         $mapper = $event->getArgument('mapper');
-     
+        
+       
         
         $this->addDefaultRoles($mapper->event_id);
-        
+       // $this->addUsers($mapper->event_id);
+       // $this->addAttendees($mapper->event_id);
+       // $this->addTags($mapper->event_id);
         return $event;
     }
 
@@ -28,5 +31,14 @@ class Eventlistener extends \Prefab
          $model->create($newrole); 
         }   
     }
+
+    protected function addUsers($eventid, $event_type = null) { 
+       
+         \Base::instance()->set('event.db', $eventid);
+         $model = new \Dash\Models\Event\Users;
+         $model->setIndexes();
+    }
+    protected function addAttendees($eventid, $event_type = null) { }
+    protected function addTags($eventid, $event_type = null) { }
 
 }

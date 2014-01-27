@@ -21,6 +21,7 @@ Class Events Extends Base {
     protected function createDb()
     {
         $db_name = \Base::instance()->get('db.mongo.name');
+
         $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
         
         return $this;
@@ -113,7 +114,11 @@ Class Events Extends Base {
     }
 
     //if all checks pass lets process values
-   /* public function processEventID(){
+   public function processEventID($event_id){
+
+    $id = str_replace(' ', '', $event_id);
+    $id = strtolower($id);
+    return $id;
 
     }
 
@@ -121,12 +126,14 @@ Class Events Extends Base {
     {   
         if(empty($values['event_id'])){
             $this->setError('Event ID is required, it is used as the collection name and as the sub domain');
+        } else {
+            $values['event_id'] = $this->processEventID($values['event_id']);
         }
         
 
         return $this->checkErrors();
     }
-*/
+
 }
 
 ?>
