@@ -307,6 +307,56 @@ class Attendee extends BaseAuth
         echo $view->render('Msft/Views::attendee/attendee.php');
     }
 
+    public function signin() 
+    {
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'Sign in');
+        
+        $f3->set('tagid',$f3->get('PARAMS.tagid'));
+
+        $view = new \Dsc\Template;
+        echo $view->render('Msft/Views::attendee/signin.php');
+    }
+
+     public function assign() 
+    {   
+        $f3 = \Base::instance();
+        $model = new \Msft\Models\Tags;
+        $thisTag = $model->setState('filter.id', $f3->get('PARAMS.tagid'))->getItem();
+
+
+
+        $model = new \Msft\Models\Attendees;
+        $model->setState('filter.first_name', $f3->get('POST.first_name'));
+        $model->setState('filter.last_name', $f3->get('POST.last_name'));
+        $model->setState('filter.phone', $f3->get('POST.phone'));
+
+        $attendee = $model->getItem();
+
+        if($attendee->tagid) {
+            $model = new \Msft\Models\Tags;
+            $oldTag = $model->setState('filter.id', $attendee->tagid)->getItem();
+            $oldTag->previd = $oldTag->tagid;
+            $oldTag->tagid = $thisTag->tagid;
+            $oldTag->save();
+            $model->delete($thisTag);
+        }
+        
+        if (method_exists($attendee, 'cast')) {
+            $item  = $attendee->cast();
+        } else {
+            $item = \Joomla\Utilities\ArrayHelper::fromObject($attendee);
+        }
+   
+
+        $f3->set('pagetitle', 'Sign in');
+        
+        $f3->set('item',$item);
+
+        $view = new \Dsc\Template;
+        echo $view->render('Msft/Views::attendee/confirm.php');
+    }
+
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method
      */

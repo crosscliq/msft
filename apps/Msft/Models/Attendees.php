@@ -64,6 +64,33 @@ class Attendees extends Eventbase
             $this->filters['slug'] = $filter_slug;
         }
 
+         $filter_first_name = $this->getState('filter.first_name');
+
+        if (strlen($filter_first_name))
+        {
+            $this->filters['first_name'] = $filter_first_name;
+        }
+
+        $filter_last_name = $this->getState('filter.last_name');
+
+        if (strlen($filter_last_name))
+        {
+            $this->filters['last_name'] = $filter_last_name;
+        }
+
+        $filter_phone = $this->getState('filter.phone');
+
+        if (strlen($filter_phone))
+        {
+            $this->filters['phone'] = $filter_phone;
+        }
+
+        $filter_email = $this->getState('filter.email');
+
+        if (strlen($filter_email))
+        {
+            $this->filters['email'] = $filter_email;
+        }
         
       /*  $filter_username_contains = $this->getState('filter.username-contains', null, 'username');
         if (strlen($filter_username_contains))
