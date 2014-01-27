@@ -16,7 +16,7 @@
 
 		<div class="form-group">
 
-			<button type="submit" id="login-btn" class="btn btn-primary btn-block">Signin &nbsp; <i class="fa fa-play-circle"></i></button>
+			<button type="submit" id="login-btn" class="btn btn-primary btn-block large">Signin &nbsp; <i class="fa fa-play-circle"></i></button>
 
 		</div>
 	</form>

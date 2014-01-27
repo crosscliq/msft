@@ -44,7 +44,12 @@ switch ($global_app_name)
         $f3->route('POST /ticketing/create/@id', '\Site\Controllers\Ticketing->add');
         $f3->route('GET /ticketing/edit/@id', '\Site\Controllers\Ticketing->edit');
         $f3->route('GET /ticketing/confirm/@id', '\Site\Controllers\Ticketing->confirm');
-        
+	$f3->route('GET|POST /logout', function() {
+        \Base::instance()->clear('SESSION');
+         \Base::instance()->clear('COOKIE');
+	setcookie('id','',time()-3600);
+	\Base::instance()->reroute('/');
+        });          
 
         
         // append this app's UI folder to the path

@@ -36,7 +36,7 @@
                 <div class="filter-content">
                         <div class="widget-container">
                     
-                                  <div class="stats-heading"><span class="pull-left"><small><?=$item['category'];?></small></span><?=$item['name'];?></div>
+                                  <div class="stats-heading"><span class="pull-left"><small><?=$item['category'];?></small></span><a href="#" class="btn btn-xs btn-success pull-right"><i class="icon-edit"></i></a><?=$item['name'];?></div>
                                     <div class="text-center">
                                <a href="/<?=$item['event_id'];?>/dashboard/" class="map" style="background:url('<?php echo $maps->width('400')->height('120')->location(@$item["address"]["city"].', '.@$item["address"]["state"])->getImageURL(); ?>');"></a> 
                                               </div>

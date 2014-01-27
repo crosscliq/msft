@@ -1,6 +1,12 @@
 <?php
-//phpinfo();
+if(!empty($_COOKIE['id'])) {
+session_id($_COOKIE['id']);
+}
+
+
 $app = require('../vendor/bcosca/fatfree/lib/base.php');
+
+
 
 $app->set('PATH_ROOT', __dir__ . '/../');
 $app->set('AUTOLOAD',
@@ -13,7 +19,6 @@ require $app->get('PATH_ROOT') . 'vendor/autoload.php';
 $app->set('APP_NAME', 'site');
 //TODO maybe we query the event model, and get the event object from the main DB and load it. so than we can  let the DB be controlled by the dash
 $app->set('event.db', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
-
 if ($app->get('event.db') == 'dashboard') {
     $app->set('APP_NAME', 'dash');
 }

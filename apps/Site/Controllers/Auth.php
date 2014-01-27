@@ -14,6 +14,9 @@ class Auth extends \Users\Site\Controllers\Auth {
     
 
     function beforeRoute() {
+
+	$f3 = \Base::instance();
+
         $session = \Base::instance()->get('SESSION.user');
         
         if(@$session->_id) {
@@ -126,10 +129,16 @@ class Auth extends \Users\Site\Controllers\Auth {
           
             if ($authenticated) 
             {   
+	session_set_cookie_params ( time()+3600, '/' , 'ontario.msft.cc' );
                    
-                \Base::instance()->set('SESSION.user', (object) $user->cast());
+                \Base::instance()->set('SESSION.user', (object) $user->cast());	 
+              echo session_id(); 
 
-                $redirect = $this->input->get('login-redirect','', 'string');
+		setcookie("id", session_id(), time()+3600, '/', 'ontario.msft.cc');
+	//	setcookie("user", '', time()-3600, '/', 'ontario.msft.cc');
+
+
+		$redirect = $this->input->get('login-redirect','', 'string');
                 if($redirect) {
                  $this->default_login_redirect = base64_decode($redirect);  
                 }
