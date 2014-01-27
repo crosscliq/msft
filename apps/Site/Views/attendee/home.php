@@ -10,12 +10,10 @@
 		  <div class="row">
 		    <div class="span12 text-center">
 					<div class="notice marker-on-top bg-black">
-					    <h2> Tap Wristband to Activate </h2>
+					    <h2> Tap Wristband to Register Guest </h2>
 					</div>
 		    </div>
 		  </div>
-		<div style="height:300px;">hi&nbsp;</div>
-
 
 	</div>
    

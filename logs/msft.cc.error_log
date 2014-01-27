@@ -3639,3 +3639,24 @@ PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->ca
 PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
 2014/01/27 17:19:14 [error] 22736#0: *751 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
 PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 17:29:37 [error] 22736#0: *866 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /apps/Site/Views/attendee/register.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 17:29:42 [error] 22736#0: *866 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /attendee/register.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 17:29:53 [error] 22736#0: *866 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /attendee/register)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /attendee/register HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 17:30:26 [error] 22736#0: *866 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /attendee/create/)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /attendee/create/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 17:30:46 [error] 22736#0: *866 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /attendee/create/band/193247129837410298374)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /attendee/create/band/193247129837410298374 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 17:46:25 [error] 22736#0: *1017 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /prizepatrol)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 70.208.20.97, server: ontario.msft.cc, request: "GET /prizepatrol HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 18:01:34 [error] 22736#0: *1052 directory index of "/var/www/msft.cc/public/dash/" is forbidden, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /dash/ HTTP/1.1", host: "msft.cc"
+2014/01/27 18:01:34 [error] 22736#0: *1052 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/01/27 18:02:34 [error] 22736#0: *1056 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 18:05:38 [error] 22736#0: *1075 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /meetgreet)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /meetgreet HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 18:09:33 [error] 22736#0: *1123 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /prizepatrol)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /prizepatrol HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 18:09:56 [error] 22736#0: *1123 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /roles/registration)
+PHP message: - index.php:55 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /roles/registration HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"

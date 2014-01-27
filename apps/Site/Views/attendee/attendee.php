@@ -22,14 +22,24 @@
                                         <div class="input-control text" data-role="input-control">
                                             <input name="email" type="text" placeholder="Email Address" autofocus="" value="<?php echo $flash->old('email'); ?>">
                                         </div>
-           </fieldset>
-				<legend>Continued ( optional )</legend><br/>
                                         <label>Phone</label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="phone" type="text" placeholder="Phone" value="<?php echo $flash->old('phone'); ?>" >
-                                        </div>					
+                                        </div>	
+		<br/><br/>
+           <legend></legend>
+			
+                                        <label>Receive offers/updates from Microsoft?</label>
+                                        <div class="input-control checkbox">
+                                            <input type="checkbox" checked>
+						  <span class="check"></span>email
+                                        </div>	<br/>
+                                        <div class="input-control checkbox">
+                                            <input type="checkbox" checked>
+						  <span class="check"></span>sms
+                                        </div><br/><br/>				
                                         <input type="hidden" name="submitType" value="save_confirm";>      
-                                        <input type="submit" value="Register">
+                                        <input type="submit" value="Register" class="inverse large">
                                     </fieldset>
                                 </form>
 	    </div>
