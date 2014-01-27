@@ -33,6 +33,8 @@ switch ($global_app_name)
 
         //Attendee Reg pages
         $f3->route('GET /attendee', '\Msft\Controllers\Attendees->display');
+        $f3->route('POST /attendee/assign/tag/@tagid', '\Msft\Controllers\Attendee->assign');
+        $f3->route('GET /attendee/signin/@tagid', '\Msft\Controllers\Attendee->signin');
         $f3->route('GET /attendee/create/@tagid', '\Msft\Controllers\Attendee->create');
         $f3->route('POST /attendee/create/@tagid', '\Msft\Controllers\Attendee->add');
         $f3->route('GET /attendee/edit/@id', '\Msft\Controllers\Attendee->edit');

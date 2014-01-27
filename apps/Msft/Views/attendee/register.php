@@ -27,7 +27,7 @@
                                         <input type="hidden" name="submitType" value="save_customer">
                                         <input type="submit" value="Register" class="btn large inverse">
 						<br/><br/>
-					     <a class="button large warning">Already Registered?</a>
+					     <a href="/attendee/signin/<?=$tagid?>" class="button large warning">Already Registered?</a>
                                     </fieldset>
                                 </form>
             </div>
