@@ -56,6 +56,12 @@ class Attendees extends Eventbase
             $this->filters['eventid'] = $filter_eventid;
         }
 
+        $filter_ticket_id = $this->getState('filter.ticket_id');
+
+        if (strlen($filter_eventid))
+        {
+            $this->filters['ticket.id'] = $filter_ticket_id;
+        }
 
         $filter_slug = $this->getState('filter.slug');
 

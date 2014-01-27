@@ -3,7 +3,7 @@
         <a href="/" class="element"><span class="icon-grid-view"></span> MICROSOFT<sup></sup></a>
         <span class="element-divider"></span>
 
-
+       
  
 
         <div class="no-tablet-portrait no-phone">

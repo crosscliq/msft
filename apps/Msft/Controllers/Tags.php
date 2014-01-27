@@ -109,7 +109,7 @@ class Tags extends BaseAuth
         $ticket = $ticketModel->getPrefab();
         $ticket->tag = array('tagid' => $tag->tagid , "id" => $tag->_id );
         $ticket = $ticketModel->save((array) $ticket);
-        $tag->ticket = array( "id" => $ticket->_id, "Status" => $ticket->status);
+        $tag->ticket = array( "id" => $ticket->_id, "status" => $ticket->status);
         $tag->save();
 
         } else {
@@ -135,7 +135,44 @@ class Tags extends BaseAuth
 
     //This goes to inside of the event
     protected function gateKeeper($tag, $tagid, $role) {
-        $this->emptyTag($tag);
+
+         $f3 = \Base::instance();
+        
+        
+        if(empty($tag)) {
+             \Base::instance()->reroute('/gatekeeper/ticket/no/');
+        }
+        
+        
+        if(empty($tag->ticket)) {
+            \Base::instance()->reroute('/gatekeeper/ticket/no/');
+        } else {
+         $ticketModel = new \Msft\Models\Tickets;
+         $ticket = $ticketModel->setState('filter.id',$tag->ticket['id'])->getItem();
+             if(empty($ticket)) {
+                \Base::instance()->reroute('/gatekeeper/ticket/no/');
+             }  else {
+                if($ticket->redeemed) {
+                   \Base::instance()->reroute('/gatekeeper/ticket/bad/'.$ticket->_id);  
+                } else {
+                    $ticket->redeemed = \Dsc\Mongo\Metastamp::getDate('now');
+                    $ticket->status = 'redeemed';
+                    $ticket->save();
+
+                    $tag->{'ticket.status'} = 'redeemed';
+                    $tag->save();  
+
+                    
+
+                   \Base::instance()->reroute('/gatekeeper/ticket/ok/'.$ticket->_id);
+                }
+
+
+             }
+
+        }
+
+
     }
     
     //If here is no session

@@ -64,6 +64,12 @@ switch ($global_app_name)
         $f3->route('POST /meetgreet/customer/update/@id', '\Msft\Controllers\Meetgreet->update');
         $f3->route('GET /meetgreet/confirm/@id', '\Msft\Controllers\Meetgreet->confirm');
         
+          //Meet greet Reg pages
+        $f3->route('GET /gatekeeper', '\Msft\Controllers\Gatekeeper->display');
+        $f3->route('GET /gatekeeper/ticket/ok/@ticketid', '\Msft\Controllers\Gatekeeper->ok');
+        $f3->route('GET /gatekeeper/ticket/bad/@ticketid', '\Msft\Controllers\Gatekeeper->bad');
+       
+
 
         $f3->route('GET /prizepatrol', '\Msft\Controllers\Prizepatrol->display');
 

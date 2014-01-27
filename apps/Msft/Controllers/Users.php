@@ -49,6 +49,9 @@ class Users extends BaseAuth
             case 'band_transfer':
                $f3->reroute('/transfer');
                 break;
+            case 'gate_keeper':
+               $f3->reroute('/gatekeeper');
+                break;
             default:
                 # code...
                 break;
