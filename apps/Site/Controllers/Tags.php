@@ -59,12 +59,23 @@ class Tags extends BaseAuth
     }
    
     protected function bandTransfer($tag,$tagid,$role) {
+        $f3 =  \Base::instance();
 
-        if(empty($tag->attendee)) {
-            \Base::instance()->reroute('/attendee/create/'.$tag->_id);
-        } else {
-            \Base::instance()->reroute('/attendee/edit/'.$tag->attendee['id']); 
+        if(!empty($tag->_id) && empty($f3->get('SESSION.transfer'))) {
+            $f3->reroute('/transfer/origin/'.$tag->_id);
         }
+        if(empty($tag->_id) && !empty($f3->get('SESSION.transfer'))) {
+            $f3->reroute('/transfer/destination/'.$tagid);
+        }
+        if(!empty($tag->_id) && !empty($f3->get('SESSION.transfer'))) {
+            $f3->reroute('/transfer/notempty/'.$tagid);
+        }
+
+
+        if(empty($tag->_id)) {
+            \Base::instance()->reroute('/transfer/empty/'.$tagid);
+        }
+
         
     }
 

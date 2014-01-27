@@ -58,19 +58,11 @@ Class Events Extends Base {
             $this->filters['_id'] = new \MongoId((string) $filter_id);
         }
 
-        $filter_tagid = $this->getState('filter.tagid');
-        
-        if (strlen($filter_tagid))
-        {
-            $this->filters['tagid'] = $filter_tagid;
-        }
-
-
         $filter_eventid = $this->getState('filter.eventid');
 
         if (strlen($filter_eventid))
         {
-            $this->filters['eventid'] = $filter_eventid;
+            $this->filters['event_id'] = $filter_eventid;
         }
 
 
@@ -81,35 +73,7 @@ Class Events Extends Base {
             $this->filters['slug'] = $filter_slug;
         }
 
-        
-      /*  $filter_username_contains = $this->getState('filter.username-contains', null, 'username');
-        if (strlen($filter_username_contains))
-        {
-            $key =  new \MongoRegex('/'. $filter_username_contains .'/i');
-            $this->filters['username'] = $key;
-        }
-        
-        $filter_email_contains = $this->getState('filter.email-contains');
-        if (strlen($filter_email_contains))
-        {
-            $key =  new \MongoRegex('/'. $filter_email_contains .'/i');
-            $this->filters['email'] = $key;
-        }
-       
-
-        $filter_password = $this->getState('filter.password');
-        if (strlen($filter_password))
-        {
-            $this->filters['password'] = $filter_password;
-        }
-
-        $filter_group = $this->getState('filter.group');
-
-        if (strlen($filter_group))
-        {
-            $this->filters['groups.id'] = new \MongoId((string) $filter_group);
-        }*/
-    
+         
         return $this->filters;
     }
 

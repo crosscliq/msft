@@ -20,11 +20,7 @@ class UserListener extends \Prefab
         $user->save(); 
     }
 
-    public function onBeforeSaveAttendees( $event )
-    {   
-        var_dump($event);
-        die();
-    }
+  
 
 
 }

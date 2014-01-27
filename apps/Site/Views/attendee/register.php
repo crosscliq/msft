@@ -5,7 +5,7 @@
           <div class="row">
             <div class="span12">
              <br/>
-                <form method="post" action="">
+                <form method="post" action="<?php echo $PARAMS[0]?>">
                         <fieldset>
                                 <legend>Customer Profile</legend>
                                              <div class="input-control select">

@@ -4,20 +4,84 @@ namespace Site\Controllers;
 class Transfer extends BaseAuth 
 {   
 
-    use \Dsc\Traits\Controllers\CrudItem;
-
-    protected $list_route = '/attendee';
-    protected $create_item_route = '/attendee/create';
-    protected $create_item_confirm_route = '/attendee/confirm/{id}';
-    protected $create_item_customer_route = '/attendee/customer/{id}';
-    protected $get_item_route = '/attendee/view/{id}';    
-    protected $edit_item_route = '/attendee/edit/{id}';
     
     protected function getModel() 
     {
-        $model = new \Site\Models\Attendees;
+        $model = new \Site\Models\Tags;
         return $model; 
     }
+    public function home() {
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'Transfer Wristband');
+        
+        $view = new \Dsc\Template;
+        echo $view->render('Site/Views::transfer/home.php');
+    }
+     public function notempty() {
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'Transfer Wristband');
+        
+        $view = new \Dsc\Template;
+        echo $view->render('Site/Views::transfer/notempty.php');
+    }
+    
+    public function origin() {
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'Original Wristband');
+        
+        $f3->set('id',$f3->get('PARAMS.id'));
+
+        $f3->set('SESSION.transfer', $f3->get('PARAMS.id'));
+
+        $model = $this->getModel();
+        $flash = \Dsc\Flash::instance();
+        $item = $this->getItem();
+
+        $f3->set('item',$item);
+        if (method_exists($item, 'cast')) {
+            $item_data = $item->cast();
+        } else {
+            $item_data = \Joomla\Utilities\ArrayHelper::fromObject($item);
+        }
+
+        $flash->store($item_data);
+        
+        $f3->set('flash', $flash );
+
+        $view = new \Dsc\Template;
+        echo $view->render('Site/Views::transfer/origin.php');
+    }
+
+    public function destination() {
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'New Wristband');
+        
+
+       
+        $item = $this->getModel()->setState('filter.id', $f3->get('SESSION.transfer'))->getItem();
+        $flash = \Dsc\Flash::instance();
+
+        $item->tagid = $f3->get('PARAMS.tagid');
+        $item->save();
+
+        $f3->clear('SESSION.transfer');
+        
+        $f3->set('item',$item);
+        if (method_exists($item, 'cast')) {
+            $item_data = $item->cast();
+        } else {
+            $item_data = \Joomla\Utilities\ArrayHelper::fromObject($item);
+        }
+
+        $flash->store($item_data);
+        
+        $f3->set('flash', $flash );
+
+        $view = new \Dsc\Template;
+        echo $view->render('Site/Views::transfer/destination.php');
+    }
+
+
     
     protected function getItem() 
     {
@@ -37,116 +101,8 @@ class Transfer extends BaseAuth
         return $item;
     }
     
-    protected function displayCreate() 
-    {
-        $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Activate Wristband');
-        
-        $f3->set('tagid',$f3->get('PARAMS.tagid'));
-        $selected = array();
-        $flash = \Dsc\Flash::instance();
-
-        $view = new \Dsc\Template;
-        echo $view->render('Site/Views::attendee/register.php');
-    }
-
-    protected function doAdd($data) 
-    {    
-        if (!isset($data['submitType'])) {
-            $data['submitType'] = "save_confirm";
-        }
-        
-        $f3 = \Base::instance();
-        $flash = \Dsc\Flash::instance();
-        $model = $this->getModel();
-        
-        // save
-        try {
-            $values = $data;
-            unset($values['submitType']);
-            //\Dsc\System::instance()->addMessage(\Dsc\Debug::dump($values), 'warning');
-            $this->item = $model->create($values);
-
-
-            if($this->item->tagid) {
-                $tags = new \Site\Models\Tags();
-                $tag = $tags->setState('filter.id',$this->item->tagid)->getItem();
-                $tag->set('attendee.id',$this->item->_id);
-                $tag->set('attendee.name',$this->item->first_name . ' ' .$this->item->last_name);
-                $tag->save();
-            }
-
-
-        }
-        catch (\Exception $e) {
-            \Dsc\System::instance()->addMessage('Save failed with the following errors:', 'error');
-            foreach ($model->getErrors() as $error)
-            {
-                \Dsc\System::instance()->addMessage($error, 'error');
-            }
-            
-            if ($f3->get('AJAX')) {
-                // output system messages in response object
-                return $this->outputJson( $this->getJsonResponse( array(
-                        'error' => true,
-                        'message' => \Dsc\System::instance()->renderMessages()
-                ) ) );
-            }
-            
-            // redirect back to the create form with the fields pre-populated
-            \Dsc\System::instance()->setUserState('use_flash.' . $this->create_item_route, true);
-            $flash->store($data);
-            
-            $this->setRedirect( $this->create_item_route );
-                        
-            return false;
-        }
-                
-        // redirect to the editing form for the new item
-        \Dsc\System::instance()->addMessage('Item saved');
-        
-        if (method_exists($this->item, 'cast')) {
-            $this->item_data = $this->item->cast();
-        } else {
-            $this->item_data = \Joomla\Utilities\ArrayHelper::fromObject($this->item);
-        }
-        
-        if ($f3->get('AJAX')) {
-            return $this->outputJson( $this->getJsonResponse( array(
-                    'message' => \Dsc\System::instance()->renderMessages(),
-                    'result' => $this->item_data
-            ) ) );
-        }
-        
-        switch ($data['submitType']) 
-        {
-            case "save_new":
-                $route = $this->create_item_route;
-                break;
-             case "save_customer":
-                $flash->store($this->item_data);
-                $id = $this->item->get( $this->getItemKey() );
-                $route = str_replace('{id}', $id, $this->create_item_customer_route );   
-                break;      
-             case "save_confirm":
-                 $flash->store($this->item_data);
-                $id = $this->item->get( $this->getItemKey() );
-                $route = str_replace('{id}', $id, $this->create_item_confirm_route );   
-                break;    
-            case "save_close":
-                $route = $this->list_route;
-                break;
-            default:
-                $flash->store($this->item_data);
-                $id = $this->item->get( $this->getItemKey() );
-                $route = str_replace('{id}', $id, $this->edit_item_route );                
-                break;
-        }
-
-        $this->setRedirect( $route );
-        
-        return $this;
-    }
+    
+   
 
     protected function doUpdate(array $data, $key=null) 
     {

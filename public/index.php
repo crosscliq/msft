@@ -7,6 +7,8 @@ $app->set('AUTOLOAD',
         $app->get('PATH_ROOT') . 'lib/;' .
         $app->get('PATH_ROOT') . 'apps/;'
 );
+// common config
+$app->config( $app->get('PATH_ROOT') . 'config/common.config.ini');
 
 require $app->get('PATH_ROOT') . 'vendor/autoload.php';
 
@@ -25,13 +27,15 @@ if($app->get('event.db') != 'admin' && $app->get('event.db') != 'dashboard' && !
 //WE are loading an event
 //HERE WE CAN CHECK THIS IT IS A VALID EVENT REGISTERED AND SUCH
 
+$model = new \Dash\Models\Events;
+$item = $model->setState('filter.eventid', $app->get('event.db'))->getItem();
+$app->set('SESSION.event', $item );
+
 }
 
 if (empty($app->get('event.db'))) {
     $app->set('event.db', 'msft');
 }
-// common config
-$app->config( $app->get('PATH_ROOT') . 'config/common.config.ini');
 
 $logger = new \Log( $app->get('application.logfile') );
 \Registry::set('logger', $logger);

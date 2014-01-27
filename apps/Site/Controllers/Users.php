@@ -43,9 +43,12 @@ class Users extends BaseAuth
             case 'ticketing':
                $f3->reroute('/ticketing');
                 break;
-             case 'mc':
+            case 'mc':
                $f3->reroute('/mc');
-                break;    
+                break;
+            case 'band_transfer':
+               $f3->reroute('/transfer');
+                break;
             default:
                 # code...
                 break;

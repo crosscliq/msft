@@ -56,6 +56,8 @@ class Attendee extends BaseAuth
             $data['submitType'] = "save_confirm";
         }
         
+
+
         $f3 = \Base::instance();
         $flash = \Dsc\Flash::instance();
         $model = $this->getModel();
@@ -96,8 +98,8 @@ class Attendee extends BaseAuth
             // redirect back to the create form with the fields pre-populated
             \Dsc\System::instance()->setUserState('use_flash.' . $this->create_item_route, true);
             $flash->store($data);
-            
-            $this->setRedirect( $this->create_item_route );
+
+          //  $this->setRedirect( $this->create_item_route );
                         
             return false;
         }
@@ -126,11 +128,13 @@ class Attendee extends BaseAuth
              case "save_customer":
                 $flash->store($this->item_data);
                 $id = $this->item->get( $this->getItemKey() );
+
                 $route = str_replace('{id}', $id, $this->create_item_customer_route );   
                 break;      
              case "save_confirm":
-                 $flash->store($this->item_data);
+                $flash->store($this->item_data);
                 $id = $this->item->get( $this->getItemKey() );
+                
                 $route = str_replace('{id}', $id, $this->create_item_confirm_route );   
                 break;    
             case "save_close":

@@ -7,6 +7,7 @@ switch ($global_app_name)
     case "site":
         // register event listener
         \Dsc\System::instance()->getDispatcher()->addListener(\Site\UserListener::instance());
+        \Dsc\System::instance()->getDispatcher()->addListener(\Site\PusherListener::instance());
         //fixing a view bug where I shouldn't call my app Site
         $ui_overrides = $f3->get('PATH_ROOT') . "apps/";
         $f3->set('UI_OVERRIDES', $ui_overrides);
@@ -46,6 +47,12 @@ switch ($global_app_name)
         $f3->route('POST /ticketing/create/@id', '\Site\Controllers\Ticketing->add');
         $f3->route('GET /ticketing/edit/@id', '\Site\Controllers\Ticketing->edit');
         $f3->route('GET /ticketing/confirm/@id', '\Site\Controllers\Ticketing->confirm');
+
+         //Ticketing pages
+        $f3->route('GET /transfer', '\Site\Controllers\Transfer->home');
+        $f3->route('GET /transfer/origin/@id', '\Site\Controllers\Transfer->origin');
+        $f3->route('GET /transfer/destination/@tagid', '\Site\Controllers\Transfer->destination');
+        $f3->route('GET /transfer/notempty/@tagid', '\Site\Controllers\Transfer->notempty');
         
 
         

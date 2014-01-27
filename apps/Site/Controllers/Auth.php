@@ -14,6 +14,9 @@ class Auth extends \Users\Site\Controllers\Auth {
     
 
     function beforeRoute() {
+     
+
+
         $session = \Base::instance()->get('SESSION.user');
         
         if(@$session->_id) {
