@@ -48,6 +48,15 @@ class Attendees extends Eventbase
             $this->filters['_id'] = new \MongoId((string) $filter_id);
         }
 
+        $filter_profile_complete = $this->getState('filter.profile.complete');
+
+        if (strlen($filter_profile_complete))
+        {
+            $this->filters['first_name'] = array('$ne' => null);
+            $this->filters['last_name'] = array('$ne' => null);
+            $this->filters['phone'] = array('$ne' => null);
+        }
+
 
         $filter_eventid = $this->getState('filter.eventid');
 
@@ -127,6 +136,58 @@ class Attendees extends Eventbase
         }*/
     
         return $this->filters;
+    }
+
+      public function getTotal()
+    {
+        
+        $filters = $this->getFilters();
+        $mapper = $this->getMapper();
+        $count = $mapper->count($filters);
+    
+        return $count;
+    }
+
+    function getTotalCount() {
+        $this->emptyState();
+        return $this->getTotal();
+    }
+
+
+        public function prepareItem($item) {
+           
+
+            return $item;
+
+        }
+
+
+      public function getRandomItem( $refresh=false )
+    {
+        $filters = $this->getFilters();
+        $options = $this->getOptions();
+        
+        $total = (int) $this->getTotal();
+        $skip = rand(0,$total);
+
+        $mapper = $this->getMapper();
+        $options['limit'] = 1;
+        if($skip !=0 || $skip !=1){
+           $options['offset'] = $skip; 
+        }
+        
+        $items = $mapper->find($filters, $options);
+        if(@$items[0]){
+             $item = $items[0];
+            $item = $this->prepareItem($item);
+
+        return $item;
+        } else {
+            return $items ;
+        }
+       
+        
+       
     }
 
 }

@@ -75,7 +75,7 @@ switch ($global_app_name)
         $f3->route('GET /games/raffle', '\Msft\Controllers\Games\Raffle->display');
         $f3->route('POST /games/raffle/play', '\Msft\Controllers\Games\Raffle->play');
         $f3->route('GET /games/raffle/winners', '\Msft\Controllers\Games\Raffle->winners');
-
+        $f3->route('GET /games/raffle/nomorewinners', '\Msft\Controllers\Games\Raffle->nomorewinners');
         $f3->route('GET /prizepatrol', '\Msft\Controllers\Prizepatrol->display');
 
 	    $f3->route('GET|POST /logout', function() {
