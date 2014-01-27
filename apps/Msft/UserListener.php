@@ -1,7 +1,7 @@
 <?php 
 namespace Msft;
 
-class UserListener extends \Prefab 
+class Userlistener extends \Prefab 
 {
     public function onUserSignup( $event )
     {   

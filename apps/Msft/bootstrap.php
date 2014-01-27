@@ -6,8 +6,8 @@ switch ($global_app_name)
 {
     case "site":
         // register event listener
-        \Dsc\System::instance()->getDispatcher()->addListener(\Msft\UserListener::instance());
-        \Dsc\System::instance()->getDispatcher()->addListener(\Msft\PusherListener::instance());
+        \Dsc\System::instance()->getDispatcher()->addListener(\Msft\Userlistener::instance());
+        \Dsc\System::instance()->getDispatcher()->addListener(\Msft\Pusherlistener::instance());
         //fixing a view bug where I shouldn't call my app Site
         
         //
