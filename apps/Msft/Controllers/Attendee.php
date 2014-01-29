@@ -147,6 +147,8 @@ class Attendee extends BaseAuth
                 break;
         }
 
+
+        $flash->store(array());
         $this->setRedirect( $route );
         
         return $this;
