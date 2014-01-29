@@ -42,8 +42,3 @@
             </div>
         </div>
     </div>
-
-   
-<pre> File located
-<?php echo __FILE__; ?>
-</pre>
