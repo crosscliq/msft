@@ -258,7 +258,7 @@ $maps = new \Dash\Models\Bingmap;?>
           </div>
         </div>            
 </section>
-
+<?php /*
 <section id="attendees">
 <h1>Attendees</h1>
 
@@ -266,3 +266,4 @@ $maps = new \Dash\Models\Bingmap;?>
 <section id="users"> 
 <h1>Users</h1>
 </section>
+*/ ?>

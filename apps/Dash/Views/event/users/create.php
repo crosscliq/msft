@@ -1,5 +1,5 @@
 
-<form id="detail-form" action="" class="form-horizontal" method="post">
+<form id="detail-form"  class="form-horizontal" method="post">
 
     <div class="row">
         <div class="col-md-12">
@@ -36,15 +36,14 @@
                 <li>
                     <a href="#tab-groups" data-toggle="tab"> Groups </a>
                 </li>
-               
+              
             </ul>
             
             <div class="tab-content">
 
                 <div class="tab-pane active" id="tab-basics">
                 
-                    
-                    <!-- /.form-group -->
+                  
         
                     <div class="form-group">
         
@@ -80,7 +79,31 @@
                         <!-- /.col -->
         
                     </div>
-                    <!-- /.form-group -->   
+                    <!-- /.form-group -->
+                    
+                    <div class="form-group">
+        
+                        <label class="col-md-3">New Password</label>
+        
+                        <div class="col-md-7">
+                            <input type="password" name="new_password" class="form-control" autocomplete="off" />
+                        </div>
+                        <!-- /.col -->
+        
+                    </div>
+                    <!-- /.form-group -->
+                    
+                    <div class="form-group">
+        
+                        <label class="col-md-3">Confirm New Password</label>
+        
+                        <div class="col-md-7">
+                            <input type="password" name="confirm_new_password" class="form-control" autocomplete="off" />
+                        </div>
+                        <!-- /.col -->
+        
+                    </div>
+                    <!-- /.form-group -->
                                  
                 </div>
                 <!-- /.tab-pane -->
@@ -140,8 +163,7 @@
                 
                 </div>
                 <!-- /.tab-pane -->
-                
-              
+             
                 
             </div>
             <!-- /.tab-content -->
