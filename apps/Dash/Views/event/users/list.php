@@ -1,6 +1,8 @@
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
 <?php //echo \Dsc\Debug::dump( $list ); ?>
+<a class="btn btn-sucess pull-right" href="./<?php echo $PARAMS['eventid']?>/user/create">New User</a>
 
+<br clear="both"><br>
 <form id="list-form" action="./admin/users" method="post">
 
     <div class="row datatable-header">

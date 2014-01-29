@@ -20,7 +20,7 @@ class Roles extends \Dash\Controllers\BaseAuth
         
         $view = new \Dsc\Template;
         $view->setLayout('event.php');
-        echo $view->render('Dash/Views::event/Roles/list.php');
+        echo $view->render('Dash/Views::event/roles/list.php');
     }
 
 }
