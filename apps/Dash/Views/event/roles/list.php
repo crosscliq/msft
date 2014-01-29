@@ -1,4 +1,6 @@
+<a class="btn btn-sucess pull-right" href="./<?php echo $PARAMS['eventid']?>/role/create">New Role</a>
 
+<br clear="both"><br>
 <form id="searchForm" action="" method="post">
 
     <div class="row datatable-header">

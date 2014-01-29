@@ -1,9 +1,6 @@
-<?php //echo \Dsc\Debug::dump( $state, false ); ?>
-<?php echo \Dsc\Debug::dump( $list, false ); ?>
-<pre>
-    
-    <?php echo __FILE__; ?>
-</pre>
+<a class="btn btn-sucess pull-right" href="./<?php echo $PARAMS['eventid']?>/prize/create">New Prize</a>
+
+<br clear="both"><br>
 
 <form id="searchForm" action="./admin/blog/posts" method="post">
 

@@ -56,7 +56,7 @@ class Attendee extends \Dash\Controllers\BaseAuth
 
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::attendees/create.php');
+        echo $view->render('Dash/Views::event/attendees/create.php');
     }
     
      protected function displayEdit()
@@ -65,7 +65,7 @@ class Attendee extends \Dash\Controllers\BaseAuth
         $f3->set('pagetitle', 'Edit Attendees');
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::attendees/edit.php');
+        echo $view->render('Dash/Views::event/attendees/edit.php');
     }
 
     //reroute this to  the \Dash\
@@ -87,6 +87,6 @@ class Attendee extends \Dash\Controllers\BaseAuth
         $f3->set('pagetitle', 'Edit Attendees');
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::attendees/edit.php');
+        echo $view->render('Dash/Views::event/attendees/edit.php');
     }
 }
