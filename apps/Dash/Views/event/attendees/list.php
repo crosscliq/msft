@@ -33,12 +33,12 @@
     <table class="table table-striped table-bordered table-hover table-highlight table-checkable">
 		<thead>
 			<tr>
-			    <th class="checkbox-column"><input type="checkbox" class="icheck-input"></th>
+			  
 				<th data-sortable="metadata.title">First Name</th>
 				<th>Last Name</th>
 				<th>Phone</th>
 				<th>Email</th>
-				<th data-sortable="publication.start_date">Status</th>
+				
 				<th class="col-md-1"></th>
 			</tr>
 		</thead>
@@ -47,14 +47,12 @@
         <?php if (!empty($list['subset'])) { ?>
     
         <?php foreach ($list['subset'] as $item) { ?>
-<?php echo \Dsc\Debug::dump( $item, false ); ?>
+
             <tr>
-                <td class="checkbox-column">
-                    <input type="checkbox" class="icheck-input" name="ids[]" value="<?php echo $item->id; ?>">
-                </td>
+                
                             
                 <td class="">
-                    <a href="./admin/blog/post/edit/<?php echo $item->id; ?>">
+                    <a href="./<?php echo $PARAMS['eventid'] ?>/attendee/edit/<?php echo $item->id; ?>">
                     <?php echo $item->{'first_name'}; ?>
                     </a>             
                 </td>
@@ -70,15 +68,9 @@
                 <td class="">
                     <?php echo $item->{'email'}; ?>
                 </td>
-                
-                <td class="">
-                    <div><?php echo ucwords( $item->{'publication.status'} ); ?></div>
-                    <div><?php if ($item->{'publication.start_date'}) { echo "Up: " . $item->{'publication.start_date'}; } ?></div>
-                    <div><?php if ($item->{'publication.end_date'}) { echo "Down: " . $item->{'publication.end_date'}; } ?></div>
-                </td>
                                 
                 <td class="text-center">
-                    <a class="btn btn-s btn-success" href="./admin/blog/post/edit/<?php echo $item->id; ?>">
+                    <a class="btn btn-s btn-success" href="./<?php echo $PARAMS['eventid'] ?>/attendee/edit/<?php echo $item->id; ?>">
                         <i class="icon-edit"></i>
                     </a>
                     &nbsp;

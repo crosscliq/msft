@@ -9,6 +9,7 @@ class Attendees extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('subtitle', '');
         
         $model = new \Dash\Models\Event\Attendees;
+        $model->setState('filter.profile.complete', 1);
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         

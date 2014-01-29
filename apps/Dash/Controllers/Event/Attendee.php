@@ -1,7 +1,7 @@
 <?php 
 namespace Dash\Controllers\Event;
 
-class Attendee extends BaseAuth 
+class Attendee extends \Dash\Controllers\BaseAuth 
 {
     use \Dsc\Traits\Controllers\CrudItem;
 
@@ -14,6 +14,15 @@ class Attendee extends BaseAuth
     {
         $model = new \Dash\Models\Event\Attendees;
         return $model; 
+    }
+    public function __construct() {
+        $f3 = \Base::instance();
+        $this->list_route = '/'. $f3->get('PARAMS.eventid').'/attendees/';
+        $this->create_item_route = '/'. $f3->get('PARAMS.eventid').'/attendee/create';
+        $this->get_item_route = '/'. $f3->get('PARAMS.eventid').'/attendee/view/{id}';
+        $this->edit_item_route = '/'. $f3->get('PARAMS.eventid').'/attendee/edit/{id}';
+
+        parent::__construct();
     }
     
     protected function getItem() 

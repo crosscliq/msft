@@ -1,7 +1,7 @@
 <?php 
 namespace Dash\Controllers\Event;
 
-class User extends BaseAuth 
+class User extends \Dash\Controllers\BaseAuth 
 {
     use \Dsc\Traits\Controllers\CrudItem;
 
@@ -10,6 +10,17 @@ class User extends BaseAuth
     protected $get_item_route = '/user/view/{id}';    
     protected $edit_item_route = '/user/edit/{id}';
     
+    public function __construct() {
+        $f3 = \Base::instance();
+        $this->list_route = '/'. $f3->get('PARAMS.eventid').'/users/';
+        $this->create_item_route = '/'. $f3->get('PARAMS.eventid').'/user/create';
+        $this->get_item_route = '/'. $f3->get('PARAMS.eventid').'/user/view/{id}';
+        $this->edit_item_route = '/'. $f3->get('PARAMS.eventid').'/user/edit/{id}';
+
+        parent::__construct();
+    }
+
+
     protected function getModel() 
     {
         $model = new \Dash\Models\Event\Users;
@@ -47,16 +58,16 @@ class User extends BaseAuth
 
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::user/create.php');
+        echo $view->render('Dash/Views::event/users/create.php');
     }
     
      protected function displayEdit()
     {
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit User');
-        
+       
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::user/edit.php');
+        echo $view->render('Dash/Views::event/users/edit.php');
     }
 
     //reroute this to  the \Dash\
@@ -78,6 +89,6 @@ class User extends BaseAuth
         $f3->set('pagetitle', 'Edit User');
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::user/edit.php');
+        echo $view->render('Dash/Views::event/user/edit.php');
     }
 }

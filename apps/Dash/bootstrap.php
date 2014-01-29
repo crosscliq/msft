@@ -67,7 +67,7 @@ switch ($global_app_name)
         $f3->route('GET /@eventid/user/create', '\Dash\Controllers\Event\User->create');
         $f3->route('GET /@eventid/user/read/@id', '\Dash\Controllers\Event\User->add');
         $f3->route('GET /@eventid/user/edit/@id', '\Dash\Controllers\Event\User->edit');
-        $f3->route('POST /@eventid/user/update/@id', '\Dash\Controllers\Event\User->update');
+        $f3->route('POST /@eventid/user/edit/@id', '\Dash\Controllers\Event\User->update');
 
         // EVENT USER ROLES ROUTES
         $f3->route('GET|POST /@eventid/roles', '\Dash\Controllers\Event\Roles->display');
@@ -76,7 +76,13 @@ switch ($global_app_name)
         $f3->route('GET /@eventid/role/create', '\Dash\Controllers\Event\Role->create');
         $f3->route('GET /@eventid/role/read/@id', '\Dash\Controllers\Event\Role->add');
         $f3->route('GET /@eventid/role/edit/@id', '\Dash\Controllers\Event\Role->edit');
-        $f3->route('POST /@eventid/role/update/@id', '\Dash\Controllers\Event\Role->update');
+        $f3->route('POST /@eventid/role/edit/@id', '\Dash\Controllers\Event\Role->update');
+
+        $f3->route('GET /@eventid/tags/dashboard', '\Dash\Controllers\Event\Tags->dashboard');
+        $f3->route('GET /@eventid/tags/download/@list', '\Dash\Controllers\Event\Tags->download');
+         $f3->route('GET /@eventid/tags/generate', '\Dash\Controllers\Event\Tags->generate');
+        $f3->route('POST /@eventid/tags/generate', '\Dash\Controllers\Event\Tags->generateTags');
+
 
         $f3->route('GET|POST /users', '\Dash\Controllers\Users->display');
         $f3->route('GET|POST /users/@page', '\Dash\Controllers\Users->display');

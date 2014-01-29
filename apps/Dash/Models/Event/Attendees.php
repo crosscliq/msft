@@ -58,6 +58,16 @@ Class Attendees Extends Eventbase {
         }
 
 
+        $filter_profile_complete = $this->getState('filter.profile.complete');
+
+        if (strlen($filter_profile_complete))
+        {
+            $this->filters['first_name'] = array('$ne' => null);
+            $this->filters['last_name'] = array('$ne' => null);
+            $this->filters['phone'] = array('$ne' => null);
+        }
+
+
         $filter_eventid = $this->getState('filter.eventid');
 
         if (strlen($filter_eventid))
@@ -65,6 +75,12 @@ Class Attendees Extends Eventbase {
             $this->filters['eventid'] = $filter_eventid;
         }
 
+        $filter_ticket_id = $this->getState('filter.ticket_id');
+
+        if (strlen($filter_eventid))
+        {
+            $this->filters['ticket.id'] = $filter_ticket_id;
+        }
 
         $filter_slug = $this->getState('filter.slug');
 
@@ -73,34 +89,33 @@ Class Attendees Extends Eventbase {
             $this->filters['slug'] = $filter_slug;
         }
 
-        
-      /*  $filter_username_contains = $this->getState('filter.username-contains', null, 'username');
-        if (strlen($filter_username_contains))
-        {
-            $key =  new \MongoRegex('/'. $filter_username_contains .'/i');
-            $this->filters['username'] = $key;
-        }
-        
-        $filter_email_contains = $this->getState('filter.email-contains');
-        if (strlen($filter_email_contains))
-        {
-            $key =  new \MongoRegex('/'. $filter_email_contains .'/i');
-            $this->filters['email'] = $key;
-        }
-       
+         $filter_first_name = $this->getState('filter.first_name');
 
-        $filter_password = $this->getState('filter.password');
-        if (strlen($filter_password))
+        if (strlen($filter_first_name))
         {
-            $this->filters['password'] = $filter_password;
+            $this->filters['first_name'] = $filter_first_name;
         }
 
-        $filter_group = $this->getState('filter.group');
+        $filter_last_name = $this->getState('filter.last_name');
 
-        if (strlen($filter_group))
+        if (strlen($filter_last_name))
         {
-            $this->filters['groups.id'] = new \MongoId((string) $filter_group);
-        }*/
+            $this->filters['last_name'] = $filter_last_name;
+        }
+
+        $filter_phone = $this->getState('filter.phone');
+
+        if (strlen($filter_phone))
+        {
+            $this->filters['phone'] = $filter_phone;
+        }
+
+        $filter_email = $this->getState('filter.email');
+
+        if (strlen($filter_email))
+        {
+            $this->filters['email'] = $filter_email;
+        }
     
         return $this->filters;
     }

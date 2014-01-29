@@ -1,7 +1,7 @@
 <?php 
 namespace Dash\Controllers\Event;
 
-class Role extends BaseAuth 
+class Role extends \Dash\Controllers\BaseAuth
 {
     use \Dsc\Traits\Controllers\CrudItem;
 
@@ -12,8 +12,17 @@ class Role extends BaseAuth
     
     protected function getModel() 
     {
-        $model = new \Dash\Models\Event\Prize;
+        $model = new \Dash\Models\Event\Roles;
         return $model; 
+    }
+    public function __construct() {
+        $f3 = \Base::instance();
+        $this->list_route = '/'. $f3->get('PARAMS.eventid').'/roles/';
+        $this->create_item_route = '/'. $f3->get('PARAMS.eventid').'/role/create';
+        $this->get_item_route = '/'. $f3->get('PARAMS.eventid').'/role/view/{id}';
+        $this->edit_item_route = '/'. $f3->get('PARAMS.eventid').'/role/edit/{id}';
+
+        parent::__construct();
     }
     
     protected function getItem() 
@@ -47,7 +56,7 @@ class Role extends BaseAuth
 
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::role/create.php');
+        echo $view->render('Dash/Views::event/roles/create.php');
     }
     
      protected function displayEdit()
@@ -56,7 +65,7 @@ class Role extends BaseAuth
         $f3->set('pagetitle', 'Edit Role');
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::role/edit.php');
+        echo $view->render('Dash/Views::event/roles/edit.php');
     }
 
     //reroute this to  the \Dash\
@@ -78,6 +87,6 @@ class Role extends BaseAuth
         $f3->set('pagetitle', 'Edit Role');
         
         $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::role/edit.php');
+        echo $view->render('Dash/Views::event/roles/edit.php');
     }
 }

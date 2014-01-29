@@ -1,5 +1,5 @@
 
-<form id="detail-form" action="" class="form-horizontal" method="post">
+<form id="detail-form"  class="form-horizontal" method="post">
 
     <div class="row">
         <div class="col-md-12">

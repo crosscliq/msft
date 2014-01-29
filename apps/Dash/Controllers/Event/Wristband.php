@@ -16,6 +16,17 @@ class Wristband extends BaseAuth
         return $model; 
     }
     
+    public function __construct() {
+        $f3 = \Base::instance();
+        $this->list_route = '/'. $f3->get('PARAMS.eventid').'/wristbands/';
+        $this->create_item_route = '/'. $f3->get('PARAMS.eventid').'/wristband/create';
+        $this->get_item_route = '/'. $f3->get('PARAMS.eventid').'/wristband/view/{id}';
+        $this->edit_item_route = '/'. $f3->get('PARAMS.eventid').'/wristband/edit/{id}';
+
+        parent::__construct();
+    }
+
+
     protected function getItem() 
     {
         $f3 = \Base::instance();

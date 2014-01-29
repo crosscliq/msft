@@ -15,6 +15,15 @@ class Prize extends BaseAuth
         $model = new \Dash\Models\Event\Prize;
         return $model; 
     }
+     public function __construct() {
+        $f3 = \Base::instance();
+        $this->list_route = '/'. $f3->get('PARAMS.eventid').'/prizes/';
+        $this->create_item_route = '/'. $f3->get('PARAMS.eventid').'/prize/create';
+        $this->get_item_route = '/'. $f3->get('PARAMS.eventid').'/prize/view/{id}';
+        $this->edit_item_route = '/'. $f3->get('PARAMS.eventid').'/prize/edit/{id}';
+
+        parent::__construct();
+    }
     
     protected function getItem() 
     {
