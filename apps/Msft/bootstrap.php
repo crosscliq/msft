@@ -38,7 +38,7 @@ switch ($global_app_name)
         $f3->route('GET /attendee/create/@tagid', '\Msft\Controllers\Attendee->create');
         $f3->route('POST /attendee/create/@tagid', '\Msft\Controllers\Attendee->add');
         $f3->route('GET /attendee/edit/@id', '\Msft\Controllers\Attendee->edit');
-        $f3->route('GET /attendee/customer/@tagid', '\Msft\Controllers\Attendee->attendee');
+        $f3->route('GET /attendee/customer/@id', '\Msft\Controllers\Attendee->attendee');
         $f3->route('POST /attendee/customer/update/@id', '\Msft\Controllers\Attendee->update');
         $f3->route('GET /attendee/confirm/@id', '\Msft\Controllers\Attendee->confirm');
         // TODO set some app-specific settings, if desired

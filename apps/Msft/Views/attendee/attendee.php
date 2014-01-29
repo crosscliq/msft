@@ -20,11 +20,11 @@
                                         </div>
                                         <label>Email</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="email" type="text" placeholder="Email Address" autofocus="" value="<?php echo $flash->old('email'); ?>">
+                                            <input name="email" type="email" placeholder="Email Address" autofocus="" value="<?php echo $flash->old('email'); ?>">
                                         </div>
                                         <label>Phone</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="phone" type="text" placeholder="Phone" value="<?php echo $flash->old('phone'); ?>" >
+                                            <input name="phone" type="tel" placeholder="Phone" value="<?php echo $flash->old('phone'); ?>" >
                                         </div>  
         <br/><br/>
            <legend></legend>

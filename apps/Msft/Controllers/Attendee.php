@@ -291,7 +291,9 @@ class Attendee extends BaseAuth
         $f3->set('tagid',$f3->get('PARAMS.tagid'));
 
         $model = $this->getModel();
+        $model->setState('filter.id',);
         $flash = \Dsc\Flash::instance();
+   
         $item = $this->getItem();
 
         $f3->set('item',$item);

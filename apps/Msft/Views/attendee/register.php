@@ -16,9 +16,9 @@
                                                 </select>
                                              </div><br/><br/>
                                              <div class="input-control range">
-                                        <label>Age Estimate ( 10 - 110 )</label>
+                                        <label>Age Estimate ( 10 - 80 )</label>
                                              <span id="ageval"></span>
-                                             <input type="range" name="age" min="10" max="110" value="<?php echo $flash->old('age'); ?>" onchange="updateRange(value)">
+                                             <input type="range" name="age" min="10" max="80" step="5" value="<?php echo $flash->old('age'); ?>" onchange="updateRange(value)">
                                              </div><br/><br/>
                                              <div class="input-control text">
 						<input name="zipcode" type="text" value="" placeholder="Zip Code"/>
