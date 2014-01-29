@@ -5,7 +5,7 @@
           <div class="row">
             <div class="span12">
              <br/>
-                <form method="post" action="<?php echo $PARAMS[0]?>">
+                <form method="post" action="<?php echo $PARAMS[0]?>" autocomplete="off" >
                         <fieldset>
                                 <legend>Customer Profile</legend>
                                              <div class="input-control select">
@@ -21,7 +21,7 @@
                                              <input type="range" name="age" min="10" max="110" value="<?php echo $flash->old('age'); ?>" onchange="updateRange(value)">
                                              </div><br/><br/>
                                              <div class="input-control text">
-						<input type="text" value="" placeholder="Zip Code"/>
+						<input name="zipcode" type="text" value="" placeholder="Zip Code"/>
                                              </div><br/><br/><br/>
                                         <input type="hidden" name="tagid" value="<?=$tagid?>">
                                         <input type="hidden" name="submitType" value="save_customer">

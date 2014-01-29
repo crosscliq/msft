@@ -7,7 +7,7 @@
 	  <div class="row">
 	    <div class="span12">
 	    	     <br/>
-		<form method="post" action="/attendee/customer/update/<?php echo $item->_id; ?>">
+		<form method="post" action="/attendee/customer/update/<?php echo $item->_id; ?>" autocomplete="off" >
 			<fieldset>
                 <legend>Customer Info ( required )</legend><br>
                                         <label>First Name</label>
