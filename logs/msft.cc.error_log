@@ -3668,3 +3668,404 @@ Stack trace:
 #2 [internal function]: Base->{closure}(Object(ErrorException))
 #3 {main}
   thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 173.236.123.99, server: ontario.msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/27 22:37:29 [error] 22736#0: *1202 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/01/27 22:37:29 [error] 22736#0: *1202 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/01/27 22:37:33 [error] 22736#0: *1210 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/01/27 22:37:57 [error] 22736#0: *1210 FastCGI sent in stderr: "PHP message: Unable to open event/Roles/list.php
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:90 View->render('event/Roles/list.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:119 Dsc\Template->renderLayout('Dash/Views::event/Roles/list.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Dash/Controllers/Event/Roles.php:23 Dsc\Template->render('Dash/Views::event/Roles/list.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Dash\Controllers\Event\Roles->display',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'dashboard.msft.cc','Connection'=>'keep-alive','Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent'=>'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36','Referer'=>'http://dashboard.msft.cc/ontario/users','Accept-Encoding'=>'gzip,deflate,sdch','Accept-Language'=>'en-US,en;q=0.8,it;q=0.6','Cook...
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /ontario/roles HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/ontario/users"
+2014/01/27 22:45:17 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:45:17 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:11 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:11 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:12 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:12 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:13 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:13 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:13 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:13 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:13 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:46:13 [error] 22736#0: *1231 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\PusherListener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 10
+PHP message: Fatal error: Class 'Msft\PusherListener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:10" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:47:48 [error] 22736#0: *1254 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\Userlistener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 9
+PHP message: Fatal error: Class 'Msft\Userlistener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:9" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:47:49 [error] 22736#0: *1254 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\Userlistener' not found in /var/www/msft.cc/apps/Msft/bootstrap.php on line 9
+PHP message: Fatal error: Class 'Msft\Userlistener' not found
+PHP message: - /var/www/msft.cc/apps/Msft/bootstrap.php:9" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:49:03 [error] 22736#0: *1257 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Minify\Factory' not found in /var/www/msft.cc/apps/Theme/bootstrap.php on line 35
+PHP message: Fatal error: Class 'Minify\Factory' not found
+PHP message: - /var/www/msft.cc/apps/Theme/bootstrap.php:35" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:49:03 [error] 22736#0: *1257 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Minify\Factory' not found in /var/www/msft.cc/apps/Theme/bootstrap.php on line 35
+PHP message: Fatal error: Class 'Minify\Factory' not found
+PHP message: - /var/www/msft.cc/apps/Theme/bootstrap.php:35" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:51:38 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/27 22:51:38 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/27 22:51:38 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/27 22:51:38 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/27 22:51:41 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 22:51:41 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 22:51:41 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 22:51:43 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 22:51:43 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 22:51:43 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 22:51:51 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 22:51:51 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 22:51:51 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 22:52:05 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/ticketing"
+2014/01/27 22:52:06 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/ticketing"
+2014/01/27 22:52:06 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/ticketing"
+2014/01/27 22:52:24 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:52:24 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:52:24 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:52:30 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:52:30 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:52:30 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:53:06 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 22:53:06 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 22:53:07 [error] 22736#0: *1260 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 22:53:11 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 22:53:11 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 22:53:11 [error] 22736#0: *1263 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 22:58:50 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:58:50 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:58:50 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:58:52 [error] 22734#0: *1375 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:58:52 [error] 22734#0: *1375 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:58:53 [error] 22734#0: *1375 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 22:58:55 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:58:55 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:58:55 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:59:38 [error] 22734#0: *1375 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:59:38 [error] 22734#0: *1375 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:59:38 [error] 22734#0: *1375 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 22:59:42 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/mc"
+2014/01/27 22:59:42 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/mc"
+2014/01/27 22:59:42 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/mc"
+2014/01/27 23:00:02 [error] 22734#0: *1379 FastCGI sent in stderr: "PHP message: Call to undefined method Dsc\Controller::display
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Games\Raffle->display',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'ontario.msft.cc','Connection'=>'keep-alive','Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','User-Agent'=>'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36','Referer'=>'http://ontario.msft.cc/mc','Accept-Encoding'=>'gzip,deflate,sdch','Accept-Language'=>'en-US,en;q=0.8','Cooki...
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /games/raffle HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/mc"
+2014/01/27 23:51:08 [error] 22734#0: *1434 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/27 23:51:08 [error] 22734#0: *1434 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/27 23:51:08 [error] 22734#0: *1434 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/27 23:51:10 [error] 22734#0: *1433 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:51:10 [error] 22734#0: *1433 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:51:10 [error] 22734#0: *1433 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:51:13 [error] 22734#0: *1434 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/mc"
+2014/01/27 23:51:13 [error] 22734#0: *1434 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/mc"
+2014/01/27 23:51:13 [error] 22734#0: *1434 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/mc"
+2014/01/27 23:52:32 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/games/raffle"
+2014/01/27 23:52:32 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/games/raffle"
+2014/01/27 23:52:32 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/games/raffle"
+2014/01/27 23:53:00 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/games/raffle"
+2014/01/27 23:53:00 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/games/raffle"
+2014/01/27 23:53:00 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/games/raffle"
+2014/01/27 23:53:07 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:07 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:07 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:09 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 23:53:09 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 23:53:09 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/27 23:53:15 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:15 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:15 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:17 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 23:53:17 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 23:53:17 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/27 23:53:19 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:19 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:19 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:21 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/meetgreet"
+2014/01/27 23:53:21 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/meetgreet"
+2014/01/27 23:53:21 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/meetgreet"
+2014/01/27 23:53:22 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:22 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:22 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:25 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 23:53:25 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 23:53:25 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/27 23:53:29 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:29 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:29 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:32 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 23:53:32 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 23:53:32 [error] 22734#0: *1475 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/transfer"
+2014/01/27 23:53:35 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:35 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/27 23:53:35 [error] 22734#0: *1472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:07:11 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/28 01:07:11 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/28 01:07:12 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/28 01:07:15 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:07:15 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:07:15 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:07:18 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:07:18 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:07:18 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:07:22 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/28 01:07:22 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/28 01:07:22 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/gatekeeper"
+2014/01/28 01:07:27 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/28 01:07:27 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/28 01:07:27 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/prizepatrol"
+2014/01/28 01:07:41 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:07:41 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:07:41 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:07:45 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/ticketing"
+2014/01/28 01:07:45 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/ticketing"
+2014/01/28 01:07:45 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/ticketing"
+2014/01/28 01:08:24 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:08:24 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:08:24 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:08:27 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:08:27 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:08:27 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee"
+2014/01/28 01:08:29 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:08:29 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:08:29 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:08:31 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/meetgreet"
+2014/01/28 01:08:31 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/meetgreet"
+2014/01/28 01:08:31 [error] 22734#0: *1606 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/meetgreet"
+2014/01/28 01:08:34 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:08:34 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 01:08:35 [error] 22734#0: *1603 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.177.38.16, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/roles"
+2014/01/28 04:57:12 [error] 22734#0: *1734 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 174.143.204.138, server: ontario.msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/28 10:04:41 [error] 22734#0: *1736 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /proxy.txt)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 111.73.45.204, server: ontario.msft.cc, request: "GET http://www.daydaydata.com/proxy.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "www.daydaydata.com"
+2014/01/28 18:45:07 [error] 22734#0: *1738 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/login"
+2014/01/28 18:45:07 [error] 22734#0: *1738 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/login"
+2014/01/28 18:45:07 [error] 22734#0: *1739 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/28 18:45:07 [error] 22734#0: *1738 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/28 18:45:07 [error] 22734#0: *1738 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/28 19:16:37 [error] 22734#0: *1752 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/28 19:16:37 [error] 22734#0: *1754 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/28 19:16:37 [error] 22734#0: *1754 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/28 19:16:37 [error] 22734#0: *1754 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/"
+2014/01/29 02:49:59 [error] 17404#0: *6 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 66.29.190.59, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/01/29 02:50:18 [error] 17405#0: *10 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 50.56.228.100, server: msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232", referrer: "http://23.253.33.232/minify/css"
+2014/01/29 02:50:18 [error] 17405#0: *10 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 50.56.228.100, server: msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232", referrer: "http://23.253.33.232/minify/css"
+2014/01/29 02:51:36 [error] 17405#0: *29 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 50.56.228.100, server: msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232", referrer: "http://23.253.33.232/minify/css"
+2014/01/29 02:51:36 [error] 17405#0: *29 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 50.56.228.100, server: msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232", referrer: "http://23.253.33.232/minify/css"
+2014/01/29 02:51:38 [error] 17405#0: *29 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 50.56.228.100, server: msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232", referrer: "http://23.253.33.232/minify/css"
+2014/01/29 02:51:38 [error] 17405#0: *29 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 50.56.228.100, server: msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232", referrer: "http://23.253.33.232/minify/css"
+2014/01/29 02:52:49 [error] 17405#0: *49 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/01/29 02:52:49 [error] 17405#0: *61 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/01/29 02:52:49 [error] 17405#0: *61 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/01/29 03:47:33 [error] 17405#0: *78 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 58.215.56.110, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/01/29 05:01:44 [error] 17405#0: *80 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/login"
+2014/01/29 05:01:44 [error] 17405#0: *80 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/login"
+2014/01/29 05:01:44 [error] 17405#0: *80 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/login"
+2014/01/29 05:01:45 [error] 17405#0: *80 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/29 05:05:10 [error] 17405#0: *95 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/login"
+2014/01/29 05:05:10 [error] 17405#0: *95 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/login"
+2014/01/29 05:05:10 [error] 17405#0: *95 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.svg)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 67.161.221.113, server: ontario.msft.cc, request: "GET /fonts/iconFont.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/login"
+2014/01/29 05:05:59 [error] 17405#0: *110 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 66.29.190.59, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/29 05:05:59 [error] 17405#0: *107 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 66.29.190.59, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/01/29 05:05:59 [error] 17405#0: *110 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 66.29.190.59, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/minify/css"
+2014/01/29 05:05:59 [error] 17405#0: *107 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 66.29.190.59, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/minify/css"
+2014/01/29 05:06:05 [error] 17405#0: *107 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.woff)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 66.29.190.59, server: ontario.msft.cc, request: "GET /fonts/iconFont.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/minify/css"
+2014/01/29 05:06:05 [error] 17405#0: *107 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /fonts/iconFont.ttf)
+PHP message: - index.php:59 Base->run()" while reading response header from upstream, client: 66.29.190.59, server: ontario.msft.cc, request: "GET /fonts/iconFont.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/minify/css"
