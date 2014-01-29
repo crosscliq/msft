@@ -292,7 +292,9 @@ class Attendee extends BaseAuth
 
         $model = $this->getModel();
         $flash = \Dsc\Flash::instance();
-        $item = $this->getItem();
+	$flash->store(array());        
+	
+$item = $this->getItem();
 
         $f3->set('item',$item);
         if (method_exists($item, 'cast')) {
