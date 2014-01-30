@@ -54,6 +54,8 @@ switch ($global_app_name)
         $f3->route('GET /transfer/origin/@id', '\Msft\Controllers\Transfer->origin');
         $f3->route('GET /transfer/destination/@tagid', '\Msft\Controllers\Transfer->destination');
         $f3->route('GET /transfer/notempty/@tagid', '\Msft\Controllers\Transfer->notempty');
+        $f3->route('GET /transfer/empty/@tagid', '\Msft\Controllers\Transfer->empty');
+
 
          //Meet greet Reg pages
         $f3->route('GET /meetgreet', '\Msft\Controllers\Meetgreets->display');

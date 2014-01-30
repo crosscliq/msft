@@ -24,6 +24,14 @@ class Transfer extends BaseAuth
         $view = new \Dsc\Template;
         echo $view->render('Msft/Views::transfer/notempty.php');
     }
+
+     public function empty() {
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'Transfer Wristband');
+        
+        $view = new \Dsc\Template;
+        echo $view->render('Msft/Views::transfer/empty.php');
+    }
     
     public function origin() {
         $f3 = \Base::instance();

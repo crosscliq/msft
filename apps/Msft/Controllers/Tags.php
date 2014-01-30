@@ -157,9 +157,11 @@ class Tags extends BaseAuth
                 if($ticket->redeemed) {
                    \Base::instance()->reroute('/gatekeeper/ticket/bad/'.$ticket->_id);  
                 } else {
-                    $ticket->redeemed = \Dsc\Mongo\Metastamp::getDate('now');
-                    $ticket->status = 'redeemed';
-                    $ticket->save();
+                    $redeemed = \Dsc\Mongo\Metastamp::getDate('now');
+                    $status = 'redeemed';
+                  
+                    $ticketModel->update($ticket, array('redeemed' => $redeemed, 'status' => $status ));
+
 
                     $tag->{'ticket.status'} = 'redeemed';
                     $tag->save();  
