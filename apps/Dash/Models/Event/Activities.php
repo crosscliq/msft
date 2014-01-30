@@ -18,12 +18,14 @@ Class Activities Extends Eventbase {
         parent::__construct($config);
     }
 
-
-    public function getPrefab() {
-        $prefab = New \Dash\Models\Prefabs\Activity();
+    public function prefab( $source=array(), $options=array() )
+    {
+        $prefab = new \Dash\Models\Prefabs\Activity($source, $options);
+        
         return $prefab;
     }
-    
+
+   
     protected function fetchFilters()
     {   
        
@@ -50,19 +52,19 @@ Class Activities Extends Eventbase {
             $this->filters['_id'] = new \MongoId((string) $filter_id);
         }
 
-        $filter_tagid = $this->getState('filter.tagid');
+        $filter_type = $this->getState('filter.type');
         
-        if (strlen($filter_tagid))
+        if (strlen($filter_type))
         {
-            $this->filters['tagid'] = $filter_tagid;
+            $this->filters['type'] = $filter_type;
         }
 
 
-        $filter_eventid = $this->getState('filter.eventid');
-
-        if (strlen($filter_eventid))
+        $filter_action = $this->getState('filter.action');
+        
+        if (strlen($filter_action))
         {
-            $this->filters['eventid'] = $filter_eventid;
+            $this->filters['action'] = $filter_action;
         }
 
 
@@ -78,8 +80,17 @@ Class Activities Extends Eventbase {
 
 
 
-    function addEvent() {
+    /**
+* An alias for the save command, used only for creating a new object
+*
+* @param array $values
+* @param array $options
+*/
+    public function create( $values, $options=array() )
+    {
+        $values = $this->prefab( $values, $options )->cast();
 
+        return $this->save( $values, $options );
     }
 
     

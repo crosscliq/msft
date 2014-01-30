@@ -105,151 +105,98 @@ $maps = new \Dash\Models\Bingmap;?>
 <div class="tab-content">
 	<div class="tab-pane active" id="activity-All">
               <div class="timeline-messages" id="activity-log"> 
+              <?php foreach ($event['activities']['all']['subset'] as $action) : ?>
+            
                 <!-- Comment -->
                 <div class="msg-time-chat"><i class="icon-user message-img" style="font-size:55px;"></i>
                   <div class="message-body msg-in"> <span class="arrow"></span>
                     <div class="text">
-                      <p class="attribution"><a href="#">John Doe</a> at 1:55pm, 13th Jan 2014</p>
-                      <p>Logged-In</p>
+                      <p class="attribution"><a href="#"><?php echo $action->{'type'}; ?></a> at <?php echo @$action->{'timestamp.local'}; ?></p>
+                      <p><?php echo $action->{'action'}; ?></p>
                     </div>
                   </div>
                 </div>
                 <!-- /comment --> 
-                
-                <!-- Comment -->
-                <div class="msg-time-chat"><i class="icon-trophy message-img" style="font-size:55px;"></i>
-                  <div class="message-body msg-out"> <span class="arrow"></span>
-                    <div class="text">
-                      <p class="attribution"> <a href="#">Dale Steyn</a> at 2:01pm, 14th Jan 2014</p>
-                      <p>Instant Winner</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /comment --> 
-                <!-- Comment -->
-                <div class="msg-time-chat"><i class="icon-trophy message-img" style="font-size:55px;"></i>
-                  <div class="message-body msg-out"> <span class="arrow"></span>
-                    <div class="text">
-                      <p class="attribution"> <a href="#">Dale Steyn</a> at 2:01pm, 14th Jan 2014</p>
-                      <p>Instant Winner</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /comment -->                 
-                
-                <div class="msg-time-chat" id="blank-activity"><i class="message-img" style="font-size:55px;"></i>
-                  <div class="message-body msg-in"> <span class="arrow"></span>
-                    <div class="text"> 
-                      <p class="attribution"><a href="#" class="name">hi</a> at <span class="timestamp">1:55pm, 13th April 2013</span></p>
-                      <p class="msg">Hello, How are you brother?</p>
-                    </div>
-                  </div>
-                </div>
+              
+                <?php endforeach; ?>
 
               </div>
 	</div>
 	<div class="tab-pane" id="activity-Tickets">
               <div class="timeline-messages"> 
+               <?php foreach ($event['activities']['tickets']['subset'] as $action) : ?>
+            
                 <!-- Comment -->
                 <div class="msg-time-chat"><i class="icon-user message-img" style="font-size:55px;"></i>
                   <div class="message-body msg-in"> <span class="arrow"></span>
                     <div class="text">
-                      <p class="attribution"><a href="#">John Doe</a> at 1:55pm, 13th April 2013</p>
-                      <p>Hello, How are you brother?</p>
+                      <p class="attribution"><a href="#"><?php echo $action->{'type'}; ?></a> at <?php echo @$action->{'timestamp.local'}; ?></p>
+                      <p><?php echo $action->{'action'}; ?></p>
                     </div>
                   </div>
                 </div>
                 <!-- /comment --> 
-                
-                <!-- Comment -->
-                <div class="msg-time-chat"><i class="icon-gift message-img" style="font-size:55px;"></i>
-                  <div class="message-body msg-out"> <span class="arrow"></span>
-                    <div class="text">
-                      <p class="attribution"> <a href="#">Dale Steyn</a> at 2:01pm, 13th April 2013</p>
-                      <p>I'm Fine, Thank you. What about you? How is going on?</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /comment --> 
+              
+                <?php endforeach; ?>
                 
               </div>
 	</div>
 	<div class="tab-pane" id="activity-Reg">
               <div class="timeline-messages"> 
+                <?php foreach ($event['activities']['attendees']['subset'] as $action) : ?>
+            
                 <!-- Comment -->
                 <div class="msg-time-chat"><i class="icon-user message-img" style="font-size:55px;"></i>
                   <div class="message-body msg-in"> <span class="arrow"></span>
                     <div class="text">
-                      <p class="attribution"><a href="#">John Doe</a> at 1:55pm, 13th April 2013</p>
-                      <p>Hello, How are you brother?</p>
+                      <p class="attribution"><a href="#"><?php echo $action->{'type'}; ?></a> at <?php echo @$action->{'timestamp.local'}; ?></p>
+                      <p><?php echo $action->{'action'}; ?></p>
                     </div>
                   </div>
                 </div>
                 <!-- /comment --> 
-                
-                <!-- Comment -->
-                <div class="msg-time-chat"><i class="icon-gift message-img" style="font-size:55px;"></i>
-                  <div class="message-body msg-out"> <span class="arrow"></span>
-                    <div class="text">
-                      <p class="attribution"> <a href="#">Dale Steyn</a> at 2:01pm, 13th April 2013</p>
-                      <p>I'm Fine, Thank you. What about you? How is going on?</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /comment --> 
+              
+                <?php endforeach; ?>
                 
               </div>
 	</div>
 	<div class="tab-pane" id="activity-Prizes">
               <div class="timeline-messages"> 
                 <!-- Comment -->
+                 <?php foreach ($event['activities']['prizes']['subset'] as $action) : ?>
+            
+                <!-- Comment -->
                 <div class="msg-time-chat"><i class="icon-user message-img" style="font-size:55px;"></i>
                   <div class="message-body msg-in"> <span class="arrow"></span>
                     <div class="text">
-                      <p class="attribution"><a href="#">John Doe</a> at 1:55pm, 13th April 2013</p>
-                      <p>Hello, How are you brother?</p>
+                      <p class="attribution"><a href="#"><?php echo $action->{'type'}; ?></a> at <?php echo @$action->{'timestamp.local'}; ?></p>
+                      <p><?php echo $action->{'action'}; ?></p>
                     </div>
                   </div>
                 </div>
                 <!-- /comment --> 
-                
-                <!-- Comment -->
-                <div class="msg-time-chat"><i class="icon-gift message-img" style="font-size:55px;"></i>
-                  <div class="message-body msg-out"> <span class="arrow"></span>
-                    <div class="text">
-                      <p class="attribution"> <a href="#">Dale Steyn</a> at 2:01pm, 13th April 2013</p>
-                      <p>I'm Fine, Thank you. What about you? How is going on?</p>
-                    </div>
-                  </div>  
-                </div>
-                <!-- /comment --> 
+              
+                <?php endforeach; ?>
                 
               </div>
 	</div>
 	<div class="tab-pane" id="activity-Users">
               <div class="timeline-messages"> 
+                 <!-- Comment -->
+                 <?php foreach ($event['activities']['users']['subset'] as $action) : ?>
+            
                 <!-- Comment -->
                 <div class="msg-time-chat"><i class="icon-user message-img" style="font-size:55px;"></i>
                   <div class="message-body msg-in"> <span class="arrow"></span>
-                    <div class="text"> 
-                      <p class="attribution"><a href="#">John Doe</a> at 1:55pm, 13th April 2013</p>
-                      <p class="msg">Hello, How are you brother?</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /comment --> 
-                
-                <!-- Comment -->
-                <div class="msg-time-chat"><i class="icon-gift message-img" style="font-size:55px;"></i>
-                  <div class="message-body msg-out"> <span class="arrow"></span>
                     <div class="text">
-                      <p class="attribution"> <a href="#">Dale Steyn</a> at 2:01pm, 13th April 2013</p>
-                      <p>I'm Fine, Thank you. What about you? How is going on?</p>
+                      <p class="attribution"><a href="#"><?php echo $action->{'type'}; ?></a> at <?php echo @$action->{'timestamp.local'}; ?></p>
+                      <p><?php echo $action->{'action'}; ?></p>
                     </div>
                   </div>
                 </div>
                 <!-- /comment --> 
-
+              
+                <?php endforeach; ?>
 
               </div>
 	</div>
@@ -258,6 +205,12 @@ $maps = new \Dash\Models\Bingmap;?>
           </div>
         </div>            
 </section>
+<pre>
+<?php var_dump($event['activities']); ?>
+</pre>
+
+
+
 <?php /*
 <section id="attendees">
 <h1>Attendees</h1>

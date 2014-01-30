@@ -148,7 +148,7 @@ class Attendee extends BaseAuth
         }
 
 
-        $flash->store(array());
+
         $this->setRedirect( $route );
         
         return $this;
@@ -171,9 +171,9 @@ class Attendee extends BaseAuth
         try {
             $values = $data; 
             unset($values['submitType']);
-            
+   
                 $this->item = $model->update($this->item, $values);
-                
+                        
                 if($this->item->tagid) {
                 $tags = new \Msft\Models\Tags();
                 $tag = $tags->setState('filter.id',$this->item->tagid)->getItem();

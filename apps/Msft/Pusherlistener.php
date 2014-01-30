@@ -16,10 +16,25 @@ class Pusherlistener extends \Prefab
 	 //	parent::__construct();
 	 }
 
-
-    public function onAfterSaveSiteModelsAttendees( $event )
+     
+    public function onAfterSaveMsftModelsActivity( $event )
     {   
-       // $mapper = $event->getArgument('mapper');
+        $mapper = $event->getArgument('mapper');
+        
+        $pusherEvent = 'Activity';
+        $pusherEvent .= ucfirst($mapper->type);
+        $pusherEvent .= ucfirst($mapper->action);
+       
+        $this->pusher->trigger($this->f3->get('event.db'), $pusherEvent, array( 'mapper' => $mapper->cast()));
+        
+
+        return $event;
+    } 
+
+
+    public function onAfterSaveMsftModelsAttendees( $event )
+    {   
+       /*  $mapper = $event->getArgument('mapper');
         
         $WBmodel = new \Dash\Models\Event\Wristbands;
         $used = (int) $WBmodel->getTotalCount();
@@ -28,27 +43,27 @@ class Pusherlistener extends \Prefab
         $available = $ordered - $used;
        
         $this->pusher->trigger($this->f3->get('event.db'), 'updateWbAvailable', array( 'message' => $available));
-        
+        */
         return $event;
     }
 
-      public function onAfterSaveSiteModelsEvents( $event )
+      public function onAfterSaveMsftModelsEvents( $event )
     {   
-        $mapper = $event->getArgument('mapper');
+        /* $mapper = $event->getArgument('mapper');*/
         
         return $event;
     }
-       public function onAfterSaveSiteModelsRoles( $event )
+       public function onAfterSaveMsftModelsRoles( $event )
     {   
-        $mapper = $event->getArgument('mapper');
+          /* $mapper = $event->getArgument('mapper');*/
         
         return $event;
     }
 
   
-     public function onAfterSaveSiteModelsTickets( $event )
+     public function onAfterSaveMsftModelsTickets( $event )
     {   
-        $mapper = $event->getArgument('mapper');
+          /* $mapper = $event->getArgument('mapper');*/
         
 
         return $event;

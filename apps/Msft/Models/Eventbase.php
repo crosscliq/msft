@@ -15,5 +15,9 @@ class Eventbase extends \Dsc\Models\Db\Mongo
     
         return $this->db;
     }
+
+    
+
+
 }
 ?>

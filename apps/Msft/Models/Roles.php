@@ -83,4 +83,43 @@ class Roles extends Eventbase
     
         return $order;
     }
+
+    /**
+     * An alias for the save command
+     * 
+     * @param unknown_type $values
+     * @param unknown_type $options
+     */
+    public function create( $values, $options=array() ) 
+    { 
+        
+        $save =  $this->save( $values, $options );
+        if($save) {
+            $activity = new \Msft\Models\Activity;
+            $activity->create(array('type'=> 'role', 'action' => 'activated', 'object' => $save->cast()));
+        }
+        return $save;
+
+
+    }
+
+      /**
+     * An alias for the save command
+     * 
+     * @param unknown_type $mapper
+     * @param unknown_type $values
+     * @param unknown_type $options
+     */
+    public function update( $mapper, $values, $options=array() )
+    {   
+        $save =  $this->save( $values, $options, $mapper );
+     
+        if($save) {
+            $activity = new \Msft\Models\Activity;
+            $activity->create(array('type'=> 'role', 'action' => 'update', 'object' => $save->cast(), 'updated' =>  $values ));
+        }
+
+        return $save;
+   
+    }
 }
