@@ -6,6 +6,8 @@
 	<div class="grid">
 	  <div class="row">
 	    <div class="span12">
+	<?php echo \Dsc\System::instance()->renderMessages(); ?>
+
 	    	     <br/>
 		<form method="post" action="/attendee/assign/tag/<?php echo $PARAMS['tagid']; ?>">
 			<fieldset>

@@ -337,15 +337,19 @@ class Attendee extends BaseAuth
 
         $attendee = $model->getItem();
 
-        if($attendee->tagid) {
+	 if(@$attendee->tagid) {
             $model = new \Msft\Models\Tags;
             $oldTag = $model->setState('filter.id', $attendee->tagid)->getItem();
             $oldTag->previd = $oldTag->tagid;
             $oldTag->tagid = $thisTag->tagid;
             $oldTag->save();
             $model->delete($thisTag);
-        }
-        
+        } else {
+		   \Dsc\System::instance()->addMessage('A band with that information doesn\'t exist', 'error');
+            $f3->reroute('/attendee/signin/'.$f3->get('PARAMS.tagid'));
+
+        }       
+ 
         if (method_exists($attendee, 'cast')) {
             $item  = $attendee->cast();
         } else {
