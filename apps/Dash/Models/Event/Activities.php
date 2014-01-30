@@ -5,15 +5,14 @@ namespace Dash\Models\Event;
 Class Activities Extends Eventbase {
 
     protected $collection = 'activities';
-    protected $default_ordering_direction = '1';
-    protected $default_ordering_field = 'type';
+    protected $default_ordering_direction = '-1';
+    protected $default_ordering_field = '_id';
 
     public function __construct($config=array())
     {
-        $config['filter_fields'] = array(
-            'name', 'start_date', 'end_date'
+        $config['filter_fields'] = array('_id', 'timestamp.id'
         );
-        $config['order_directions'] = array('-1', '1');
+        $config['order_directions'] = array('1', '-1');
         
         parent::__construct($config);
     }

@@ -8,14 +8,9 @@ class Activity extends \Dsc\Prefabs
     );
 
     public function __construct($source=array(), $options=array())
-    {   $this->document['timestamp'] =  \Dsc\Mongo\Metastamp::getDate('now'); 
-        
-        $this->setOptions($options);
-        
-        if (!empty($source))
-        {
-            $this->bind($source, $this->options);
-        }
+    {
+         parent::__construct( $source, $options );
+         $this->set('timestamp', \Dsc\Mongo\Metastamp::getDate('now'));
     }
    
     /**
