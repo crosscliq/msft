@@ -21,11 +21,13 @@ class Pusherlistener extends \Prefab
     {   
         $mapper = $event->getArgument('mapper');
         
-        $pusherEvent = 'Activity';
-        $pusherEvent .= ucfirst($mapper->type);
-        $pusherEvent .= ucfirst($mapper->action);
+        $pusherEvent = 'createActivity';
+      //  $pusherEvent .= ucfirst($mapper->type);
+       // $pusherEvent .= ucfirst($mapper->action);
        
-        $this->pusher->trigger($this->f3->get('event.db'), $pusherEvent, array( 'mapper' => $mapper->cast()));
+        $helper = new \Dash\Helpers\Activity($mapper);
+        $data = $helper->getData();
+        $this->pusher->trigger($this->f3->get('event.db'), $pusherEvent, $data);
         
 
         return $event;

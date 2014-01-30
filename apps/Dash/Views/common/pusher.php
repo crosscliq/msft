@@ -59,6 +59,7 @@
 
     // Create Activity
 	channel.bind('createActivity', function(data) {
+		console.log(data);
 		console.log('create new activity');
 		    $( "#blank-activity" ).attr('data-id',data.id).clone().prependTo( "#activity-log" ).attr('id','');
 		    $('[data-id='+ data.id +']').find('.msg').html(data.message);
@@ -72,7 +73,7 @@
 		    $('[data-id='+ data.id +']').attr('data-type',data.type);
 		  break;
 
-		  case 'reg':
+		  case 'attendee':
 		    $('[data-id='+ data.id +']').find('.message-img').addClass('icon-check');
 		    $('[data-id='+ data.id +']').attr('data-type',data.type);
 		  break;

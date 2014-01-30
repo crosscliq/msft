@@ -43,7 +43,7 @@ Class Event {
         $event['tickets'] = $model->paginate();
 
 
-        $event['activities'] = array();
+        /*$event['activities'] = array();
         $model = new \Dash\Models\Event\Activities;
         $event['activities']['all'] = $model->paginate();
         $model = new \Dash\Models\Event\Activities;
@@ -54,6 +54,20 @@ Class Event {
         $event['activities']['prizes'] = $model->setState('filter.type', 'prize')->paginate();
         $model = new \Dash\Models\Event\Activities;
         $event['activities']['users'] = $model->setState('filter.type', 'user')->paginate();
+        */
+
+       
+        $model = new \Dash\Models\Event\Activities;
+        $paginated = $model->paginate();
+        $list = array();
+        foreach ($paginated['subset'] as $activity ) {
+           $helper = new \Dash\Helpers\Activity($activity);
+          $list[] = $helper->getData();      
+        }
+        $paginated['subset'] = $list;
+         $event['activities'] =$paginated;
+        
+
 
         return $event;
 
