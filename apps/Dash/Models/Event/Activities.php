@@ -13,7 +13,7 @@ Class Activities Extends Eventbase {
         $config['filter_fields'] = array(
             'name', 'start_date', 'end_date'
         );
-        $config['order_directions'] = array('1', '-1');
+        $config['order_directions'] = array('-1', '1');
         
         parent::__construct($config);
     }

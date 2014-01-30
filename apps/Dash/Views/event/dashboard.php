@@ -134,7 +134,7 @@ $maps = new \Dash\Models\Bingmap;?>
                 " style="font-size:55px;"></i>
                   <div class="message-body msg-in"> <span class="arrow"></span>
                     <div class="text">
-                      <p class="attribution"><a href="#"><?php echo $action['type']; ?></a> at <?php echo $action['timestamp']; ?></p>
+                      <p class="attribution"><a href=""><?php echo $action['name']; ?></a> at <?php echo $action['timestamp']; ?></p>
                       <p><?php echo $action['message'] ?></p>
                     </div>
                   </div>
