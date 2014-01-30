@@ -36,6 +36,11 @@ class Raffle extends \Msft\Controllers\BaseAuth
        $winner = $this->pickWinner();
        $prize = $this->pickPrize();
 
+        $activity = new \Msft\Models\Activity;
+        $activity->create(array('type'=> 'raffle', 'action' => 'play', 'winner' => $winner->cast(), 'prize' => $prize  ));
+       
+
+
     $play = array('winner' => $winner , 'prize' => $prize);
     return $play;
     }

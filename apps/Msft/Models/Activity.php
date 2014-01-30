@@ -1,8 +1,8 @@
 <?php 
-namespace Dash\Models\Event;
+namespace Msft\Models;
 
 
-Class Activities Extends Eventbase {
+Class Activity Extends Eventbase {
 
     protected $collection = 'activities';
     protected $default_ordering_direction = '1';
@@ -20,7 +20,7 @@ Class Activities Extends Eventbase {
 
     public function prefab( $source=array(), $options=array() )
     {
-        $prefab = new \Dash\Models\Prefabs\Activity($source, $options);
+        $prefab = new \Msft\Models\Prefabs\Activity($source, $options);
         
         return $prefab;
     }
@@ -52,19 +52,19 @@ Class Activities Extends Eventbase {
             $this->filters['_id'] = new \MongoId((string) $filter_id);
         }
 
-        $filter_type = $this->getState('filter.type');
+        $filter_tagid = $this->getState('filter.tagid');
         
-        if (strlen($filter_type))
+        if (strlen($filter_tagid))
         {
-            $this->filters['type'] = $filter_type;
+            $this->filters['tagid'] = $filter_tagid;
         }
 
 
-        $filter_action = $this->getState('filter.action');
-        
-        if (strlen($filter_action))
+        $filter_eventid = $this->getState('filter.eventid');
+
+        if (strlen($filter_eventid))
         {
-            $this->filters['action'] = $filter_action;
+            $this->filters['eventid'] = $filter_eventid;
         }
 
 

@@ -17,6 +17,10 @@ class Users extends BaseAuth
         $user = $this->getModel()->setState('filter.id', $user->_id)->getItem();
 
         $f3->set('roles', $user->roles);
+        echo 'pusher_key '. $f3->get('pusher_key');
+
+            $pusher = new \Pusher($f3->get('pusher_key'), $f3->get('pusher_secret'), $f3->get('pusher_app_id'));
+            $pusher->trigger('rolestest', 'test', array( 'msg' => 'hi working'));
 
         $view = new \Dsc\Template;
         echo $view->render('Msft/Views::roles/list.php');

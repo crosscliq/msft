@@ -29,7 +29,7 @@ class Tags extends BaseAuth
     				$tag = $this->getModel()->getPrefab();
     				$tag->tagid = $tagid;
     				$tag->eventid = $f3->get('PARAMS.eventid');
-    				$tag = $model->save((array) $tag);
+    				$tag = $model->create((array) $tag);
     			}
 
     			$this->attendeeRegistration($tag, $tagid, $role);
@@ -101,16 +101,18 @@ class Tags extends BaseAuth
             $tag = $this->getModel()->getPrefab();
             $tag->tagid = $tagid;
             $tag->eventid = $f3->get('PARAMS.eventid');
-            $tag = $this->getModel()->save((array) $tag);
+            $tag = $this->getModel()->create((array) $tag);
         }
         $ticketModel = new \Msft\Models\Tickets;
         if(empty($tag->ticket)) {
 
         $ticket = $ticketModel->getPrefab();
         $ticket->tag = array('tagid' => $tag->tagid , "id" => $tag->_id );
-        $ticket = $ticketModel->save((array) $ticket);
-        $tag->ticket = array( "id" => $ticket->_id, "status" => $ticket->status);
-        $tag->save();
+        $ticket = $ticketModel->create((array) $ticket);
+       
+        $model = $this->getModel( );
+        $model->update($tag, array('ticket' => array( "id" => $ticket->_id, "status" => $ticket->status)));
+
 
         } else {
          $ticket = $ticketModel->setState('filter.id',$tag->ticket['id'])->getItem();   
