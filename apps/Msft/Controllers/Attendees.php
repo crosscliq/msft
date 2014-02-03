@@ -14,5 +14,14 @@ class Attendees extends BaseAuth
         echo $view->render('attendee/home.php');
     }
 
+     public function own()
+    {
+        \Base::instance()->set('pagetitle', 'Home');
+        \Base::instance()->set('subtitle', '');
+                
+        $view = new \Dsc\Template;
+        echo $view->render('attendee/home.php');
+    }
+
 }
 ?> 
