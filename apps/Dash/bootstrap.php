@@ -66,10 +66,10 @@ switch ($global_app_name)
         $f3->route('GET|POST /@eventid/users/page/@page', '\Dash\Controllers\Event\Users->display');
         $f3->route('GET|POST /@eventid/users/delete', '\Dash\Controllers\Event\Users->delete');
         $f3->route('GET /@eventid/user/create', '\Dash\Controllers\Event\User->create');
-        $f3->route('GET /@eventid/user/read/@id', '\Dash\Controllers\Event\User->add');
+        $f3->route('POST /@eventid/user/create', '\Dash\Controllers\Event\User->add');
         $f3->route('GET /@eventid/user/edit/@id', '\Dash\Controllers\Event\User->edit');
         $f3->route('POST /@eventid/user/edit/@id', '\Dash\Controllers\Event\User->update');
-
+        $f3->route('GET|POST /@eventid/user/delete/@id', '\Dash\Controllers\Event\User->delete');
         // EVENT USER ROLES ROUTES
         $f3->route('GET|POST /@eventid/roles', '\Dash\Controllers\Event\Roles->display');
         $f3->route('GET|POST /@eventid/roles/page/@page', '\Dash\Controllers\Event\Roles->display');
