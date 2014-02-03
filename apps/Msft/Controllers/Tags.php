@@ -51,6 +51,9 @@ class Tags extends BaseAuth
             case 'band_transfer':
                 $this->bandTransfer($tag, $tagid, $role);
                 break;
+             case 'mc':
+                $this->notallowed($tag, $tagid, $role);
+                break;
     		default:
            
     			$this->attendeeTapper($tag, $tagid, $role);
@@ -193,6 +196,12 @@ class Tags extends BaseAuth
         if(empty($tag)) {
            \Base::instance()->reroute('/empty');  
         }
+    }
+
+    //if there is an empty tag on a route that reqires a tag what do we do? error page or  what?
+    public function notallowed($tag, $tagid, $role) {
+        $view = new \Dsc\Template;
+        echo $view->render('Msft/Views::tags/notallow.php');
     }
 
     public function displayEmpty() {
