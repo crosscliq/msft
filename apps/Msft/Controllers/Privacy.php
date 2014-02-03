@@ -1,7 +1,7 @@
 <?php 
 namespace Msft\Controllers;
 
-class Privacy extends BaseAuth 
+class Privacy extends Base 
 {   
 
     
