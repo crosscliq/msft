@@ -10,10 +10,15 @@
                     <a href="/active/role/<?php echo $role['id'] ?>" class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(0,0,0,0.6)!important">
                         <?php echo $role['name']; ?>
                     </a>
+ 
                 </div>
 
 
             <?php endforeach; ?>
+                <div id="role" style="text-align:center;">
+        		<a href="/logout" class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(229,10,10,0.6)!important">Logout</a>
+                </div>
+             
 
         </div>
       </div>
@@ -21,11 +26,7 @@
    
         <div class="page-footer">
             <div class="page-footer-content">
-                 <div id="role" style="text-align:center;">
-                    <a href="/logout" class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(229,10,10,0.6)!important">
-                      Logout
-                    </a>
-                </div>
+
                 <!--<div data-load="header.html"></div>-->
             </div>
         </div>
