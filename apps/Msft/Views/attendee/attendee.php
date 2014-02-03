@@ -29,7 +29,7 @@
         <br/><br/>
            <legend></legend>
             
-                                        <label>Receive offers/updates from Microsoft?</label>
+                                        <label>Receive offers/updates from Microsoft? <small>( <a href="/privacy/policy" target="_BLANK" class="fg-white tiny">Privacy Policy</a> )</small></label>
                                         <div class="input-control checkbox">
                                             <input name="offers[email]" type="checkbox" checked>
                           <span class="check"></span>email
@@ -37,7 +37,8 @@
                                         <div class="input-control checkbox">
                                             <input name="offers[sms]" type="checkbox" checked>
                           <span class="check"></span>sms
-                                        </div><br/><br/>                
+                                        </div><br/><br/>    
+					               
                                         <input type="hidden" name="submitType" value="save_confirm";>      
                                         <input type="submit" value="Register" class="inverse large">
                                     </fieldset>
