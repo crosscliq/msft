@@ -80,6 +80,8 @@ switch ($global_app_name)
         $f3->route('GET /games/raffle/nomorewinners', '\Msft\Controllers\Games\Raffle->nomorewinners');
         $f3->route('GET /prizepatrol', '\Msft\Controllers\Prizepatrol->display');
 
+         $f3->route('GET /privacy/policy', '\Msft\Controllers\Privacy->display');
+
 	    $f3->route('GET|POST /logout', function() {
             \Base::instance()->clear('SESSION');
              \Base::instance()->clear('COOKIE');
