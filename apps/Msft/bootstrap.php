@@ -16,9 +16,14 @@ switch ($global_app_name)
         $f3->route('GET /header', '\Msft\Controllers\Header->base');
         $f3->route('GET /header-cust', '\Msft\Controllers\Header->customer');
 
-        //USERS FRONTEND AUTH ROUTES, creates signup, and login, logout routes        
-    	$f3->route('GET /', '\Msft\Controllers\Auth->showLogin');
-        $f3->route('POST /', '\Msft\Controllers\Auth->doLogin');
+        //USERS FRONTEND AUTH ROUTES, creates signup, and login, logout routes
+        $f3->route('GET /', function($f3) {
+           $f3->reroute('/welcome');
+        });
+       
+        $f3->route('GET /home', '\Msft\Controllers\Auth->showLogin');
+        $f3->route('POST /home', '\Msft\Controllers\Auth->doLogin');     
+    	
         $f3->route('GET /login', '\Msft\Controllers\Auth->showLogin'); 
         $f3->route('POST /login', '\Msft\Controllers\Auth->doLogin');
         $f3->route('GET /signup', '\Msft\Controllers\Auth->showSignup');
@@ -80,8 +85,8 @@ switch ($global_app_name)
         $f3->route('GET /games/raffle/nomorewinners', '\Msft\Controllers\Games\Raffle->nomorewinners');
         $f3->route('GET /prizepatrol', '\Msft\Controllers\Prizepatrol->display');
 
-         $f3->route('GET /privacy/policy', '\Msft\Controllers\Privacy->display');
-
+        $f3->route('GET /privacy/policy', '\Msft\Controllers\Privacy->display');
+        
 	    $f3->route('GET|POST /logout', function() {
             \Base::instance()->clear('SESSION');
              \Base::instance()->clear('COOKIE');
@@ -93,7 +98,12 @@ switch ($global_app_name)
         $ui = $f3->get('UI');
         $ui .= ";" . $f3->get('PATH_ROOT') . "apps/Msft/Views/";
         $f3->set('UI', $ui);
-        
+
+
+        $f3->route('GET /welcome', function() {
+        $view = new \Dsc\Template;
+        echo $view->render('Msft/Views::attendee/own.php');
+    });
             
         break;
 }
