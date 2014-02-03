@@ -135,14 +135,14 @@ Class Attendees Extends Eventbase {
         $model = new \Dash\Models\Event\Tickets;
         $model->setState('filter.tag.id',$tagid);
         $tickets = $model->getList();
-
+	if(empty( $tickets)){
+            $tickets = array();
+        }
+	else {
         foreach ($tickets as $key => $ticket) {
             $ticket = $ticket->cast();
         }
-
-        if(empty( $tickets)){
-            $tickets = array();
-        }
+}
 
         return $tickets;
 
