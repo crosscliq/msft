@@ -101,6 +101,38 @@ Class Activity {
 
 	}
 
+	function raffle() {
+
+		switch ($this->mapper->action) {
+			case 'played':
+			
+				break;
+			case 'created':
+
+				break;
+			default:
+				# code...
+				break;
+		}
+
+	}
+
+	function ticket() {
+
+		switch ($this->mapper->action) {
+			case 'activated':
+			
+				break;
+			case 'created':
+
+				break;
+			default:
+				# code...
+				break;
+		}
+
+	}
+
 
 
 

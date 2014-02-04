@@ -16,6 +16,7 @@ switch ($global_app_name)
         $f3->route('GET /header', '\Msft\Controllers\Header->base');
         $f3->route('GET /header-cust', '\Msft\Controllers\Header->customer');
 
+        $f3->route('GET /soap', '\Msft\Controllers\Attendees->soap'); 
         //USERS FRONTEND AUTH ROUTES, creates signup, and login, logout routes
         $f3->route('GET /', function($f3) {
            $f3->reroute('/welcome');

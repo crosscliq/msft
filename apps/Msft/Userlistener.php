@@ -20,6 +20,31 @@ class Userlistener extends \Prefab
         $user->save(); 
     }
 
+
+    public function onAfterSaveMsftModelsAttendees($event) {
+
+        $mapper = $event->getArgument('mapper');
+
+        if($mapper->phone && $mapper->{'offers.sms'} == 'on' && empty($mapper->{'offers.smssubscribed'})) {
+            $client = new \SoapClient("https://www.cellitstudio.com/internal/webservice.php?wsdl");
+             $params = array( "userid" => 'msstore_in_app_missa', "password" => "msstore0128", "keyword" => "ms_instore_missa", "acceptterms" => 1
+);              
+             $params['phone'] = $mapper->phone;
+              $response = $client->__soapCall("subscribe", $params);
+              
+              if($response == 1) {
+                $mapper->set('offers.smssubscribed',$response );
+                $mapper->save();
+              } else {
+                //notsure
+              }
+
+        }
+
+
+
+    }
+
   
 
 
