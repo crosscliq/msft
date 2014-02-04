@@ -1,21 +1,22 @@
-<a class="btn btn-sucess pull-right" href="./<?php echo $PARAMS['eventid']?>/attendee/create">New Attendee</a>
+<a class="btn btn-success pull-right" href="./<?php echo $PARAMS['eventid']?>/attendee/create">New Attendee</a>
 
 <br clear="both"><br>
 <form id="searchForm" action="" method="post">
 
     <div class="row datatable-header">
-        <div class="col-sm-2">
+        <div class="col-sm-6">
             <div class="row row-marginless">
                 <?php if (!empty($list['subset'])) { ?>
                 <div class="col-sm-4">
                     <?php echo $pagination->getLimitBox( $state->get('list.limit') ); ?>
                 </div>
                 <?php } ?>
-                <?php if (!empty($list['count']) && $list['count'] > 1) { ?>
+                <?php if (!empty($list['count']) && $list['count'] > 1) { ?>                                
                 <div class="col-sm-8">
                     <?php echo $pagination->serve(); ?>
                 </div>
                 <?php } ?>
+
             </div>
         </div>    
         <div class="col-sm-4 pull-right">
@@ -27,7 +28,7 @@
             </div>
         </div>
     </div>
-    
+    <br/><br/>
     <input type="hidden" name="list[order]" value="<?php echo $state->get('list.order'); ?>" />
     <input type="hidden" name="list[direction]" value="<?php echo $state->get('list.direction'); ?>" />
     

@@ -3,29 +3,7 @@
 
     <div class="row">
         <div class="col-md-12">
-        
-            <div class="form-actions clearfix">
 
-                <div class="pull-right">
-                    <div class="btn-group">
-                        <button type="submit" class="btn btn-primary">Save</button>
-                        <input id="primarySubmit" type="hidden" value="save_edit" name="submitType" />
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a onclick="document.getElementById('primarySubmit').value='save_close'; document.getElementById('detail-form').submit();" href="javascript:void(0);">Save & Close</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    &nbsp;
-                    <a class="btn btn-default" href="./<?php echo $PARAMS['eventid'] ?>/users">Cancel</a>
-                </div>
-
-            </div>
-            <!-- /.form-actions -->
             
             <hr />
         
@@ -39,7 +17,7 @@
               
             </ul>
             
-            <div class="tab-content">
+            <div class="tab-content form-actions">
 
                 <div class="tab-pane active" id="tab-basics">
                 
@@ -49,7 +27,7 @@
         
                         <label class="col-md-3">First Name</label>
         
-                        <div class="col-md-7">
+                        <div class="col-md-3">
                             <input type="text" name="first_name" value="<?php echo $flash->old('first_name'); ?>" class="form-control" />
                         </div>
                         <!-- /.col -->
@@ -61,7 +39,7 @@
         
                         <label class="col-md-3">Last Name</label>
         
-                        <div class="col-md-7">
+                        <div class="col-md-3">
                             <input type="text" name="last_name" value="<?php echo $flash->old('last_name'); ?>" class="form-control" />
                         </div>
                         <!-- /.col -->
@@ -73,7 +51,7 @@
         
                         <label class="col-md-3">Email Address</label>
         
-                        <div class="col-md-7">
+                        <div class="col-md-3">
                             <input type="text" name="email" value="<?php echo $flash->old('email'); ?>" class="form-control" />
                         </div>
                         <!-- /.col -->
@@ -85,7 +63,7 @@
         
                         <label class="col-md-3">New Password</label>
         
-                        <div class="col-md-7">
+                        <div class="col-md-3">
                             <input type="password" name="new_password" class="form-control" autocomplete="off" />
                         </div>
                         <!-- /.col -->
@@ -97,7 +75,7 @@
         
                         <label class="col-md-3">Confirm New Password</label>
         
-                        <div class="col-md-7">
+                        <div class="col-md-3">
                             <input type="password" name="confirm_new_password" class="form-control" autocomplete="off" />
                         </div>
                         <!-- /.col -->
@@ -167,7 +145,33 @@
                 
             </div>
             <!-- /.tab-content -->
+
+        
+            <div class="form-actions clearfix">
+
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <input id="primarySubmit" type="hidden" value="save_edit" name="submitType" />
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a onclick="document.getElementById('primarySubmit').value='save_close'; document.getElementById('detail-form').submit();" href="javascript:void(0);">Save & Close</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    &nbsp;
+                    <a class="btn btn-default" href="./<?php echo $PARAMS['eventid'] ?>/users">Cancel</a>
+                </div>
+
+            </div>
+            <!-- /.form-actions -->
+
         </div>
+
     </div>
 
 </form>

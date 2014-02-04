@@ -35,7 +35,7 @@ $maps = new \Dash\Models\Bingmap;?>
               <div class="stats-heading">Wristbands</div>
               <div class="stats-body-alt" style="height:170px;"> 
                 <div class="text-center"><h1><span class="wbAvailable"><?php echo $event['wristbands']['available']; ?></span><small> / <span  class="wbTotal"><?php echo $event['wristbands']['total']; ?></span> </small></h1></div>
-		  <small>Available / Total</small> 
+		  <small>Inventory Available / Total</small> 
               </div>
               <div class="stats-footer">&nbsp;</div>
               </div>
@@ -44,7 +44,7 @@ $maps = new \Dash\Models\Bingmap;?>
               <div class="stats-body-alt" style="height:170px;"> 
                 <!--i class="fa fa-bar-chart-o"></i-->
                 <div class="text-center"><h1><span class="aAvailable"><?php echo ( $event['details']['attendees'] - $event['attendees']['total'] ) ?></span><small> / <span class="aTotal"><?php echo $event['details']['attendees']; ?></span> </small></h1></div>
-                <small>Available / Total </div>
+                <small>Available / Capacity </div>
               <div class="stats-footer"> &nbsp;</div>
               </a> </div>
 		

@@ -1,4 +1,4 @@
-<a class="btn btn-sucess pull-right" href="./<?php echo $PARAMS['eventid']?>/role/create">New Role</a>
+<a class="btn btn-success pull-right" href="./<?php echo $PARAMS['eventid']?>/role/create">New Role</a>
 
 <br clear="both"><br>
 <form id="searchForm" action="" method="post">
@@ -18,12 +18,12 @@
                 <?php } ?>
             </div>
         </div>    
-        <div class="col-sm-6">
+        <div class="col-sm-4 pull-right">
             <div class="input-group">
                 <input class="form-control" type="text" name="filter[keyword]" placeholder="Keyword" maxlength="200" value="<?php echo $state->get('filter.keyword'); ?>"> 
                 <span class="input-group-btn">
                     <input class="btn btn-primary" type="submit" onclick="this.form.submit();" value="Search" />
-                    <button class="btn btn-danger" type="button" onclick="Dsc.resetFormFilters(this.form);">Reset</button>
+
                 </span>
             </div>
         </div>
@@ -32,7 +32,7 @@
     <input type="hidden" name="list[order]" value="<?php echo $state->get('list.order'); ?>" />
     <input type="hidden" name="list[direction]" value="<?php echo $state->get('list.direction'); ?>" />
     
-    
+    <br/><br/>
 
     <div class="table-responsive datatable">
     

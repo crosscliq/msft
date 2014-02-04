@@ -1,6 +1,6 @@
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
 <?php //echo \Dsc\Debug::dump( $list ); ?>
-<a class="btn btn-sucess pull-right" href="./<?php echo $PARAMS['eventid']?>/user/create">New User</a>
+<a class="btn btn-success pull-right" href="./<?php echo $PARAMS['eventid']?>/user/create">New User</a>
 
 <br clear="both"><br>
 <form id="list-form" action="./admin/users" method="post">
@@ -20,12 +20,12 @@
                 <?php } ?>
             </div>
         </div>    
-        <div class="col-sm-6">
+        <div class="col-sm-4 pull-right">
             <div class="input-group">
                 <input class="form-control" type="text" name="filter[keyword]" placeholder="Keyword" maxlength="200" value="<?php echo $state->get('filter.keyword'); ?>"> 
                 <span class="input-group-btn">
                     <input class="btn btn-primary" type="submit" onclick="this.form.submit();" value="Search" />
-                    <button class="btn btn-danger" type="button" onclick="Dsc.resetFormFilters(this.form);">Reset</button>
+    
                 </span>
             </div>
         </div>
@@ -48,23 +48,7 @@
                 <th>Groups</th>
                 <th></th>
             </tr>
-            <tr class="filter-row">
-                
-                <th>
-                    <input placeholder="Email" name="filter[email-contains]" value="<?php echo $state->get('filter.email-contains'); ?>" type="text" class="form-control input-sm">
-                </th>
-                <th></th>
-                <th></th>
-                <th><select  id="group_filter" name="filter[group]" class="form-control" >
-                <option value="">-Group Filter-</option>
-                <?php if(!empty($groups)) : ?>
-                <?php foreach (@$groups as $group) : ?>
-                <option <?php if($state->get('filter.group') == $group->id) { echo 'selected'; } ?> value="<?=$group->_id;?>"><?=$group->name;?></option>
-                <?php endforeach; ?>
-                <?php endif; ?>
-            </select></th>
-                <th><button class="btn " type="sumbit">Filter</button></th>
-            </tr>
+
         </thead>
         <tbody>    
         

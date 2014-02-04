@@ -25,15 +25,7 @@
                 <?php } ?>
             </div>
         </div>    
-        <div class="col-sm-6">
-            <div class="input-group">
-                <input class="form-control" type="text" name="filter[keyword]" placeholder="Keyword" maxlength="200" value="<?php echo $state->get('filter.keyword'); ?>"> 
-                <span class="input-group-btn">
-                    <input class="btn btn-primary" type="submit" onclick="this.form.submit();" value="Search" />
-                   <!-- <button class="btn btn-danger" type="button" onclick="Dsc.resetFormFilters(this.form);">Reset</button> -->
-                </span>
-            </div>
-        </div>
+
     </div>
     
     <input type="hidden" name="list[order]" value="<?php echo $state->get('list.order'); ?>" />
@@ -149,9 +141,4 @@
 </form>
 
 
-
-
-<pre>
-<?php echo __FILE__; ?>
-</pre>
 
