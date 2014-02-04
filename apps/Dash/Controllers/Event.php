@@ -71,6 +71,8 @@ class Event extends BaseAuth
         $f3->reroute( $route );
     }
 
+
+
     
     protected function displayRead() {
 

@@ -6,7 +6,7 @@
     <div class="widget-header"> <i class="icon-plus-sign"></i><h3>Create Event</h3></div>
     <div class="widget-content">
   
-       <form id="detail-form" action="/event/add" class="form" method="post">
+       <form id="detail-form" action="" class="form" method="post">
 		<div class="row">
                   <div class="col-md-3">
                     <label for="normal-field" class="control-label">Event Name</label>

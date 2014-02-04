@@ -1,20 +1,12 @@
 <?php //echo \Dsc\Debug::dump( $flash->get('old'), false ); ?>
 
-<script src="./ckeditor/ckeditor.js"></script>
-<script>
-jQuery(document).ready(function(){
-    CKEDITOR.replaceAll( 'wysiwyg' );    
-});
-
-</script>
 <div class="row">
  <div class="col-lg-6">
    <div class="widget">
-    <div class="widget-header"> <i class="icon-plus-sign"></i><h3>Edit Event</h3></div>
+    <div class="widget-header"> <i class="icon-plus-sign"></i><h3>Create Event</h3></div>
     <div class="widget-content">
-
-<form id="detail-form" action="" class="form" method="post">
-
+  
+       <form id="detail-form" action="" class="form" method="post">
 		<div class="row">
                   <div class="col-md-3">
                     <label for="normal-field" class="control-label">Event Name</label>
@@ -35,65 +27,94 @@ jQuery(document).ready(function(){
                     </div>
                     </div>
         </div>
+		<div class="row">
 
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Dates</label>
+                  </div>
 
+                  <div class="col-md-4">
+		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                    <input type="text" placeholder="Start Date" value="<?php echo $flash->old('dates.start_date' ); ?>" size="16" class="form-control datepicker" id="dates[start_date]" data-inputmask="'alias': 'date'">
+                   </div>
+                  </div>
+                 <div class="col-md-4">
+		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                    <input type="text" placeholder="End Date" value="<?php echo $flash->old('dates.end_date' ); ?>" size="16" class="form-control datepicker" id="dates[end_date]" data-inputmask="'alias': 'date'">
+                   </div>
+                  </div>
+	</div>
+	<div class="control-group">
+	
+		<div class="row">
+                  <div class="col-md-3"><br/>
+                    <label for="normal-field" class="control-label">Category</label>
+                  </div>
 
-    <div class="form-group">
-                        <label>Dates:</label>
-                        <div class="row">
-                            <div class="col-md-6">
-                               Start Date <input name="dates[start_date]" value="<?php echo $flash->old('dates.start_date' ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true">
-                            </div>
-                            <div class="input-group col-md-6">
-                              Start Time   <input name="dates[start_time]" value="<?php echo $flash->old('dates.start_time' ); ?>" type="text" class="ui-timepicker form-control" data-default-time="false" data-show-meridian="false" data-show-inputs="false">
-                                <span class="input-group-addon"><i class="icon-clock"></i></span>
-                            </div>
-                        </div>
-                    	<div class="row">
-                            <div class="col-md-6">
-                               End Date <input name="dates[end_date]" value="<?php echo $flash->old('dates.end_date' ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true">
-                            </div>
-                            <div class="input-group col-md-6">
-                              End Time   <input name="dates[end_time]" value="<?php echo $flash->old('dates.end_time' ); ?>" type="text" class="ui-timepicker form-control" data-default-time="false" data-show-meridian="false" data-show-inputs="false">
-                                <span class="input-group-addon"><i class="icon-clock"></i></span>
-                            </div>
-                        </div>
-                    </div>
-   <?php $categories =  array('NSO'=> 'New Store Opening', 'XBOX'=> 'Xbox Event', 'HR'=> 'Human Resources', ); ?>
-   <br>
-   <label>Category</label><br>
-   <select name="category">
-   <?php foreach ($categories as $value => $text) : ?>
-   <option value="<?=$value?>" <?php if($value == $flash->old('category')){ echo 'selected="selected"';} ;?> > <?=$text?>
-   <?php endforeach; ?>
-   </select>
-   <br>
-   <label>Address</label><br>
-   <input type="text" name="address[street]" placeholder="Street" value="<?php echo $flash->old('address.street') ?>" >
-   <br>
-   <input type="text" name="address[city]" placeholder="City" value="<?php echo $flash->old('address.city'); ?>" >
-
-   <input type="text" name="address[state]" placeholder="State" value="<?php echo $flash->old('address.state'); ?>" >
-  	 <br>
-   <input type="text" name="address[zip]" placeholder="Zip" value="<?php echo $flash->old('address.zip'); ?>" >
-   
-   <input type="text" name="address[country]" placeholder="Country" value="<?php echo $flash->old('address.country'); ?>" >
-   <br>
-   <label>Wristbands</label><br>
-   Ordered: <input type="text" name="wristbands[ordered]" placeholder="wristbands" value="<?php echo $flash->old('wristbands.ordered'); ?>" ><br>
-   Activated: <input type="text" disabled="disabled"  value="<?php echo $flash->old('wristbands.activated'); ?>" >
-   
-   <br>
-   	<br>
-    <label>Attendees</label><br>
-   # <input type="text" name="attendees" placeholder="Attendee Limit" value="<?php echo $flash->old('attendees'); ?>" ><br>
-   
-   
-   <input type="hidden" name="submitType" value="save_close";>      
+                  <div class="col-md-8">
+				<br/>
+				<?php $categories =  array('NSO'=> 'New Store Opening', 'XBOX'=> 'Xbox Event', 'HR'=> 'Human Resources', ); ?>
+				<select name="category" class="form-control">
+				  <?php foreach ($categories as $value => $text) : ?>
+				  <option value="<?=$value?>" <?php if($value == $flash->old('category')){ echo 'selected="selected"';} ;?> > <?=$text?>
+				  <?php endforeach; ?>
+				</select>
+		     
+                  </div>
+		</div>
+		<div class="row">
+                  <div class="col-md-3"><br/>
+                    <label for="normal-field" class="control-label">Address</label>
+                  </div>
+                  <div class="col-md-3"><br/>
+                    <input type="text" class="form-control" name="address[street]" placeholder="Street" value="<?php echo $flash->old('address.street') ?>" >
+                  </div>
+                  <div class="col-md-3"><br/>
+                    <input type="text" class="form-control"  name="address[city]" placeholder="City" value="<?php echo $flash->old('address.city'); ?>" >
+                  </div>
+                  <div class="col-sm-2"><br/>
+                    <input type="text" class="form-control"  name="address[state]" placeholder="State" value="<?php echo $flash->old('address.state'); ?>" >
+                  </div>
+		</div>
+		<div class="row">
+                  <div class="col-md-3"><br/>
+                    <label for="normal-field" class="control-label"></label>
+                  </div>	
+                  <div class="col-sm-2"><br/>
+                    <input type="text" class="form-control" name="address[zip]" placeholder="Zip" value="<?php echo $flash->old('address.zip'); ?>" >
+                  </div>	
+                  <div class="col-sm-2"><br/>
+                    <input type="text" class="form-control"  name="address[country]" placeholder="Country" value="<?php echo $flash->old('address.country'); ?>" >
+                  </div>
+                  <div class="col-sm-4"><br/>
+                    <input type="text" class="form-control" name="address[zip]" placeholder="Zip" value="<?php echo $flash->old('address.zip'); ?>" >
+                  </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3"><br/>
+                    <label for="normal-field" class="control-label">Wristbands</label>
+                  </div>
+                  <div class="col-md-3"><br/>
+                    <input type="text" class="form-control" name="wristbands[ordered]" placeholder="wristbands" value="<?php echo $flash->old('wristbands.ordered'); ?>" >
+                  </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3"><br/>
+                    <label for="normal-field" class="control-label">Attendees</label>
+                  </div>
+                  <div class="col-md-3"><br/>
+                    <input type="text" class="form-control" name="attendees" placeholder="Attendee Limit" value="<?php echo $flash->old('attendees'); ?>" >
+                  </div>
+		</div>
 	           
                     <div><br/>
    			  <input class="btn btn-primary pull-right" type="submit" type="hidden" name="submitType" value="Save">      
                     </div>
+             
+
+
+
+
 
 
 		</div>
@@ -104,3 +125,5 @@ jQuery(document).ready(function(){
    </div>
  </div>
 </div>
+
+
