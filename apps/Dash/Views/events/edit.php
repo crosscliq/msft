@@ -7,15 +7,37 @@ jQuery(document).ready(function(){
 });
 
 </script>
-    <div class="widget">
-            <div class="widget-header"> <i class="icon-plus-sign"></i>
-              <h3>Edit Event</h3>
-            </div>
+<div class="row">
+ <div class="col-lg-6">
+   <div class="widget">
+    <div class="widget-header"> <i class="icon-plus-sign"></i><h3>Edit Event</h3></div>
     <div class="widget-content">
-   <div class="body">
+
 <form id="detail-form" action="" class="form" method="post">
-   <input type="text" name="name" placeholder="Event Name" value="<?php echo $flash->old('name'); ?>" > <br>
-   <input type="text" name="event_id" placeholder="Event ID" value="<?php echo $flash->old('event_id'); ?>" ><br>
+
+		<div class="row">
+                  <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Event Name</label>
+                    </div>
+                    <div class="col-md-9">
+                    <div class="form-group">
+			 <input type="text" name="name" placeholder="Event Name" value="<?php echo $flash->old('name'); ?>" class="form-control"> 
+                    </div>
+                    </div>
+        </div>
+		<div class="row">
+                 <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Event ID</label>
+                 </div>
+                    <div class="col-md-9">
+                    <div class="form-group">
+			 <input type="text" name="event_id" placeholder="Event ID" value="<?php echo $flash->old('event_id'); ?>"  class="form-control"> 
+                    </div>
+                    </div>
+        </div>
+
+
+
     <div class="form-group">
                         <label>Dates:</label>
                         <div class="row">
@@ -68,13 +90,17 @@ jQuery(document).ready(function(){
    
    
    <input type="hidden" name="submitType" value="save_close";>      
-   <button type="submit">Save</button>
-</form>
-</div></div></div>
+	           
+                    <div><br/>
+   			  <input class="btn btn-primary pull-right" type="submit" type="hidden" name="submitType" value="Save">      
+                    </div>
 
 
+		</div>
 
-<h2>Shae can you make this form</h2>
-<pre>
-<?php echo __FILE__; ?>
-</pre>
+   
+	</form>
+   
+   </div>
+ </div>
+</div>
