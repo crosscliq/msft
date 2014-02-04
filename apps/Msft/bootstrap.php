@@ -89,9 +89,9 @@ switch ($global_app_name)
         $f3->route('GET /privacy/policy', '\Msft\Controllers\Privacy->display');
         
 	    $f3->route('GET|POST /logout', function() {
-            \Base::instance()->clear('SESSION');
+             \Base::instance()->clear('SESSION');
              \Base::instance()->clear('COOKIE');
-	        setcookie('id','',time()-3600);
+	         setcookie('id','',time()-3600);
 	         \Base::instance()->reroute('/');
         });          
         
