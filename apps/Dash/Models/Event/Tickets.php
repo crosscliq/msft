@@ -58,11 +58,11 @@ class Tickets extends Eventbase
         }
 
 
-        $filter_slug = $this->getState('filter.slug');
+        $filter_status = $this->getState('filter.status');
 
-        if (strlen($filter_slug))
+        if (strlen($filter_status))
         {
-            $this->filters['slug'] = $filter_slug;
+            $this->filters['status'] = $filter_status;
         }
 
          $filter_tag_id = $this->getState('filter.tag.id');
@@ -102,6 +102,24 @@ class Tickets extends Eventbase
         }*/
     
         return $this->filters;
+    }
+
+
+
+
+      public function getTotal()
+    {
+        
+        $filters = $this->getFilters();
+        $mapper = $this->getMapper();
+        $count = $mapper->count($filters);
+    
+        return $count;
+    }
+
+     function getTotalCount() {
+        $this->emptyState();
+        return $this->getTotal();
     }
 
 }

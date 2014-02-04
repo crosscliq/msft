@@ -32,17 +32,21 @@ Class Event {
         $event['wristbands']['available'] = (int) $event['wristbands']['total'] - (int) $event['wristbands']['used'];
 
 
-        $model = new \Dash\Models\Event\Prizes;
-        $event['prizes'] = $model->paginate();
+        //$model = new \Dash\Models\Event\Prizes;
+        //$event['prizes'] = $model->paginate();
 
-        $model = new \Dash\Models\Event\Users;
-        $event['users'] = $model->paginate();
+        //$model = new \Dash\Models\Event\Users;
+        //$event['users'] = $model->paginate();
 	
 
         $model = new \Dash\Models\Event\Tickets;
-       $event['tickets'] = $model->paginate();
-
-
+        
+        $event['tickets'] = array();
+        $model->setState('filter.status', 'active');
+        $event['tickets']['active'] = $model->getTotal();
+        $model->setState('filter.status', 'redeemed');
+        $event['tickets']['redeemed'] = $model->getTotal();
+        $event['tickets']['total'] = $model->getTotalCount();
 
        
         $model = new \Dash\Models\Event\Activities;
