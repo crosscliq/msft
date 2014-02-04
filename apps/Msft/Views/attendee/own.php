@@ -7,7 +7,7 @@
       <div class="row">
         <div class="span12">
 
-           <legend><?php var_dump($event); ?></legend>
+           <legend>Welcome</legend>
             
         </div>
       </div>
