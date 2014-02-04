@@ -4,6 +4,66 @@
 <form id="detail-form" action="" class="form" method="post">
 
 <div class="form-actions clearfix">
+    <div class="row">
+         <div class="col-md-9">
+            <div class="form-group">
+		  <label>First Name</label>
+                <input type="text" name="first_name" placeholder="First Name" value="<?php echo $flash->old('first_name'); ?>" class="form-control" />
+                
+            </div>
+        </div>
+         <div class="col-md-9">
+            <div class="form-group">
+		  <label>Last Name</label>
+                <input type="text" name="last_name" placeholder="Last Name" value="<?php echo $flash->old('last_name'); ?>" class="form-control" />
+                
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="form-group">
+		  <label>Email</label>
+                <input type="text" name="email" placeholder="Email" value="<?php echo $flash->old('email'); ?>" class="form-control" />
+                
+            </div>
+        </div>
+         <div class="col-md-9">
+            <div class="form-group">
+		  <label>Phone</label>
+                <input type="text" name="phone" placeholder="Phone" value="<?php echo $flash->old('phone'); ?>" class="form-control" />
+                
+            </div>
+        </div>
+       
+        <div class="col-md-9">
+            <div class="form-group">
+		  <label>Gender</label>
+                <input type="text" name="gender" placeholder="Gender" value="<?php echo $flash->old('gender'); ?>" class="form-control" />
+                
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="form-group">
+		  <label>Age</label>
+                <input type="text" name="age" placeholder="Age" value="<?php echo $flash->old('age'); ?>" class="form-control" />
+                
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="form-group">
+		  <label>Region</label>
+                <input type="text" name="region" placeholder="Region" value="<?php echo $flash->old('region'); ?>" class="form-control" />
+                
+            </div>
+        </div>
+         <div class="col-md-9">
+            <div class="form-group">
+		  <label>Tag Id</label>
+                <input type="text" name="tagid" placeholder="Tag Id" value="<?php echo $flash->old('tagid'); ?>" class="form-control" />
+                
+            </div>
+        </div>
+
+    </div>
 
                 <div class="pull-right">
                     <div class="btn-group">
@@ -26,55 +86,4 @@
             </div>
             <!-- /.form-actions -->
 
-    <div class="row">
-        <div class="col-md-9">
-            <div class="form-group">
-                <input type="text" name="gender" placeholder="Gender" value="<?php echo $flash->old('gender'); ?>" class="form-control" />
-                
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="form-group">
-                <input type="text" name="age" placeholder="Gender" value="<?php echo $flash->old('age'); ?>" class="form-control" />
-                
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="form-group">
-                <input type="text" name="region" placeholder="Gender" value="<?php echo $flash->old('region'); ?>" class="form-control" />
-                
-            </div>
-        </div>
-         <div class="col-md-9">
-            <div class="form-group">
-                <input type="text" name="tagid" placeholder="Gender" value="<?php echo $flash->old('tagid'); ?>" class="form-control" />
-                
-            </div>
-        </div>
-         <div class="col-md-9">
-            <div class="form-group">
-                <input type="text" name="first_name" placeholder="Gender" value="<?php echo $flash->old('first_name'); ?>" class="form-control" />
-                
-            </div>
-        </div>
-         <div class="col-md-9">
-            <div class="form-group">
-                <input type="text" name="last_name" placeholder="Gender" value="<?php echo $flash->old('last_name'); ?>" class="form-control" />
-                
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="form-group">
-                <input type="text" name="email" placeholder="Gender" value="<?php echo $flash->old('email'); ?>" class="form-control" />
-                
-            </div>
-        </div>
-         <div class="col-md-9">
-            <div class="form-group">
-                <input type="text" name="phone" placeholder="Gender" value="<?php echo $flash->old('phone'); ?>" class="form-control" />
-                
-            </div>
-        </div>
-       
-    </div>
 </form>

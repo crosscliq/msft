@@ -20,6 +20,9 @@ $maps = new \Dash\Models\Bingmap;?>
                 		  <div class="col-xs-4"> <small class="text-muted block"><i class="icon-calendar"></i> End Date</small> <span><?php echo $event['details']->dates['end_date'];?><br/><?php echo $event['details']->dates['end_time'];?></span></div>
 		  		  <div class="col-xs-4"> <small class="text-muted block"><i class="icon-map-marker"></i> Address</small> <span><?php echo $event['details']->address['street']; ?> <?php echo $event['details']->address['zip']; ?> <?php echo $event['details']->address['country']; ?></span></small> </div>
               		</div>
+              		<div class="row">
+
+                		  <div class="col-xs-12"> <i class="icon-link"></i> URL: <A href="http://<?php echo $event['details']->event_id; ?>.msft.css/home">http://<?php echo $event['details']->event_id; ?>.msft.css/home</a></div></div>
             		</div>
            		  <div class="">
 			   <div class="text-center padder m-t">  <img style="width:100%;opacity:0.6;" src="<?php echo $maps->width('400')->height('345')->location($event['details']['address']['city'] . ', ' . $event['details']['address']['state'])->getImageURL(); ?>" >
@@ -184,7 +187,7 @@ $maps = new \Dash\Models\Bingmap;?>
         </div>            
 </section>
 <pre>
-<?php var_dump($event['activities']); ?>
+<?php //var_dump($event); ?>
 </pre>
 
 
