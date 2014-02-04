@@ -121,6 +121,10 @@ class Auth extends \Users\Site\Controllers\Auth {
         //TODO support a config of setting the username or email or somehow support both.
         $auth = new \Auth($user, array('id'=>'email', 'pw'=>'password'));
         */
+
+        if(!empty($user)) {
+
+
         
         $authenticated =  $this->doCryptVerify((string) $password_input, (string) $user->password);
           
@@ -144,7 +148,7 @@ class Auth extends \Users\Site\Controllers\Auth {
                 \Base::instance()->reroute($this->default_login_redirect);
                 return;
             }
-       
+       }
         // TODO otherwise, reroute to login with error message
         \Dsc\System::instance()->addMessage('Login failed', 'error');
         
