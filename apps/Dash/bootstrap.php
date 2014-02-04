@@ -28,7 +28,7 @@ switch ($global_app_name)
         $f3->route('GET|POST /events/page/@page', '\Dash\Controllers\Events->display');
         $f3->route('GET|POST /events/delete', '\Dash\Controllers\Events->delete');
         $f3->route('GET /event/create', '\Dash\Controllers\Event->create');
-        $f3->route('POST /event/add', '\Dash\Controllers\Event->add');
+        $f3->route('POST /event/create', '\Dash\Controllers\Event->add');
         $f3->route('GET /event/read/@id', '\Dash\Controllers\Event->read');
         $f3->route('GET /event/edit/@id', '\Dash\Controllers\Event->edit');
         $f3->route('POST /event/edit/@id', '\Dash\Controllers\Event->update');

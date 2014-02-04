@@ -24,6 +24,7 @@ Class Events Extends Base {
 
         $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
         
+
         return $this;
     }
 
@@ -76,6 +77,31 @@ Class Events Extends Base {
          
         return $this->filters;
     }
+
+        /**
+     * An alias for the save command
+     * 
+     * @param unknown_type $values
+     * @param unknown_type $options
+     */
+    public function create( $values, $options=array() ) 
+    { 
+        
+        $save =  $this->save( $values, $options );
+        if($save) {
+             $event = new \Joomla\Event\Event( 'onAfterCreateDashModelsEvents' );
+             $event->addArgument('model', $this)->addArgument('mapper', $save);
+             $event = \Dsc\System::instance()->getDispatcher()->triggerEvent($event);
+                if ($event->hasArgument('mapper')) {
+                  $save = $event->getArgument('mapper');
+                }
+        }
+        return $save;
+
+
+    }
+
+
 
     //if all checks pass lets process values
    public function processEventID($event_id){

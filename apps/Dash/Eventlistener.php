@@ -4,11 +4,11 @@ namespace Dash;
 class Eventlistener extends \Prefab 
 {   
 
-    public function onAfterSaveDashModelsEvents( $event )
+    public function onAfterCreateDashModelsEvents( $event )
     {   
         $mapper = $event->getArgument('mapper');
         
-       
+        
         
         $this->addDefaultRoles($mapper->event_id);
        // $this->addUsers($mapper->event_id);
@@ -19,11 +19,14 @@ class Eventlistener extends \Prefab
 
 
     protected function addDefaultRoles($eventid, $event_type = null) {
+
+        
         $roles = array();
         $model = new \Dash\Models\Roles;
         $roles = $model->emptyState()->getList();
-        \Base::instance()->set('event.db', $eventid);
+        \Base::instance()->set('eventid', $eventid);
 
+      
         foreach ( $roles as $key => $role) {
          $newrole = (array) $role->cast();
          unset($newrole['_id']);

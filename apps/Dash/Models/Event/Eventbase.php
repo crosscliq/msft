@@ -11,7 +11,7 @@ class Eventbase extends \Dsc\Models\Db\Mongo
         {   
             $f3 = \Base::instance();
 
-
+           
             if(empty($f3->get('eventid'))) {
                 $f3->set('eventid', $f3->get('PARAMS.eventid'));
             }
