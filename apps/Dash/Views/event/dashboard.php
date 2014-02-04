@@ -5,7 +5,7 @@ $maps = new \Dash\Models\Bingmap;?>
 <div class="content container">
                               <div class="row">
                                 <div class="col-lg-12">
-				      <a href="#" class="btn btn-s btn-success pull-right"><i class="icon-edit"></i> Edit</a>
+				      <a href="/event/edit/<?php echo $event['details']->_id;?>" class="btn btn-s btn-success pull-right"><i class="icon-edit"></i> Edit</a>
                                   <h1 class="page-title"><?php echo $event['details']->name;?><small> <?php echo $event['details']->category;?></small></h1>
                                 </div>
                               </div>
