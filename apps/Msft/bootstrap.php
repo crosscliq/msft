@@ -100,7 +100,7 @@ switch ($global_app_name)
         $ui .= ";" . $f3->get('PATH_ROOT') . "apps/Msft/Views/";
         $f3->set('UI', $ui);
 
-	$f3->route('GET /welcome', '\Msft\Controllers\Attendees->own');
+	$f3->route('GET /welcome', '\Msft\Controllers\Home->own');
             
         break;
 }
