@@ -168,11 +168,11 @@
                         <div class="">
                             <div id="groups" class="list-group">
                                 <div id="groups-checkboxes">
-                                <?php echo $this->renderLayout('groups/checkboxes.php'); ?>
+                                <?php echo $this->renderLayout('/event/roles/checkboxes.php'); ?>
                                 </div>
                                 <script>
                                     Dsc.refreshCategories = function(r) {
-                                        console.log('trying to get groups');
+                                        
                                         var form_data = new Array();
                                         jQuery.merge( form_data, jQuery('#groups-checkboxes').find(':input').serializeArray() );
                                         jQuery.merge( form_data, [{ name: "groups_ids[]", value: r.result._id['$id'] }] );
