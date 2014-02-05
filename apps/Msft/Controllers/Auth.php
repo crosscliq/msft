@@ -9,7 +9,7 @@ class Auth extends \Users\Site\Controllers\Auth {
     protected $get_item_route = '/admin/user/{id}';
     protected $edit_item_route = '/{username}/edit';
     protected $default_login_redirect = '/roles';
-    protected $default_signup_redirect = '/';
+    protected $default_signup_redirect = '/roles';
     protected $default_loggedin_redirect = '/roles';
     
 
@@ -96,6 +96,7 @@ class Auth extends \Users\Site\Controllers\Auth {
         $event->addArgument('user', $user);
         \Dsc\System::instance()->getDispatcher()->triggerEvent($event); 
 
+        \Base::instance()->set('SESSION.user', (object) $user->cast());
 
         // TODO otherwise, reroute to login with error message
         \Dsc\System::instance()->addMessage('Sign up Success', 'msg');
