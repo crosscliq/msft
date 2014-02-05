@@ -92,7 +92,7 @@ switch ($global_app_name)
         $f3->route('POST /users/create', '\Dash\Controllers\User->add');
         $f3->route('GET /user/@id', '\Dash\Controllers\User->read');
         $f3->route('GET /user/edit/@id', '\Dash\Controllers\User->edit');
-        $f3->route('POST /user/@id', '\Dash\Controllers\User->update');
+        $f3->route('POST /user/edit/@id', '\Dash\Controllers\User->update');
         $f3->route('DELETE /user/@id', '\Dash\Controllers\User->delete');
         $f3->route('GET /user/delete/@id', '\Dash\Controllers\User->delete');    
         
