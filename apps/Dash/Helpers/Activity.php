@@ -91,9 +91,9 @@ Class Activity {
 		     $this->data['message'] = 'Band with the ID of ' . $this->mapper->{'object.tagid'} . ' has been activated';
 		   
 				break;
-			case 'created':
-
-				break;
+			case 'update':
+				$this->data['message'] = 'Band with the ID of ' . $this->mapper->{'object.tagid'} . ' has been updated';
+		   		break;
 			default:
 				# code...
 				break;
