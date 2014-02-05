@@ -11,11 +11,7 @@
                     <?php echo $pagination->getLimitBox( $state->get('list.limit') ); ?>
                 </div>
                 <?php } ?>
-                <?php if (!empty($list['count']) && $list['count'] > 1) { ?>                                
-                <div class="col-sm-8">
-                    <?php echo $pagination->serve(); ?>
-                </div>
-                <?php } ?>
+
 
             </div>
         </div>    

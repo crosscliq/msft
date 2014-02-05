@@ -5,7 +5,7 @@ $maps = new \Dash\Models\Bingmap;?>
 <div class="content container">
                               <div class="row">
                                 <div class="col-lg-12">
-				      <a href="/event/edit/<?php echo $event['details']->_id;?>" class="btn btn-s btn-success pull-right"><i class="icon-edit"></i> Edit</a>
+				      <a href="/event/edit/<?=$event['details']['_id'];?>" class="btn btn-s btn-success pull-right"><i class="icon-edit"></i> Edit</a>
                                   <h1 class="page-title"><?php echo $event['details']->name;?><small> <?php echo $event['details']->category;?></small></h1>
                                 </div>
                               </div>
@@ -22,7 +22,7 @@ $maps = new \Dash\Models\Bingmap;?>
               		</div>
               		<div class="row">
 
-                		  <div class="col-xs-12"> <i class="icon-link"></i> URL: <A href="http://<?php echo $event['details']->event_id; ?>.msft.css/home">http://<?php echo $event['details']->event_id; ?>.msft.css/home</a></div></div>
+                		  <div class="col-xs-12"><A class="text-info" href="http://<?php echo $event['details']->event_id; ?>.msft.css/home"><i class="icon-link"></i>  http://<?php echo $event['details']->event_id; ?>.msft.css/home</a></div></div>
             		</div>
            		  <div class="">
 			   <div class="text-center padder m-t">  <img style="width:100%;opacity:0.6;" src="<?php echo $maps->width('400')->height('345')->location($event['details']['address']['city'] . ', ' . $event['details']['address']['state'])->getImageURL(); ?>" >
@@ -73,8 +73,6 @@ $maps = new \Dash\Models\Bingmap;?>
             		<!-- /widget-content --> 
           		</div>
         	</div>
-
-
           </div>
         </div>
     </div>

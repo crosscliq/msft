@@ -42,10 +42,10 @@
                                               </div>
                                               <div class="widget-footer lt">
                                                   <div class="row">
-                                  <div class="col-xs-3"> <small class="text-muted block">Line:</small> <span>1/24/14</span> </div>
-                                  <div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span>1/24/14</span> </div>
-                                  <div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span>300</span> </div>
-                                  <div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span>220</span> </div>
+                                  <div class="col-xs-3"> <small class="text-muted block">Line:</small> <span><?php echo $item['dates']['start_date']; ?></span> </div>
+                                  <div class="col-xs-3"> <small class="text-muted block">Concert:</small> <span><?php echo $item['dates']['end_date']; ?></span> </div>
+                                  <div class="col-xs-3"> <small class="text-muted block">Wristbands:</small> <span><?php echo $item['wristbands']['ordered']; ?></span> </div>
+                                  <div class="col-xs-3"> <small class="text-muted block">Attendees:</small> <span><?php echo $item['attendees']; ?></span> </div>
                                   </div>
                                           </div>
                                   </div>

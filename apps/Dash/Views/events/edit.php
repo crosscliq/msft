@@ -1,3 +1,4 @@
+<form id="detail-form" action="" class="form" method="post">
 <?php //echo \Dsc\Debug::dump( $flash->get('old'), false ); ?>
 
 <div class="row">
@@ -110,12 +111,6 @@
                     <div><br/>
    			  <input class="btn btn-primary pull-right" type="submit" type="hidden" name="submitType" value="Save">      
                     </div>
-             
-
-
-
-
-
 
 		</div>
 
