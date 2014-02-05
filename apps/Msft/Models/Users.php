@@ -22,7 +22,7 @@ Class Users Extends \Users\Admin\Models\Users {
      */
     public function create( $values, $options=array() ) 
     { 
-        
+        $values['email'] = strtolower($values['email']);
         $save =  $this->save( $values, $options );
         if($save) {
             $activity = new \Msft\Models\Activity;
@@ -42,6 +42,7 @@ Class Users Extends \Users\Admin\Models\Users {
      */
     public function update( $mapper, $values, $options=array() )
     {   
+        $values['email'] = strtolower($values['email']);
         $save =  $this->save( $values, $options, $mapper );
      
         if($save) {

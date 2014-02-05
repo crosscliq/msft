@@ -111,7 +111,7 @@ class Auth extends \Users\Site\Controllers\Auth {
         
         $model = new \Msft\Models\Users;
 
-        $model->setFilter('email', $username_input);
+         $model->setFilter('email', strtolower($username_input));
         
         $user = $model->getItem();
        
