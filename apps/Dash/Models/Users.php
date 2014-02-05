@@ -23,13 +23,14 @@ Class Users Extends \Users\Admin\Models\Users {
         	 $values['password'] = password_hash($values['password'], PASSWORD_BCRYPT);
 
         }
+
                 
         return $this->save( $values, $options );
     }
     
     public function update( $mapper, $values, $options=array() )
     {
-    
+    	$values['email'] = strtolower($values['email']);
         if (!empty($values['new_password'])) 
         {
             if (empty($values['confirm_new_password']))
@@ -56,7 +57,9 @@ Class Users Extends \Users\Admin\Models\Users {
     }
     
     public function save( $values, $options=array(), $mapper=null )
-    {
+    {	
+    	$values['email'] = strtolower($values['email']);
+    	
         if (empty($options['skip_validation']))
         {
             $this->validate( $values, $options, $mapper );
