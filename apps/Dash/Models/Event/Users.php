@@ -53,9 +53,8 @@ Class Users Extends \Users\Admin\Models\Users {
             {
                 $this->setError('New password and confirmation value do not match');
             }
-
-            $values['password'] = password_hash($values['new_password'], PASSWORD_BCRYPT);
             
+            $values['password'] = password_hash($values['new_password'], PASSWORD_BCRYPT);
         }
             else 
         {

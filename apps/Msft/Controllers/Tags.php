@@ -152,6 +152,8 @@ class Tags extends BaseAuth
         if(empty($tag->ticket)) {
             \Base::instance()->reroute('/gatekeeper/ticket/no/');
         } else {
+
+
          $ticketModel = new \Msft\Models\Tickets;
          $ticket = $ticketModel->setState('filter.id',$tag->ticket['id'])->getItem();
              if(empty($ticket)) {
@@ -162,9 +164,10 @@ class Tags extends BaseAuth
                 } else {
                     $redeemed = \Dsc\Mongo\Metastamp::getDate('now');
                     $status = 'redeemed';
-                  
-                    $save = $ticketModel->save(array('redeemed' => $redeemed, 'status' => $status ));
+                    
 
+                    
+                   $save =  $ticketModel->update($ticket, array('redeemed' => $redeemed, 'status' => $status ));
                     
                     if($save) {
                         $activity = new \Msft\Models\Activity;
