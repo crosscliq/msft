@@ -108,7 +108,7 @@ class Auth extends \Users\Site\Controllers\Auth {
         
         $model = new \Dash\Models\Users;
 
-        $model->setFilter('email', $username_input);
+        $model->setFilter('email', strtolower($username_input));
         
         $user = $model->getItem();
        
