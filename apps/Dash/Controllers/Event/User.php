@@ -52,8 +52,16 @@ class User extends \Dash\Controllers\BaseAuth
         
         $selected = array();
         $flash = \Dsc\Flash::instance();
-       
+
+        $model = new \Users\Admin\Models\Groups;
+        $groups = $model->getList();
+        $f3->set('groups', $groups ); 
         
+        $model = new  \Dash\Models\Event\Roles;
+        $roles = $model->getList();
+        $f3->set('roles', $roles ); 
+
+
         $flash->store( $flash->get('old') );        
 
         
@@ -65,7 +73,15 @@ class User extends \Dash\Controllers\BaseAuth
     {
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit User');
-       
+        
+        $model = new \Users\Admin\Models\Groups;
+        $groups = $model->getList();
+        $f3->set('groups', $groups ); 
+        
+        $model = new  \Dash\Models\Event\Roles;
+        $roles = $model->getList();
+        $f3->set('roles', $roles );
+
         $view = new \Dsc\Template;
         echo $view->render('Dash/Views::event/users/edit.php');
     }
