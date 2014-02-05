@@ -28,9 +28,9 @@
                                         <div class="input-control password" data-role="input-control">
                                             <input type="password" name="password2" placeholder="Confirm Password" autofocus="">
                                         </div><br/><br/>	
-                                        <input type="submit" value="Register">
-                                    </fieldset>
-                                </form>
+                                    <input type="submit" value="Register">
+            </fieldset>
+        </form> <a href="/login" class="button large warning">Already Registered?</a>
 	    </div>
 	  </div>
 	</div>
