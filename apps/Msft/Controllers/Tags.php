@@ -190,10 +190,10 @@ class Tags extends BaseAuth
     //If here is no session
     protected function attendeeTapper($tag, $tagid, $role) {
         $f3 =  \Base::instance();
-        $f3->assign('tag', $tag);
-        $f3->assign('tagid', $tagid);
+        $f3->set('tag', $tag);
+        $f3->set('tagid', $tagid);
         $view = new \Dsc\Template;
-        echo $view->render('Msft/Views::attendees/own.php');
+        echo $view->render('Msft/Views::attendee/own.php');
     }
 
     //if there is an empty tag on a route that reqires a tag what do we do? error page or  what?

@@ -1,11 +1,12 @@
-<header class="bg-dark border" data-load="/header-cust"></header>
+
     <div class="container">
   
     <div class="grid">
       <div class="row">
-        <div class="span12">
-           <h2><?php echo $SESSION['event']->name;?></h2>
-            <h3><?php echo $SESSION['event']->dates['start_date'];?></h3>
+        <div class="span12" style="text-align:center;">
+           <h1 class="fg-white"><?php echo $SESSION['event']->name;?></h1>
+		<hr/>
+            <h2 class="fg-white"><?php echo $SESSION['event']->dates['start_date'];?></h2>
         </div>
       </div>
     </div>
