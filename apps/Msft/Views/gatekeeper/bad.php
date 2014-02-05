@@ -27,7 +27,3 @@
         </div>
 </div>
 
-<pre>
-<?php var_dump($attendee); ?>
-</pre>
-

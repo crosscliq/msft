@@ -120,11 +120,11 @@ Class Activity {
 	function ticket() {
 
 		switch ($this->mapper->action) {
-			case 'activated':
-			
+			case 'redeemed':
+				$this->data['message'] = 'A ticket has been redeemed';
 				break;
 			case 'created':
-
+				$this->data['message'] = 'A new ticket has been created';
 				break;
 			default:
 				# code...

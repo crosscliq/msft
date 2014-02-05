@@ -163,8 +163,13 @@ class Tags extends BaseAuth
                     $redeemed = \Dsc\Mongo\Metastamp::getDate('now');
                     $status = 'redeemed';
                   
-                    $ticketModel->update($ticket, array('redeemed' => $redeemed, 'status' => $status ));
+                    $save = $ticketModel->save(array('redeemed' => $redeemed, 'status' => $status ));
 
+                    
+                    if($save) {
+                        $activity = new \Msft\Models\Activity;
+                        $activity->create(array('type'=> 'ticket', 'action' => 'redeemed', 'object' => $save->cast()));
+                    }
 
                     $tag->{'ticket.status'} = 'redeemed';
                     $tag->save();  

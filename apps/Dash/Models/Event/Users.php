@@ -7,9 +7,6 @@ Class Users Extends \Users\Admin\Models\Users {
     public function setIndexes() {
         $collection = $this->getCollection;
 
-        var_dump($collection); 
-        die();
-
 
     }
 

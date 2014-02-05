@@ -9,9 +9,7 @@
 		  </div>
 		  <div class="row">
 		    <div class="span12 text-center">
-		    	<pre>
-		    	<?php var_dump($ticket); ?>
-		    	</pre>
+		    	
 
 					<div class="notice marker-on-top bg-red">
 					    <h2>  </h2>

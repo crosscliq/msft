@@ -26,10 +26,6 @@ Class Roles Extends Eventbase {
     public function setIndexes() {
         $collection = $this->getCollection;
 
-        var_dump($collection); 
-        die();
-
-
     }
     
     protected function fetchFilters()

@@ -184,18 +184,5 @@ $maps = new \Dash\Models\Bingmap;?>
           </div>
         </div>            
 </section>
-<pre>
-<?php //var_dump($event); ?>
-</pre>
 
 
-
-<?php /*
-<section id="attendees">
-<h1>Attendees</h1>
-
-</section>
-<section id="users"> 
-<h1>Users</h1>
-</section>
-*/ ?>
