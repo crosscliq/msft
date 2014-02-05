@@ -88,13 +88,13 @@ switch ($global_app_name)
         $f3->route('GET|POST /users', '\Dash\Controllers\Users->display');
         $f3->route('GET|POST /users/@page', '\Dash\Controllers\Users->display');
         $f3->route('GET|POST /users/delete', '\Dash\Controllers\Users->delete');
-        $f3->route('GET /user', '\Dash\Controllers\User->create');
-        $f3->route('POST /user', '\Dash\Controllers\User->add');
+        $f3->route('GET /users/create', '\Dash\Controllers\User->create');
+        $f3->route('POST /users/create', '\Dash\Controllers\User->add');
         $f3->route('GET /user/@id', '\Dash\Controllers\User->read');
-        $f3->route('GET /user/@id/edit', '\Dash\Controllers\User->edit');
+        $f3->route('GET /user/edit/@id', '\Dash\Controllers\User->edit');
         $f3->route('POST /user/@id', '\Dash\Controllers\User->update');
         $f3->route('DELETE /user/@id', '\Dash\Controllers\User->delete');
-        $f3->route('GET /user/@id/delete', '\Dash\Controllers\User->delete');    
+        $f3->route('GET /user/delete/@id', '\Dash\Controllers\User->delete');    
         
         $f3->route('GET|POST /logout', function() {
         \Base::instance()->clear('SESSION');
