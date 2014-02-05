@@ -29,6 +29,7 @@ Class Users Extends \Users\Admin\Models\Users {
     
     public function update( $mapper, $values, $options=array() )
     {
+    
         if (!empty($values['new_password'])) 
         {
             if (empty($values['confirm_new_password']))
