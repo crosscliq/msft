@@ -33,7 +33,8 @@ Class Users Extends \Users\Admin\Models\Users {
     {
         if (empty($values['password'])) {
             $this->auto_password = $this->generateRandomString( 10 ); // save this for later emailing to the user, if necessary
-            $values['password'] = (new \Joomla\Crypt\Password\Simple)->create( $this->auto_password );
+            $values['password'] =  password_hash($this->auto_password, PASSWORD_BCRYPT);
+
         }
                 
         return $this->save( $values, $options );
@@ -53,7 +54,8 @@ Class Users Extends \Users\Admin\Models\Users {
                 $this->setError('New password and confirmation value do not match');
             }
 
-            $values['password'] = (new \Joomla\Crypt\Password\Simple)->create( $values['new_password'] );
+            $values['password'] = password_hash($values['new_password'], PASSWORD_BCRYPT);
+            
         }
             else 
         {
