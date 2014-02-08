@@ -8,6 +8,7 @@
             <?php echo $one->name;  ?>
         </label>
     </div>
+    <br>
     <?php } ?> 
     
 </div>
