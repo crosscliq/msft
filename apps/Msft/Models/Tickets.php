@@ -105,7 +105,7 @@ class Tickets extends Eventbase
      */
     public function create( $values, $options=array() ) 
     { 
-        
+        $values['created'] = \Dsc\Mongo\Metastamp::getDate('now');
         $save =  $this->save( $values, $options );
         if($save) {
             $activity = new \Msft\Models\Activity;

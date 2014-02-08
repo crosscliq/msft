@@ -23,6 +23,7 @@ Class Users Extends \Users\Admin\Models\Users {
     public function create( $values, $options=array() ) 
     { 
         $values['email'] = strtolower($values['email']);
+        $values['created'] = \Dsc\Mongo\Metastamp::getDate('now');
         $save =  $this->save( $values, $options );
         if($save) {
             $activity = new \Msft\Models\Activity;
