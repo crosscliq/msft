@@ -12,25 +12,25 @@
                 <legend>Customer Info ( required )</legend><br>
                                         <label>First Name</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="first_name" type="text" placeholder="First name" value="<?php echo $flash->old('first_name'); ?>">
+                                            <input name="first_name" type="text" placeholder="First name" value="">
                                         </div>
                                         <label>Last Name</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="last_name" type="text" placeholder="Last name" value="<?php echo $flash->old('last_name'); ?>"  >
+                                            <input name="last_name" type="text" placeholder="Last name" value=""  >
                                         </div>
                                         <label>Email</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="email" type="email" placeholder="Email Address" autofocus="" value="<?php echo $flash->old('email'); ?>">
+                                            <input name="email" type="email" placeholder="Email Address" autofocus="" value="">
                                         </div>
                                         <label>Phone</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="phone" type="tel" placeholder="Phone" value="<?php echo $flash->old('phone'); ?>" ><br>
+                                            <input name="phone" type="tel" placeholder="Phone" value="" ><br>
                                             <small>(Min last 4 required for raffle entry.)</small>
                                        
                                         </div>
                                         <label>Zip Code</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="zipcode" type="tel" placeholder="Zipcode" value="<?php echo $flash->old('phone'); ?>" >
+                                            <input name="zipcode" type="text" placeholder="Zipcode" value="" >
                                         </div>  
         <br/><br/>
            <legend></legend>

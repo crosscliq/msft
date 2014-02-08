@@ -25,12 +25,12 @@ class Tags extends BaseAuth
     		case 'attendee_registration':
 
     			//If the tag doesn't exist lets create a new empty tag
-    			if(empty($tag)) {
+//    			if(empty($tag)) {
     				$tag = $this->getModel()->getPrefab();
     				$tag->tagid = $tagid;
     				$tag->eventid = $f3->get('PARAMS.eventid');
     				$tag = $model->create((array) $tag);
-    			}
+  //  			}
 
     			$this->attendeeRegistration($tag, $tagid, $role);
     			break;

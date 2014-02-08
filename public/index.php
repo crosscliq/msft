@@ -1,4 +1,8 @@
 <?php
+// server should keep session data for AT LEAST 1 hour
+ini_set('session.gc_maxlifetime', 36000);
+session_set_cookie_params(36000);
+
 if(!empty($_COOKIE['id'])) {
 session_id($_COOKIE['id']);
 }

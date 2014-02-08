@@ -130,10 +130,10 @@ class Auth extends \Users\Site\Controllers\Auth {
           
             if ($authenticated) 
             {   
-	session_set_cookie_params ( time()+3600, '/' , 'ontario.msft.cc' );
+	session_set_cookie_params ( time()+36000, '/' , 'ontario.msft.cc' );
                    
                 \Base::instance()->set('SESSION.user', (object) $user->cast());	 
-		setcookie("id", session_id(), time()+3600, '/', 'ontario.msft.cc');
+		setcookie("id", session_id(), time()+36000, '/', 'ontario.msft.cc');
 
 
 		$redirect = $this->input->get('login-redirect','', 'string');
