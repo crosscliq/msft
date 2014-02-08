@@ -116,7 +116,7 @@ class Auth extends \Users\Site\Controllers\Auth {
         
         $user = $model->getItem();
        
-
+        if(!empty($user)) {
         //WHY USE AUTH
         //supporting 3rd login, instead of only using the users 
         //collection we could use smtp jig, or whatever
@@ -151,6 +151,7 @@ class Auth extends \Users\Site\Controllers\Auth {
                 \Base::instance()->reroute($this->default_login_redirect);
                 return;
             }
+        }
        
         // TODO otherwise, reroute to login with error message
         \Dsc\System::instance()->addMessage('Login failed', 'error');
