@@ -85,30 +85,36 @@ $maps = new \Dash\Models\Bingmap;?>
               <h3>Activity</h3>
             </div>
             <div class="widget-content">
-<ul class="nav nav-tabs nav-tabs-small" id="activityTabs">
+<ul class="nav nav-tabs nav-tabs-small" id="filters">
                               <li class="active">
-                                    <a data-toggle="tab" href="#activity-All">All Activity</a>
+                                    <a class="filter" data-filter="all">All Activity</a>
                               </li>
                               <li class="">
-                                    <a data-toggle="tab" href="#activity-Tickets">Tickets</a>
+                                    <a class="filter" data-filter="ticket">Tickets</a>
                               </li>
                               <li>
-                                    <a data-toggle="tab" href="#activity-Reg">Registration</a>
+                                    <a class="filter" data-filter="wristband">Wristbands</a>
                               </li>
                               <li>
-                                    <a data-toggle="tab" href="#activity-Prizes">Prizes</a>
+                                    <a class="filter" data-filter="raffle">Raffle</a>
                               </li>
                               <li>
-                                    <a data-toggle="tab" href="#activity-Users">Users</a>
+                                    <a class="filter" data-filter="attendee">Attendees</a>
+                              </li>
+                              <li>
+                                    <a class="filter" data-filter="user">Users</a>
                               </li>
                         </ul>
 <legend class="section"></legend>
-<div class="tab-content">
-	<div class="tab-pane active" id="activity-All">
+
+	
               <div class="timeline-messages" id="activity-log"> 
+			<ul id="grid" class="row">
               <?php foreach ($event['activities']['subset'] as $action) : ?>
-            
+
                 <!-- Comment -->
+		<li class="mix mix_all <?=$action['type']?> col-lg-12" data-cat="<?=$action['type']?>">
+            <div class="filter-content">
                 <div class="msg-time-chat"><i class="icon-user message-img 
                   <?php 
                   switch ($action['type']) {
@@ -141,45 +147,13 @@ $maps = new \Dash\Models\Bingmap;?>
                   </div>
                 </div>
                 <!-- /comment --> 
-              
+              </div>
+		</li>
                 <?php endforeach; ?>
+			</ul>
+              </div>
 
-              </div>
-	</div>
-	<div class="tab-pane" id="activity-Tickets">
-              <div class="timeline-messages"> 
-             
-                
-              </div>
-	</div>
-	<div class="tab-pane" id="activity-Reg">
-              <div class="timeline-messages"> 
-              
-                
-              </div>
-	</div>
-	<div class="tab-pane" id="activity-Prizes">
-              <div class="timeline-messages"> 
-                <!-- Comment -->
-                
-                
-              </div>
-	</div>
-	<div class="tab-pane" id="activity-Users">
-              <div class="timeline-messages"> 
-                 <!-- Comment -->
-                
-                <div class="msg-time-chat" id="blank-activity"><i class="message-img" style="font-size:55px;"></i>
-                   <div class="message-body msg-in"> <span class="arrow"></span>
-                     <div class="text"> 
-                       <p class="attribution"><a href="#" class="name"></a> at <span class="timestamp"></span></p>
-                       <p class="msg"></p>
-                     </div>
-                   </div>
-                </div>
-              </div>
-	</div>
-</div>
+
             </div>
           </div>
         </div>            

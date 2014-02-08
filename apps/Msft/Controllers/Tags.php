@@ -143,11 +143,23 @@ class Tags extends BaseAuth
 
          $f3 = \Base::instance();
         
-        
-        if(empty($tag)) {
-             \Base::instance()->reroute('/gatekeeper/ticket/no/');
+         if(empty($tag)) {
+            $tag = $this->getModel()->getPrefab();
+            $tag->tagid = $tagid;
+            $tag->eventid = $f3->get('PARAMS.eventid');
+            $tag = $this->getModel()->create((array) $tag);
         }
-        
+		
+   if(empty($tag->ticket)) {	
+        $ticketModel = new \Msft\Models\Tickets;    
+        $ticket = $ticketModel->getPrefab();
+        $ticket->tag = array('tagid' => $tag->tagid , "id" => $tag->_id );
+        $ticket = $ticketModel->create((array) $ticket);
+       
+        $model = $this->getModel( );
+        $model->update($tag, array('ticket' => array( "id" => $ticket->_id, "status" => $ticket->status)));
+}
+ 
         
         if(empty($tag->ticket)) {
             \Base::instance()->reroute('/gatekeeper/ticket/no/');

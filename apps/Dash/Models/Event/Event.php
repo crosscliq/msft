@@ -50,6 +50,7 @@ Class Event {
 
        
         $model = new \Dash\Models\Event\Activities;
+	 $model->setState('list.limit', 100);
         $paginated = $model->paginate();
         $list = array();
         foreach ($paginated['subset'] as $activity ) {
