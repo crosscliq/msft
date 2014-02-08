@@ -35,7 +35,10 @@ Class Users Extends \Users\Admin\Models\Users {
             $this->auto_password = $this->generateRandomString( 10 ); // save this for later emailing to the user, if necessary
             $values['password'] =  password_hash($this->auto_password, PASSWORD_BCRYPT);
 
+        } else {
+            $values['password'] =  password_hash($values['password'], PASSWORD_BCRYPT);
         }
+
                 
         return $this->save( $values, $options );
     }
