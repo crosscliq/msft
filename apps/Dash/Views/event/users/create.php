@@ -21,7 +21,7 @@
                     </div>
 
                     &nbsp;
-                    <a class="btn btn-default" href="./admin/users">Cancel</a>
+                    <a class="btn btn-default" href="./<?=$PARAMS['eventid']?>/users">Cancel</a>
                 </div>
 
             </div>

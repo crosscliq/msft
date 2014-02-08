@@ -73,7 +73,7 @@
                     </div>
 
                     &nbsp;
-                    <a class="btn btn-default" href="./<?php echo $PARAMS['eventid'] ?>/users">Cancel</a>
+                    <a class="btn btn-default" href="./<?php echo $PARAMS['eventid'] ?>/attendees">Cancel</a>
                 </div>
 
             </div>
