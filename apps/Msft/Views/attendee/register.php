@@ -21,7 +21,21 @@
                                              <input type="range" name="age" min="10" max="80" step="5" value="<?php echo $flash->old('age'); ?>" onchange="updateRange(value)">
                                              </div><br/><br/>
                                              <div class="input-control text">
-						<input name="zipcode" type="text" value="" placeholder="Zip Code"/>
+						                          <select name="howdidyouhear" >
+                                                        <option>Word of Mouth</option>
+                                                        <option>Radio</option>
+                                                        <option>Mall Signage</option>
+                                                        <option>Social Media</option>
+                                                        <option>Friend/Family</option>
+                                                        <option>Online</option>
+                                                        <option>Community Event</option>
+                                                        <option>Newspaper</option>
+                                                        <option>News</option>
+                                                        <option>Other</option>
+                                                </select>
+
+
+
                                              </div><br/><br/><br/>
                                         <input type="hidden" name="tagid" value="<?=$tagid?>">
                                         <input type="hidden" name="submitType" value="save_customer">
