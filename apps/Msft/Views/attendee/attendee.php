@@ -24,7 +24,13 @@
                                         </div>
                                         <label>Phone</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="phone" type="tel" placeholder="Phone" value="<?php echo $flash->old('phone'); ?>" >
+                                            <input name="phone" type="tel" placeholder="Phone" value="<?php echo $flash->old('phone'); ?>" ><br>
+                                            <small>(Min last 4 required for raffle entry.)</small>
+                                       
+                                        </div>
+                                        <label>Zip Code</label>
+                                        <div class="input-control text" data-role="input-control">
+                                            <input name="zipcode" type="tel" placeholder="Zipcode" value="<?php echo $flash->old('phone'); ?>" >
                                         </div>  
         <br/><br/>
            <legend></legend>
