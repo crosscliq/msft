@@ -47,17 +47,7 @@
 
                 <div class="tab-pane active" id="tab-basics">
                 
-                    <div class="form-group">
-                        <label class="col-md-3">Username</label>
-        
-                        <div class="col-md-7">
-                            <input type="text" name="username" value="<?php echo $flash->old('username'); ?>" class="form-control" />
-                        </div>
-                        <!-- /.col -->
-        
-                    </div>
-                    <!-- /.form-group -->
-        
+
                     <div class="form-group">
         
                         <label class="col-md-3">First Name</label>
@@ -92,7 +82,17 @@
                         <!-- /.col -->
         
                     </div>
-                    <!-- /.form-group -->   
+                    <!-- /.form-group -->  
+                     <div class="form-group">
+        
+                        <label class="col-md-3">Password</label>
+        
+                        <div class="col-md-7">
+                            <input type="text" name="password" value="<?php echo $flash->old('password'); ?>" class="form-control" />
+                        </div>
+                        <!-- /.col -->
+        
+                    </div>
                                  
                 </div>
                 <!-- /.tab-pane -->
