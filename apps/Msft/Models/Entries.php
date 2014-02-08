@@ -1,9 +1,9 @@
 <?php 
 namespace Msft\Models;
 
-class Attendees extends Eventbase 
+class Tickets extends Eventbase 
 {
-    protected $collection = 'attendees';
+    protected $collection = 'entries';
     protected $default_ordering_direction = '1';
     protected $default_ordering_field = 'type';
 
@@ -18,7 +18,7 @@ class Attendees extends Eventbase
     }
 
     public function getPrefab() {
-        $prefab = New Msft\Models\Prefabs\Tag();
+        $prefab = New \Msft\Models\Prefabs\Ticket();
         return $prefab;
     }
     
@@ -48,15 +48,6 @@ class Attendees extends Eventbase
             $this->filters['_id'] = new \MongoId((string) $filter_id);
         }
 
-        $filter_profile_complete = $this->getState('filter.profile.complete');
-
-        if (strlen($filter_profile_complete))
-        {
-            $this->filters['first_name'] = array('$ne' => null);
-            $this->filters['last_name'] = array('$ne' => null);
-            $this->filters['phone'] = array('$ne' => null);
-        }
-
 
         $filter_eventid = $this->getState('filter.eventid');
 
@@ -65,12 +56,6 @@ class Attendees extends Eventbase
             $this->filters['eventid'] = $filter_eventid;
         }
 
-        $filter_ticket_id = $this->getState('filter.ticket_id');
-
-        if (strlen($filter_eventid))
-        {
-            $this->filters['ticket.id'] = $filter_ticket_id;
-        }
 
         $filter_slug = $this->getState('filter.slug');
 
@@ -79,47 +64,6 @@ class Attendees extends Eventbase
             $this->filters['slug'] = $filter_slug;
         }
 
-         $filter_first_name = $this->getState('filter.first_name');
-
-        if (strlen($filter_first_name))
-        {
-            $this->filters['first_name'] = $filter_first_name;
-        }
-
-        $filter_last_name = $this->getState('filter.last_name');
-
-        if (strlen($filter_last_name))
-        {
-            $this->filters['last_name'] = $filter_last_name;
-        }
-
-        $filter_phone = $this->getState('filter.phone');
-
-        if (strlen($filter_phone))
-        {
-            $this->filters['phone'] = $filter_phone;
-        }
-
-        $filter_email = $this->getState('filter.email');
-
-        if (strlen($filter_email))
-        {
-            $this->filters['email'] = $filter_email;
-        }
-
-        $filter_offers_sms = $this->getState('filter.offers.sms');
-        
-        if (strlen($filter_offers_sms))
-        {
-         $this->filters['offers.sms'] = 'on';
-        }
-
-         $filter_offers_email = $this->getState('filter.offers.email');
-        
-        if (strlen($filter_offers_email))
-        {
-         $this->filters['offers.email'] = 'on';
-        }
         
       /*  $filter_username_contains = $this->getState('filter.username-contains', null, 'username');
         if (strlen($filter_username_contains))
@@ -152,59 +96,6 @@ class Attendees extends Eventbase
         return $this->filters;
     }
 
-      public function getTotal()
-    {
-        
-        $filters = $this->getFilters();
-        $mapper = $this->getMapper();
-        $count = $mapper->count($filters);
-    
-        return $count;
-    }
-
-    function getTotalCount() {
-        $this->emptyState();
-        return $this->getTotal();
-    }
-
-
-        public function prepareItem($item) {
-           
-
-            return $item;
-
-        }
-
-
-      public function getRandomItem( $refresh=false )
-    {
-        $filters = $this->getFilters();
-        $options = $this->getOptions();
-        
-        $total = (int) $this->getTotal();
-        $skip = rand(0,$total);
-
-        $mapper = $this->getMapper();
-        $options['limit'] = 1;
-        if($skip !=0 || $skip !=1){
-           $options['offset'] = $skip; 
-        }
-        
-        $items = $mapper->find($filters, $options);
-        if(@$items[0]){
-             $item = $items[0];
-            $item = $this->prepareItem($item);
-
-        return $item;
-        } else {
-            return $items ;
-        }
-       
-        
-       
-    }
-
-
 
     /**
      * An alias for the save command
@@ -218,7 +109,7 @@ class Attendees extends Eventbase
         $save =  $this->save( $values, $options );
         if($save) {
             $activity = new \Msft\Models\Activity;
-            $activity->create(array('type'=> 'attendee', 'action' => 'created', 'object' => $save->cast()));
+            $activity->create(array('type'=> 'ticket', 'action' => 'created', 'object' => $save->cast()));
         }
         return $save;
 
@@ -238,13 +129,12 @@ class Attendees extends Eventbase
      
         if($save) {
             $activity = new \Msft\Models\Activity;
-            $activity->create(array('type'=> 'attendee', 'action' => 'update', 'object' => $save->cast(), 'updated' =>  $values ));
+            $activity->create(array('type'=> 'ticket', 'action' => 'update', 'object' => $save->cast(), 'updated' =>  $values ));
         }
 
         return $save;
    
     }
-
 
 }
 ?>

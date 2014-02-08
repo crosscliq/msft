@@ -17,8 +17,15 @@ Class Event {
         $f3->set('eventid',  $event['details']->event_id);
 
         $model = new \Dash\Models\Event\Attendees;
-        $list = $model->paginate();
         $event['attendees'] = $model->paginate();
+        $model = new \Dash\Models\Event\Attendees;
+        $model->emptyState();
+        $model->setState('filter.offers.sms', true);
+        $event['smsoptin'] = $model->getTotal();
+        $model = new \Dash\Models\Event\Attendees;
+        $model->emptyState();
+        $model->setState('filter.offers.email', 'on');
+        $event['emailoptin'] = $model->getTotal();
 
         $model = new \Dash\Models\Event\Wristbands;
         
@@ -30,6 +37,7 @@ Class Event {
         $event['wristbands']['total'] =  $event['details']->wristbands['ordered'];
         $event['wristbands']['used'] = $event['wristbands']['withTicketsOnly'] + $event['wristbands']['withAttendeesOnly'] + $event['wristbands']['withAttendeesAndTickets'] + $event['wristbands']['withNOAttendeesAndTickets'];
         $event['wristbands']['available'] = (int) $event['wristbands']['total'] - (int) $event['wristbands']['used'];
+
 
 
         //$model = new \Dash\Models\Event\Prizes;

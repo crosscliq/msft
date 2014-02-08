@@ -116,6 +116,20 @@ Class Attendees Extends Eventbase {
         {
             $this->filters['email'] = $filter_email;
         }
+
+        $filter_offers_sms = $this->getState('filter.offers.sms');
+        
+        if (strlen($filter_offers_sms))
+        {
+         $this->filters['offers.sms'] = (string) 'on';
+        }
+
+         $filter_offers_email = $this->getState('filter.offers.email');
+        
+        if (strlen($filter_offers_email))
+        {
+         $this->filters['offers.email'] = 'on';
+        }
     
         return $this->filters;
     }
@@ -195,6 +209,22 @@ Class Attendees Extends Eventbase {
         $item = $this->prepareItem($item);
 
         return $item;
+    }
+
+
+     public function getTotal()
+    {
+        
+        $filters = $this->getFilters();
+        $mapper = $this->getMapper();
+        $count = $mapper->count($filters);
+    
+        return $count;
+    }
+
+    function getTotalCount() {
+        $this->emptyState();
+        return $this->getTotal();
     }
 
      /**
