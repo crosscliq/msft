@@ -2,6 +2,7 @@
 
 $maps = new \Dash\Models\Bingmap;?>
 
+
 <div class="content container">
                               <div class="row">
                                 <div class="col-lg-12">
@@ -44,8 +45,11 @@ $maps = new \Dash\Models\Bingmap;?>
               <div class="stats-body-alt" style="height:170px;"> 
                 <!--i class="fa fa-bar-chart-o"></i-->
                 <div class="text-center"><h1><span class="aAvailable"><?php echo ( $event['details']['attendees'] - $event['attendees']['total'] ) ?></span><small> / <span class="aTotal"><?php echo $event['details']['attendees']; ?></span> </small></h1></div>
-                <small>Available / Capacity </div>
-              <div class="stats-footer"> &nbsp;</div>
+                <small>Available / Capacity </small></div>
+              
+
+
+              <div class="stats-footer"> SMS Opt: <?php echo $event['smsoptin']; ?> | Email Opt: <?php echo $event['emailoptin']; ?></div>
               </a> </div>
 		
           
