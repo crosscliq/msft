@@ -26,6 +26,7 @@ class Attendees extends Eventbase
     {   
        
         $filter_keyword = $this->getState('filter.keyword');
+        
         if ($filter_keyword && is_string($filter_keyword))
         {
             $key =  new \MongoRegex('/'. $filter_keyword .'/i');
@@ -57,6 +58,12 @@ class Attendees extends Eventbase
             $this->filters['phone'] = array('$ne' => null);
         }
 
+        $filter_yearday = $this->getState('filter.yearday');
+
+        if (strlen($filter_yearday))
+        {   
+            $this->filters['created.yday'] = $filter_yearday;
+        }
 
         $filter_eventid = $this->getState('filter.eventid');
 
@@ -148,6 +155,7 @@ class Attendees extends Eventbase
         {
             $this->filters['groups.id'] = new \MongoId((string) $filter_group);
         }*/
+        
     
         return $this->filters;
     }
