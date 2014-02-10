@@ -28,19 +28,27 @@ class Activity extends \Dash\Controllers\BaseAuth
 
     public function movetoattendee() {
 
-    	$model = new \Dash\Models\Event\Activities;
-        $model->setFilter('type', 'attendee');
-        $model->setFilter('action', 'update');
-        $list = $model->getList();
+    	$array = array();
+    	$array[] = 'Word of Mouth';
+    	$array[] = 'Radio';
+    	$array[] = 'Mall Signage';
+    	$array[] = 'Social Media';
+    	$array[] = 'Friend/Family';
+    	$array[] = 'Community Event';
+    	$array[] = 'Newspaper';
+    	$array[] = 'News';
+    	$array[] = 'Other';
 
-        foreach ($list as $key => $activity) {
-        	$attendees = new \Dash\Models\Event\Attendees;
-        	$values = $activity->object;
-        	unset ($values['_id']);
-        	$create = $attendees->create((array) $values);
-        	
-        	# code...
-        }
+
+    	foreach ($array as $key => $value) {
+    		# code...
+    	}
+    	$model = new \Dash\Models\Event\Attendees;
+        $model->setFilter('howdidyouhear', $value);
+      
+        $count = $model->getTotal();
+
+      	echo $value .' : '.$count;
 
     }
 

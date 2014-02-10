@@ -42,6 +42,7 @@ switch ($global_app_name)
         $f3->route('GET|POST /@eventid/attendees/page/@page', '\Dash\Controllers\Event\Attendees->display');
         $f3->route('GET|POST /@eventid/attendees/delete', '\Dash\Controllers\Event\Attendees->delete');
         $f3->route('GET /@eventid/attendee/create', '\Dash\Controllers\Event\Attendee->create');
+        $f3->route('GET /@eventid/attendees/tocsv', '\Dash\Controllers\Event\Attendees->toCSV');
         $f3->route('POST /@eventid/attendee/create', '\Dash\Controllers\Event\Attendee->add');
         $f3->route('GET /@eventid/attendee/read/@id', '\Dash\Controllers\Event\Attendee->read');
         $f3->route('GET /@eventid/attendee/edit/@id', '\Dash\Controllers\Event\Attendee->edit');
