@@ -21,6 +21,7 @@
         "twbs/bootstrap": "<=3.0.0",
         "aws/aws-sdk-php": "dev-master",
 	    "pusher/pusher-php-server": "dev-master",
-        "mandrill/mandrill": "dev-master"
+        "mandrill/mandrill": "dev-master",
+        "ddeboer/data-import": "@stable"
     }
 }

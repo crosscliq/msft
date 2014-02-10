@@ -9,7 +9,7 @@ Class Users Extends \Users\Admin\Models\Users {
     {
         $db_name = \Base::instance()->get('event.db');
     
-        $this->db = new \DB\Mongo('mongodb://localhost:27017', $db_name);
+        $this->db = new \DB\Mongo('mongodb://127.0.0.1:27017', $db_name);
         
         return $this;
     }

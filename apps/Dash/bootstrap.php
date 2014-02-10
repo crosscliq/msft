@@ -35,7 +35,8 @@ switch ($global_app_name)
         $f3->route('DELETE /event/edit/@id', '\Dash\Controllers\Event->delete');
         $f3->route('GET /event/delete/@id', '\Dash\Controllers\Event->delete');  
 
-        $f3->route('GET|POST /@eventid/dashboard', '\Dash\Controllers\Event\Event->display');    
+        $f3->route('GET|POST /@eventid/dashboard', '\Dash\Controllers\Event\Event->display'); 
+         $f3->route('GET|POST /@eventid/moveact', '\Dash\Controllers\Event\Activity->movetoattendee');   
         // EVENT ATTENDEES ROUTES
         $f3->route('GET|POST /@eventid/attendees', '\Dash\Controllers\Event\Attendees->display');
         $f3->route('GET|POST /@eventid/attendees/page/@page', '\Dash\Controllers\Event\Attendees->display');
