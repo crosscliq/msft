@@ -29,14 +29,14 @@ class Attendees extends \Dash\Controllers\BaseAuth
 
     public function toCSV () {
         $model = new \Dash\Models\Event\Attendees;
-        $list = $model->paginate();
+        $list = $model->getList();
        
         $f3 = \Base::instance();
         $file = new \SplFileObject($f3->get('PATH_ROOT').'logs/output.csv', 'w');
         $writer = new \Ddeboer\DataImport\Writer\CsvWriter($file, 'w', ',');
 
         $writer->writeItem(array('first_name', 'last_name', 'email', 'phone', 'zipcode', 'age', 'gender', 'created', 'SMS OPT IN' , 'EMAIL OPT IN'));
-        foreach($list['subset'] as $attendee) {
+        foreach($list as $attendee) {
             $array = array();
             $array[] = $attendee->first_name;
             $array[] = $attendee->last_name;
