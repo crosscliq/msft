@@ -6459,3 +6459,325 @@ Stack trace:
 PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 199.7.156.163, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
 2014/02/08 22:59:25 [error] 19792#0: *26341 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
 PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 199.7.156.163, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/08 23:48:27 [error] 19792#0: *26391 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 199.7.156.130, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/08 23:50:24 [error] 19792#0: *26396 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 38.117.106.136, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/02/09 01:03:17 [error] 19792#0: *26450 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 174.93.63.211, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 01:37:43 [error] 19792#0: *26482 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 135.23.222.49, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 01:37:43 [error] 19792#0: *26482 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 135.23.222.49, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 02:18:12 [error] 19792#0: *26487 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'msft.cc','Connection'=>'Keep-alive','Accept'=>'*/*','From'=>'googlebot(at)googlebot.com','User-Agent'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','Accept-Encoding'=>'gzip,deflate'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'66.249.73.47','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en','LOCALES'=>'./','LOGS'...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/ww
+2014/02/09 02:48:47 [error] 19792#0: *26493 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 174.93.67.78, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/welcome"
+2014/02/09 03:41:53 [error] 19792#0: *26524 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 54.197.67.117, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/09 04:29:20 [error] 19792#0: *26530 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 199.7.156.131, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/welcome"
+2014/02/09 08:28:10 [error] 19792#0: *26556 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 66.249.73.47, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/02/09 08:28:10 [error] 19792#0: *26556 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'msft.cc','Connection'=>'Keep-alive','Accept'=>'*/*','From'=>'googlebot(at)googlebot.com','User-Agent'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','Accept-Encoding'=>'gzip,deflate'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'66.249.73.47','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en','LOCALES'=>'./','LOGS'...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/ww
+2014/02/09 13:43:43 [error] 19792#0: *26559 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 23.253.40.79, server: msft.cc, request: "GET /phppath/php HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/09 14:13:04 [error] 19792#0: *26568 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:13:04 [error] 19792#0: *26578 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:13:04 [error] 19792#0: *26578 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:13:47 [error] 19792#0: *26590 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:13:47 [error] 19792#0: *26593 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:13:47 [error] 19792#0: *26593 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:13:59 [error] 19792#0: *26596 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:13:59 [error] 19792#0: *26605 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:14:00 [error] 19792#0: *26605 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:14:20 [error] 19792#0: *26608 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:14:55 [error] 19792#0: *26622 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:14:55 [error] 19792#0: *26622 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:14:55 [error] 19792#0: *26622 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:15:02 [error] 19792#0: *26635 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:15:02 [error] 19792#0: *26628 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:15:02 [error] 19792#0: *26635 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:16:41 [error] 19792#0: *26664 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 172.56.31.52, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:16:56 [error] 19792#0: *26673 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:16:56 [error] 19792#0: *26677 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:16:56 [error] 19792#0: *26677 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:00 [error] 19792#0: *26677 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:00 [error] 19792#0: *26684 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:00 [error] 19792#0: *26684 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:20 [error] 19792#0: *26714 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:20 [error] 19792#0: *26709 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:20 [error] 19792#0: *26709 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:46 [error] 19792#0: *26730 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:46 [error] 19792#0: *26737 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:46 [error] 19792#0: *26737 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:53 [error] 19792#0: *26745 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:53 [error] 19792#0: *26750 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:17:54 [error] 19792#0: *26750 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.23, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:25:31 [error] 19791#0: *26867 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 108.168.110.144, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 14:35:22 [error] 19791#0: *27068 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 184.151.190.219, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/welcome"
+2014/02/09 16:19:00 [error] 19791#0: *28641 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '`', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /var/www/msft.cc/apps/Msft/Controllers/Attendee.php on line 340
+PHP message: Fatal error: syntax error, unexpected '`', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Attendee.php:340" while reading response header from upstream, client: 68.101.206.139, server: ontario.msft.cc, request: "POST /attendee/assign/tag/52f7a98113ec023b038b4a0c HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/attendee/signin/52f7a98113ec023b038b4a0c"
+2014/02/09 16:19:13 [error] 19791#0: *28643 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '`', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /var/www/msft.cc/apps/Msft/Controllers/Attendee.php on line 340
+PHP message: Fatal error: syntax error, unexpected '`', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Attendee.php:340" while reading response header from upstream, client: 24.114.52.3, server: ontario.msft.cc, request: "GET /attendee/create/52f7aa8013ec023a038b49d8 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 16:19:17 [error] 19791#0: *28643 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '`', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /var/www/msft.cc/apps/Msft/Controllers/Attendee.php on line 340
+PHP message: Fatal error: syntax error, unexpected '`', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Attendee.php:340" while reading response header from upstream, client: 24.114.52.3, server: ontario.msft.cc, request: "GET /attendee/create/52f7aa8013ec023a038b49d8 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 16:30:10 [error] 19791#0: *28948 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 24.114.74.27, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 16:42:59 [error] 19793#0: *29811 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 184.151.190.86, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/welcome"
+2014/02/09 16:59:54 [error] 19793#0: *30716 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 206.130.178.227, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/02/09 17:01:47 [error] 19793#0: *30786 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 206.130.178.227, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 17:12:11 [error] 19791#0: *31280 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 216.218.29.172, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/welcome"
+2014/02/09 17:15:45 [error] 19791#0: *31467 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 173.195.15.97, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 17:22:11 [error] 19794#0: *31917 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /rolesl)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 206.130.178.227, server: ontario.msft.cc, request: "GET /rolesl HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 17:22:15 [error] 19794#0: *31919 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /logo)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 206.130.178.227, server: ontario.msft.cc, request: "GET /logo HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 17:22:35 [error] 19794#0: *31961 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 24.114.64.59, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/welcome"
+2014/02/09 17:28:48 [error] 19794#0: *32405 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 135.23.222.49, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 19:16:47 [error] 19791#0: *39123 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 24.114.57.105, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/welcome"
+2014/02/09 19:23:02 [error] 19791#0: *39130 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 135.23.222.49, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 19:46:53 [error] 19791#0: *39153 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.164.79.46, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 21:05:57 [error] 19791#0: *39238 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 135.23.222.49, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 21:08:08 [error] 19794#0: *39248 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 66.249.64.34, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/02/09 21:08:09 [error] 19794#0: *39248 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'msft.cc','Cookie'=>'PHPSESSID=mdc6nrieb6ls5k7c0svuq72u20','Connection'=>'Keep-alive','Accept'=>'*/*','From'=>'googlebot(at)googlebot.com','Accept-Encoding'=>'gzip,deflate','User-Agent'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'66.249.64.34','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>tr...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/ww
+2014/02/09 21:49:09 [error] 19794#0: *39252 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 157.55.33.39, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/02/09 21:55:10 [error] 19794#0: *39272 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 24.114.69.151, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc", referrer: "http://ontario.msft.cc/welcome"
+2014/02/09 21:59:24 [error] 19794#0: *39283 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Cache-Control'=>'no-cache','Connection'=>'Keep-Alive','Pragma'=>'no-cache','Accept'=>'*/*','Accept-Encoding'=>'gzip, deflate','From'=>'bingbot(at)microsoft.com','Host'=>'msft.cc','User-Agent'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'157.55.33.39','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>true)...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www
+2014/02/09 22:04:19 [error] 19794#0: *39285 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Cache-Control'=>'no-cache','Connection'=>'Keep-Alive','Accept'=>'*/*','Accept-Encoding'=>'','From'=>'bingbot(at)microsoft.com','Host'=>'msft.cc','User-Agent'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'157.55.33.39','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en','LOCALES'=...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www
+2014/02/09 22:25:54 [error] 19794#0: *39287 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 66.249.85.97, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 23:03:28 [error] 19794#0: *39363 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 172.56.30.177, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 23:06:36 [error] 19794#0: *39367 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Cache-Control'=>'no-cache','Connection'=>'Keep-Alive','Accept'=>'*/*','Accept-Encoding'=>'','From'=>'bingbot(at)microsoft.com','Host'=>'msft.cc','User-Agent'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'157.55.33.39','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en','LOCALES'=...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www
+2014/02/09 23:40:16 [error] 19794#0: *39379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 38.117.106.136, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/02/09 23:40:57 [error] 19794#0: *39379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/fonts/glyphicons-halflings-regular.woff)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 38.117.106.136, server: msft.cc, request: "GET /dash/fonts/glyphicons-halflings-regular.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/login"
+2014/02/09 23:40:57 [error] 19794#0: *39379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/fonts/glyphicons-halflings-regular.ttf)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 38.117.106.136, server: msft.cc, request: "GET /dash/fonts/glyphicons-halflings-regular.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/login"
+2014/02/09 23:40:57 [error] 19794#0: *39379 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/fonts/glyphicons-halflings-regular.svg)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 38.117.106.136, server: msft.cc, request: "GET /dash/fonts/glyphicons-halflings-regular.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/login"
+2014/02/09 23:50:35 [error] 19794#0: *39416 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 135.23.222.49, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/09 23:53:34 [error] 19794#0: *39424 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 71.6.165.200, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 00:06:28 [error] 19794#0: *39426 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 201.212.54.43, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/10 02:22:25 [error] 19794#0: *39446 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 173.195.15.97, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/10 02:30:26 [error] 19794#0: *39456 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'msft.cc','Cookie'=>'PHPSESSID=s7qnd8u2njkvav2hitsn2f0qs2','Connection'=>'Keep-alive','Accept'=>'*/*','From'=>'googlebot(at)googlebot.com','Accept-Encoding'=>'gzip,deflate','User-Agent'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'66.249.64.36','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>tr...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/ww
+2014/02/10 02:35:18 [error] 19794#0: *39462 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 99.243.146.33, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/10 02:48:03 [error] 19794#0: *39472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon-precomposed.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 38.117.106.136, server: ontario.msft.cc, request: "GET /apple-touch-icon-precomposed.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/10 02:48:03 [error] 19794#0: *39472 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /apple-touch-icon.png)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 38.117.106.136, server: ontario.msft.cc, request: "GET /apple-touch-icon.png HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/10 03:00:32 [error] 19794#0: *39480 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 99.243.146.33, server: ontario.msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/10 04:00:51 [error] 19794#0: *39493 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /w00tw00t.at.blackhats.romanian.anti-sec:))
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 178.254.32.249, server: msft.cc, request: "GET /w00tw00t.at.blackhats.romanian.anti-sec:) HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 04:00:51 [error] 19794#0: *39495 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 178.254.32.249, server: msft.cc, request: "GET /phpMyAdmin/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 04:00:52 [error] 19794#0: *39497 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 178.254.32.249, server: msft.cc, request: "GET /phpmyadmin/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 04:00:52 [error] 19794#0: *39499 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 178.254.32.249, server: msft.cc, request: "GET /pma/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 04:00:52 [error] 19794#0: *39501 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 178.254.32.249, server: msft.cc, request: "GET /myadmin/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 04:00:52 [error] 19794#0: *39503 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 178.254.32.249, server: msft.cc, request: "GET /MyAdmin/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 06:01:49 [error] 19794#0: *39505 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /w00tw00t.at.blackhats.romanian.anti-sec:))
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 218.108.85.213, server: msft.cc, request: "GET /w00tw00t.at.blackhats.romanian.anti-sec:) HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 06:01:49 [error] 19794#0: *39507 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 218.108.85.213, server: msft.cc, request: "GET /phpMyAdmin/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 06:01:50 [error] 19794#0: *39509 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 218.108.85.213, server: msft.cc, request: "GET /phpmyadmin/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 06:01:50 [error] 19794#0: *39511 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 218.108.85.213, server: msft.cc, request: "GET /pma/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 06:01:51 [error] 19794#0: *39513 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 218.108.85.213, server: msft.cc, request: "GET /myadmin/scripts/setup.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 07:29:19 [error] 19794#0: *39515 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 107.150.32.130, server: msft.cc, request: "GET /xmlrpc.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 07:40:43 [error] 19794#0: *39517 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 190.121.17.163, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/10 07:53:08 [error] 19794#0: *39519 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 107.20.221.248, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/10 08:40:26 [error] 19794#0: *39523 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'msft.cc','Cookie'=>'PHPSESSID=fit4rvb80ogj7jtqj0q9ilql70','Connection'=>'Keep-alive','Accept'=>'*/*','From'=>'googlebot(at)googlebot.com','Accept-Encoding'=>'gzip,deflate','User-Agent'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'66.249.64.36','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>tr...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/ww
+2014/02/10 08:55:33 [error] 19794#0: *39527 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 198.20.69.74, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/10 12:06:31 [error] 19794#0: *39529 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 66.249.73.47, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/02/10 12:06:31 [error] 19794#0: *39529 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'msft.cc','Connection'=>'Keep-alive','Accept'=>'*/*','From'=>'googlebot(at)googlebot.com','User-Agent'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','Accept-Encoding'=>'gzip,deflate'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'66.249.73.47','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en','LOCALES'=>'./','LOGS'...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/ww
+2014/02/10 14:17:22 [error] 19794#0: *39534 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 207.241.237.107, server: msft.cc, request: "GET /robots.txt HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "www.msft.cc"
+2014/02/10 14:22:39 [error] 19794#0: *39538 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 38.117.106.136, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/02/10 14:47:25 [error] 19794#0: *39558 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 190.85.128.185, server: msft.cc, request: "GET /phppath/php HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/10 17:07:52 [error] 19794#0: *39571 directory index of "/var/www/msft.cc/public/dash/" is forbidden, client: 24.10.133.60, server: msft.cc, request: "GET /dash/ HTTP/1.1", host: "msft.cc"
+2014/02/10 17:07:53 [error] 19794#0: *39571 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 24.10.133.60, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/02/10 17:07:58 [error] 19794#0: *39580 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 24.10.133.60, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/02/10 17:28:22 [error] 19794#0: *39587 FastCGI sent in stderr: "PHP message: Trying to get property of non-object
+PHP message: - /var/www/msft.cc/apps/Msft/Views/attendee/own.php:7 Base->{closure}(8,'Trying to get property of non-object','/var/www/msft.cc/apps/Msft/Views/attendee/own.php',7,array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/www/msft.cc/public/../lib/;/var/www/msft.cc/public/../apps/;','BASE'=>'','BODY'=>'','CACHE'=>'','CASELESS'=>true,'DEBUG'=>2,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>true,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Host'=>'msft.cc','Connection'=>'Keep-alive','Accept'=>'*/*','From'=>'googlebot(at)googlebot.com','User-Agent'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','Accept-Encoding'=>'gzip,deflate'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'msft.cc','IP'=>'66.249.73.47','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'msft.cc','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en','LOCALES'=>'./','LOGS'...
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2032 require('/var/www/msft.cc/apps/Msft/Views/attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:2058 View->sandbox(NULL)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129 View->render('attendee/own.php','text/html',NULL,0)
+PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
+PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'/var/ww
+2014/02/10 18:30:15 [error] 19794#0: *39605 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/fonts/glyphicons-halflings-regular.woff)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 68.101.206.139, server: msft.cc, request: "GET /dash/fonts/glyphicons-halflings-regular.woff HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/login"
+2014/02/10 18:30:15 [error] 19794#0: *39605 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/fonts/glyphicons-halflings-regular.ttf)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 68.101.206.139, server: msft.cc, request: "GET /dash/fonts/glyphicons-halflings-regular.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/login"
+2014/02/10 18:30:15 [error] 19794#0: *39605 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/fonts/glyphicons-halflings-regular.svg)
+PHP message: - index.php:63 Base->run()" while reading response header from upstream, client: 68.101.206.139, server: msft.cc, request: "GET /dash/fonts/glyphicons-halflings-regular.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/login"
+2014/02/10 19:01:08 [error] 19794#0: *39644 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 178.124.164.118, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
