@@ -26,32 +26,6 @@ class Activity extends \Dash\Controllers\BaseAuth
     }
 
 
-    public function movetoattendee() {
-	
-    	$array = array();
-    	$array[] = 'Word of Mouth';
-    	$array[] = 'Radio';
-    	$array[] = 'Mall Signage';
-    	$array[] = 'Social Media';
-    	$array[] = 'Friend/Family';
-    	$array[] = 'Community Event';
-    	$array[] = 'Newspaper';
-    	$array[] = 'News';
-    	$array[] = 'Other';
-
-
-    	foreach ($array as $key => $value) {
-    	$model = new \Dash\Models\Event\Attendees;
-        $model->setFilter('howdidyouhear', $value);
-      
-        $count = $model->getTotal();
-
-      	echo $value .' : '.$count;
-
-    	}
-        	
-
-    }
 
 }
 
