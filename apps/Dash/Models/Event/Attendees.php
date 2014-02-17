@@ -128,9 +128,58 @@ Class Attendees Extends Eventbase {
         
         if (strlen($filter_offers_email))
         {
-         $this->filters['offers.email'] = 'on';
+         $this->filters['offers.email'] = (string) 'on';
         }
-    
+        
+        $filter_products_xboxone = $this->getState('filter.products.xboxone');
+        
+        if (strlen($filter_products_xboxone))
+        {
+         $this->filters['products.xboxone'] = (string) 'on';
+        }
+
+        $filter_products_xbox360 = $this->getState('filter.products.xbox360');
+        
+        if (strlen($filter_products_xbox360))
+        {
+         $this->filters['products.xbox360'] = (string) 'on';
+        }
+
+        $filter_products_kinect = $this->getState('filter.products.kinect');
+        
+        if (strlen($filter_products_kinect))
+        {
+         $this->filters['products.kinect'] = (string) 'on';
+        }
+
+        $filter_products_surface = $this->getState('filter.products.surface');
+        
+        if (strlen($filter_products_surface))
+        {
+         $this->filters['products.surface'] = (string) 'on';
+        }
+
+        $filter_products_pc = $this->getState('filter.products.pc');
+        
+        if (strlen($filter_products_pc))
+        {
+         $this->filters['products.pc'] = (string) 'on';
+        }
+
+        $filter_products_windowsphone = $this->getState('filter.products.windowsphone');
+        
+        if (strlen($filter_products_windowsphone))
+        {
+         $this->filters['products.windowsphone'] = (string) 'on';
+        }
+         $filter_products_office = $this->getState('filter.products.office');
+        
+        if (strlen($filter_products_office))
+        {
+         $this->filters['products.office'] = (string) 'on';
+        }
+
+
         return $this->filters;
     }
 
