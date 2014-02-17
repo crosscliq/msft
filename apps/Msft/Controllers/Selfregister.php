@@ -1,7 +1,7 @@
 <?php 
 namespace Msft\Controllers;
 
-class Selfregister extends base 
+class Selfregister extends Base 
 {	
 
     use \Dsc\Traits\Controllers\CrudItem;
