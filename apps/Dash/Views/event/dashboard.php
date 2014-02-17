@@ -81,6 +81,39 @@ $maps = new \Dash\Models\Bingmap;?>
         </div>
     </div>
 </section>
+<section id='attendeeStats'>
+ <div class="col-lg-12">
+              <div class="widget">
+                  <div class="widget-header"> <i class="icon-bar-chart"></i>
+                    <h3>Attendees Stats </h3>
+                  </div>
+                  <!-- /widget-header -->
+                      <div class="widget-content">
+                        <div class="shortcuts"> 
+                          <div class="shortcut"><h2 class="wbTotal"><?php echo $event['smsoptin']; ?></h2><span class="shortcut-label">SMS OPT IN</span> </div>
+                          <div class="shortcut"><h2 class="tTotal"><?php echo $event['emailoptin']; ?></h2><span class="shortcut-label">EMAIL OPT IN</span> </div>
+                          <div class="shortcut"><h2 class="aTotal"><?php echo $event['xboxone']; ?></h2><span class="shortcut-label">Xbox One</span> </div>
+                          <div class="shortcut"><h2 class="eTotal"><?php echo $event['xbox360']; ?></h2><span class="shortcut-label">Xbox 360</span> </div>
+                          <div class="shortcut"><h2 class="eTotal"><?php echo $event['kinect']; ?></h2><span class="shortcut-label">Kinect</span> </div>
+                          <div class="shortcut"><h2 class="eTotal"><?php echo $event['pc']; ?></h2><span class="shortcut-label">PC</span> </div>
+                          <div class="shortcut"><h2 class="eTotal"><?php echo $event['windowsphone']; ?></h2><span class="shortcut-label">Windows Phone</span> </div>
+                          <div class="shortcut"><h2 class="eTotal"><?php echo $event['office']; ?></h2><span class="shortcut-label">Windows Phone</span> </div>
+                          
+                          
+                        </div>
+                        <!-- /shortcuts --> 
+                     </div>
+                <!-- /widget-content --> 
+              </div>
+          
+     
+   
+
+</section>
+
+
+
+
 <section id="Activity">
 
 <div class="col-lg-12">

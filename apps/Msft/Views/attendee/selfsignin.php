@@ -35,33 +35,33 @@
         <br/><br/>
                                         </div>
                                          <legend></legend>
-         <label>Receive offers/updates from Microsoft?</label>
-                                        <div class="input-control checkbox">
-                                            <input name="products[Xbox One]" type="checkbox" >
+         <label>Do you own any Microsoft products?</label>
+                                         <div class="input-control checkbox">
+                                            <input name="products[xboxone]" type="checkbox" >
                           <span class="check"></span>Xbox One
                                         </div>  <br/>
                                         <div class="input-control checkbox">
-                                            <input name="products[Xbox 360]" type="checkbox" >
+                                            <input name="products[xbox360]" type="checkbox" >
                           <span class="check"></span>Xbox 360
                                         </div><br/>
                                         <div class="input-control checkbox">
-                                            <input name="products[Kinect]" type="checkbox" >
+                                            <input name="products[kinect]" type="checkbox" >
                           <span class="check"></span>Kinect
                                         </div><br/>
                                         <div class="input-control checkbox">
-                                            <input name="products[Surface]" type="checkbox" >
+                                            <input name="products[surface]" type="checkbox" >
                           <span class="check"></span>Surface
                                         </div><br/>
                                         <div class="input-control checkbox">
-                                            <input name="products[PC]" type="checkbox" >
+                                            <input name="products[pc]" type="checkbox" >
                           <span class="check"></span>PC
                                         </div><br/>
                                         <div class="input-control checkbox">
-                                            <input name="products[Windows Phone]" type="checkbox" >
+                                            <input name="products[windowsphone]" type="checkbox" >
                           <span class="check"></span>Windows Phone
                                         </div><br/>
                                         <div class="input-control checkbox">
-                                            <input name="products[Office]" type="checkbox" >
+                                            <input name="products[office]" type="checkbox" >
                           <span class="check"></span>Office
                                         </div><br/>
      <br>

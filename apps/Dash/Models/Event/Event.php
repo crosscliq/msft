@@ -26,6 +26,33 @@ Class Event {
         $model->emptyState();
         $model->setState('filter.offers.email', 'on');
         $event['emailoptin'] = $model->getTotal();
+        $model->emptyState();
+        $model->setState('filter.offers.email', 'on');
+        $event['emailoptin'] = $model->getTotal();
+        $model->emptyState();
+        $model->setState('filter.products.xboxone', 'on');
+        $event['xboxone'] = $model->getTotal();
+        $model->emptyState();
+        $model->setState('filter.products.xbox360', 'on');
+        $event['xbox360'] = $model->getTotal();
+        $model->emptyState();
+        $model->setState('filter.products.kinect', 'on');
+        $event['kinect'] = $model->getTotal();
+        $model->emptyState();
+        $model->setState('filter.products.surface', 'on');
+        $event['surface'] = $model->getTotal();
+        $model->emptyState();
+        $model->setState('filter.products.pc', 'on');
+        $event['pc'] = $model->getTotal();
+        $model->emptyState();
+        $model->setState('filter.products.windowsphone', 'on');
+        $event['windowsphone'] = $model->getTotal();
+        $model->emptyState();
+        $model->setState('filter.products.office', 'on');
+        $event['office'] = $model->getTotal();
+        
+
+
 
         $model = new \Dash\Models\Event\Wristbands;
         
