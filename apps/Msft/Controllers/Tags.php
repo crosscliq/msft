@@ -10,8 +10,6 @@ class Tags extends Base
         return $model; 
     }
 
-
-
     public function action($f3)
     {
         $tagid = $f3->get('PARAMS.tagid');
@@ -25,12 +23,12 @@ class Tags extends Base
     		case 'attendee_registration':
 
     			//If the tag doesn't exist lets create a new empty tag
-//    			if(empty($tag)) {
+   		       	if(empty($tag)) {
     				$tag = $this->getModel()->getPrefab();
     				$tag->tagid = $tagid;
     				$tag->eventid = $f3->get('PARAMS.eventid');
     				$tag = $model->create((array) $tag);
-  //  			}
+    			}
 
     			$this->attendeeRegistration($tag, $tagid, $role);
     			break;
@@ -140,101 +138,50 @@ class Tags extends Base
 
     //This goes to inside of the event
     protected function gateKeeper($tag, $tagid, $role) {
-        /*  $f3 = \Base::instance();
+          $f3 = \Base::instance();
          
--         if(empty($tag)) {
-+        if(empty($tag)) {
-             $tag = $this->getModel()->getPrefab();
-             $tag->tagid = $tagid;
-             $tag->eventid = $f3->get('PARAMS.eventid');
-             $tag = $this->getModel()->create((array) $tag);
-         }
-        
--   if(empty($tag->ticket)) {   
-         $ticketModel = new \Msft\Models\Tickets;    
-         $ticket = $ticketModel->getPrefab();
-         $ticket->tag = array('tagid' => $tag->tagid , "id" => $tag->_id );
-         $ticket = $ticketModel->create((array) $ticket);
--       
--        $model = $this->getModel( );
--        $model->update($tag, array('ticket' => array( "id" => $ticket->_id, "status" => $ticket->status)));
--}
-- 
--        
--        if(empty($tag->ticket)) {
--            \Base::instance()->reroute('/gatekeeper/ticket/no/');
--        } else {
--
--
--         $ticketModel = new \Msft\Models\Tickets;
--         $ticket = $ticketModel->setState('filter.id',$tag->ticket['id'])->getItem();
--             if(empty($ticket)) {
--                \Base::instance()->reroute('/gatekeeper/ticket/no/');
--             }  else {
--                if($ticket->redeemed) {
--                   \Base::instance()->reroute('/gatekeeper/ticket/bad/'.$ticket->_id);  
--                } else {
--                    $redeemed = \Dsc\Mongo\Metastamp::getDate('now');
--                    $status = 'redeemed';
-+            
-+         $redeemed = \Dsc\Mongo\Metastamp::getDate('now'); 
-+         $status = 'redeemed';
-+         $save =  $ticketModel->update($ticket, array('redeemed' => $redeemed, 'status' => $status ));
-                     
--
--                    
--                   $save =  $ticketModel->update($ticket, array('redeemed' => $redeemed, 'status' => $status ));
--                    
--                    if($save) {
--                        $activity = new \Msft\Models\Activity;
--                        $activity->create(array('type'=> 'ticket', 'action' => 'redeemed', 'object' => $save->cast()));
--                    }
--
--                    $tag->{'ticket.status'} = 'redeemed';
--                    $tag->save();  
--
--                    
--
--                   \Base::instance()->reroute('/gatekeeper/ticket/ok/'.$ticket->_id);
--                }
--
--
--             }
--
-+        if($save) {
-+            $activity = new \Msft\Models\Activity;
-+            $activity->create(array('type'=> 'ticket', 'action' => 'redeemed', 'object' => $save->cast()));
-         }
- 
--
-+         \Base::instance()->reroute('/gatekeeper/ticket/ok/'.$ticket->_id);
-+    
+      
+      if(empty($tag->ticket)) {
+          \Base::instance()->reroute('/gatekeeper/ticket/no/');
+      } else {
 
-*/
-         $f3 = \Base::instance();
-        
-        if(empty($tag)) {
-            $tag = $this->getModel()->getPrefab();
-            $tag->tagid = $tagid;
-            $tag->eventid = $f3->get('PARAMS.eventid');
-            $tag = $this->getModel()->create((array) $tag);
-        }
-		
-        $ticketModel = new \Msft\Models\Tickets;    
-        $ticket = $ticketModel->getPrefab();
-        $ticket->tag = array('tagid' => $tag->tagid , "id" => $tag->_id );
-        $ticket = $ticketModel->create((array) $ticket);
-            
-         $redeemed = \Dsc\Mongo\Metastamp::getDate('now'); 
-         $status = 'redeemed';
-         $save =  $ticketModel->update($ticket, array('redeemed' => $redeemed, 'status' => $status ));
-                    
+       $ticketModel = new \Msft\Models\Tickets;
+       $ticket = $ticketModel->setState('filter.id',$tag->ticket['id'])->getItem();
+           if(empty($ticket)) {
+              \Base::instance()->reroute('/gatekeeper/ticket/no/');
+           }  else {
+              if($ticket->redeemed) {
+                 \Base::instance()->reroute('/gatekeeper/ticket/bad/'.$ticket->_id);  
+              } else {
+                  $redeemed = \Dsc\Mongo\Metastamp::getDate('now');
+                  $status = 'redeemed';
+           
+        $redeemed = \Dsc\Mongo\Metastamp::getDate('now'); 
+        $status = 'redeemed';
+        $save =  $ticketModel->update($ticket, array('redeemed' => $redeemed, 'status' => $status ));
+                     
+
+                  
+                 $save =  $ticketModel->update($ticket, array('redeemed' => $redeemed, 'status' => $status ));
+                  
+                  if($save) {
+                      $activity = new \Msft\Models\Activity;
+                      $activity->create(array('type'=> 'ticket', 'action' => 'redeemed', 'object' => $save->cast()));
+                  }
+
+                 $tag->{'ticket.status'} = 'redeemed';
+                $tag->save();  
+                
+               \Base::instance()->reroute('/gatekeeper/ticket/ok/'.$ticket->_id);
+          }
+         }
         if($save) {
             $activity = new \Msft\Models\Activity;
             $activity->create(array('type'=> 'ticket', 'action' => 'redeemed', 'object' => $save->cast()));
-        }
-
-         \Base::instance()->reroute('/gatekeeper/ticket/ok/'.$ticket->_id);
+         }
+ 
+        \Base::instance()->reroute('/gatekeeper/ticket/ok/'.$ticket->_id);
+   
      
     }
     
