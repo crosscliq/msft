@@ -7836,3 +7836,6 @@ PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:129
 PHP message: - /var/www/msft.cc/vendor/dioscouri/f3-lib/src/Dsc/Template.php:159 Dsc\Template->renderLayout('attendee/own.php','text/html',NULL)
 PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Home.php:22 Dsc\Template->render('attendee/own.php')
 PHP message: - /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1292 Base->call('\Msft\Controllers\Home->own',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; ARM; Touch; WPDesktop)','AJAX'=>false,'ALIASES'=>array(),'AUTOLOA
+2014/02/17 18:33:16 [error] 6227#0: *745 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Msft\Controllers\base' not found in /var/www/msft.cc/apps/Msft/Controllers/Selfregister.php on line 5
+PHP message: Fatal error: Class 'Msft\Controllers\base' not found
+PHP message: - /var/www/msft.cc/apps/Msft/Controllers/Selfregister.php:5" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /band/totallynotreal123/selfsignup HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "westfarms.msft.cc", referrer: "http://westfarms.msft.cc/band/totallynotreal123"
