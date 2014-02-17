@@ -142,7 +142,8 @@ Class Attendees Extends Eventbase {
         
         if (strlen($filter_products_xbox360))
         {
-         $this->filters['products.xbox360'] = (string) 'on';
+
+         $this->filters['products.xbox360'] = 'on';
         }
 
         $filter_products_kinect = $this->getState('filter.products.kinect');
@@ -150,6 +151,7 @@ Class Attendees Extends Eventbase {
         if (strlen($filter_products_kinect))
         {
          $this->filters['products.kinect'] = (string) 'on';
+        
         }
 
         $filter_products_surface = $this->getState('filter.products.surface');
@@ -178,7 +180,6 @@ Class Attendees Extends Eventbase {
         {
          $this->filters['products.office'] = (string) 'on';
         }
-
 
         return $this->filters;
     }
