@@ -36,7 +36,39 @@
 
 
 
-                                             </div><br/><br/><br/>
+                                             </div><br/>
+                                              <legend></legend>
+         <label>Receive offers/updates from Microsoft?</label>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Xbox One]" type="checkbox" >
+                          <span class="check"></span>Xbox One
+                                        </div>  <br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Xbox 360]" type="checkbox" >
+                          <span class="check"></span>Xbox 360
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Kinect]" type="checkbox" >
+                          <span class="check"></span>Kinect
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Surface]" type="checkbox" >
+                          <span class="check"></span>Surface
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[PC]" type="checkbox" >
+                          <span class="check"></span>PC
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Windows Phone]" type="checkbox" >
+                          <span class="check"></span>Windows Phone
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Office]" type="checkbox" >
+                          <span class="check"></span>Office
+                                        </div><br/>
+     <br>
+                                             <br/><br/>
                                         <input type="hidden" name="tagid" value="<?=$tagid?>">
                                         <input type="hidden" name="submitType" value="save_customer">
                                         <input type="submit" value="Register" class="btn large inverse">

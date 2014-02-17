@@ -33,6 +33,39 @@
                                             <input name="zipcode" type="text" placeholder="Zipcode" value="" >
                                         </div>  
         <br/><br/>
+                                        </div>
+                                         <legend></legend>
+         <label>Receive offers/updates from Microsoft?</label>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Xbox One]" type="checkbox" >
+                          <span class="check"></span>Xbox One
+                                        </div>  <br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Xbox 360]" type="checkbox" >
+                          <span class="check"></span>Xbox 360
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Kinect]" type="checkbox" >
+                          <span class="check"></span>Kinect
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Surface]" type="checkbox" >
+                          <span class="check"></span>Surface
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[PC]" type="checkbox" >
+                          <span class="check"></span>PC
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Windows Phone]" type="checkbox" >
+                          <span class="check"></span>Windows Phone
+                                        </div><br/>
+                                        <div class="input-control checkbox">
+                                            <input name="products[Office]" type="checkbox" >
+                          <span class="check"></span>Office
+                                        </div><br/>
+     <br>
+
            <legend></legend>
             
                                         <label>Receive offers/updates from Microsoft? <small>( <a href="/privacy/policy" target="_BLANK" class="fg-white tiny">Privacy Policy</a> )</small></label>
