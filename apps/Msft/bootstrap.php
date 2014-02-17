@@ -34,7 +34,10 @@ switch ($global_app_name)
         $f3->route('GET /active/role/@roleid', '\Msft\Controllers\Users->role');
         //Tag Parser
         $f3->route('GET /band/@tagid', '\Msft\Controllers\Tags->action');
-
+        $f3->route('GET /band/@tagid/selfsignup', '\Msft\Controllers\Selfregister->selfsignin');
+        $f3->route('POST /band/@tagid/selfsignup', '\Msft\Controllers\Selfregister->add');
+        $f3->route('GET /band/@id/registerconfirm', '\Msft\Controllers\Selfregister->registerconfirm');
+        $f3->route('GET /band/@tagid/alreadyregistered', '\Msft\Controllers\Selfregister->alreadyregistered');
         $f3->route('GET /empty', '\Msft\Controllers\Tags->displayEmpty');
 
         //Attendee Reg pages

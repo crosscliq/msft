@@ -13,6 +13,9 @@
 
         <div class="page-footer">
             <div class="page-footer-content">
+            <?php if($showselfregister) : ?>
+            <a href="/band/<?php echo $tagid; ?>/selfsignup">Register your wristband</a>
+            <?php endif; ?>
             </div>
         </div>
     </div>

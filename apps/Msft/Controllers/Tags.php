@@ -1,7 +1,7 @@
 <?php 
 namespace Msft\Controllers;
 
-class Tags extends BaseAuth 
+class Tags extends Base 
 {	
 
 	 protected function getModel() 
@@ -243,8 +243,22 @@ class Tags extends BaseAuth
         $f3 =  \Base::instance();
         $f3->set('tag', $tag);
         $f3->set('tagid', $tagid);
-        $view = new \Dsc\Template;
-        echo $view->render('Msft/Views::attendee/own.php');
+
+
+        $model = $this->getModel()->setState('filter.tagid', $tagid);
+        $tag = $model->getItem();
+
+        if(empty($tag->attendee)) {
+            $f3->set('showselfregister', true);
+            $view = new \Dsc\Template;
+            echo $view->render('Msft/Views::attendee/own.php');
+        } else {
+             $f3->set('showselfregister', false);
+            $view = new \Dsc\Template;
+            echo $view->render('Msft/Views::attendee/own.php');
+        }
+
+       
     }
 
     //if there is an empty tag on a route that reqires a tag what do we do? error page or  what?

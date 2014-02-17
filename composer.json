@@ -14,6 +14,7 @@
         "dioscouri/f3-modules": "dev-master",
         "dioscouri/f3-mailer": "dev-master",
         "dioscouri/f3-minify": "dev-master",
+        "dioscouri/f3-activity": "dev-master",
         "firephp/firephp-core": "dev-master",
         "joomla/framework": ">=1.0",
         "bcosca/fatfree": "dev-master",

@@ -1,14 +1,14 @@
 <?php 
 namespace Msft\Controllers;
 
-class Attendee extends BaseAuth 
+class Selfregister extends base 
 {	
 
     use \Dsc\Traits\Controllers\CrudItem;
 
     protected $list_route = '/attendee';
     protected $create_item_route = '/attendee/create';
-    protected $create_item_confirm_route = '/attendee/confirm/{id}';
+    protected $create_item_confirm_route = '/band/{id}/registerconfirm';
     protected $create_item_customer_route = '/attendee/customer/{id}';
     protected $get_item_route = '/attendee/view/{id}';    
     protected $edit_item_route = '/attendee/edit/{id}';
@@ -56,18 +56,29 @@ class Attendee extends BaseAuth
             $data['submitType'] = "save_confirm";
         }
         
-
-
         $f3 = \Base::instance();
         $flash = \Dsc\Flash::instance();
         $model = $this->getModel();
         
         // save
         try {
+
+        	//FIRST WE NEED TO CREATE A TAG
+        	$tagsmodel =  new \Msft\Models\Tags();
+            $tag = $tagsmodel->getPrefab();
+            $tag->tagid = $f3->get('PARAMS.tagid');;
+            $tag->eventid = $f3->get('event.db');
+            $tag = $tagsmodel->create((array) $tag);
+        	
+        	$data['tagid'] = $tag->_id;
+
+
             $values = $data;
             unset($values['submitType']);
             //\Dsc\System::instance()->addMessage(\Dsc\Debug::dump($values), 'warning');
             $this->item = $model->create($values);
+
+
 
 
             if($this->item->tagid) {
@@ -133,7 +144,7 @@ class Attendee extends BaseAuth
                 break;      
              case "save_confirm":
                 $flash->store($this->item_data);
-                $id = $this->item->get( $this->getItemKey() );
+               $id = $this->item->get( $this->getItemKey() );
                 
                 $route = str_replace('{id}', $id, $this->create_item_confirm_route );   
                 break;    
@@ -237,7 +248,7 @@ class Attendee extends BaseAuth
                 break;      
              case "save_confirm":
                  $flash->store($this->item_data);
-                $id = $this->item->get( $this->getItemKey() );
+                $id = $f3->get('PARAMS.tagid');
                 $route = str_replace('{id}', $id, $this->create_item_confirm_route );   
                 break;    
             case "save_close":
@@ -264,52 +275,30 @@ class Attendee extends BaseAuth
         $view = new \Dsc\Template;
         echo $view->render('Msft/Views::attendee/edit.php');
     }
-     public function confirm() 
+
+
+     public function registerconfirm() 
     {
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Activate Wristband');
         
-        $f3->set('tagid',$f3->get('PARAMS.tagid'));
-
+    
         $model = $this->getModel();
-   
+
         $item = $this->getItem();
+
         $f3->set('item',$item);
+
+
 
         $selected = array();
         $flash = \Dsc\Flash::instance();
 
         $view = new \Dsc\Template;
-        echo $view->render('Msft/Views::attendee/confirm.php');
+        echo $view->render('Msft/Views::attendee/selfconfirm.php');
     }
 
-    public function attendee() 
-    {
-        $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Activate Wristband');
-        
-        $f3->set('tagid',$f3->get('PARAMS.tagid'));
-
-        $model = $this->getModel();
-
-        $flash = \Dsc\Flash::instance();
    
-        $item = $this->getItem();
-
-        $f3->set('item',$item);
-        if (method_exists($item, 'cast')) {
-            $item_data = $item->cast();
-        } else {
-            $item_data = \Joomla\Utilities\ArrayHelper::fromObject($item);
-        }
-
-        $flash->store($item_data);
-        
-        $f3->set('flash', $flash );
-
-        $view = new \Dsc\Template;
-        echo $view->render('Msft/Views::attendee/attendee.php');
-    }
 
     public function signin() 
     {
@@ -337,13 +326,13 @@ class Attendee extends BaseAuth
 
         $attendee = $model->getItem();
 
-	 if(@$attendee->id) {
-//            $model = new \Msft\Models\Tags;
-  //          $oldTag = $model->setState('filter.id', $attendee->tagid)->getItem();
-    //        $oldTag->previd = $oldTag->tagid;
-      //      $oldTag->tagid = $thisTag->tagid;
-        //  ;;  $oldTag->save();
-          //  $model->delete($thisTag);
+	 	if(@$attendee->tagid) {
+            $model = new \Msft\Models\Tags;
+            $oldTag = $model->setState('filter.id', $attendee->tagid)->getItem();
+            $oldTag->previd = $oldTag->tagid;
+            $oldTag->tagid = $thisTag->tagid;
+            $oldTag->save();
+            $model->delete($thisTag);
         } else {
 		   \Dsc\System::instance()->addMessage('A band with that information doesn\'t exist', 'error');
             $f3->reroute('/attendee/signin/'.$f3->get('PARAMS.tagid'));
@@ -371,9 +360,34 @@ class Attendee extends BaseAuth
         $f3->set('pagetitle', 'Sign in');
         
         $f3->set('tagid',$f3->get('PARAMS.tagid'));
+        $model = new \Msft\Models\Tags;
+        $tagid = $f3->get('PARAMS.tagid');
+        $model->setState('filter.tagid', $tagid);
+    	
+    	$tag = $model->getItem();
+
+    	if(!empty($tag->attendee)) {
+    		$f3->reroute('/band/'.$f3->get('PARAMS.tagid').'/alreadyregistered');
+    	}
 
         $view = new \Dsc\Template;
-        echo $view->render('Msft/Views::attendee/signin.php');
+        echo $view->render('Msft/Views::attendee/selfsignin.php');
+    }
+
+    public function alreadyregistered() 
+    {
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'Sign in');
+        
+        $f3->set('tagid',$f3->get('PARAMS.tagid'));
+        $model = new \Msft\Models\Tags;
+        $tagid = $f3->get('PARAMS.tagid');
+        $model->setState('filter.tagid', $tagid);
+    	
+    	$tag = $model->getItem();
+
+        $view = new \Dsc\Template;
+        echo $view->render('Msft/Views::attendee/alreadyregistered.php');
     }
 
 
