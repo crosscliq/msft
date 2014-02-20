@@ -17,7 +17,7 @@ class Attendees extends \Dsc\Controller
 
         $model = new \Api\Models\Attendees;
 
-        $model->create((array) $object );
+        $model->create( $object, array('append' => true) );
         
         $result = array('response' => true, 'msg' => 'Attendee Saved');
         echo json_encode($result);
