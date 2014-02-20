@@ -31,8 +31,12 @@ if ($app->get('event.db') == 'dashboard') {
 if ($app->get('event.db') == 'admin') {
     $app->set('APP_NAME', 'admin');
 }
+if ($app->get('event.db') == 'api') {
+    $app->set('APP_NAME', 'api');
+    $app->set('event.db', 'msft');
+}
 
-if($app->get('event.db') != 'admin' && $app->get('event.db') != 'dashboard' && !empty($app->get('event.db')) ) {
+if($app->get('event.db') != 'api' &&$app->get('event.db') != 'admin' && $app->get('event.db') != 'dashboard' && !empty($app->get('event.db')) ) {
 //WE are loading an event
 //HERE WE CAN CHECK THIS IT IS A VALID EVENT REGISTERED AND SUCH
 echo $app->get('event.db'); die();
