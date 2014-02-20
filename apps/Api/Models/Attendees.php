@@ -28,6 +28,11 @@ class Attendees extends \Dsc\Models\Db\Mongo
         return $this->db;
     }
 
+    public function prefab() {
+        $prefab = New \Api\Models\Prefabs\Attendee();
+        return $prefab;
+    }
+
     protected function fetchFilters()
     {   
        
@@ -219,24 +224,24 @@ class Attendees extends \Dsc\Models\Db\Mongo
     }
 
 
-    /**
-     * An alias for the save command
-     * 
-     * @param unknown_type $values
-     * @param unknown_type $options
+     /**
+        * An alias for the save command, used only for creating a new object
+        *
+        * @param array $values
+        * @param array $options
      */
-    public function create( $values, $options=array() ) 
-    { 
-        $values['created'] = \Dsc\Mongo\Metastamp::getDate('now');
+    public function create( $values, $options=array() )
+    {
+        $values = $this->prefab( $values, $options )->cast();
+
         $save =  $this->save( $values, $options );
         if($save) {
             $activity = new \Msft\Models\Activity;
             $activity->create(array('type'=> 'attendee', 'action' => 'created', 'object' => $save->cast()));
         }
         return $save;
-
-
     }
+
 
       /**
      * An alias for the save command
