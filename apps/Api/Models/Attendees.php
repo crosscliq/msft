@@ -232,6 +232,7 @@ class Attendees extends \Dsc\Models\Db\Mongo
      */
     public function create( $values, $options=array() )
     {
+     
         $values = $this->prefab( $values, $options )->cast();
 
         $save =  $this->save( $values, $options );
