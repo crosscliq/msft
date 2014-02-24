@@ -16,8 +16,11 @@
             <?php if($showselfregister) : ?>
             <div id="role" style="text-align:center;">
             <a href="/band/<?php echo $tagid; ?>/selfsignup" class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(229,10,10,0.6)!important">Register your wristband</a>
-                </div>
-          
+            </div><br><br>
+            <div id="role" style="text-align:center;">
+            <a href="/attendee/signin/<?php echo$tagid; ?>" class="button large warning">Already Registered?</a>
+            </div>
+             
             <?php endif; ?>
             </div>
         </div>

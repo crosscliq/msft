@@ -75,7 +75,7 @@
                                         </div>  <br/>
                                         <div class="input-control checkbox">
                                             <input name="offers[sms]" type="checkbox" checked>
-                          <span class="check"></span>sms
+                                <span class="check"></span>sms
                                         </div><br/><br/>    
 					               		 <input type="hidden" name="selfregistered" value="true"> 
                                         <input type="hidden" name="submitType" value="save_confirm">      
@@ -87,9 +87,11 @@
     </div>
    
 
-        <div class="page-footer">
+    <div class="page-footer">
             <div class="page-footer-content">
-                <!--<div data-load="header.html"></div>-->
+                <div id="role" style="text-align:center;">
+                    <a href="/attendee/signin/<?php echo $tagid; ?>" class="button large warning">Already Registered?</a>
+                </div>
             </div>
         </div>
     </div>
