@@ -39,7 +39,6 @@ if ($app->get('event.db') == 'api') {
 if($app->get('event.db') != 'api' &&$app->get('event.db') != 'admin' && $app->get('event.db') != 'dashboard' && !empty($app->get('event.db')) ) {
 //WE are loading an event
 //HERE WE CAN CHECK THIS IT IS A VALID EVENT REGISTERED AND SUCH
-echo $app->get('event.db'); die();
 $model = new \Dash\Models\Events;
 $item = $model->setState('filter.eventid', $app->get('event.db'))->getItem();
 $app->set('SESSION.event', $item );

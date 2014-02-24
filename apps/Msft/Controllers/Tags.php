@@ -182,10 +182,11 @@ class Tags extends Base
  
         \Base::instance()->reroute('/gatekeeper/ticket/ok/'.$ticket->_id);
    
-     
+	}     
     }
-    
-    //If here is no session
+   
+
+ 
     protected function attendeeTapper($tag, $tagid, $role) {
         $f3 =  \Base::instance();
         $f3->set('tag', $tag);
