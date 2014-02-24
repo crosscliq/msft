@@ -4,6 +4,7 @@ namespace Api\Controllers;
 class Attendees extends \Dsc\Controller  
 {	
 
+
 	
      public function Sync($f3)
     {
@@ -17,12 +18,29 @@ class Attendees extends \Dsc\Controller
 
         $model = new \Api\Models\Attendees;
 
-        $model->create((array) $object, array('append' => true) );
-        
-        $result = array('response' => true, 'msg' => 'Attendee Saved');
-        echo json_encode($result);
-        exit();
+        $f3->set('HALT', false) ;
+       // $f3->set('DEBUG', 0) ;
+        $result = array();
 
+
+
+        try {
+          $result =   $model->create((array) $object);
+            $result['response'] = true;
+            $result['msg'] = 'Attendee Saved';
+        } catch (\Exception $e) {
+
+            $result['response'] = false;
+            $result['msg'] = $model->getErrors();
+            
+        } finally {
+
+            echo json_encode($result);
+           
+        }
+         die();
+        
+      
     }
 	
  
