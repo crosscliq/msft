@@ -20,7 +20,7 @@
                                              <span id="ageval"></span>
                                              <input type="range" name="age" min="10" max="80" step="5" value="<?php echo $flash->old('age'); ?>" onchange="updateRange(value)">
                                              </div><br/><br/>
-                                             <div class="input-control text">
+                                            
 						                          <select name="howdidyouhear" >
                                                         <option>Word of Mouth</option>
                                                         <option>Radio</option>
@@ -34,11 +34,9 @@
                                                         <option>Other</option>
                                                 </select>
 
-
-
-                                             </div><br/>
+<br/>
                                               <legend></legend>
-         <label>Receive offers/updates from Microsoft?</label>
+         <label>Do you own any Microsoft products?</label>
                                         <div class="input-control checkbox">
                                             <input name="products[xboxone]" type="checkbox" >
                           <span class="check"></span>Xbox One
