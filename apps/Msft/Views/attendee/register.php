@@ -19,7 +19,7 @@
                                         <label>Age Estimate ( 10 - 80 )</label>
                                              <span id="ageval"></span>
                                              <input type="range" name="age" min="10" max="80" step="5" value="<?php echo $flash->old('age'); ?>" onchange="updateRange(value)">
-                                             </div><br/><br/>
+                                             </div><br/>
                                             <div class="input-control select">
                                         <label>How did you hear about this event?</label>
                                                 <select name="howdidyouhear" >
@@ -34,11 +34,7 @@
                                                         <option>News</option>
                                                         <option>Other</option>
                                                 </select>
-                                             </div><br/><br/>
-						                         
-
-<br/>
-                                              <legend></legend>
+                                             </div><br/>
          <label>Do you own any Microsoft products?</label>
                                         <div class="input-control checkbox">
                                             <input name="products[xboxone]" type="checkbox" >
