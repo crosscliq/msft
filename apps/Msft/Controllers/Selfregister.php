@@ -308,7 +308,7 @@ class Selfregister extends Base
         $f3->set('tagid',$f3->get('PARAMS.tagid'));
 
         $view = new \Dsc\Template;
-        echo $view->render('Msft/Views::attendee/signin.php');
+        echo $view->render('Msft/Views::attendee/selfsignin.php');
     }
 
      public function assign() 
@@ -335,7 +335,7 @@ class Selfregister extends Base
             $model->delete($thisTag);
         } else {
 		   \Dsc\System::instance()->addMessage('A band with that information doesn\'t exist', 'error');
-            $f3->reroute('/attendee/signin/'.$f3->get('PARAMS.tagid'));
+            $f3->reroute('/self/signin/'.$f3->get('PARAMS.tagid'));
 
         }       
  

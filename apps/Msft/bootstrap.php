@@ -40,6 +40,9 @@ switch ($global_app_name)
         $f3->route('GET /band/@tagid/alreadyregistered', '\Msft\Controllers\Selfregister->alreadyregistered');
         $f3->route('GET /empty', '\Msft\Controllers\Tags->displayEmpty');
 
+         $f3->route('POST /self/assign/tag/@tagid', '\Msft\Controllers\Selfregister->assign');
+        $f3->route('GET /self/signin/@tagid', '\Msft\Controllers\Selfregister->signin');
+        
         //Attendee Reg pages
         $f3->route('GET /attendee', '\Msft\Controllers\Attendees->display');
         $f3->route('POST /attendee/assign/tag/@tagid', '\Msft\Controllers\Attendee->assign');

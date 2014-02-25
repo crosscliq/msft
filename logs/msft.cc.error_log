@@ -8701,3 +8701,73 @@ PHP message: - index.php:66 Base->run()" while reading response header from upst
 PHP message: - index.php:66 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /dash/fonts/glyphicons-halflings-regular.ttf HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/ontario/attendees/page/89"
 2014/02/24 22:11:50 [error] 6228#0: *6724 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/fonts/glyphicons-halflings-regular.svg)
 PHP message: - index.php:66 Base->run()" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /dash/fonts/glyphicons-halflings-regular.svg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/ontario/attendees/page/89"
+2014/02/24 23:47:10 [error] 6228#0: *6766 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 54.205.217.245, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/24 23:51:50 [error] 6228#0: *6779 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 124.207.198.18, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/25 02:19:35 [error] 6228#0: *6792 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 24.10.229.93, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/02/25 03:12:39 [error] 6228#0: *6822 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 182.73.163.36, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "eventname.msft.cc"
+2014/02/25 03:12:57 [error] 6228#0: *6824 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 182.73.163.36, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "eventname.msft.cc"
+2014/02/25 04:45:33 [error] 6228#0: *6829 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /cgi-bin/rtpd.cgi)" while reading response header from upstream, client: 27.21.87.124, server: msft.cc, request: "GET /cgi-bin/rtpd.cgi?/bin/busybox HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "23.253.33.232"
+2014/02/25 04:58:04 [error] 6228#0: *6831 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 23.23.194.136, server: msft.cc, request: "HEAD / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/25 06:51:48 [error] 6228#0: *6842 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /browserconfig.xml)" while reading response header from upstream, client: 24.10.229.93, server: ontario.msft.cc, request: "GET /browserconfig.xml HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "ontario.msft.cc"
+2014/02/25 07:21:34 [error] 6228#0: *6845 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)" while reading response header from upstream, client: 66.249.75.111, server: msft.cc, request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"
+2014/02/25 09:01:42 [error] 6228#0: *6859 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 167.220.225.12, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "eventname.msft.cc"
+2014/02/25 09:01:43 [error] 6228#0: *6852 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 167.220.225.12, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "eventname.msft.cc"
+2014/02/25 09:01:50 [error] 6228#0: *6861 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 167.220.225.12, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "eventname.msft.cc"
+2014/02/25 12:21:13 [error] 6228#0: *6867 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 72.90.72.229, server: msft.cc, request: "GET /phppath/php HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/25 12:56:03 [error] 6228#0: *6871 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 72.90.72.229, server: msft.cc, request: "GET /phppath/php HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/25 15:00:38 [error] 6228#0: *6889 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /robots.txt)" while reading response header from upstream, client: 64.246.161.42, server: msft.cc, request: "GET /robots.txt HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "www.msft.cc"
+2014/02/25 15:13:17 [error] 6228#0: *6895 FastCGI sent in stderr: "PHP message: Undefined index: HTTP_HOST
+PHP message: PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: QUIET' in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php:1608
+Stack trace:
+#0 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1026): Base->{closure}(8, 'Undefined index...', '/var/www/msft.c...', 1026, Array)
+#1 /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php(1602): Base->error(500, 'Undefined index...', Array)
+#2 [internal function]: Base->{closure}(Object(ErrorException))
+#3 {main}
+  thrown in /var/www/msft.cc/vendor/bcosca/fatfree/lib/base.php on line 1608" while reading response header from upstream, client: 72.90.72.229, server: msft.cc, request: "GET /phppath/php HTTP/1.0", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:"
+2014/02/25 16:43:01 [error] 6228#0: *6920 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "westfarms.msft.cc"
+2014/02/25 16:43:24 [error] 6228#0: *6936 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 75.165.0.99, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "eventname.msft.cc"
+2014/02/25 16:43:48 [error] 6228#0: *6938 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 75.165.0.99, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "eventname.msft.cc"
+2014/02/25 16:44:19 [error] 6228#0: *6967 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "westfarms.msft.cc"
+2014/02/25 17:16:09 [error] 6228#0: *7107 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:66" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/02/25 17:16:09 [error] 6228#0: *7107 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:66" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc"
+2014/02/25 17:18:48 [error] 6228#0: *7159 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /dash/js/jquery.min.map)
+PHP message: - index.php:66" while reading response header from upstream, client: 69.27.7.162, server: msft.cc, request: "GET /dash/js/jquery.min.map HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "dashboard.msft.cc", referrer: "http://dashboard.msft.cc/westfarms/dashboard"
+2014/02/25 17:32:47 [error] 6228#0: *7215 FastCGI sent in stderr: "PHP message: HTTP 404 (GET /favicon.ico)
+PHP message: - index.php:66" while reading response header from upstream, client: 131.107.147.83, server: msft.cc, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "msft.cc"

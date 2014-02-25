@@ -3,25 +3,24 @@
 <header class="bg-dark border" data-load="/header-cust"></header>
     <div class="container">
   
-    <div class="grid">
-      <div class="row">
-        <div class="span12">
-                 <br/>
-        <form method="post" action="<?php echo $PARAMS[0]?>" autocomplete="off" >
-            <fieldset>
-                <legend>Customer Info ( required )</legend><br>
+	<div class="grid">
+	  <div class="row">
+	    <div class="span12">
+	<?php echo \Dsc\System::instance()->renderMessages(); ?>
+
+	    	     <br/>
+		<form method="post" action="/self/assign/tag/<?php echo $PARAMS['tagid']; ?>">
+			<fieldset>
+                <legend>Customer Info </legend><br>
                                         <label>First Name</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="first_name" type="text" placeholder="First name" value="">
+                                            <input name="first_name" type="text" placeholder="First name" >
                                         </div>
                                         <label>Last Name</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="last_name" type="text" placeholder="Last name" value=""  >
+                                            <input name="last_name" type="text" placeholder="Last name"   >
                                         </div>
-                                        <label>Email</label>
-                                        <div class="input-control text" data-role="input-control">
-                                            <input name="email" type="email" placeholder="Email Address" autofocus="" value="">
-                                        </div>
+                        
                                         <label>Phone</label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="phone" type="tel" placeholder="Phone" value="" ><br>
@@ -79,21 +78,17 @@
                                         </div><br/><br/>    
 					               		 <input type="hidden" name="selfregistered" value="true"> 
                                         <input type="hidden" name="submitType" value="save_confirm">      
-                                        <input type="submit" value="Register" class="inverse large">
+                                        <input type="submit" value="Activate New Band" class="inverse large">
                                     </fieldset>
                                 </form>
-        </div>
-      </div>
-    </div>
+	    </div>
+	  </div>
+	</div>
    
 
-    <div class="page-footer">
+        <div class="page-footer">
             <div class="page-footer-content">
-                <div id="role" style="text-align:center;">
-                    <a href="/attendee/signin/<?php echo $tagid; ?>" class="button large warning">Already Registered?</a>
-                </div>
+                <!--<div data-load="header.html"></div>-->
             </div>
         </div>
     </div>
-
- 
