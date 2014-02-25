@@ -56,6 +56,7 @@ class Selfregister extends Base
             $data['submitType'] = "save_confirm";
         }
         
+
         $f3 = \Base::instance();
         $flash = \Dsc\Flash::instance();
         $model = $this->getModel();
@@ -92,9 +93,12 @@ class Selfregister extends Base
 
         }
         catch (\Exception $e) {
-            \Dsc\System::instance()->addMessage('Save failed with the following errors:', 'error');
+          
             foreach ($model->getErrors() as $error)
-            {
+            {   
+
+                $error = (new \Dash\Helpers\Errors('attendee', $error))->getData();
+
                 \Dsc\System::instance()->addMessage($error, 'error');
             }
             
@@ -110,7 +114,7 @@ class Selfregister extends Base
             \Dsc\System::instance()->setUserState('use_flash.' . $this->create_item_route, true);
             $flash->store($data);
 
-          //  $this->setRedirect( $this->create_item_route );
+            $this->setRedirect( $f3->get('PARAMS.0') );
                         
             return false;
         }
@@ -307,6 +311,7 @@ class Selfregister extends Base
         
         $f3->set('tagid',$f3->get('PARAMS.tagid'));
 
+
         $view = new \Dsc\Template;
         echo $view->render('Msft/Views::attendee/selfsignin.php');
     }
@@ -369,6 +374,8 @@ class Selfregister extends Base
     	if(!empty($tag->attendee)) {
     		$f3->reroute('/band/'.$f3->get('PARAMS.tagid').'/alreadyregistered');
     	}
+         $flash = \Dsc\Flash::instance();
+         $f3->set('flash',$flash );
 
         $view = new \Dsc\Template;
         echo $view->render('Msft/Views::attendee/selfsignin.php');

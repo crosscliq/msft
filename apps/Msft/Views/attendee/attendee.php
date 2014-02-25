@@ -9,29 +9,32 @@
                  <br/>
         <form method="post" action="/attendee/customer/update/<?php echo $item->_id; ?>" autocomplete="off" >
             <fieldset>
-                <legend>Customer Info ( required )</legend><br>
-                                        <label>First Name</label>
+               <legend>Customer Info </legend><br>
+                            <label>First Name <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="first_name" type="text" placeholder="First name" value="">
                                         </div>
-                                        <label>Last Name</label>
+                                        <label>Last Name <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="last_name" type="text" placeholder="Last name" value=""  >
                                         </div>
-                                        <label>Email</label>
+                                        <label>Email <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="email" type="email" placeholder="Email Address" autofocus="" value="">
                                         </div>
-                                        <label>Phone</label>
+                                        <label>Phone <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="phone" type="tel" placeholder="Phone" value="" ><br>
                                             <small>(Min last 4 required for raffle entry.)</small>
                                        
                                         </div>
-                                        <label>Zip Code</label>
+                                        <label>Zip Code <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="zipcode" type="text" placeholder="Zipcode" value="" >
+                                            <small>*Minimum information needed for raffle entry</small>
                                         </div>  
+
+                    
         <br/><br/>
            <legend></legend>
             

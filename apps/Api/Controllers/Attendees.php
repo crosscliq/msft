@@ -31,7 +31,7 @@ class Attendees extends \Dsc\Controller
         } catch (\Exception $e) {
 
             $result['response'] = false;
-            $result['msg'] = $model->getErrors();
+            $result['msg'] = \Dsc\System::instance()->renderMessages();
             
         } finally {
 

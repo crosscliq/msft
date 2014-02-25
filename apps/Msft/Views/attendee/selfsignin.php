@@ -9,28 +9,34 @@
 	<?php echo \Dsc\System::instance()->renderMessages(); ?>
 
 	    	     <br/>
-		<form method="post" action="/self/assign/tag/<?php echo $PARAMS['tagid']; ?>">
+		<form method="post" action="<?php echo $PARAMS[0]; ?>">
 			<fieldset>
                 <legend>Customer Info </legend><br>
-                                        <label>First Name</label>
+                            <label>First Name <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="first_name" type="text" placeholder="First name" >
+                                            <input name="first_name" type="text" placeholder="First name" value="<?php echo $flash->old('first_name');?>">
                                         </div>
-                                        <label>Last Name</label>
+                                        <label>Last Name <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="last_name" type="text" placeholder="Last name"   >
+                                            <input name="last_name" type="text" placeholder="Last name" value="<?php echo $flash->old('last_name');?>"  >
                                         </div>
-                        
-                                        <label>Phone</label>
+                                        <label>Email <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="phone" type="tel" placeholder="Phone" value="" ><br>
+                                            <input name="email" type="email" placeholder="Email Address" autofocus="" value="<?php echo $flash->old('email');?>">
+                                        </div>
+                                        <label>Phone <span class="required">*</span></label>
+                                        <div class="input-control text" data-role="input-control">
+                                            <input name="phone" type="tel" placeholder="Phone" value="<?php echo $flash->old('phone');?>" ><br>
                                             <small>(Min last 4 required for raffle entry.)</small>
                                        
                                         </div>
-                                        <label>Zip Code</label>
+                                        <label>Zip Code <span class="required">*</span></label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="zipcode" type="text" placeholder="Zipcode" value="" >
+                                            <input name="zipcode" type="text" placeholder="Zipcode" value="<?php echo $flash->old('zipcode');?>" >
+                                            <small>*Minimum information needed for raffle entry</small>
                                         </div>  
+
+                    
         <br/><br/>
                                         </div>
                                          <legend></legend>
@@ -76,9 +82,12 @@
                                             <input name="offers[sms]" type="checkbox" checked>
                                 <span class="check"></span>sms
                                         </div><br/><br/>    
+
 					               		 <input type="hidden" name="selfregistered" value="true"> 
                                         <input type="hidden" name="submitType" value="save_confirm">      
                                         <input type="submit" value="Activate New Band" class="inverse large">
+                                   
+
                                     </fieldset>
                                 </form>
 	    </div>
@@ -87,8 +96,9 @@
    
 
         <div class="page-footer">
-            <div class="page-footer-content">
-                <!--<div data-load="header.html"></div>-->
+            <div class="page-footer-content" style="text-align:center;"><br>
+                                                     <small>Data collected by Crosscliq on behalf of Microsoft retail stores</small>
+
             </div>
         </div>
     </div>
