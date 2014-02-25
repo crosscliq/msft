@@ -20,8 +20,9 @@
                                              <span id="ageval"></span>
                                              <input type="range" name="age" min="10" max="80" step="5" value="<?php echo $flash->old('age'); ?>" onchange="updateRange(value)">
                                              </div><br/><br/>
-                                            
-						                          <select name="howdidyouhear" >
+                                            <div class="input-control select">
+                                        <label>How did you hear about this event?</label>
+                                                <select name="howdidyouhear" >
                                                         <option>Word of Mouth</option>
                                                         <option>Radio</option>
                                                         <option>Mall Signage</option>
@@ -33,6 +34,8 @@
                                                         <option>News</option>
                                                         <option>Other</option>
                                                 </select>
+                                             </div><br/><br/>
+						                         
 
 <br/>
                                               <legend></legend>
