@@ -23,7 +23,7 @@
                                         <div class="input-control text" data-role="input-control">
                                             <input name="last_name" type="text" placeholder="Last name" value="<?php echo $flash->old('last_name');?>"  >
                                         </div>
-                                        <label>Email <span class="required">*</span></label>
+                                        <label>Email </label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="email" type="email" placeholder="Email Address" autofocus="" value="<?php echo $flash->old('email');?>">
                                         </div>
@@ -33,7 +33,7 @@
                                             <small>(Min last 4 required for raffle entry.)</small>
                                        
                                         </div>
-                                        <label>Zip Code <span class="required">*</span></label>
+                                        <label>Zip Code </label>
                                         <div class="input-control text" data-role="input-control">
                                             <input name="zipcode" type="text" placeholder="Zipcode" value="<?php echo $flash->old('zipcode');?>" >
                                             <small>*Minimum information needed for raffle entry</small>
@@ -44,7 +44,7 @@
                                         </div>
                                          <legend></legend>
         
-    
+
             
                                         <label>Receive offers/updates from Microsoft? <small>( <a href="/privacy/policy" target="_BLANK" class="fg-white tiny">Privacy Policy</a> )</small></label>
                                         <div class="checkbox">

@@ -378,7 +378,7 @@ class Selfregister extends Base
          $f3->set('flash',$flash );
 
         $view = new \Dsc\Template;
-        echo $view->render('Msft/Views::attendee/selfsignin.php');
+        echo $view->render('Msft/Views::attendee/selfregister.php');
     }
 
     public function alreadyregistered() 

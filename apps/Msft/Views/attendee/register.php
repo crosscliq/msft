@@ -4,6 +4,7 @@
         <div class="grid">
           <div class="row">
             <div class="span12">
+               <?php echo \Dsc\System::instance()->renderMessages(); ?>
              <br/>
                 <form method="post" action="<?php echo $PARAMS[0]?>" autocomplete="off" >
                         <fieldset>
@@ -35,32 +36,32 @@
                                                         <option>Other</option>
                                                 </select>
                                              </div><br/>
-         <label>Do you own any Microsoft products?</label>
-                                        <div class="input-control checkbox">
-                                            <input name="products[xboxone]" type="checkbox" >
+        <label>Do you own any Microsoft products?</label>
+                                         <div class="checkbox">
+                                            <input name="products[xboxone]" type="checkbox">
                           <span class="check"></span>Xbox One
                                         </div>  <br/>
-                                        <div class="input-control checkbox">
-                                            <input name="products[xbox360]" type="checkbox" >
+                                        <div class="checkbox">
+                                            <input name="products[xbox360]" type="checkbox">
                           <span class="check"></span>Xbox 360
                                         </div><br/>
-                                        <div class="input-control checkbox">
-                                            <input name="products[kinect]" type="checkbox" >
+                                        <div class="checkbox">
+                                            <input name="products[kinect]" type="checkbox">
                           <span class="check"></span>Kinect
                                         </div><br/>
-                                        <div class="input-control checkbox">
-                                            <input name="products[surface]" type="checkbox" >
+                                        <div class="checkbox">
+                                            <input name="products[surface]" type="checkbox">
                           <span class="check"></span>Surface
                                         </div><br/>
-                                        <div class="input-control checkbox">
+                                        <div class="checkbox">
                                             <input name="products[pc]" type="checkbox" >
                           <span class="check"></span>PC
                                         </div><br/>
-                                        <div class="input-control checkbox">
+                                        <div class="checkbox">
                                             <input name="products[windowsphone]" type="checkbox" >
                           <span class="check"></span>Windows Phone
                                         </div><br/>
-                                        <div class="input-control checkbox">
+                                        <div class="checkbox">
                                             <input name="products[office]" type="checkbox" >
                           <span class="check"></span>Office
                                         </div><br/>

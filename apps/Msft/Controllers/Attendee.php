@@ -81,9 +81,9 @@ class Attendee extends BaseAuth
 
         }
         catch (\Exception $e) {
-            \Dsc\System::instance()->addMessage('Save failed with the following errors:', 'error');
             foreach ($model->getErrors() as $error)
-            {
+            {   
+                $error = (new \Dash\Helpers\Errors('attendee', $error))->getData();
                 \Dsc\System::instance()->addMessage($error, 'error');
             }
             
@@ -99,7 +99,7 @@ class Attendee extends BaseAuth
             \Dsc\System::instance()->setUserState('use_flash.' . $this->create_item_route, true);
             $flash->store($data);
 
-          //  $this->setRedirect( $this->create_item_route );
+               $this->setRedirect( $f3->get('PARAMS.0') );
                         
             return false;
         }
@@ -259,11 +259,13 @@ class Attendee extends BaseAuth
     {
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Wristband');
+        $flash = \Dsc\Flash::instance();
+        $f3->set('flash', $flash);
 
-     
         $view = new \Dsc\Template;
         echo $view->render('Msft/Views::attendee/edit.php');
     }
+    
      public function confirm() 
     {
         $f3 = \Base::instance();

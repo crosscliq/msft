@@ -9,85 +9,27 @@
 	<?php echo \Dsc\System::instance()->renderMessages(); ?>
 
 	    	     <br/>
-		<form method="post" action="<?php echo $PARAMS[0]; ?>">
+		<form method="post" action="/self/assign/tag/<?php echo $PARAMS['tagid']; ?>">
 			<fieldset>
                 <legend>Customer Info </legend><br>
-                            <label>First Name <span class="required">*</span></label>
+                                        <label>First Name</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="first_name" type="text" placeholder="First name" value="<?php echo $flash->old('first_name');?>">
+                                            <input name="first_name" type="text" placeholder="First name" >
                                         </div>
-                                        <label>Last Name <span class="required">*</span></label>
+                                        <label>Last Name</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="last_name" type="text" placeholder="Last name" value="<?php echo $flash->old('last_name');?>"  >
+                                            <input name="last_name" type="text" placeholder="Last name"   >
                                         </div>
-                                        <label>Email <span class="required">*</span></label>
+                        
+                        
+                                        <label>Phone</label>
                                         <div class="input-control text" data-role="input-control">
-                                            <input name="email" type="email" placeholder="Email Address" autofocus="" value="<?php echo $flash->old('email');?>">
-                                        </div>
-                                        <label>Phone <span class="required">*</span></label>
-                                        <div class="input-control text" data-role="input-control">
-                                            <input name="phone" type="tel" placeholder="Phone" value="<?php echo $flash->old('phone');?>" ><br>
-                                            <small>(Min last 4 required for raffle entry.)</small>
-                                       
-                                        </div>
-                                        <label>Zip Code <span class="required">*</span></label>
-                                        <div class="input-control text" data-role="input-control">
-                                            <input name="zipcode" type="text" placeholder="Zipcode" value="<?php echo $flash->old('zipcode');?>" >
-                                            <small>*Minimum information needed for raffle entry</small>
-                                        </div>  
-
-                    
-        <br/><br/>
-                                        </div>
-                                         <legend></legend>
-         <label>Do you own any Microsoft products?</label>
-                                         <div class="checkbox">
-                                            <input name="products[xboxone]" type="checkbox">
-                          <span class="check"></span>Xbox One
-                                        </div>  <br/>
-                                        <div class="checkbox">
-                                            <input name="products[xbox360]" type="checkbox">
-                          <span class="check"></span>Xbox 360
-                                        </div><br/>
-                                        <div class="checkbox">
-                                            <input name="products[kinect]" type="checkbox">
-                          <span class="check"></span>Kinect
-                                        </div><br/>
-                                        <div class="checkbox">
-                                            <input name="products[surface]" type="checkbox">
-                          <span class="check"></span>Surface
-                                        </div><br/>
-                                        <div class="checkbox">
-                                            <input name="products[pc]" type="checkbox" >
-                          <span class="check"></span>PC
-                                        </div><br/>
-                                        <div class="checkbox">
-                                            <input name="products[windowsphone]" type="checkbox" >
-                          <span class="check"></span>Windows Phone
-                                        </div><br/>
-                                        <div class="checkbox">
-                                            <input name="products[office]" type="checkbox" >
-                          <span class="check"></span>Office
-                                        </div><br/>
-     <br>
-
-           <legend></legend>
-            
-                                        <label>Receive offers/updates from Microsoft? <small>( <a href="/privacy/policy" target="_BLANK" class="fg-white tiny">Privacy Policy</a> )</small></label>
-                                        <div class="checkbox">
-                                            <input name="offers[email]" type="checkbox" checked>
-                          <span class="check"></span>email
-                                        </div>  <br/>
-                                        <div class="checkbox">
-                                            <input name="offers[sms]" type="checkbox" checked>
-                                <span class="check"></span>sms
-                                        </div><br/><br/>    
-
-					               		 <input type="hidden" name="selfregistered" value="true"> 
-                                        <input type="hidden" name="submitType" value="save_confirm">      
+                                            <input name="phone" type="text" placeholder="Phone"  >
+                                        </div>	
+		<br/><br/>
+		                                
+                                        <input type="hidden" name="submitType" value="save_confirm";>      
                                         <input type="submit" value="Activate New Band" class="inverse large">
-                                   
-
                                     </fieldset>
                                 </form>
 	    </div>
@@ -96,9 +38,8 @@
    
 
         <div class="page-footer">
-            <div class="page-footer-content" style="text-align:center;"><br>
-                                                     <small>Data collected by Crosscliq on behalf of Microsoft retail stores</small>
-
+            <div class="page-footer-content">
+                <!--<div data-load="header.html"></div>-->
             </div>
         </div>
     </div>
