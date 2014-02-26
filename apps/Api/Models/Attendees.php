@@ -17,16 +17,30 @@ class Attendees extends \Dsc\Models\Db\Mongo
         parent::__construct($config);
     }
 
-    public function getDb()
+     public function getDb()
     {
         if (empty($this->db))
-        {
+        {   
+            $db_host = \Base::instance()->get('db.mongo.host');
+            $db_port = \Base::instance()->get('db.mongo.port');
             $db_name = \Base::instance()->get('event.db');
-            $this->db = new \DB\Mongo('mongodb://127.0.0.1:27017', $db_name);
+            $db_user = \Base::instance()->get('db.mongo.user');
+            $db_pass = \Base::instance()->get('db.mongo.password');
+
+            $string = 'mongodb://';
+            if( $db_user && $db_pass) {
+                $string .= $db_user.':'.$db_pass ."@";
+            }
+             $string .= $db_host;
+             $string .= ':'.$db_port;
+             $string .= '/'.$db_name;
+
+            $this->db = new \DB\Mongo($string, $db_name);
         }
     
         return $this->db;
     }
+   
 
     public function prefab() {
         $prefab = New \Api\Models\Prefabs\Attendee();
