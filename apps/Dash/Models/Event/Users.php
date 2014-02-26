@@ -15,8 +15,8 @@ Class Users Extends \Users\Admin\Models\Users {
         if (empty($this->db))
         {   
 
-            if(empty($f3->get('eventid'))) {
-                $f3->set('eventid', $f3->get('PARAMS.eventid'));
+            if(empty(\Base::instance()->get('eventid'))) {
+                \Base::instance()->set('eventid', \Base::instance()->get('PARAMS.eventid'));
             }
 
             $db_host = \Base::instance()->get('db.mongo.host');
