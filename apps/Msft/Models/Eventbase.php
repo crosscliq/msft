@@ -10,13 +10,10 @@ class Eventbase extends \Dsc\Models\Db\Mongo
         if (empty($this->db))
         {   
 
-            if(empty($f3->get('eventid'))) {
-                $f3->set('eventid', $f3->get('PARAMS.eventid'));
-            }
-
+          
             $db_host = \Base::instance()->get('db.mongo.host');
             $db_port = \Base::instance()->get('db.mongo.port');
-           $db_name = \Base::instance()->get('event.db');
+            $db_name = \Base::instance()->get('event.db');
             $db_user = \Base::instance()->get('db.mongo.user');
             $db_pass = \Base::instance()->get('db.mongo.password');
 
