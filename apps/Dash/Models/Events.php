@@ -22,16 +22,17 @@ Class Events Extends Base {
     {
         if (empty($this->db))
         {   
+            $f3 = \Base::instance();
 
             if(empty($f3->get('eventid'))) {
                 $f3->set('eventid', $f3->get('PARAMS.eventid'));
             }
 
-            $db_host = \Base::instance()->get('db.mongo.host');
-            $db_port = \Base::instance()->get('db.mongo.port');
-            $db_name = \Base::instance()->get('eventid');
-            $db_user = \Base::instance()->get('db.mongo.user');
-            $db_pass = \Base::instance()->get('db.mongo.password');
+            $db_host = $f3->get('db.mongo.host');
+            $db_port = $f3->get('db.mongo.port');
+            $db_name = $f3->get('eventid');
+            $db_user = $f3->get('db.mongo.user');
+            $db_pass = $f3->get('db.mongo.password');
 
             $string = 'mongodb://';
             if( $db_user && $db_pass) {
