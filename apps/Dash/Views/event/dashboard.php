@@ -187,7 +187,28 @@ $maps = new \Dash\Models\Bingmap;?>
               </div>
 		</li>
                 <?php endforeach; ?>
+
+
+
+
+
+
 			</ul>
+
+<li id="blank-activity" class="col-lg-12" data-id="">
+  <div class="filter-content">
+    <div class="msg-time-chat"><i class="icon-user message-img" style="font-size:55px;"></i>
+      <div class="message-body msg-in"> <span class="arrow"></span>
+        <div class="text">
+         <p class="attribution"><a href="" class="name"></a> at <span class="timestamp"></span></p>
+         <p class="msg">has create a new profile</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+
+
               </div>
 
 

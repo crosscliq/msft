@@ -60,8 +60,9 @@
     // Create Activity
 	channel.bind('createActivity', function(data) {
 		console.log(data);
-		console.log('create new activity');
-		    $( "#blank-activity" ).attr('data-id',data.id).clone().prependTo( "#activity-log" ).attr('id','');
+		console.log('create new activity id:'  + data.id);
+		    $( "#blank-activity" ).clone().attr('data-id',data.id).prependTo( "#activity-log #grid" ).attr('id','');
+		    $('[data-id='+ data.id +']').css('display','inline-block');
 		    $('[data-id='+ data.id +']').find('.msg').html(data.message);
 		    $('[data-id='+ data.id +']').find('.timestamp').html(data.timestamp);
 		    $('[data-id='+ data.id +']').find('.name').html(data.name);

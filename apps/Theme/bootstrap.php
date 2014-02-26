@@ -50,7 +50,7 @@ switch ($global_app_name)
         
         \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/site/");
         \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/images/");       
-       
+	\Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/site/images/");       
         
         
         break;

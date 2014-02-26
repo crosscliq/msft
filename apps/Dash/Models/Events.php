@@ -24,13 +24,10 @@ Class Events Extends Base {
         {   
             $f3 = \Base::instance();
 
-            if(empty($f3->get('eventid'))) {
-                $f3->set('eventid', $f3->get('PARAMS.eventid'));
-            }
 
             $db_host = $f3->get('db.mongo.host');
             $db_port = $f3->get('db.mongo.port');
-            $db_name = $f3->get('eventid');
+            $db_name = $f3->get('db.mongo.name');
             $db_user = $f3->get('db.mongo.user');
             $db_pass = $f3->get('db.mongo.password');
 
