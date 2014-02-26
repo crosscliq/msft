@@ -9,10 +9,7 @@ Class Users Extends \Users\Admin\Models\Users {
         if (empty($this->db))
         {   
 
-            if(empty($f3->get('eventid'))) {
-                $f3->set('eventid', $f3->get('PARAMS.eventid'));
-            }
-
+        
             $db_host = \Base::instance()->get('db.mongo.host');
             $db_port = \Base::instance()->get('db.mongo.port');
            $db_name = \Base::instance()->get('event.db');
