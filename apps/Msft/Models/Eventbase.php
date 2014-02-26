@@ -9,8 +9,6 @@ class Eventbase extends \Dsc\Models\Db\Mongo
     {
         if (empty($this->db))
         {   
-
-          
             $db_host = \Base::instance()->get('db.mongo.host');
             $db_port = \Base::instance()->get('db.mongo.port');
             $db_name = \Base::instance()->get('event.db');
