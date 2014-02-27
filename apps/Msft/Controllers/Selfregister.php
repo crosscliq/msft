@@ -311,7 +311,7 @@ class Selfregister extends Base
         
         $f3->set('tagid',$f3->get('PARAMS.tagid'));
 
-
+ 
         $view = new \Dsc\Template;
         echo $view->render('Msft/Views::attendee/selfsignin.php');
     }
@@ -320,11 +320,19 @@ class Selfregister extends Base
     {   
         $f3 = \Base::instance();
         $model = new \Msft\Models\Tags;
-        $thisTag = $model->setState('filter.id', $f3->get('PARAMS.tagid'))->getItem();
+        $thisTag = $model->setState('filter.tagid', $f3->get('PARAMS.tagid'))->getItem();
+	
+	if(empty($thisTag)) {
+            $tag = $model->getPrefab();
+            $tag->tagid = $f3->get('PARAMS.tagid');
+            $tag->eventid = $f3->get('PARAMS.eventid');
+            $thisTag = $model->create((array) $tag);
+        }        
 
 
 
-        $model = new \Msft\Models\Attendees;
+
+	$model = new \Msft\Models\Attendees;
         $model->setState('filter.first_name', $f3->get('POST.first_name'));
         $model->setState('filter.last_name', $f3->get('POST.last_name'));
         $model->setState('filter.phone', $f3->get('POST.phone'));
@@ -333,7 +341,7 @@ class Selfregister extends Base
 
 	 	if(@$attendee->tagid) {
             $model = new \Msft\Models\Tags;
-            $oldTag = $model->setState('filter.id', $attendee->tagid)->getItem();
+            $oldTag = $model->setState('filter.id',  $attendee->tagid)->getItem();
             $oldTag->previd = $oldTag->tagid;
             $oldTag->tagid = $thisTag->tagid;
             $oldTag->save();
