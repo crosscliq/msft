@@ -55,6 +55,8 @@ class Attendees extends \Dsc\Controller
         $newTag = $tagModel->create((array) $tag);
         
         $object->tagid = (string) $newTag->_id;
+        $object->created = \Dsc\Mongo\Metastamp::getDate('now');
+        
         $f3->set('HALT', false) ;
        // $f3->set('DEBUG', 0) ;
         $result = array();
