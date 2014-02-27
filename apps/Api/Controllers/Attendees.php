@@ -47,12 +47,12 @@ class Attendees extends \Dsc\Controller
 
         $url = parse_url($object->Url);
         
-        $model = new \Msft\Models\Tags;
-        $tag = $model->getPrefab();
+        $tagModel = new \Msft\Models\Tags;
+        $tag = $tagModel->getPrefab();
         $peices = explode('/', $url['path']);
         $tag->tagid = end($peices);
         $tag->eventid = $f3->get('event.db');
-        $newTag = $model->create((array) $tag);
+        $newTag = $tagModel->create((array) $tag);
         
         $object->tagid = (string) $newTag->_id;
         $f3->set('HALT', false) ;
@@ -60,7 +60,7 @@ class Attendees extends \Dsc\Controller
         $result = array();
         $model = new \Api\Models\Attendees;
         try {
-          $model->create((array) $object);
+          $attendee = $model->create((array) $object);
             $result['response'] = true;
             $result['msg'] = 'Attendee Saved';
         } catch (\Exception $e) {
@@ -69,7 +69,11 @@ class Attendees extends \Dsc\Controller
             $result['msg'] = \Dsc\System::instance()->renderMessages();
             
         } finally {
-            echo json_encode($result);
+            echo json_encode($result);  
+
+                $newTag->set('attendee.id',$attendee->_id);
+                $newTag->set('attendee.name',$attendee->first_name . ' ' .$attendee->last_name);
+                $newTag->save();
         }
          die();
         
