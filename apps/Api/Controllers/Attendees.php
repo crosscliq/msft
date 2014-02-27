@@ -50,7 +50,7 @@ class Attendees extends \Dsc\Controller
         $model = new \Msft\Models\Tags;
     
         $tag = $model->getPrefab();
-        $tag->tagid = end(explode('/',parse_url($object->Url)));
+        $tag->tagid = end(explode('/',parse_url($object->Url)['path']));
         $tag->eventid = $f3->get('event.db');
         $newTag = $model->create((array) $tag);
         
