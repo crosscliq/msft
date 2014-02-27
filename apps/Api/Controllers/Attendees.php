@@ -43,14 +43,13 @@ class Attendees extends \Dsc\Controller
         //get the EVENT ID FROM URL
         $f3->set('event.db',explode('.',parse_url( $object->Url, PHP_URL_HOST ))[0]);
 
-        $model = new \Api\Models\Attendees;
+        
 
         $url = parse_url($object->Url);
         
         $model = new \Msft\Models\Tags;
-    
         $tag = $model->getPrefab();
-        $tag->tagid = end(explode('/',parse_url($object->Url)['path']));
+        $tag->tagid = end(explode('/', $url['path']));
         $tag->eventid = $f3->get('event.db');
         $newTag = $model->create((array) $tag);
         
@@ -58,7 +57,7 @@ class Attendees extends \Dsc\Controller
         $f3->set('HALT', false) ;
        // $f3->set('DEBUG', 0) ;
         $result = array();
-
+        $model = new \Api\Models\Attendees;
         try {
           $model->create((array) $object);
             $result['response'] = true;
