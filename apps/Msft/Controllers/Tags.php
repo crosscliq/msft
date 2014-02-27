@@ -190,6 +190,12 @@ class Tags extends Base
     protected function gateKeeper($tag, $tagid, $role) {
           $f3 = \Base::instance();
          
+         if(empty($tag)) {
+            $tag = $this->getModel()->getPrefab();
+            $tag->tagid = $tagid;
+            $tag->eventid = $f3->get('PARAMS.eventid');
+            $tag = $this->getModel()->create((array) $tag);
+        }
       
       if(empty($tag->ticket)) {
         
