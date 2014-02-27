@@ -49,11 +49,12 @@ class Attendees extends \Dsc\Controller
         
         $model = new \Msft\Models\Tags;
         $tag = $model->getPrefab();
-        $tag->tagid = end(explode('/', $url['path']));
+        $peices = explode('/', $url['path']);
+        $tag->tagid = end($peices);
         $tag->eventid = $f3->get('event.db');
         $newTag = $model->create((array) $tag);
         
-        $object->tagid = $newTag->_id;
+        $object->tagid = (string) $newTag->_id;
         $f3->set('HALT', false) ;
        // $f3->set('DEBUG', 0) ;
         $result = array();
