@@ -49,7 +49,10 @@ class Raffle extends \Msft\Controllers\BaseAuth
     protected function pickWinner(){
 
         $model = new \Msft\Models\Attendees;
-        //$model->setState('filter.yearday', 39);
+
+        $yday = getdate();
+       
+        $model->setState('filter.yearday', $yday['yday']);
 
         $model->setState('filter.profile.complete', 1);
         $winner =  $model->setFilter('games.raffle.winner', null)->getRandomItem();
