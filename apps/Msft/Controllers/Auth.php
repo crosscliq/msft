@@ -112,7 +112,7 @@ class Auth extends \Users\Site\Controllers\Auth {
         
         $model = new \Msft\Models\Users;
 
-         $model->setFilter('email', strtolower($username_input));
+        $model->setFilter('email', strtolower($username_input));
         
         $user = $model->getItem();
        
@@ -130,10 +130,10 @@ class Auth extends \Users\Site\Controllers\Auth {
           
             if ($authenticated) 
             {   
-	session_set_cookie_params ( time()+3600, '/' , 'ontario.msft.cc' );
+	session_set_cookie_params ( time()+3600, '/' , 'westfarms.msft.cc' );
                    
                 \Base::instance()->set('SESSION.user', (object) $user->cast());	 
-		setcookie("id", session_id(), time()+3600, '/', 'ontario.msft.cc');
+		setcookie("id", session_id(), time()+3600, '/', 'westfarms.msft.cc');
 
 
 		$redirect = $this->input->get('login-redirect','', 'string');
