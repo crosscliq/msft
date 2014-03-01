@@ -180,6 +180,12 @@ Class Attendees Extends Eventbase {
         {
          $this->filters['products.office'] = (string) 'on';
         }
+         $filter_howdidyouhear = $this->getState('filter.howdidyouhear');
+      
+        if (strlen($filter_howdidyouhear))
+        {
+         $this->filters['howdidyouhear'] = (string) $filter_howdidyouhear;
+        }
 
         return $this->filters;
     }

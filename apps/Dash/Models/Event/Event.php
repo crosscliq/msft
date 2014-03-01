@@ -56,7 +56,35 @@ Class Event {
         $model->setState('filter.products.office', 'on');
         $event['office'] = $model->getTotal();
 
+        $model = new \Dash\Models\Event\Attendees;
+        $model->emptyState();
+        $model->setState('filter.howdidyouhear', 'Radio');
+        $event['howdidyouhear']['Radio'] = $model->getTotal();
 
+        $model->setState('filter.howdidyouhear', 'Social Media');
+        $event['howdidyouhear']['Social Media'] = $model->getTotal();
+
+        $model->setState('filter.howdidyouhear', 'Friend/Family');
+        $event['howdidyouhear']['Friend Family'] = $model->getTotal();
+
+       
+        $model->setState('filter.howd idyouhear', 'Mall Signage');
+        $event['howdidyouhear']['MallSignage'] = $model->getTotal();
+
+        $model->setState('filter.howdidyouhear', 'Online');
+        $event['howdidyouhear']['Online'] = $model->getTotal();
+
+        $model->setState('filter.howdidyouhear', 'Community Event');
+        $event['howdidyouhear']['Community Event'] = $model->getTotal();
+
+        $model->setState('filter.howdidyouhear', 'Newspaper');
+        $event['howdidyouhear']['Newspaper'] = $model->getTotal();
+
+        $model->setState('filter.howdidyouhear', 'News');
+        $event['howdidyouhear']['News'] = $model->getTotal();
+        
+        $model->setState('filter.howdidyouhear', 'Other');
+        $event['howdidyouhear']['Other'] = $model->getTotal();
 
 
         $model = new \Dash\Models\Event\Wristbands;

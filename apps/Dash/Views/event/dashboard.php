@@ -81,6 +81,26 @@ $maps = new \Dash\Models\Bingmap;?>
         </div>
     </div>
 </section>
+<section>
+<div class="col-lg-12">
+              <div class="widget">
+                  <div class="widget-header"> <i class="icon-bar-chart"></i>
+                    <h3>How did you hear </h3>
+                  </div>
+  <div class="widget-content">
+                        <div class="shortcuts"> 
+<?php foreach ($event['howdidyouhear'] as $key => $value) :?>
+<?php echo $key ; ?> : <?php echo $value ; ?> <br>
+
+<?php endforeach; ?>
+ </div>
+                        <!-- /shortcuts --> 
+                     </div>
+                <!-- /widget-content --> 
+                </div>
+</section>
+
+
 <section id='attendeeStats'>
  <div class="col-lg-12">
               <div class="widget">
@@ -97,8 +117,8 @@ $maps = new \Dash\Models\Bingmap;?>
                           <div class="shortcut"><h2 class="eTotal"><?php echo $event['kinect']; ?></h2><span class="shortcut-label">Kinect</span> </div>
                           <div class="shortcut"><h2 class="eTotal"><?php echo $event['pc']; ?></h2><span class="shortcut-label">PC</span> </div>
                           <div class="shortcut"><h2 class="eTotal"><?php echo $event['windowsphone']; ?></h2><span class="shortcut-label">Windows Phone</span> </div>
-                          <div class="shortcut"><h2 class="eTotal"><?php echo $event['office']; ?></h2><span class="shortcut-label">Windows Phone</span> </div>
-                          
+                          <div class="shortcut"><h2 class="eTotal"><?php echo $event['office']; ?></h2><span class="shortcut-label">Office</span> </div>
+                          <div class="shortcut"><h2 class="eTotal"><?php echo $event['surface']; ?></h2><span class="shortcut-label">Surface</span> </div>
                           
                         </div>
                         <!-- /shortcuts --> 
