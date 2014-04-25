@@ -194,6 +194,13 @@ Class Attendees Extends Eventbase {
         public function prepareItem($item) {
            
             $item->tickets = $this->hydrateTickets($item->tagid);
+		
+        $item->email =  \Base::instance()->get('gpg')->decrypt($item->email);
+
+
+
+
+
 
             return $item;
 
@@ -282,7 +289,23 @@ Class Attendees Extends Eventbase {
         $this->emptyState();
         return $this->getTotal();
     }
+      public function create( $values, $options=array() ) 
+    { 
+        $values['created'] = \Dsc\Mongo\Metastamp::getDate('now');
+        $gpg = \Base::instance()->get('gpg');
+	$values['protected_first_name'] = $gpg->encrypt($values['first_name']);
+	$values['protected_last_name'] = $gpg->encrypt($values['last_name']);
+	$values['protected_email'] = $gpg->encrypt($values['email']);
+	$values['protected_phone'] = $gpg->encrypt($values['phone']);
+	$save =  $this->save( $values, $options );
+        
+	
 
+	return $save;
+
+
+    }		
+	
      /**
      *
      * @return unknown

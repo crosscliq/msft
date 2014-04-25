@@ -178,7 +178,8 @@ class Attendees extends Eventbase
 
         public function prepareItem($item) {
            
-
+	    \Base::instance()->get('gpg');
+	     $item->email = $gpg->decrypt($item->email);	
             return $item;
 
         }
@@ -222,8 +223,15 @@ class Attendees extends Eventbase
      */
     public function create( $values, $options=array() ) 
     { 
+	die('creating');
         $values['created'] = \Dsc\Mongo\Metastamp::getDate('now');
+	$gpg = \Base::instance()->get('gpg');
+	$values['email'] = $gpg->encrypt($values['email']);
+
         $save =  $this->save( $values, $options );
+
+
+
         if($save) {
             $activity = new \Msft\Models\Activity;
             $activity->create(array('type'=> 'attendee', 'action' => 'created', 'object' => $save->cast()));
