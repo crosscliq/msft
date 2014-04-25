@@ -1,6 +1,9 @@
 <?php 
 namespace Dash\Controllers\Event;
 
+ini_set('memory_limit', '128M');
+        ini_set('max_execution_time', 300);
+
 class Attendees extends \Dash\Controllers\BaseAuth 
 {   
    
@@ -28,9 +31,13 @@ class Attendees extends \Dash\Controllers\BaseAuth
 
 
     public function toCSV () {
+	\set_time_limit(300);
+	ini_set('memory_limit', '128M');
+	ini_set('max_execution_time', 300);
+	error_reporting(E_ALL);
+
         $model = new \Dash\Models\Event\Attendees;
         $list = $model->getList();
-       
         $f3 = \Base::instance();
         $file = new \SplFileObject($f3->get('PATH_ROOT').'logs/output.csv', 'w');
         $writer = new \Ddeboer\DataImport\Writer\CsvWriter($file, 'w', ',');

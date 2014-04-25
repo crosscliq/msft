@@ -33,7 +33,7 @@ switch ($global_app_name)
         $f3->route('GET /roles', '\Msft\Controllers\Users->roles');
         $f3->route('GET /active/role/@roleid', '\Msft\Controllers\Users->role');
         //Tag Parser
-        $f3->route('GET /band/@tagid', '\Msft\Controllers\Tags->action');
+        $f3->route('GET|POST /band/@tagid', '\Msft\Controllers\Tags->action');
         $f3->route('GET /band/@tagid/selfsignup', '\Msft\Controllers\Selfregister->selfsignin');
         $f3->route('POST /band/@tagid/selfsignup', '\Msft\Controllers\Selfregister->add');
         $f3->route('GET /band/@id/registerconfirm', '\Msft\Controllers\Selfregister->registerconfirm');

@@ -10,6 +10,28 @@ session_id($_COOKIE['id']);
 
 $app = require('../vendor/bcosca/fatfree/lib/base.php');
 
+$CONFIG = array();
+$CONFIG['gnupg_home'] = '/var/www/.gnupg';
+$CONFIG['gnupg_fingerprint'] = 'C613 8CE7 665D 23AA DB9F  E82E 8E14 BE57 9513 0BE8';
+
+$gpg = new gnupg();
+putenv("GNUPGHOME={$CONFIG['gnupg_home']}");
+$gpg->seterrormode(GNUPG_ERROR_SILENT);
+$gpg->addencryptkey('C613 8CE7 665D 23AA DB9F  E82E 8E14 BE57 9513 0BE8');
+$gpg->adddecryptkey('C613 8CE7 665D 23AA DB9F  E82E 8E14 BE57 9513 0BE8', 'F0rgetting01');
+$app->set('gpg', $gpg);
+
+// Then use something like this to decrypt the data.
+//$passphrase = 'F0rgetting01';
+//$gpg->adddecryptkey('C613 8CE7 665D 23AA DB9F  E82E 8E14 BE57 9513 0BE8', $passphrase);
+//$decrypted = $gpg->decrypt($encrypted);
+
+//ecddho "Decrypted text: $decrypted";
+
+
+
+
+
 $app->set('PATH_ROOT', __dir__ . '/../');
 $app->set('AUTOLOAD',
         $app->get('PATH_ROOT') . 'lib/;' .
