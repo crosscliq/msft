@@ -289,7 +289,8 @@ Class Attendees Extends Eventbase {
         $this->emptyState();
         return $this->getTotal();
     }
-      public function create( $values, $options=array() ) 
+     
+     public function create( $values, $options=array() ) 
     { 
         $values['created'] = \Dsc\Mongo\Metastamp::getDate('now');
         $gpg = \Base::instance()->get('gpg');
@@ -304,7 +305,7 @@ Class Attendees Extends Eventbase {
 	return $save;
 
 
-    }		
+    }	
 	
      /**
      *

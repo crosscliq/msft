@@ -177,7 +177,7 @@ class Attendees extends Eventbase
 
 
         public function prepareItem($item) {
-           
+     
 	    \Base::instance()->get('gpg');
 	     $item->email = $gpg->decrypt($item->email);	
             return $item;

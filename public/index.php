@@ -26,7 +26,7 @@ $app->set('gpg', $gpg);
 //$gpg->adddecryptkey('C613 8CE7 665D 23AA DB9F  E82E 8E14 BE57 9513 0BE8', $passphrase);
 //$decrypted = $gpg->decrypt($encrypted);
 
-//ecddho "Decrypted text: $decrypted";
+//echo "Decrypted text: $decrypted";
 
 
 
