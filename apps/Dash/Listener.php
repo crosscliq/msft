@@ -5,7 +5,7 @@ class Listener extends \Prefab
 {
     public function onSystemRebuildMenu( $event )
     {
-        if ($mapper = $event->getArgument('mapper')) 
+      /*  if ($mapper = $event->getArgument('mapper')) 
         {
         	$mapper->reset();
         	$mapper->priority = 30;
@@ -21,7 +21,7 @@ class Listener extends \Prefab
         	$mapper->save();
         	
         	\Dsc\System::instance()->addMessage('Customers added its admin menu items.');
-        }
+        }*/
         
     }
 }

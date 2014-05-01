@@ -2,7 +2,7 @@
 namespace Dash\Site\Models;
 
 
-Class Events Extends Company {
+Class Events Extends \Dash\Site\Models\Base {
 
     public $_id;
     public $name;
@@ -15,15 +15,7 @@ Class Events Extends Company {
 
     protected $__collection_name = 'events';
       
-    protected function createDb()
-    {
-        $db_name = \Base::instance()->get('db.mongo.name');
-
-        $this->db = new \DB\Mongo('mongodb://127.0.0.1:27017', $db_name);
-        
-
-        return $this;
-    }
+  
 
  
       protected function fetchConditions()
