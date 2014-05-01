@@ -11,7 +11,8 @@ class Dashboard extends BaseAuth
         $list = $model->getItems();
         \Base::instance()->set('list', $list );
 
-    	$view = new \Dsc\Template;
+
+        $view = \Dsc\System::instance()->get( 'theme' );
         echo $view->render('Dash/Site/Views::dashboard/home.php');
     }
 }
