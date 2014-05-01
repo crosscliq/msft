@@ -1,5 +1,5 @@
 <?php 
-namespace Dash\Controllers;
+namespace Dash\Site\Controllers;
 
 class Base extends \Dsc\Controller 
 {    

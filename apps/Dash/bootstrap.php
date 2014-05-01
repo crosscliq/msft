@@ -14,7 +14,6 @@ switch ($global_app_name)
 
         \Base::instance()->clear('SESSION');
         \Base::instance()->reroute('/');
-        });  
         // TODO set some app-specific settings, if desired
         // append this app's UI folder to the path
         $ui = $f3->get('UI');

@@ -3,7 +3,7 @@ namespace Dash\Site\Controllers;
 
 class Dashboard extends BaseAuth 
 {
-    public function display($f3) {
+    public function index($f3) {
     	$model = new \Dash\Models\Events;
         $state = $model->populateState()->getState();
         $model->setState('list.limit', 50);
