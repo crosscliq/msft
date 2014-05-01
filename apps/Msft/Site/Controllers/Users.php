@@ -14,8 +14,6 @@ class Users extends BaseAuth
    public function roles($f3) {
         $user = $this->getIdentity();
          
-     
-        $user = $this->getModel()->setState('filter.id', $user->_id)->getItem();
 
         $f3->set('roles', $user->roles);
     

@@ -1,5 +1,5 @@
 <?php
-// \Dsc\System::instance()->addMessage('this is a warning', 'warning');
+ \Dsc\System::instance()->addMessage('this is a warning', 'warning');
 // \Dsc\System::instance()->addMessage('this is a default', 'message');
 
  $messages = \Dsc\System::instance()->getMessages(); ?>

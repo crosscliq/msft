@@ -4,7 +4,7 @@ namespace Msft\Site\Controllers;
 class Attendee extends BaseAuth 
 {	
 
-    use \Dsc\Traits\Controllers\CrudItem;
+    use \Dsc\Traits\Controllers\CrudItemCollection;
 
     protected $list_route = '/attendee';
     protected $create_item_route = '/attendee/create';
@@ -56,8 +56,6 @@ class Attendee extends BaseAuth
             $data['submitType'] = "save_confirm";
         }
         
-
-
         $f3 = \Base::instance();
         $flash = \Dsc\Flash::instance();
         $model = $this->getModel();

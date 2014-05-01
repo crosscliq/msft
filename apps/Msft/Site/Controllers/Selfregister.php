@@ -3,8 +3,8 @@ namespace Msft\Site\Controllers;
 
 class Selfregister extends Base 
 {	
-
-    use \Dsc\Traits\Controllers\CrudItem;
+    //TODO write all of this 
+    use \Dsc\Traits\Controllers\CrudItemCollection;
 
     protected $list_route = '/attendee';
     protected $create_item_route = '/attendee/create';
@@ -66,10 +66,9 @@ class Selfregister extends Base
 
         	//FIRST WE NEED TO CREATE A TAG
         	$tagsmodel =  new \Msft\Models\Tags();
-            $tag = $tagsmodel->getPrefab();
-            $tag->tagid = $f3->get('PARAMS.tagid');;
-            $tag->eventid = $f3->get('event.db');
-            $tag = $tagsmodel->create((array) $tag);
+            $tagsmodel->tagid = $f3->get('PARAMS.tagid');;
+            $tagsmodel->eventid = $f3->get('event.db');
+            $tag = $tagsmodel->create();
         	
         	$data['tagid'] = $tag->_id;
 
@@ -78,9 +77,6 @@ class Selfregister extends Base
             unset($values['submitType']);
             //\Dsc\System::instance()->addMessage(\Dsc\Debug::dump($values), 'warning');
             $this->item = $model->create($values);
-
-
-
 
             if($this->item->tagid) {
                 $tags = new \Msft\Models\Tags();
