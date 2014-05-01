@@ -1,5 +1,5 @@
 <?php 
-namespace Dash\Modules\Eventsmenu;
+namespace Dash\Site\Modules\Eventsmenu;
 
 class Module extends \Modules\Abstracts\Module
 {

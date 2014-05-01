@@ -1,5 +1,5 @@
 <?php 
-namespace Dash\Modules\Nav;
+namespace Dash\Site\Modules\Nav;
 
 class Module extends \Modules\Abstracts\Module
 {

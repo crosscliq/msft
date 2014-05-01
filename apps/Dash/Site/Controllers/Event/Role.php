@@ -1,7 +1,7 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-class Role extends \Dash\Controllers\BaseAuth
+class Role extends \Dash\Site\Controllers\BaseAuth
 {
     use \Dsc\Traits\Controllers\CrudItem;
 
@@ -12,7 +12,7 @@ class Role extends \Dash\Controllers\BaseAuth
     
     protected function getModel() 
     {
-        $model = new \Dash\Models\Event\Roles;
+        $model = new \Dash\Site\Models\Event\Roles;
         return $model; 
     }
     public function __construct() {
@@ -55,8 +55,8 @@ class Role extends \Dash\Controllers\BaseAuth
         $flash->store( $flash->get('old') );        
 
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/roles/create.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/roles/create.php');
     }
     
      protected function displayEdit()
@@ -64,11 +64,11 @@ class Role extends \Dash\Controllers\BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit Role');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/roles/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/roles/edit.php');
     }
 
-    //reroute this to  the \Dash\
+    //reroute this to  the \Dash\Site\
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method
      */
@@ -86,7 +86,7 @@ class Role extends \Dash\Controllers\BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit Role');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/roles/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/roles/edit.php');
     }
 }

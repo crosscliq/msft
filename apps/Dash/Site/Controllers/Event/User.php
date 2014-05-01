@@ -1,10 +1,10 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-class User extends \Dash\Controllers\BaseAuth 
+class User extends \Dash\Site\Controllers\BaseAuth  
 {
-    use \Dsc\Traits\Controllers\CrudItem;
-
+    use \Dsc\Traits\Controllers\CrudItemCollection;
+    
     protected $list_route = '/';
     protected $create_item_route = '/user/create';
     protected $get_item_route = '/user/view/{id}';    
@@ -19,21 +19,30 @@ class User extends \Dash\Controllers\BaseAuth
 
         parent::__construct();
     }
-
-
-    protected function getModel() 
+    
+    protected function getModel($name='Users')
     {
-        $model = new \Dash\Models\Event\Users;
-        return $model; 
+        switch (strtolower($name)) 
+        {
+            case "group":
+            case "groups":
+                $model = new \Users\Models\Groups;
+                break;
+            default:
+                $model = new \Dash\Site\Models\Event\Users;
+                break;              
+        }
+        
+        return $model;
     }
     
-    protected function getItem() 
+    protected function getItem()
     {
         $f3 = \Base::instance();
         $id = $this->inputfilter->clean( $f3->get('PARAMS.id'), 'alnum' );
         $model = $this->getModel()
-            ->setState('filter.id', $id);
-
+        ->setState('filter.id', $id);
+        
         try {
             $item = $model->getItem();
         } catch ( \Exception $e ) {
@@ -41,70 +50,66 @@ class User extends \Dash\Controllers\BaseAuth
             $f3->reroute( $this->list_route );
             return;
         }
-
+    
         return $item;
     }
     
-    protected function displayCreate() 
+    protected function displayCreate()
     {
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Create User');
-        
-        $selected = array();
-        $flash = \Dsc\Flash::instance();
 
-        $model = new \Users\Admin\Models\Groups;
+        $model = $this->getModel('groups');
         $groups = $model->getList();
-        $f3->set('groups', $groups ); 
+        \Base::instance()->set('groups', $groups ); 
+
+        $model = new  \Dash\Site\Models\Event\Roles;
+        $roles = $model->getItems();
+         \Base::instance()->set('roles', $roles );
+
+        //$view = \Dsc\System::instance()->get('theme');
+        //$view->event = $view->trigger( 'onDisplayAdminUserEdit', array( 'item' => $this->getItem(), 'tabs' => array(), 'content' => array() ) );
         
-        $model = new  \Dash\Models\Event\Roles;
-        $roles = $model->getList();
-        $f3->set('roles', $roles ); 
+        //echo $view->render('Users/Admin/Views::users/create.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/users/create.php');
 
-
-        $flash->store( $flash->get('old') );        
-
-        
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/users/create.php');
     }
     
-     protected function displayEdit()
+    protected function displayEdit()
     {
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit User');
         
-        $model = new \Users\Admin\Models\Groups;
+        $model = $this->getModel('groups');
         $groups = $model->getList();
-        $f3->set('groups', $groups ); 
-        
-        $model = new  \Dash\Models\Event\Roles;
+        \Base::instance()->set('groups', $groups );     
+
+        $model = new  \Dash\Site\Models\Event\Roles;
         $roles = $model->getList();
-        $f3->set('roles', $roles );
+         \Base::instance()->set('roles', $roles );
 
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/users/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/users/edit.php');
+
+
+        //$view = \Dsc\System::instance()->get('theme');
+        //$view->event = $view->trigger( 'onDisplayAdminUserEdit', array( 'item' => $this->getItem(), 'tabs' => array(), 'content' => array() ) );
+                
+        //echo $view->render('Users/Admin/Views::users/edit.php');
     }
-
-    //reroute this to  the \Dash\
+    
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method
      */
-    protected function doRead(array $data, $key=null) 
+    protected function doRead(array $data, $key=null)
     {
         $f3 = \Base::instance();
         $id = $this->getItem()->get( $this->getItemKey() );
         $route = str_replace('{id}', $id, $this->edit_item_route );
         $f3->reroute( $route );
     }
-
     
-    protected function displayRead() {
-
-        $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Edit User');
-        
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/user/edit.php');
-    }
+    protected function displayRead() {}
 }
+

@@ -1,4 +1,4 @@
-<?php  $maps = new \Dash\Models\Bingmap;?>
+<?php  $maps = new \Dash\Site\Models\Bingmap; ?>
 <div class="content container">
                               <div class="row">
                                 <div class="col-lg-12">
@@ -11,15 +11,15 @@
     <section id="events" class="color-light text-center">     
         
           <div class="row">
-	     <div class="col-sm-2"><a class="btn btn-success" href="/event/create">Create Event</a></div>
+	     <div class="col-sm-2"><a class="btn btn-info" href="/event/create">Create Event</a></div>
             <div class="col-sm-4 col-md-offset-6">
               <div id="filters" class="text-center btn-group">
             
                   <div  class=" btn-group btn-group-justified">
-                    <a class="filter btn btn-primary active" data-filter="all" href="#">All</a>
-                    <a class="filter btn btn-primary" data-filter="NSO" href="#">NSO</a>
-                    <a class="filter btn btn-primary" data-filter="XBOX" href="#">Xbox</a>
-                    <a class="filter btn btn-primary" data-filter="HR" href="#">HR</a>
+                    <a class="filter btn btn-info active" data-filter="all" href="#">All</a>
+                    <a class="filter btn btn-info" data-filter="NSO" href="#">NSO</a>
+                    <a class="filter btn btn-info" data-filter="XBOX" href="#">Xbox</a>
+                    <a class="filter btn btn-info" data-filter="HR" href="#">HR</a>
                   </div>
 		    
               </div>
@@ -32,11 +32,11 @@
             <ul id="grid" class="row">
               <?php foreach ($list as $item) :?>
 
-              <li class="col xs-12 col-sm-4 mix <?=$item['category'];?>" data-cat="<?=$item['category'];?>">
+              <li class="col xs-12 col-sm-4 mix <?php echo  $item->{'category'}; ?>" data-cat="<?php echo  $item->{'category'}; ?>">
                 <div class="filter-content">
                         <div class="widget-container">
                     
-                                  <div class="stats-heading"><span class="pull-left"><small>  </small></span><a href="/event/edit/<?=$item['_id'];?>" class="btn btn-xs btn-success pull-right"><i class="icon-edit"></i></a><?=$item['name'];?></div>
+                                  <div class="stats-heading"><span class="pull-left"><small>  </small></span><a href="/event/edit/<?=$item['_id'];?>" class="btn btn-xs btn-success pull-right"><i class="icon-edit"></i></a><?=$item['name'];?><a href="/event/delete/<?=$item['_id'];?>" class="btn btn-xs btn-danger pull-right"><i class="icon-edit"></i></a></div>
                                     <div class="text-center">
                                <a href="/<?=$item['event_id'];?>/dashboard/" class="map" style="background:url('<?php echo $maps->width('400')->height('120')->location(@$item["address"]["city"].', '.@$item["address"]["state"])->getImageURL(); ?>');"></a> 
                                               </div>

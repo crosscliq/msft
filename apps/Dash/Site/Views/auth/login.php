@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-md-9">
                     <div class="form-group">
-                      <input type="text" name="email" placeholder="Email" class="form-control">
+                      <input type="text" name="login-username" placeholder="Email" class="form-control">
                     </div>
                     </div>
                   </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-md-9">
                     <div class="form-group">
-                      <input type="password"  name="password" placeholder="Password" autofocus="" class="form-control">
+                      <input type="password"  name="login-password" placeholder="Password" autofocus="" class="form-control">
                     </div>
                     </div>
                   </div>

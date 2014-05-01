@@ -1,20 +1,20 @@
 <?php 
-namespace Dash\Controllers;
+namespace Dash\Site\Controllers;
 
 class Dashboard extends BaseAuth 
 {
-    public function display($f3) {
+    public function index($f3) {
 
 
-    	$model = new \Dash\Models\Events;
+    	$model = new \Dash\Site\Models\Events;
         $state = $model->populateState()->getState();
         $model->setState('list.limit', 50);
 
-        $list = $model->getList();
+        $list = $model->getItems();
         \Base::instance()->set('list', $list );
 
-    	$view = new \Dsc\Template;
-        echo $view->render('Dash/Views::dashboard/home.php');
+    	$view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::dashboard/home.php');
     }
 }
 ?>

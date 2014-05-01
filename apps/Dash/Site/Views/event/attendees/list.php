@@ -6,12 +6,16 @@
     <div class="row datatable-header">
         <div class="col-sm-6">
             <div class="row row-marginless">
-                <?php if (!empty($list['subset'])) { ?>
-                <div class="col-sm-4">
-                    <?php echo $pagination->getLimitBox( $state->get('list.limit') ); ?>
-                </div>
-                <?php } ?>
-
+                <?php if (!empty($list->total_pages) && $list->total_pages > 1) { ?>
+                                <?php echo $list->serve(); ?>
+                 <?php } ?>
+                 <?php if (!empty($list->items)) { ?>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <span class="pagination">
+                            <?php echo $list->getLimitBox( $state->get('list.limit') ); ?>
+                            </span>
+                        </div>
+                        <?php } ?>
 
             </div>
         </div>    
@@ -44,9 +48,9 @@
 		</thead>
 		<tbody>    
     
-        <?php if (!empty($list['subset'])) { ?>
+        <?php if (!empty($list)) { ?>
     
-        <?php foreach ($list['subset'] as $item) { ?>
+        <?php foreach ($list->items as $item) { ?>
 
             <tr>
                 
@@ -95,16 +99,18 @@
     </div>
     
     <div class="row datatable-footer">
-        <?php if (!empty($list['count']) && $list['count'] > 1) { ?>
-        <div class="col-sm-10">
-            <?php echo (!empty($list['count']) && $list['count'] > 1) ? $pagination->serve() : null; ?>
-        </div>
-        <?php } ?>
-        <div class="col-sm-2 pull-right">
-            <div class="datatable-results-count pull-right">
-            <?php echo $pagination ? $pagination->getResultsCounter() : null; ?>
-            </div>
-        </div>        
+         <div class="col-sm-10">
+                    <?php if (!empty($list->total_pages) && $list->total_pages > 1) { ?>
+                        <?php echo $list->serve(); ?>
+                    <?php } ?>
+                </div>
+                <div class="col-sm-2">
+                    <div class="datatable-results-count pull-right">
+                        <span class="pagination">
+                            <?php echo (!empty($list->total_pages)) ? $list->getResultsCounter() : null; ?>
+                        </span>
+                    </div>
+                </div>           
     </div>
 
 </form>

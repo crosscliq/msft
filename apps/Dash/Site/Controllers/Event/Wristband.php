@@ -1,9 +1,9 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-class Wristband extends BaseAuth 
+class Wristband extends \Dash\Site\Controllers\BaseAuth 
 {
-    use \Dsc\Traits\Controllers\CrudItem;
+    use \Dsc\Traits\Controllers\CrudItemCollection;
 
     protected $list_route = '/';
     protected $create_item_route = '/wristband/create';
@@ -12,10 +12,9 @@ class Wristband extends BaseAuth
     
     protected function getModel() 
     {
-        $model = new \Dash\Models\Event\Wristband;
+        $model = new \Dash\Site\Models\Event\Tags;
         return $model; 
     }
-    
     public function __construct() {
         $f3 = \Base::instance();
         $this->list_route = '/'. $f3->get('PARAMS.eventid').'/wristbands/';
@@ -25,8 +24,7 @@ class Wristband extends BaseAuth
 
         parent::__construct();
     }
-
-
+    
     protected function getItem() 
     {
         $f3 = \Base::instance();
@@ -48,7 +46,7 @@ class Wristband extends BaseAuth
     protected function displayCreate() 
     {
         $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Create Wristband');
+        $f3->set('pagetitle', 'Create wristbands');
         
         $selected = array();
         $flash = \Dsc\Flash::instance();
@@ -57,20 +55,20 @@ class Wristband extends BaseAuth
         $flash->store( $flash->get('old') );        
 
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::wristbands/create.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/wristbands/create.php');
     }
     
      protected function displayEdit()
     {
         $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Edit Wristband');
+        $f3->set('pagetitle', 'Edit wristbands');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::wristbands/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/wristbands/edit.php');
     }
 
-    //reroute this to  the \Dash\
+    //reroute this to  the \Dash\Site\
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method
      */
@@ -86,9 +84,9 @@ class Wristband extends BaseAuth
     protected function displayRead() {
 
         $f3 = \Base::instance();
-        $f3->set('pagetitle', 'Edit Wristband');
+        $f3->set('pagetitle', 'Edit Attendees');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::wristbands/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/attendees/edit.php');
     }
 }

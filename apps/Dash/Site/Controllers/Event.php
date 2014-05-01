@@ -1,9 +1,9 @@
 <?php 
-namespace Dash\Controllers;
+namespace Dash\Site\Controllers;
 
 class Event extends BaseAuth 
 {
-    use \Dsc\Traits\Controllers\CrudItem;
+    use \Dsc\Traits\Controllers\CrudItemCollection;
 
     protected $list_route = '/';
     protected $create_item_route = '/event/create';
@@ -12,7 +12,7 @@ class Event extends BaseAuth
     
     protected function getModel() 
     {
-        $model = new \Dash\Models\Events;
+        $model = new \Dash\Site\Models\Events;
         return $model; 
     }
     
@@ -46,8 +46,8 @@ class Event extends BaseAuth
         $flash->store( $flash->get('old') );        
 
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::events/create.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::events/create.php');
     }
     
      protected function displayEdit()
@@ -55,11 +55,11 @@ class Event extends BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit Event');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::events/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::events/edit.php');
     }
 
-    //reroute this to  the \Dash\
+    //reroute this to  the \Dash\Site\
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method
      */
@@ -79,7 +79,7 @@ class Event extends BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit Event');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::events/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::events/edit.php');
     }
 }

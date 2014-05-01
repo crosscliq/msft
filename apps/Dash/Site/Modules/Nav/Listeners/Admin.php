@@ -1,5 +1,5 @@
 <?php
-namespace Dash\Modules\Nav\Listeners;
+namespace Dash\Site\Modules\Nav\Listeners;
 
 class Admin extends \Prefab
 {
@@ -9,7 +9,7 @@ class Admin extends \Prefab
 
         $module = $event->getArgument( 'module' );
    
-        if ($module != "dash.nav::\Dash\Modules\Nav\Module")
+        if ($module != "dash.nav::\Dash\Site\Modules\Nav\Module")
         {
             return;
         }

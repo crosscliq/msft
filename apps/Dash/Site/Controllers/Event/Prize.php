@@ -1,5 +1,5 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
 class Prize extends BaseAuth 
 {
@@ -12,7 +12,7 @@ class Prize extends BaseAuth
     
     protected function getModel() 
     {
-        $model = new \Dash\Models\Event\Prize;
+        $model = new \Dash\Site\Models\Event\Prize;
         return $model; 
     }
      public function __construct() {
@@ -55,8 +55,8 @@ class Prize extends BaseAuth
         $flash->store( $flash->get('old') );        
 
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::prize/create.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::prize/create.php');
     }
     
      protected function displayEdit()
@@ -64,11 +64,11 @@ class Prize extends BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit Prize');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::prize/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::prize/edit.php');
     }
 
-    //reroute this to  the \Dash\
+    //reroute this to  the \Dash\Site\
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method
      */
@@ -86,7 +86,7 @@ class Prize extends BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit Prize');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::prize/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::prize/edit.php');
     }
 }

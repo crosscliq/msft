@@ -1,48 +1,34 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-        set_time_limit(300);
-        ini_set('memory_limit', '128M');
-        ini_set('max_execution_time', 300);
-
-
-ini_set('memory_limit', '128M');
-        ini_set('max_execution_time', 300);
-
-class Attendees extends \Dash\Controllers\BaseAuth 
+class Attendees extends \Dash\Site\Controllers\BaseAuth 
 {   
    
     
-    public function display() {
+    public function index() {
         \Base::instance()->set('pagetitle', 'Attendees');
         \Base::instance()->set('subtitle', '');
         
-        $model = new \Dash\Models\Event\Attendees;
+        $model = new \Dash\Site\Models\Event\Attendees;
         $model->setState('filter.profile.complete', 1);
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         
         $list = $model->paginate();
      
+        
         \Base::instance()->set('list', $list );
         
-        $pagination = new \Dsc\Pagination($list['total'], $list['limit']);       
-        \Base::instance()->set('pagination', $pagination );
-        
-        $view = new \Dsc\Template;
-        $view->setLayout('event.php');
-        echo $view->render('Dash/Views::event/attendees/list.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        $view->setVariant('event.php');
+        echo $view->render('Dash/Site/Views::event/attendees/list.php');
     }
 
 
     public function toCSV () {
-
-         \set_time_limit(600);
-        ini_set('memory_limit', '1024M');
-        ini_set('max_execution_time', 600);
-        error_reporting(E_ALL);
-        $model = new \Dash\Models\Event\Attendees;
+        $model = new \Dash\Site\Models\Event\Attendees;
         $list = $model->getList();
+       
         $f3 = \Base::instance();
         $file = new \SplFileObject($f3->get('PATH_ROOT').'logs/output.csv', 'w');
         $writer = new \Ddeboer\DataImport\Writer\CsvWriter($file, 'w', ',');

@@ -27,6 +27,27 @@
                     </div>
                     </div>
         </div>
+      <div class="row">
+                 <div class="col-md-3">
+                    <label for="normal-field" class="control-label">Theme</label>
+                 </div>
+                    <div class="col-md-9">
+                      <div class="form-group">
+                      <select name="theme">
+                        <option value="">Default</option>
+                         <?php 
+                        $array = Dsc\Filesystem\Folder::folders( \Base::instance()->get('PATH_ROOT').'apps/Themes' );
+                       foreach ($array as $key => $value) {
+
+                        echo '<option value="'.$value.'">'.$value.'</option>';
+                       } 
+                      ?>
+                      </select>
+                      
+                      </div>
+                    </div>
+        </div>    
+
 		<div class="row">
 
                   <div class="col-md-3">
@@ -108,8 +129,9 @@
 		</div>
 	           
                     <div><br/>
-   			  <input class="btn btn-primary pull-right" type="submit" type="hidden" name="submitType" value="Save">      
-                    </div>
+   			  <input id="primarySubmit" type="hidden" value="save_edit" name="submitType" />
+          <a onclick="document.getElementById('primarySubmit').value='save_close'; document.getElementById('detail-form').submit();" href="javascript:void(0);">Save & Close</a>
+                                 </div>
              
 
 
