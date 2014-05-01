@@ -21,50 +21,39 @@ require $app->get('PATH_ROOT') . 'vendor/autoload.php';
 
 $app->set('APP_NAME', 'site');
 //TODO maybe we query the event model, and get the event object from the main DB and load it. so than we can  let the DB be controlled by the dash
-$app->set('event.db', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
-if ($app->get('event.db') == 'dashboard') {
+$app->set('subdomain', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
+if ($app->get('subdomain') == 'dashboard') {
     $app->set('APP_NAME', 'dash');
+    
 }
-if ($app->get('event.db') == 'admin') {
+if ($app->get('subdomain') == 'admin') {
     $app->set('APP_NAME', 'admin');
 }
-if ($app->get('event.db') == 'api') {
+if ($app->get('subdomain') == 'api') {
     $app->set('APP_NAME', 'api');
-    $app->set('event.db', 'msft');
 }
 
-if($app->get('event.db') != 'api' &&$app->get('event.db') != 'admin' && $app->get('event.db') != 'dashboard' && !empty($app->get('event.db')) ) {
+if($app->get('subdomain') != 'api' &&$app->get('subdomain') != 'admin' && $app->get('subdomain') != 'dashboard' && !empty($app->get('subdomain')) ) {
 //WE are loading an event
 //HERE WE CAN CHECK THIS IT IS A VALID EVENT REGISTERED AND SUCH
+$app->set('event.database', $app->get('subdomain'));
 $model = new \Dash\Models\Events;
-$item = $model->setState('filter.eventid', $app->get('event.db'))->getItem();
+$item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();
 $app->set('SESSION.event', $item );
 
 }
 
-if (empty($app->get('event.db'))) {
-    $app->set('event.db', 'msft');
-}
-
 $logger = new \Log( $app->get('application.logfile') );
 \Registry::set('logger', $logger);
-
 if ($app->get('DEBUG')) {
     ini_set('display_errors',1);
 }
-
-
-
-
 // bootstap each mini-app
 \Dsc\Apps::instance()->bootstrap();
-
 // load routes
-\Dsc\System::instance()->get('router')->registerRoutes();
- 
+\Dsc\System::instance()->get('router')->registerRoutes(); 
 // trigger the preflight event
 \Dsc\System::instance()->preflight();
-
 
 $app->run();
 
