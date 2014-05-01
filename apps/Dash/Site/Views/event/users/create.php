@@ -161,7 +161,7 @@
                         <div class="portlet-header">
         
                          
-                               <?php if (!empty($roles)) { ?>
+                          
                     <div class="">
                         <?php $current = \Joomla\Utilities\ArrayHelper::getColumn( (array) $flash->old('roles'), 'id' ); ?>
                         <?php foreach ($roles as $one) { ?>
@@ -172,43 +172,14 @@
                             </label>
                         </div>
                         <br>
-                        <?php } ?> 
+                        
                         
                     </div>
                     <?php } ?>
                         </div>
                         <!-- /.portlet-header -->
         
-                        <div class="">
-                            <div id="groups" class="list-group">
-                                <div id="groups-checkboxes">
-                                <?php echo $this->renderLayout('/event/roles/checkboxes.php'); ?>
-                                </div>
-                                <script>
-                                    Dsc.refreshCategories = function(r) {
-                                        
-                                        var form_data = new Array();
-                                        jQuery.merge( form_data, jQuery('#groups-checkboxes').find(':input').serializeArray() );
-                                        jQuery.merge( form_data, [{ name: "groups_ids[]", value: r.result._id['$id'] }] );
-        
-                                        var request = jQuery.ajax({
-                                            type: 'post', 
-                                            url: './admin/users/groups/checkboxes',
-                                            data: form_data
-        
-                                        }).done(function(data){
-                                            var lr = jQuery.parseJSON( JSON.stringify(data), false);
-                                            if (lr.result) {
-                                                 console.log(lr.result);
-                                                jQuery('#groups-checkboxes').html(lr.result);
-                                                App.initICheck();
-                                            }
-                                        });
-                                    }
-                                    </script>
-        
-                            </div>
-                        </div>
+                       
                         <!-- /.portlet-content -->
         
                     </div>

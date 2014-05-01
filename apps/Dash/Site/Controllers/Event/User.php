@@ -65,6 +65,7 @@ class User extends \Dash\Site\Controllers\BaseAuth
 
         $model = new  \Dash\Site\Models\Event\Roles;
         $roles = $model->getItems();
+      
          \Base::instance()->set('roles', $roles );
 
         //$view = \Dsc\System::instance()->get('theme');
