@@ -13,7 +13,7 @@ switch ($global_app_name)
         //
        // $f3->config( $f3->get('PATH_ROOT').'apps/Msft/config.ini');
         //HEADERS ROUTES, these are so JS can call the headers TODO maybe move to this php logic
-        $f3->route('POST /attendees/sync', '\Api\Controllers\Attendees->Sync');    
+        $f3->route('POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
         $f3->route('GET /', function () {
 
         	echo ' The only method Allowed is POST, and you have to post to valid routes valid data';

@@ -1,5 +1,5 @@
 <?php 
-namespace Api\Controllers;
+namespace Api\Site\Controllers;
 
 class Attendees extends \Dsc\Controller  
 {	

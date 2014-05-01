@@ -18,7 +18,7 @@ $app->set('AUTOLOAD',
 );
 // common config
 $app->config( $app->get('PATH_ROOT') . 'config/common.config.ini');
-
+$app->set('db.mongo.server', $app->get('db.mongo.server') .'/'. $app->get('db.mongo.database'));
 require $app->get('PATH_ROOT') . 'vendor/autoload.php';
 
 $app->set('APP_NAME', 'site');
@@ -45,7 +45,6 @@ $app->set('SESSION.event', $item );
 }
 
 
-$app->set('db.mongo.server', $app->get('db.mongo.server') .'/'.$app->get('db.mongo.database'));
 
 
 $logger = new \Log( $app->get('application.logfile') );
