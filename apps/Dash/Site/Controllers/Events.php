@@ -1,5 +1,5 @@
 <?php 
-namespace Dash\Controllers;
+namespace Dash\Site\Controllers;
 
 class Events extends BaseAuth 
 {
@@ -8,7 +8,7 @@ class Events extends BaseAuth
         \Base::instance()->set('pagetitle', 'Events');
         \Base::instance()->set('subtitle', '');
         
-        $model = new \Dash\Models\Events;
+        $model = new \Dash\Site\Models\Events;
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         
@@ -18,8 +18,8 @@ class Events extends BaseAuth
         $pagination = new \Dsc\Pagination($list['total'], $list['limit']);       
         \Base::instance()->set('pagination', $pagination );
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::events/list.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::events/list.php');
     }
 
 }

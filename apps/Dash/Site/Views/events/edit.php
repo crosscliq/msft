@@ -109,10 +109,47 @@
 		</div>
 	           
                     <div><br/>
-   			  <input class="btn btn-primary pull-right" type="submit" type="hidden" name="submitType" value="Save">      
+                     <input id="primarySubmit" type="hidden" value="save_edit" name="submitType" />
+                     
+                     <a onclick="document.getElementById('primarySubmit').value='save_close'; document.getElementById('detail-form').submit();" href="javascript:void(0);">Save & Close</a>
+   			       
                     </div>
 
 		</div>
+
+    <h1>Social</h1>
+    <div class="row">
+              <div class="col-md-3"><br/>
+                    <label for="twitteronoff" class="control-label">Twitter</label>
+                  </div>
+                  <div class="col-md-3"><br/> On / Off
+                    <input type="checkbox" id="twitteronoff" class="form-checkbox" name="social[twitter][status]"  <?php if($flash->old('social.twitter.status')) {echo 'checked';}?> >
+                  
+                  </div>
+                  <br>
+         <div class="col-md-3"><br/>
+                    <label for="normal-field" class="control-label">Twitter Hash Tag</label>
+                  </div>
+                  <div class="col-md-3"><br/>
+                    <input type="text" class="form-control" name="social[twitter][tag]" placeholder="#hashtag" value="<?php echo $flash->old('social.twitter.tag'); ?>" >
+                  </div>  
+                   <br>        
+        <div class="col-md-3"><br/>
+                    <label for="normal-field" class="control-label">Instagram</label>
+                  </div>
+                  <div class="col-md-3"><br/>On / Off
+                     <input type="checkbox" id="twitteronoff" class="form-checkbox" name="social[instrgram][status]"  <?php if($flash->old('social.instragram.status')) {echo 'checked';}?> >
+                      </div>
+                   <br>
+         <div class="col-md-3"><br/>
+                    <label for="normal-field" class="control-label">Instagram Hash Tag</label>
+                  </div>
+                  <div class="col-md-3"><br/>
+                      <input type="text" class="form-control" name="social[instagram][tag]" placeholder="#hashtag" value="<?php echo $flash->old('social.instagram.tag'); ?>" <?php if($flash->old('social.instagram.tag')) {echo 'checked';}?> >
+                  </div> 
+    </div>
+
+
 
    
 	</form>

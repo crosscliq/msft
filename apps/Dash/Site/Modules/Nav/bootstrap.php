@@ -6,7 +6,7 @@ switch ($global_app_name)
 {
     case "admin":
         // register event listener
-        \Dsc\System::instance()->getDispatcher()->addListener(\Dash\Modules\Nav\Listeners\Admin::instance());
+        \Dsc\System::instance()->getDispatcher()->addListener(\Dash\Site\Modules\Nav\Listeners\Admin::instance());
   
         break; 
     case "site":

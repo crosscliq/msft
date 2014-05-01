@@ -1,7 +1,7 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-class Ajax extends \Dash\Controllers\BaseAuth 
+class Ajax extends \Dash\Site\Controllers\BaseAuth 
 {
     
     var $pusher = '';

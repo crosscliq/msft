@@ -1,7 +1,7 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-class Tags extends \Dash\Controllers\BaseAuth 
+class Tags extends \Dash\Site\Controllers\BaseAuth 
 {
     
     public function dashboard($f3) {
@@ -9,14 +9,14 @@ class Tags extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('subtitle', '');
         
         
-        $model = new \Dash\Models\Event\Event;
+        $model = new \Dash\Site\Models\Event\Event;
         $event = $model->getAllEventInfo($f3->get('PARAMS.eventid'));
     
         \Base::instance()->set('event', $event );
         
-        $view = new \Dsc\Template;
+        $view = \Dsc\System::instance()->get( 'theme' );
         $view->setLayout('dash.php');
-        echo $view->render('Dash/Views::event/tags/dashboard.php');
+        echo $view->render('Dash/Site/Views::event/tags/dashboard.php');
     }
 
     public function download($f3) {
@@ -24,14 +24,14 @@ class Tags extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('subtitle', '');
         
         
-        $model = new \Dash\Models\Event\Tags;
+        $model = new \Dash\Site\Models\Event\Tags;
         $event = $model->getAllEventInfo($f3->get('PARAMS.eventid'));
     
         \Base::instance()->set('event', $event );
         
-        $view = new \Dsc\Template;
+        $view = \Dsc\System::instance()->get( 'theme' );
         $view->setLayout('dash.php');
-        echo $view->render('Dash/Views::event/tags/dashboard.php');
+        echo $view->render('Dash/Site/Views::event/tags/dashboard.php');
     }
 
     public function generate($f3) {
@@ -39,14 +39,14 @@ class Tags extends \Dash\Controllers\BaseAuth
         \Base::instance()->set('subtitle', '');
         
         
-        $model = new \Dash\Models\Event\Tags;
+        $model = new \Dash\Site\Models\Event\Tags;
         $event = $model->getAllEventInfo($f3->get('PARAMS.eventid'));
     
         \Base::instance()->set('event', $event );
         
-        $view = new \Dsc\Template;
+        $view = \Dsc\System::instance()->get( 'theme' );
         $view->setLayout('dash.php');
-        echo $view->render('Dash/Views::event/tags/dashboard.php');
+        echo $view->render('Dash/Site/Views::event/tags/dashboard.php');
     }
 
 }

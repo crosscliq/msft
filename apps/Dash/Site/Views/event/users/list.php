@@ -1,25 +1,13 @@
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
 <?php //echo \Dsc\Debug::dump( $list ); ?>
+
 <a class="btn btn-success pull-right" href="./<?php echo $PARAMS['eventid']?>/user/create">New User</a>
 
 <br clear="both"><br>
-<form id="list-form" action="./admin/users" method="post">
+<form id="list-form" action="./users" method="post">
 
     <div class="row datatable-header">
-        <div class="col-sm-6">
-            <div class="row row-marginless">
-                <?php if (!empty($list['subset'])) { ?>
-                <div class="col-sm-4">
-                    <?php echo $pagination->getLimitBox( $state->get('list.limit') ); ?>
-                </div>
-                <?php } ?>
-                <?php if (!empty($list['count']) && $list['count'] > 1) { ?>                                
-                <div class="col-sm-8">
-                    <?php echo $pagination->serve(); ?>
-                </div>
-                <?php } ?>
-            </div>
-        </div>    
+      
         <div class="col-sm-4 pull-right">
             <div class="input-group">
                 <input class="form-control" type="text" name="filter[keyword]" placeholder="Keyword" maxlength="200" value="<?php echo $state->get('filter.keyword'); ?>"> 
@@ -52,9 +40,9 @@
         </thead>
         <tbody>    
         
-        <?php if (!empty($list['subset'])) { ?>
+          <?php if (!empty($paginated->items)) { ?>
     
-            <?php foreach ($list['subset'] as $item) { ?>
+            <?php foreach($paginated->items as $item) { ?>
                 <tr>
                                    
                     <td class="">
@@ -79,11 +67,11 @@
                         
                     </td>
                     <td class="text-center">
-                        <a class="btn btn-success " href="./<?php echo $PARAMS['eventid']; ?>/user/edit/<?php echo $item->id; ?>">
+                        <a class="btn btn-success " href="./<?php echo $PARAMS['eventid'] ?>/user/edit/<?php echo $item->id; ?>">
                             <i class="icon-edit"></i>
                         </a>
                         &nbsp;
-                        <a class="btn  btn-danger" data-bootbox="confirm" href="./<?php echo $PARAMS['eventid']; ?>/user/delete/<?php echo $item->id; ?>">
+                        <a class="btn  btn-danger" data-bootbox="confirm" href="./<?php echo $PARAMS['eventid'] ?>/user/delete/<?php echo $item->id; ?>">
                             <i class="icon-trash"></i>
                         </a>
                     </td>
@@ -102,18 +90,26 @@
     </table>
     
     </div>
-    
-    <div class="row datatable-footer">
-        <?php if (!empty($list['count']) && $list['count'] > 1) { ?>
-        <div class="col-sm-10">
-            <?php echo (!empty($list['count']) && $list['count'] > 1) ? $pagination->serve() : null; ?>
-        </div>
-        <?php } ?>
-        <div class="col-sm-2 pull-right">
-            <div class="datatable-results-count pull-right">
-            <?php echo $pagination ? $pagination->getResultsCounter() : null; ?>
+      <div class="dt-row dt-bottom-row">
+            <div class="row">
+                <div class="col-sm-10">
+                    <?php if (!empty($paginated->total_pages) && $paginated->total_pages > 1) { ?>
+                        <?php echo $paginated->serve(); ?>
+                    <?php } ?>
+                </div>
+                <div class="col-sm-2">
+                    <div class="datatable-results-count pull-right">
+                        <span class="pagination">
+                            <?php echo (!empty($paginated->total_pages)) ? $paginated->getResultsCounter() : null; ?>
+                        </span>
+                    </div>
+                </div>        
             </div>
-        </div>
-    </div>    
+        </div> 
     
 </form>
+
+
+
+
+

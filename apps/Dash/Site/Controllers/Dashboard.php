@@ -8,7 +8,7 @@ class Dashboard extends BaseAuth
         $state = $model->populateState()->getState();
         $model->setState('list.limit', 50);
 
-        $list = $model->getList();
+        $list = $model->getItems();
         \Base::instance()->set('list', $list );
 
     	$view = new \Dsc\Template;

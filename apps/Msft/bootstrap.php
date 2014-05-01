@@ -28,8 +28,7 @@ class MsftBootstrap extends \Dsc\Bootstrap
            $f3->reroute('/welcome');
         });
        
-        $f3->route('GET /home', '\Msft\Site\Controllers\Auth->showLogin');
-        $f3->route('POST /home', '\Msft\Site\Controllers\Auth->doLogin');     
+        $f3->route('GET /home', '\Users\Site\Controllers\Login->index');
         
      
         $f3->route('GET /signup', '\Msft\Site\Controllers\Auth->showSignup');

@@ -1,29 +1,27 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-class Wristbands extends \Dash\Controllers\BaseAuth 
+class Wristbands extends \Dash\Site\Controllers\BaseAuth 
 {
-    
-    public function display() {
+    public function index() {
         \Base::instance()->set('pagetitle', 'Wristbands');
         \Base::instance()->set('subtitle', '');
         
-        $model = new \Dash\Models\Event\Wristbands;
+        $model = new \Dash\Site\Models\Event\Tags;
+  
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         
         $list = $model->paginate();
      
+        
         \Base::instance()->set('list', $list );
         
-        $pagination = new \Dsc\Pagination($list['total'], $list['limit']);       
-        \Base::instance()->set('pagination', $pagination );
-        
-        $view = new \Dsc\Template;
-        $view->setLayout('event.php');
-        echo $view->render('Dash/Views::event/wristbands/list.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        $view->setVariant('event.php');
+        echo $view->render('Dash/Site/Views::event/wristbands/list.php');
     }
-
+    
 }
 
 

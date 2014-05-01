@@ -1,27 +1,29 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-class Users extends \Dash\Controllers\BaseAuth 
+class Users extends \Dash\Site\Controllers\BaseAuth 
 {
     
-    public function display() {
-        \Base::instance()->set('pagetitle', 'Users');
-        \Base::instance()->set('subtitle', '');
+
+     public function index()
+    {
+   //     $this->checkAccess( __CLASS__, __FUNCTION__ );
         
-        $model = new \Dash\Models\Event\Users;
+        $model = new \Dash\Site\Models\Event\Users;
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
+    
+        $paginated = $model->paginate();
+        \Base::instance()->set('paginated', $paginated );
         
-        $list = $model->paginate();
-     
-        \Base::instance()->set('list', $list );
+     //   $model = $this->getModel('groups');
+      //  $groups = $model->getList();
+      //  \Base::instance()->set('groups', $groups );
         
-        $pagination = new \Dsc\Pagination($list['total'], $list['limit']);       
-        \Base::instance()->set('pagination', $pagination );
-        
-        $view = new \Dsc\Template;
-        $view->setLayout('event.php');
-        echo $view->render('Dash/Views::event/users/list.php');
+        //$view = \Dsc\System::instance()->get('theme');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        $view->setVariant('event.php');
+        echo $view->render('Dash/Site/Views::event/users/list.php');
     }
 
 }

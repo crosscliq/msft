@@ -1,9 +1,9 @@
 <?php 
-namespace Dash\Controllers\Event;
+namespace Dash\Site\Controllers\Event;
 
-class Attendee extends \Dash\Controllers\BaseAuth 
+class Attendee extends \Dash\Site\Controllers\BaseAuth 
 {
-    use \Dsc\Traits\Controllers\CrudItem;
+    use \Dsc\Traits\Controllers\CrudItemCollection;
 
     protected $list_route = '/';
     protected $create_item_route = '/attendee/create';
@@ -12,7 +12,7 @@ class Attendee extends \Dash\Controllers\BaseAuth
     
     protected function getModel() 
     {
-        $model = new \Dash\Models\Event\Attendees;
+        $model = new \Dash\Site\Models\Event\Attendees;
         return $model; 
     }
     public function __construct() {
@@ -55,8 +55,8 @@ class Attendee extends \Dash\Controllers\BaseAuth
         $flash->store( $flash->get('old') );        
 
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/attendees/create.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/attendees/create.php');
     }
     
      protected function displayEdit()
@@ -64,11 +64,11 @@ class Attendee extends \Dash\Controllers\BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit Attendees');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/attendees/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/attendees/edit.php');
     }
 
-    //reroute this to  the \Dash\
+    //reroute this to  the \Dash\Site\
     /**
      * This controller doesn't allow reading, only editing, so redirect to the edit method
      */
@@ -86,7 +86,7 @@ class Attendee extends \Dash\Controllers\BaseAuth
         $f3 = \Base::instance();
         $f3->set('pagetitle', 'Edit Attendees');
         
-        $view = new \Dsc\Template;
-        echo $view->render('Dash/Views::event/attendees/edit.php');
+        $view = \Dsc\System::instance()->get( 'theme' );
+        echo $view->render('Dash/Site/Views::event/attendees/edit.php');
     }
 }
