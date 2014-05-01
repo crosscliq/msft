@@ -1,119 +1,26 @@
 <?php 
 namespace Dash\Models;
 
-
 Class Users Extends \Users\Admin\Models\Users {
-
-
-	 public function getDb()
-    {
-        if (empty($this->db))
-        {   
-            $db_host = \Base::instance()->get('db.mongo.host');
-            $db_port = \Base::instance()->get('db.mongo.port');
-            $db_name = \Base::instance()->get('db.mongo.name');
-            $db_user = \Base::instance()->get('db.mongo.user');
-            $db_pass = \Base::instance()->get('db.mongo.password');
-
-            $string = 'mongodb://';
-            if( $db_user && $db_pass) {
-                $string .= $db_user.':'.$db_pass ."@";
-            }
-             $string .= $db_host;
-             $string .= ':'.$db_port;
-             $string .= '/'.$db_name;
-
-            $this->db = new \DB\Mongo($string, $db_name);
-        }
     
-        return $this->db;
-    }
-
-	 public function create( $values, $options=array() )
+    protected function beforeValidate()
     {
-        if (empty($values['password'])) {
-            $this->auto_password = $this->generateRandomString( 10 ); // save this for later emailing to the user, if necessary
-            $values['password'] =  password_hash($this->auto_password, PASSWORD_BCRYPT);
+    	if( strlen( $this->{'email'} ) ){
+    		$this->{'email'} = strtolower( $this->{'email'} );
+    	}
 
-        } else {
-        	 $values['password'] = password_hash($values['password'], PASSWORD_BCRYPT);
-
-        }
-
-                
-        return $this->save( $values, $options );
-    }
-    
-    public function update( $mapper, $values, $options=array() )
-    {
-    	$values['email'] = strtolower($values['email']);
-        if (!empty($values['new_password'])) 
-        {
-            if (empty($values['confirm_new_password']))
-            {
-                $this->setError('Must confirm new password');
-            }
-            
-            if ($values['new_password'] != $values['confirm_new_password'])
-            {
-                $this->setError('New password and confirmation value do not match');
-            }
-            
-            $values['password'] = password_hash($values['new_password'], PASSWORD_BCRYPT);
-        }
-            else 
-        {
-            $values['password'] = $mapper->password;
-        }
-
-        unset($values['new_password']);
-        unset($values['confirm_new_password']);
-        
-        return $this->save( $values, $options, $mapper );
-    }
-    
-    public function save( $values, $options=array(), $mapper=null )
-    {	
-    	$values['email'] = strtolower($values['email']);
-    	
-        if (empty($options['skip_validation']))
-        {
-            $this->validate( $values, $options, $mapper );
-        }
-        
-        if (empty($values['username'])) {
-            $values['username'] = $values['email'];
-        }
-        
-        $values['username'] = $this->inputfilter->clean( $values['username'], 'ALNUM' );
-        
-        if (!empty($values['groups'])) 
-        {
-            $groups = array();
-            foreach ($values['groups'] as $key => $id) 
-            {
-                $item = (new \Users\Admin\Models\Groups)->setState('filter.id', $id)->getItem();
-                $groups[] = array("id" =>  $item->id, "name" => $item->name);
-        
-            }
-            $values['groups'] = $groups;
-        }  
-
-        if (!empty($values['roles'])) 
+        if ( !empty( $this->roles ) ) 
         {
             $roles = array();
-            foreach ($values['roles'] as $key => $id) 
+            foreach ( $this->roles as $key => $id) 
             {
                 $item = (new \Dash\Models\Event\Roles)->setState('filter.id', $id)->getItem();
                 $roles[] = array("id" =>  $item->id, "name" => $item->name, "type" => $item->type );
-        
             }
-            $values['roles'] = $roles;
+            $this->roles = $roles;
         }      
-        
-        $options['skip_validation'] = true; // we've already done it above, so stop the parent from doing it
-    
-        return parent::save( $values, $options, $mapper );
+    	
+        return parent::beforeValidate();
     }
 }
 

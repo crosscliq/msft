@@ -1,24 +1,21 @@
 <?php 
 namespace Dash\Models;
 
-class Roles extends Base 
-{
-    protected $collection = 'users.roles';
-    protected $default_ordering_direction = '1';
-    protected $default_ordering_field = 'name';
+class Roles extends \Dsc\Mongo\Collection {
+	protected $__collection_name = 'users.roles';
+	
+	protected $__config = array(
+			'default_sort' => array(
+					'name' => 1
+			),
+	);
     
-    public function __construct($config=array())
-    {
-        $config['filter_fields'] = array(
-            'name', 'type'
-        );
-        $config['order_directions'] = array('1', '-1');
-        
-        parent::__construct($config);
-    }
-    
-    protected function fetchFilters()
-    {
+   	/**
+   	 * Fetches the conditions for the next query
+   	 *
+   	 * @return \Dsc\Mongo\Collection
+   	 */
+   	protected function fetchConditions(){
         $this->filters = array();
     
         $filter_keyword = $this->getState('filter.keyword');
@@ -28,41 +25,34 @@ class Roles extends Base
     
             $where = array();
             $where[] = array('name'=>$key);
-           // $where[] = array('email'=>$key);
-           // $where[] = array('first_name'=>$key);
-           // $where[] = array('last_name'=>$key);
     
-            $this->filters['$or'] = $where;
+            $this->setCondition( '$or', $where );
         }
     
-        $filter_id = $this->getState('filter.id');
-        if (strlen($filter_id))
-        {
-            $this->filters['_id'] = new \MongoId((string) $filter_id);
-        }
         $filter_type = $this->getState('filter.type'); 
-
         if (strlen($filter_type))
         {
-            $this->filters['type'] =  $filter_type;
+            $this->setCondition( 'type', $filter_type );
         }
+
         $filter_group = $this->getState('filter.group');     
         if (strlen($filter_group))
         {
-            $this->filters['group'] =  $filter_group;
+            $this->setCondition( 'group', $filter_group );
         }      
 
         $filter_name_contains = $this->getState('filter.name-contains', null, 'name');
         if (strlen($filter_name_contains))
         {
             $key =  new \MongoRegex('/'. $filter_name_contains .'/i');
-            $this->filters['name'] = $key;
+            $this->setCondition( 'name', $key );
         }
         
-    
-        return $this->filters;
+        return parent::fetchConditions();
     }
-    
+
+    /**
+     * To remove
     protected function buildOrderClause()
     {
         $order = null;
@@ -83,4 +73,5 @@ class Roles extends Base
     
         return $order;
     }
+     */
 }

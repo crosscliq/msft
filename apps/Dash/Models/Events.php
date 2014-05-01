@@ -2,57 +2,22 @@
 namespace Dash\Models;
 
 
-Class Events Extends Base {
+Class Events extends \Dsc\Mongo\Collection {
 
-    protected $collection = 'events';
-    protected $default_ordering_direction = '1';
-    protected $default_ordering_field = 'type';
+	protected $__collection_name = 'events';
+	
+	protected $__config = array(
+			'default_sort' => array(
+					'type' => 1
+			),
+	);
 
-    public function __construct($config=array())
-    {
-        $config['filter_fields'] = array(
-            'name', 'start_date', 'end_date'
-        );
-        $config['order_directions'] = array('1', '-1');
-        
-        parent::__construct($config);
-    }
-
-      public function getDb()
-    {
-        if (empty($this->db))
-        {   
-            $f3 = \Base::instance();
-
-
-            $db_host = $f3->get('db.mongo.host');
-            $db_port = $f3->get('db.mongo.port');
-            $db_name = $f3->get('db.mongo.name');
-            $db_user = $f3->get('db.mongo.user');
-            $db_pass = $f3->get('db.mongo.password');
-
-            $string = 'mongodb://';
-            if( $db_user && $db_pass) {
-                $string .= $db_user.':'.$db_pass ."@";
-            }
-             $string .= $db_host;
-             $string .= ':'.$db_port;
-             $string .= '/'.$db_name;
-
-            $this->db = new \DB\Mongo($string, $db_name);
-        }
-    
-        return $this->db;
-    }
-
-    public function getPrefab() {
-        $prefab = New \Dash\Models\Prefabs\Event();
-        return $prefab;
-    }
-    
-    protected function fetchFilters()
-    {   
-       
+   	/**
+   	 * Fetches the conditions for the next query
+   	 *
+   	 * @return \Dsc\Mongo\Collection
+   	 */
+   	protected function fetchConditions(){
         $filter_keyword = $this->getState('filter.keyword');
         if ($filter_keyword && is_string($filter_keyword))
         {
@@ -66,21 +31,16 @@ Class Events Extends Base {
             $where[] = array('end_date'=>$key);
   
     
-            $this->filters['$or'] = $where;
+            $key =  new \MongoRegex('/'. $filter_keyword .'/i');
+            $this->setCondition('$or', $where);
         }
     
         $filter_id = $this->getState('filter.id');
         
-        if (strlen($filter_id))
-        {
-            $this->filters['_id'] = new \MongoId((string) $filter_id);
-        }
-
         $filter_eventid = $this->getState('filter.eventid');
-
         if (strlen($filter_eventid))
         {
-            $this->filters['event_id'] = $filter_eventid;
+            $this->setCondition('event_id', $filter_eventid);
         }
 
 
@@ -88,59 +48,29 @@ Class Events Extends Base {
 
         if (strlen($filter_slug))
         {
-            $this->filters['slug'] = $filter_slug;
+            $this->setCondition('slug', $filter_slug);
         }
-
          
-        return $this->filters;
+        return parent::fetchConditions();
     }
-
-        /**
-     * An alias for the save command
-     * 
-     * @param unknown_type $values
-     * @param unknown_type $options
-     */
-    public function create( $values, $options=array() ) 
-    { 
-        
-        $save =  $this->save( $values, $options );
-        if($save) {
-             $event = new \Joomla\Event\Event( 'onAfterCreateDashModelsEvents' );
-             $event->addArgument('model', $this)->addArgument('mapper', $save);
-             $event = \Dsc\System::instance()->getDispatcher()->triggerEvent($event);
-                if ($event->hasArgument('mapper')) {
-                  $save = $event->getArgument('mapper');
-                }
-        }
-        return $save;
-
-
-    }
-
-
 
     //if all checks pass lets process values
-   public function processEventID($event_id){
-
-    $id = str_replace(' ', '', $event_id);
-    $id = strtolower($id);
-    return $id;
-
+    public function processEventID($event_id){
+	    $id = str_replace(' ', '', $event_id);
+	    $id = strtolower($id);
+	    return $id;
     }
 
-      public function validate( $values, $options=array(), $mapper=null ) 
-    {   
-        if(empty($values['event_id'])){
-            $this->setError('Event ID is required, it is used as the collection name and as the sub domain');
-        } else {
-            $values['event_id'] = $this->processEventID($values['event_id']);
-        }
-        
+    protected function beforeValidate()
+    {
+    	if(!empty($this->{'event_id'})){
+    		$this->setError('Event ID is required, it is used as the collection name and as the sub domain');
+    	} else {
+	    	$this->{'event_id'} = $this->processEventID($this->{'event_id'});
+    	}
 
-        return $this->checkErrors();
+    	return parent::beforeValidate();
     }
-
 }
 
 ?>

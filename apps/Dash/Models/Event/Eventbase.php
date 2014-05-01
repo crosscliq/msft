@@ -3,8 +3,7 @@ namespace Dash\Models\Event;
 
 class Eventbase extends \Dsc\Models\Db\Mongo  
 {
-    protected $db = null; // the db connection object
-    
+    protected $db = null; // the db connection object    
 
     public function getDb()
     {
