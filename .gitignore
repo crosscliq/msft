@@ -23,3 +23,5 @@ vendor/*
 .idea/vcs.xml
 
 .idea/webResources.xml
+
+.htaccess
