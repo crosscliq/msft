@@ -16,13 +16,19 @@ Class Attendees Extends Eventbase {
     public $tagid;
     public $created;
 
-
+    use \Dsc\Traits\Models\Encryptable;
+    
     protected $__collection_name = 'attendees';
     
+    protected $__config = array(
+    		'encrypted_fields' => array(
+    				'zipcode', 'phone', 'email', 'first_name', 'last_name'
+    		)
+    );
+        
     protected function fetchConditions()
     {   
         parent::fetchConditions();
-       
        
         $filter_keyword = $this->getState('filter.keyword');
         if ($filter_keyword && is_string($filter_keyword))
@@ -35,18 +41,15 @@ Class Attendees Extends Eventbase {
             $where[] = array('event_id'=>$key);
             $where[] = array('start_date'=>$key);
             $where[] = array('end_date'=>$key);
-  
+            $where[] = array('email'=>$key);
+            $where[] = array('zipcode'=>$key);
+            $where[] = array('last_name'=>$key);
+            $where[] = array('first_name'=>$key);
+            
             $this->setCondition('$or', $where);
             
         }
     
-        $filter_id = $this->getState('filter.id');
-        
-        if (strlen($filter_id))
-        {   
-            $this->setCondition('_id', new \MongoId((string) $filter_id));
-    
-        }
 
         $filter_tagid = $this->getState('filter.tagid');
         
@@ -162,52 +165,6 @@ Class Attendees Extends Eventbase {
 
 
     }
-
-
-
-      protected function fetchItems()
-    {
-        $this->__cursor = $this->collection()->find($this->conditions(), $this->fields());
-
-        if ($this->getParam('sort')) {
-            $this->__cursor->sort($this->getParam('sort'));
-        }
-        if ($this->getParam('limit')) {
-            $this->__cursor->limit($this->getParam('limit'));
-        }
-        if ($this->getParam('skip')) {
-            $this->__cursor->skip($this->getParam('skip'));
-        }
-        
-        $items = array();
-        foreach ($this->__cursor as $doc) {
-            $item = new static( $doc );
-            $items[] = $this->prepareItem($item);;
-        }           
-    
-        return $items;
-    }
-    
-    protected function fetchItem()
-    {
-        $this->__cursor = $this->collection()->find($this->conditions(), $this->fields());
-        
-        if ($this->getParam('sort')) {
-            $this->__cursor->sort($this->getParam('sort'));
-        }
-        $this->__cursor->limit(1);
-        $this->__cursor->skip(0);
-        
-        $item = null;
-        if ($this->__cursor->hasNext()) {
-            $item = new static( $this->__cursor->getNext() );
-            $item = $this->prepareItem($item);
-        }
-        
-        return $item;
-    }
-
-
 
     function getTotalCount() {
         $this->emptyState();

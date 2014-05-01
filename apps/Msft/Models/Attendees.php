@@ -3,11 +3,11 @@ namespace Msft\Models;
 
 class Attendees extends Eventbase 
 {
-    
     protected $__collection_name = 'attendees';
-    
+        
     protected function fetchConditions()
     {   
+    	
         parent::fetchConditions();
        
         $filter_keyword = $this->getState('filter.keyword');
