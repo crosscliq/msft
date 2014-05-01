@@ -16,12 +16,11 @@ Class Users Extends \Users\Models\Users {
     protected function beforeSave()
     {
        $f3 = \Base::instance();
-
-        $events = array();
+      
 
         if (!empty($this->roles)) 
         {
-            $groups = array();
+            $roles = array();
             foreach ($this->roles as $key => $id) 
             {
                 $item = (new \Dash\Site\Models\Event\Roles)->setState('filter.id', $id)->getItem();
