@@ -42,8 +42,11 @@ $app->set('event.database', $app->get('subdomain'));
 $model = new \Dash\Models\Events;
 $item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();
 $app->set('SESSION.event', $item );
-
 }
+
+
+$app->set('db.mongo.server', $app->get('db.mongo.server') .'/'.$app->get('db.mongo.database'));
+
 
 $logger = new \Log( $app->get('application.logfile') );
 \Registry::set('logger', $logger);
