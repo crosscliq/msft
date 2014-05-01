@@ -14,7 +14,7 @@ class Attendees extends BaseAuth
         echo $view->render('Msft/Site/Views::attendee/home.php');
     }
 	
- public function own($f3)
+     public function own($f3)
     {
         \Base::instance()->set('pagetitle', 'Welcome');
         \Base::instance()->set('subtitle', '');
