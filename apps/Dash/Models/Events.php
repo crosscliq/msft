@@ -18,6 +18,9 @@ Class Events extends \Dsc\Mongo\Collection {
    	 * @return \Dsc\Mongo\Collection
    	 */
    	protected function fetchConditions(){
+        
+        parent::fetchConditions();
+        
         $filter_keyword = $this->getState('filter.keyword');
         if ($filter_keyword && is_string($filter_keyword))
         {
@@ -50,8 +53,10 @@ Class Events extends \Dsc\Mongo\Collection {
         {
             $this->setCondition('slug', $filter_slug);
         }
+
+        return $this;
          
-        return parent::fetchConditions();
+      
     }
 
     //if all checks pass lets process values

@@ -41,6 +41,7 @@ if($app->get('subdomain') != 'api' &&$app->get('subdomain') != 'admin' && $app->
 $app->set('event.database', $app->get('subdomain'));
 $model = new \Dash\Models\Events;
 $item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();
+
 $app->set('SESSION.event', $item );
 }
 
