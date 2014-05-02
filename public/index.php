@@ -60,6 +60,15 @@ if ($app->get('DEBUG')) {
 // trigger the preflight event
 \Dsc\System::instance()->preflight();
 
+
+ $app->route('GET|POST /logout', function() { 
+ 	die('testing');
+             $reroute = \Base::instance()->get('SESSION.home');
+             \Base::instance()->clear('SESSION');
+             \Base::instance()->clear('COOKIE');
+             setcookie('id','',time()-3600);
+             \Base::instance()->reroute($reroute);
+        });
 $app->run();
 
 ?>

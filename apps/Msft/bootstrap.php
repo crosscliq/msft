@@ -13,7 +13,7 @@ class MsftBootstrap extends \Dsc\Bootstrap
        
         //\Dsc\System::instance()->get('router')->mount( new \Msft\Site\Routes\Bands, $this->namespace );
        
-        $f3->route('GET|POST /logout', function() { 
+        $f3->route('GET|POST /do/logout', function() { 
              $reroute = \Base::instance()->get('SESSION.home');
              \Base::instance()->clear('SESSION');
              \Base::instance()->clear('COOKIE');
@@ -38,7 +38,7 @@ class MsftBootstrap extends \Dsc\Bootstrap
      
         $f3->route('GET /signup', '\Msft\Site\Controllers\Auth->showSignup');
         $f3->route('POST /signup', '\Msft\Site\Controllers\Auth->doSignup');
-        $f3->route('GET|POST /logout', '\Users\Msft\Site\Controllers\User->logout');     
+      
         $f3->route('GET /roles', '\Msft\Site\Controllers\Users->roles');
         $f3->route('GET /active/role/@roleid', '\Msft\Site\Controllers\Users->role');
         //Tag Parser
