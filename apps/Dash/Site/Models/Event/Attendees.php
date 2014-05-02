@@ -173,5 +173,3 @@ Class Attendees Extends Eventbase {
     }
 
 }
-
-?>
