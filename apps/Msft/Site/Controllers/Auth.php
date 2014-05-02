@@ -1,7 +1,7 @@
 <?php 
 namespace Msft\Site\Controllers;
 
-class Auth extends \Users\Site\Controllers\Auth {
+class Auth extends \Users\Site\Controllers\Login {
 
     
     protected $list_route = '/admin/users';

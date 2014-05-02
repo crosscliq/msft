@@ -1,3 +1,4 @@
+<?php \Dsc\System::instance()->get( 'session' )->set( 'site.login.redirect', '/roles' ); ?>
 
 <div class="container">
     <div class="row">
