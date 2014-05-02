@@ -6,7 +6,7 @@ class DashBootstrap extends \Dsc\Bootstrap
 
     protected function runSite()
     {
-        parent::runSite();
+      //  parent::runSite();
         
      //   \Dsc\System::instance()->get('router')->mount( new \Crossbox\Site\Routes, $this->namespace );
     }

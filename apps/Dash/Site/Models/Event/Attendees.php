@@ -34,17 +34,18 @@ Class Attendees Extends Eventbase {
         if ($filter_keyword && is_string($filter_keyword))
         {
             $key =  new \MongoRegex('/'. $filter_keyword .'/i');
-    
+            $key_encrypt = new \MongoRegex('/'. $this->encryptTextMongo( $filter_keyword ) .'/i');
+            
             $where = array();
-            $where[] = array('name'=>$key);
             $where[] = array('slug'=>$key);
             $where[] = array('event_id'=>$key);
             $where[] = array('start_date'=>$key);
             $where[] = array('end_date'=>$key);
-            $where[] = array('email'=>$key);
-            $where[] = array('zipcode'=>$key);
-            $where[] = array('last_name'=>$key);
-            $where[] = array('first_name'=>$key);
+            $where[] = array('email'=>$key_encrypt);
+            $where[] = array('zipcode'=>$key_encrypt);
+            $where[] = array('last_name'=>$key_encrypt);
+            $where[] = array('first_name'=>$key_encrypt);
+            
             
             $this->setCondition('$or', $where);
             

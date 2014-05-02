@@ -29,7 +29,12 @@ class MsftBootstrap extends \Dsc\Bootstrap
         });
        
         $f3->route('GET /home', '\Users\Site\Controllers\Login->index');
-        
+        $f3->route('GET /login', function() {
+            die('getting');
+        });
+        $f3->route('POST /login', function() {
+            die('posting');
+        });        
      
         $f3->route('GET /signup', '\Msft\Site\Controllers\Auth->showSignup');
         $f3->route('POST /signup', '\Msft\Site\Controllers\Auth->doSignup');
@@ -100,12 +105,7 @@ class MsftBootstrap extends \Dsc\Bootstrap
 
         $f3->route('GET /privacy/policy', '\Msft\Site\Controllers\Privacy->display');
         
-        $f3->route('GET|POST /logout', function() {
-             \Base::instance()->clear('SESSION');
-             \Base::instance()->clear('COOKIE');
-             setcookie('id','',time()-3600);
-             \Base::instance()->reroute('/');
-        });          
+      
         
         $f3->route('GET /welcome', '\Msft\Site\Controllers\Home->own');
             

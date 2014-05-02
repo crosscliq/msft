@@ -25,7 +25,7 @@
 
   <div class="page-content">
    	 <?php 
-       \Dsc\System::instance()->addMessage('this is a warning', 'warning');
+       //\Dsc\System::instance()->addMessage('this is a warning', 'warning');
        if (\Dsc\System::instance()->getMessages(false)) { ?>
             <div class="container margin-top">
                 <tmpl type="system.messages" />
