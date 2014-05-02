@@ -69,6 +69,20 @@ if ($app->get('DEBUG')) {
              setcookie('id','',time()-3600);
              \Base::instance()->reroute($reroute);
         });
+
+ $app->route('GET|POST /encrypt', function() { 
+                foreach (\Msft\Models\Attendees::collection()->find() as $doc)
+        {
+            set_time_limit( 0 );
+            $state = new \Msft\Models\Attendees( $doc );
+            $state->save();
+        }
+        });
+
+
+
+
+
 $app->run();
 
 ?>
