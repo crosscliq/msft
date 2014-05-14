@@ -31,7 +31,7 @@ class Userlistener extends \Prefab
 
             $client = new \SoapClient("https://www.cellitstudio.com/internal/webservice.php?wsdl");
            
-           // $params = array( "userid" => 'msstore_nso', "password" => "msstore_nso", "keyword" => $event->{'sms.keyword'}, "acceptterms" => 1);              
+            $params = array( "userid" => 'msstore_nso', "password" => "msstore_nso", "keyword" => $event->{'sms.keyword'}, "acceptterms" => 1);              
              $params['phone'] = $model->phone;
 
              $params['datafield_xml'] = '<datafields>
@@ -40,13 +40,13 @@ class Userlistener extends \Prefab
           <datafield id="106792">xyz</datafield>
           <datafield id="106798">abc</datafield>
           </datafields>';
-          //    $response = $client->__soapCall("subscribe", $params);
-               $response = $client->subscribe('msstore_nso', 'msstore_nso', $event->{'sms.keyword'}, 1, $model->phone, '<datafields>
+            $response = $client->__soapCall("subscribe", $params);
+        /*       $response = $client->subscribe('msstore_nso', 'msstore_nso', $event->{'sms.keyword'}, 1, $model->phone, '<datafields>
           <datafield id="106794">xyz</datafield> 
           <datafield id="106796">xyz</datafield>
           <datafield id="106792">xyz</datafield>
           <datafield id="106798">abc</datafield>
-          </datafields>');
+          </datafields>'); */
               $model->set('smsdebug',$response );
                 $model->save();
 
