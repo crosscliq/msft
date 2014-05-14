@@ -23,19 +23,19 @@ class Userlistener extends \Prefab
 
     public function afterCreateMsftModelsAttendees($event) {
 
-        $mapper = $event->getArgument('mapper');
+        $model = $event->getArgument('model');
 
-        if(strlen($mapper->phone) > 6 && $mapper->{'offers.sms'} == 'on' && empty($mapper->{'offers.smssubscribed'})) {
+        if(strlen($model->phone) > 6 && $model->{'offers.sms'} == 'on' && empty($model->{'offers.smssubscribed'})) {
          $event = \Dsc\System::instance()->get('session')->get('event');
          var_dump($event);
-        var_dump($mapper);
+        var_dump($model);
         die();
 
             $client = new \SoapClient("https://www.cellitstudio.com/internal/webservice.php?wsdl");
            
             $params = array( "userid" => 'msstore_nso', "password" => "msstore_nso", "keyword" => $event->{'sms.keyword'}, "acceptterms" => 1
 );              
-             $params['phone'] = $mapper->phone;
+             $params['phone'] = $model->phone;
 
              $params['datafield_xml'] = '<datafields>
           <datafield id="106794">xyz</datafield> 
@@ -46,8 +46,8 @@ class Userlistener extends \Prefab
               $response = $client->__soapCall("subscribe", $params);
               
               if($response == 1) {
-                $mapper->set('offers.smssubscribed',$response );
-                $mapper->save();
+                $model->set('offers.smssubscribed',$response );
+                $model->save();
               } else {
                 //notsure
               }
