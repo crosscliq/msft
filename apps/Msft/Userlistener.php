@@ -27,9 +27,7 @@ class Userlistener extends \Prefab
 
         if(strlen($model->phone) > 6 && $model->{'offers.sms'} == 'on' && empty($model->{'offers.smssubscribed'})) {
          $event = \Dsc\System::instance()->get('session')->get('event');
-         var_dump($event);
-        var_dump($model);
-        die();
+        
 
             $client = new \SoapClient("https://www.cellitstudio.com/internal/webservice.php?wsdl");
            
