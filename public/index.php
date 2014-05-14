@@ -41,8 +41,7 @@ if($app->get('subdomain') != 'api' &&$app->get('subdomain') != 'admin' && $app->
 $app->set('event.database', $app->get('subdomain'));
 $model = new \Dash\Models\Events;
 $item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();
-
-$app->set('SESSION.event', $item );
+\Dsc\System::instance()->get('session')->set('event', $item);
 }
 
 
@@ -69,18 +68,6 @@ if ($app->get('DEBUG')) {
              setcookie('id','',time()-3600);
              \Base::instance()->reroute($reroute);
         });
-
- $app->route('GET|POST /encrypt', function() { 
-                foreach (\Msft\Models\Attendees::collection()->find() as $doc)
-        {
-            set_time_limit( 0 );
-            $state = new \Msft\Models\Attendees( $doc );
-            $state->save();
-        }
-        });
-
-
-
 
 
 $app->run();

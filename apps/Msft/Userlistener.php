@@ -29,7 +29,8 @@ class Userlistener extends \Prefab
         
 
             $client = new \SoapClient("https://www.cellitstudio.com/internal/webservice.php?wsdl");
-            $params = array( "userid" => 'msstore_nso', "password" => "msstore_nso", "keyword" => "PARAMUS", "acceptterms" => 1
+            $event = \Dsc\System::instance()->get('session')->get('event');
+            $params = array( "userid" => 'msstore_nso', "password" => "msstore_nso", "keyword" => $event->{'sms.keyword'}, "acceptterms" => 1
 );              
              $params['phone'] = $mapper->phone;
 
@@ -39,7 +40,6 @@ class Userlistener extends \Prefab
           <datafield id="106792">xyz</datafield>
           <datafield id="106798">abc</datafield>
           </datafields>';
-
               $response = $client->__soapCall("subscribe", $params);
               
               if($response == 1) {
