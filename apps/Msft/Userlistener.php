@@ -21,7 +21,7 @@ class Userlistener extends \Prefab
     }
 
 
-    public function onAfterSaveMsftModelsAttendees($event) {
+    public function afterCreateMsftModelsAttendees($event) {
 
         $mapper = $event->getArgument('mapper');
 
