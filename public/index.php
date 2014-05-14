@@ -62,7 +62,6 @@ if ($app->get('DEBUG')) {
 
 
  $app->route('GET|POST /logout', function() { 
- 	die('testing');
              $reroute = \Base::instance()->get('SESSION.home');
              \Base::instance()->clear('SESSION');
              \Base::instance()->clear('COOKIE');
