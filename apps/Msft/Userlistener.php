@@ -26,10 +26,13 @@ class Userlistener extends \Prefab
         $mapper = $event->getArgument('mapper');
 
         if(strlen($mapper->phone) > 6 && $mapper->{'offers.sms'} == 'on' && empty($mapper->{'offers.smssubscribed'})) {
-        
+         $event = \Dsc\System::instance()->get('session')->get('event');
+         var_dump($event);
+        var_dump($mapper);
+        die();
 
             $client = new \SoapClient("https://www.cellitstudio.com/internal/webservice.php?wsdl");
-            $event = \Dsc\System::instance()->get('session')->get('event');
+           
             $params = array( "userid" => 'msstore_nso', "password" => "msstore_nso", "keyword" => $event->{'sms.keyword'}, "acceptterms" => 1
 );              
              $params['phone'] = $mapper->phone;
