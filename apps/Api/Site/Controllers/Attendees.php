@@ -41,18 +41,17 @@ class Attendees extends \Dsc\Controller
 
         $object->api = 'apiregister';
         //get the EVENT ID FROM URL
-        $f3->set('event.db',explode('.',parse_url( $object->Url, PHP_URL_HOST ))[0]);
+        $f3->set('event.database',explode('.',parse_url( $object->Url, PHP_URL_HOST ))[0]);
 
         
 
         $url = parse_url($object->Url);
         
-        $tagModel = new \Msft\Models\Tags;
-        $tag = $tagModel->getPrefab();
+        $tag = new \Msft\Models\Tags;
         $peices = explode('/', $url['path']);
         $tag->tagid = end($peices);
-        $tag->eventid = $f3->get('event.db');
-        $newTag = $tagModel->create((array) $tag);
+        $tag->eventid = $f3->get('event.database');
+        $newTag = $tag->save();
         
         $object->tagid = (string) $newTag->_id;
         $object->created = \Dsc\Mongo\Metastamp::getDate('now');
