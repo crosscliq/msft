@@ -67,9 +67,11 @@ if ($app->get('DEBUG')) {
              setcookie('id','',time()-3600);
              \Base::instance()->reroute($reroute);
         });
+
+ 
 $app->route('POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
         
- 
+
 
 
 $app->run();

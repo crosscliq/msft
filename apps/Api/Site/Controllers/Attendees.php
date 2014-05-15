@@ -35,7 +35,9 @@ class Attendees extends \Dsc\Controller
      public function Sync($f3)
     {
 
-        $body = $f3->get('BODY');
+
+
+      $body = $f3->get('BODY');
 
         $object = json_decode($body);
 
@@ -46,13 +48,13 @@ class Attendees extends \Dsc\Controller
         
 
         $url = parse_url($object->Url);
-        
+
         $tag = new \Msft\Models\Tags;
         $peices = explode('/', $url['path']);
         $tag->tagid = end($peices);
         $tag->eventid = $f3->get('event.database');
         $newTag = $tag->save();
-        
+
         $object->tagid = (string) $newTag->_id;
         $object->created = \Dsc\Mongo\Metastamp::getDate('now');
         
@@ -60,8 +62,12 @@ class Attendees extends \Dsc\Controller
        // $f3->set('DEBUG', 0) ;
         $result = array();
         $model = new \Api\Models\Attendees;
+     
+       
         try {
-          $attendee = $model->create((array) $object);
+        
+          $attendee = $model->create($object);
+
             $result['response'] = true;
             $result['msg'] = 'Attendee Saved';
         } catch (\Exception $e) {
@@ -76,7 +82,6 @@ class Attendees extends \Dsc\Controller
                 $newTag->set('attendee.name',$attendee->first_name . ' ' .$attendee->last_name);
                 $newTag->save();
         }
-         die();
         
       
     }

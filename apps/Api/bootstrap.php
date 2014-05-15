@@ -9,12 +9,12 @@ class ApiBootstrap extends \Dsc\Bootstrap
     {    
         $f3 = \Base::instance();
  
-        $f3->route('POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
+        //$f3->route('POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
         
-        $f3->route('GET /', function () {
+        /*$f3->route('GET /', function () {
 
             echo ' The only method Allowed is POST, and you have to post to valid routes valid data';
-        });  
+        });  */
     }
 
 
