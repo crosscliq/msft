@@ -69,7 +69,7 @@ if ($app->get('DEBUG')) {
         });
 
  
-$app->route('POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
+$app->route('GET|POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
         
 
 

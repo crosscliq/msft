@@ -1,6 +1,6 @@
 <div class="navigation-bar dark">
     <div class="navigation-bar-content container">
-        <a href="/home" class="element"><span class="icon-grid-view"></span> MICROSOFT<sup></sup></a>
+        <a href="/home" class="element" style="margin-left:0px;padding-left:0px;"><img src="/site/images/msft-logbox.png">&nbsp;MICROSOFT<sup></sup></a>
         <span class="element-divider"></span>
 
        

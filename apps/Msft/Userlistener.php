@@ -27,27 +27,30 @@ class Userlistener extends \Prefab
 
         if(strlen($model->phone) > 6 && $model->{'offers.sms'} == 'on' && empty($model->{'offers.smssubscribed'})) {
          $event = \Dsc\System::instance()->get('session')->get('event');
-        
+	
+
+
 
             $client = new \SoapClient("https://www.cellitstudio.com/internal/webservice.php?wsdl");
            
-            $params = array( "userid" => 'msstore_nso', "password" => "msstore_nso", "keyword" => $event->{'sms.keyword'}, "acceptterms" => 1);              
-             $params['phone'] = $model->phone;
+       //     $params = array( "userid" => 'msstore_nso', "password" => "msstore_nso", "keyword" => $event->{'sms.keyword'}, "acceptterms" => 1);              
+         //    $params['phone'] = $model->phone;
 
-             $params['datafield_xml'] = '<datafields>
+           /*  $params['datafield_xml'] = '<datafields>
           <datafield id="106794">xyz</datafield> 
           <datafield id="106796">xyz</datafield>
           <datafield id="106792">xyz</datafield>
           <datafield id="106798">abc</datafield>
-          </datafields>';
-            $response = $client->__soapCall("subscribe", $params);
-        /*       $response = $client->subscribe('msstore_nso', 'msstore_nso', $event->{'sms.keyword'}, 1, $model->phone, '<datafields>
+          </datafields>';*/
+        //    $response = $client->__soapCall("subscribe_with_datafields", $params);
+              $response = $client->subscribe_with_datafields('msstore_nso', 'msstore_nso',$model->phone,  $event->{'sms.keyword'}, 1, '<datafields>
           <datafield id="106794">xyz</datafield> 
           <datafield id="106796">xyz</datafield>
           <datafield id="106792">xyz</datafield>
           <datafield id="106798">abc</datafield>
-          </datafields>'); */
-              $model->set('smsdebug',$response );
+          </datafields>'); 
+       
+       $model->set('smsdebug',$response );
                 $model->save();
 
               if($response == 1) {

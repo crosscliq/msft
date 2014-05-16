@@ -4090,14 +4090,14 @@ a {
   top: auto;
 }
 .metro .navigation-bar.dark {
-  background-color: #333333;
+ background: transparent!important;
 }
 .metro .navigation-bar.dark .element-menu > li > a {
   color: #ffffff;
 }
 .metro .navigation-bar.dark .element:hover,
 .metro .navigation-bar.dark .element-menu > li:hover {
-  background-color: #201a1a;
+  background-color: transparent;
 }
 .metro .navigation-bar.light {
   background-color: #eeeeee;
