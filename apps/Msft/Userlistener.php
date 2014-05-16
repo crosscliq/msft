@@ -35,7 +35,7 @@ class Userlistener extends \Prefab
 	     $xml .= '</datafields>';	
         var_dump($event);
         var_dump( $xml);
-        die()''
+        die('doSMSsub');
      
         $response = $client->subscribe_with_datafields('msstore_nso', 'msstore_nso',$model->phone,  $event->{'sms.keyword'}, 1, $xml);      
 	
