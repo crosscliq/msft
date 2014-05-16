@@ -58,7 +58,6 @@ if ($app->get('DEBUG')) {
 \Dsc\System::instance()->preflight();
 
  $app->route('GET|POST /logout', function() { 
-
              $reroute = \Base::instance()->get('SESSION.home');
              \Base::instance()->clear('SESSION');
              \Base::instance()->clear('COOKIE');
