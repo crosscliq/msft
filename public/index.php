@@ -16,17 +16,18 @@ $app->set('AUTOLOAD',
         $app->get('PATH_ROOT') . 'lib/;' .
         $app->get('PATH_ROOT') . 'apps/;'
 );
+
 // common config
 $app->config( $app->get('PATH_ROOT') . 'config/common.config.ini');
 $app->set('db.mongo.server', $app->get('db.mongo.server') .'/'. $app->get('db.mongo.database'));
 require $app->get('PATH_ROOT') . 'vendor/autoload.php';
+
 
 $app->set('APP_NAME', 'site');
 //TODO maybe we query the event model, and get the event object from the main DB and load it. so than we can  let the DB be controlled by the dash
 $app->set('subdomain', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
 if ($app->get('subdomain') == 'dashboard') {
     $app->set('APP_NAME', 'dash');
-    
 }
 if ($app->get('subdomain') == 'admin') {
     $app->set('APP_NAME', 'admin');
@@ -44,9 +45,6 @@ $item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();
 \Dsc\System::instance()->get('session')->set('event', $item);
 }
 
-
-
-
 $logger = new \Log( $app->get('application.logfile') );
 \Registry::set('logger', $logger);
 if ($app->get('DEBUG')) {
@@ -59,7 +57,6 @@ if ($app->get('DEBUG')) {
 // trigger the preflight event
 \Dsc\System::instance()->preflight();
 
-
  $app->route('GET|POST /logout', function() { 
              $reroute = \Base::instance()->get('SESSION.home');
              \Base::instance()->clear('SESSION');
@@ -71,8 +68,6 @@ if ($app->get('DEBUG')) {
  
 $app->route('GET|POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
         
-
-
 
 $app->run();
 
