@@ -21,8 +21,7 @@ class Userlistener extends \Prefab
     }
 
     public function doSMSsub($model) {
-      var_dump($model);
-      die('doSMSsub');
+      
        if(strlen($model->phone) > 6 && $model->{'offers.sms'} == 'on' && empty($model->{'offers.smssubscribed'})) {
          $event = \Dsc\System::instance()->get('session')->get('event');
 	
