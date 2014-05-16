@@ -22,7 +22,7 @@ class Userlistener extends \Prefab
 
     public function doSMSsub($model) {
 
-       if(strlen($model->phone) > 6 && $model->{'offers.sms'} == 'on' && empty($model->{'offers.smssubscribed'})) {
+       if(strlen($model->phone) > 6 && $model->{'offers.sms'} == 'on' && empty($model->{'smssubscribed'})) {
          $event = \Dsc\System::instance()->get('session')->get('event');
 	
             $client = new \SoapClient("https://www.cellitstudio.com/internal/webservice.php?wsdl");
@@ -41,10 +41,10 @@ class Userlistener extends \Prefab
 $model->set('smsdebug',$response );
                
 
- $model->save();
+          $model->save();
 
               if($response == 1) {
-                $model->set('offers.smssubscribed',$response );
+                $model->set('smssubscribed',$response);
                 $model->save();
               } else {
                 //notsure
