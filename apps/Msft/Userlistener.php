@@ -20,6 +20,35 @@ class Userlistener extends \Prefab
         $user->save(); 
     }
 
+    function formatPhoneNumber($s) {
+$rx = "/
+    (1)?\D*     # optional country code
+    (\d{3})?\D* # optional area code
+    (\d{3})\D*  # first three
+    (\d{4})     # last four
+    (?:\D+|$)   # extension delimiter or EOL
+    (\d*)       # optional extension
+/x";
+preg_match($rx, $s, $matches);
+if(!isset($matches[0])) return false;
+
+$country = $matches[1];
+$area = $matches[2];
+$three = $matches[3];
+$four = $matches[4];
+$ext = $matches[5];
+
+$out = "$three$four";
+if(!empty($area)) $out = "$area$out";
+//if(!empty($country)) $out = "+$country$out";
+//if(!empty($ext)) $out .= "x$ext";
+
+// check that no digits were truncated
+// if (preg_replace('/\D/', '', $s) != preg_replace('/\D/', '', $out)) return false;
+return $out;
+}
+    
+
     public function doSMSsub($model) {
 
        if(strlen($model->phone) > 6 && $model->{'offers.sms'} == 'on' && empty($model->{'smssubscribed'})) {
@@ -35,7 +64,7 @@ class Userlistener extends \Prefab
 	     $xml .= '</datafields>';	
    
      
-        $response = $client->subscribe_with_datafields('msstore_nso', 'msstore_nso',$model->phone,  $event->{'sms.keyword'}, 1, $xml);      
+        $response = $client->subscribe_with_datafields('msstore_nso', 'msstore_nso',$this->formatPhoneNumber($model->phone),  $event->{'sms.keyword'}, 1, $xml);      
 	
 
 $model->set('smsdebug',$response );
