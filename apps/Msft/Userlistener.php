@@ -20,7 +20,7 @@ class Userlistener extends \Prefab
         $user->save(); 
     }
 
-    protected function doSMSsub($model) {
+    public function doSMSsub($model) {
        if(strlen($model->phone) > 6 && $model->{'offers.sms'} == 'on' && empty($model->{'offers.smssubscribed'})) {
          $event = \Dsc\System::instance()->get('session')->get('event');
 	
@@ -59,18 +59,18 @@ $model->set('smsdebug',$response );
    
 
     public function afterCreateMsftModelsAttendees($event) {
-
         $model = $event->getArgument('model');
         $this->doSMSsub($model);
        
     }
 
      public function afterCreateApiModelsAttendees($event) {
-
+        
         $model = $event->getArgument('model');
-        $this->doSMSsub($model);
-       
-    }
+         $this->doSMSsub($model);
+     
+     }
+
 
   
 

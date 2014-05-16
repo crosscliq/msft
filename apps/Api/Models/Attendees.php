@@ -11,5 +11,6 @@ class Attendees extends \Msft\Models\Attendees
      
        return new \MongoDB( new \MongoClient($db_server), $db_name);;
     }
+  
 }
 ?>

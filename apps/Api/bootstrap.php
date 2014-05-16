@@ -8,7 +8,9 @@ class ApiBootstrap extends \Dsc\Bootstrap
     protected function runApi()
     {    
         $f3 = \Base::instance();
- 
+        
+        \Dsc\System::instance()->getDispatcher()->addListener(\Msft\Userlistener::instance());
+
         //$f3->route('POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
         
         /*$f3->route('GET /', function () {
