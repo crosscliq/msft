@@ -33,7 +33,9 @@ class Userlistener extends \Prefab
              $xml .= '<datafield id="106792">'.@$model->zipcode.'</datafield> '; //Zip Code
              $xml .= '<datafield id="106798">'.@$model->gender.'</datafield> '; //Gender
 	     $xml .= '</datafields>';	
-        
+        var_dump($event);
+        var_dump( $xml);
+        die()''
      
         $response = $client->subscribe_with_datafields('msstore_nso', 'msstore_nso',$model->phone,  $event->{'sms.keyword'}, 1, $xml);      
 	
