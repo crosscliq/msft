@@ -63,9 +63,9 @@ class Attendees extends \Dsc\Controller
         $result = array();
         $model = new \Api\Models\Attendees;
       
-      $model = new \Dash\Models\Events;
-      $item = $model->setState('filter.eventid', $f3->get('event.database'))->getItem();
-      \Dsc\System::instance()->get('session')->set('event', $item);
+        $eventModel = new \Dash\Models\Events;
+        $item = $eventModel->setState('filter.eventid', $f3->get('event.database'))->getItem();
+        \Dsc\System::instance()->get('session')->set('event', $item);
              
         try {
         
