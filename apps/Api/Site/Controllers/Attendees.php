@@ -44,8 +44,13 @@ class Attendees extends \Dsc\Controller
         $object->api = 'apiregister';
         //get the EVENT ID FROM URL
         $f3->set('event.database',explode('.',parse_url( $object->Url, PHP_URL_HOST ))[0]);
-
+        $eventModel = new \Dash\Models\Events;
+        $item = $eventModel->setState('filter.eventid', $f3->get('event.database'))->getItem();
+        \Dsc\System::instance()->get('session')->set('event', $item);
         
+        if(!empty($item->timezone)) {
+          date_default_timezone_set ( $item->timezone );
+        }
 
         $url = parse_url($object->Url);
 

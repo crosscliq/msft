@@ -40,6 +40,23 @@ function format_telephone($phone_number)
 }
 }
 
+
+function niceDate($time) {
+    $event_date = DateTime::createFromFormat('Y-m-d H:i:s', $time);
+    $today = new DateTime();
+    $firstDate = $event_date->format('Y-m-d');
+    $secondDate = $today->format('Y-m-d');
+
+
+    if($firstDate == $secondDate) {
+        $day = 'Today @';
+    } else {
+        $day = $event_date->format('Y-m-d');
+    }
+    echo $day .' '.$event_date->format('g:i A');
+   
+}
+
 ?>
 
 
@@ -55,7 +72,7 @@ function format_telephone($phone_number)
 			
 			<h2 class="fg-white"><?php echo $game["winner"]["first_name"]; ?> <?php echo $game["winner"]["last_name"]; ?></h2>
 			<br/>PHONE: <?php echo formatPhoneNumber($game["winner"]["phone"]); ?><br/>
-			<br/>Registered: <?php echo $game["winner"]["created"]["local"]; ?><br/>
+			<br/>Registered: <?php echo niceDate($game["winner"]["created"]["local"]); ?><br/>
 <form action="/games/raffle/play" method="post">
 <button type="submit"  class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(0,0,0,0.6)!important">Play Again</button>
 </form>

@@ -50,6 +50,10 @@ if($app->get('subdomain') != 'api' &&$app->get('subdomain') != 'admin' && $app->
  
     try {
          $item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();  
+         //lets support time zones
+          if(!empty($item->timezone)) {
+          date_default_timezone_set ( $item->timezone );
+          }
     } catch (Exception $e) {
         echo $e->getMessage(); 
     }

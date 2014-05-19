@@ -64,7 +64,7 @@ class Raffle extends \Msft\Site\Controllers\BaseAuth
         }
 
         $winner->set('games.raffle.winner', \Dsc\Mongo\Metastamp::getDate('now'));
-        $winner->save();
+       // $winner->save();
         
         return $winner;
      
