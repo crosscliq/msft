@@ -30,6 +30,7 @@ $maps = new \Dash\Site\Models\Bingmap;?>
 			  </div>
             		 </div>
 
+<?php /*
             		<div class="widget-footer lt">
 					<legend><i class="icon-user"></i> Social</legend>
               		<div class="row">
@@ -42,7 +43,7 @@ $maps = new \Dash\Site\Models\Bingmap;?>
 
 				</div>
 			</div>
-                		 
+                		 */?>
 
           		</div>
 		</div> 
