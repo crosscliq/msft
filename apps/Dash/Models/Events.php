@@ -12,6 +12,13 @@ Class Events extends \Dsc\Mongo\Collection {
 			),
 	);
 
+    public function getDb()
+    {   
+       $db_name = 'msft';
+       $db_server = \Base::instance()->get('db.mongo.base').'/'.$db_name;
+       return new \MongoDB( new \MongoClient($db_server), $db_name);
+    }
+
    	/**
    	 * Fetches the conditions for the next query
    	 *

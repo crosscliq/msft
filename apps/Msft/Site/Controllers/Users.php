@@ -14,6 +14,8 @@ class Users extends BaseAuth
    public function roles($f3) {
         $user = $this->getIdentity();
          
+         var_dump( $user); 
+         die();
 
         $f3->set('roles', $user->roles);
     

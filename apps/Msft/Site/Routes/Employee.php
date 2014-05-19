@@ -1,11 +1,10 @@
 <?php
-
-namespace Msft\Site;
+namespace Msft\Site\Routes;
 
 /**
  * Group class is used to keep track of a group of routes with similar aspects (the same controller, the same f3-app and etc)
  */
-class Routes extends \Dsc\Routes\Group{
+class Employee extends \Dsc\Routes\Group{
 	
 	
 	function __construct(){
@@ -24,12 +23,14 @@ class Routes extends \Dsc\Routes\Group{
 					'url_prefix' => ''
 				)
 		);
-		$this->add( '/', 'GET', array(
-								'controller' => 'Home',
+		$this->add( '/home', 'GET', array(
+								'controller' => 'Login',
 								'action' => 'index'
 								));
-		
-	 
-        
+		$this->add( '/home', 'POST', array(
+								'controller' => 'Login',
+								'action' => 'auth'
+								));
+	 	  
 	}
 }

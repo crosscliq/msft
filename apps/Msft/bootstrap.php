@@ -8,6 +8,12 @@ class MsftBootstrap extends \Dsc\Bootstrap
     protected function runSite()
     {    
         $f3 = \Base::instance();
+        \Dsc\System::instance()->get('router')->mount( new \Msft\Site\Routes );
+        \Dsc\System::instance()->get('router')->mount( new \Msft\Site\Routes\Attendee );
+        \Dsc\System::instance()->get('router')->mount( new \Msft\Site\Routes\Bands );
+        \Dsc\System::instance()->get('router')->mount( new \Msft\Site\Routes\Ticketing );
+        \Dsc\System::instance()->get('router')->mount( new \Msft\Site\Routes\Employee );
+
         \Dsc\System::instance()->getDispatcher()->addListener(\Msft\Userlistener::instance());
         \Dsc\System::instance()->getDispatcher()->addListener(\Msft\Pusherlistener::instance());
        
@@ -28,13 +34,7 @@ class MsftBootstrap extends \Dsc\Bootstrap
            $f3->reroute('/welcome');
         });
        
-        $f3->route('GET /home', '\Users\Site\Controllers\Login->index');
-        $f3->route('GET /login', function() {
-            die('getting');
-        });
-        $f3->route('POST /login', function() {
-            die('posting');
-        });        
+           
      
         $f3->route('GET /signup', '\Msft\Site\Controllers\Auth->showSignup');
         $f3->route('POST /signup', '\Msft\Site\Controllers\Auth->doSignup');

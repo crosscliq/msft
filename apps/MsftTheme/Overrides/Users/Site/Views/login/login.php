@@ -1,7 +1,7 @@
 <?php \Dsc\System::instance()->get( 'session' )->set( 'site.login.redirect', '/roles' ); ?>
 
 
-   <form action="./login" method="post" class="form" role="form">
+   <form action="./home" method="post" class="form" role="form">
            <legend>
                 <i class="glyphicon glyphicon-globe"></i>
              Event Staff Log-In</legend>

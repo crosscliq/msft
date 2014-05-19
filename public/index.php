@@ -28,21 +28,23 @@ $app->set('APP_NAME', 'site');
 $app->set('subdomain', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
 if ($app->get('subdomain') == 'dashboard') {
     $app->set('APP_NAME', 'dash');
+    $app->set('db.mongo.database', 'msft');
 }
 if ($app->get('subdomain') == 'admin') {
     $app->set('APP_NAME', 'admin');
+    $app->set('db.mongo.database', 'msft');
 }
 if ($app->get('subdomain') == 'api') {
     $app->set('APP_NAME', 'api');
 }
 
 if($app->get('subdomain') != 'api' &&$app->get('subdomain') != 'admin' && $app->get('subdomain') != 'dashboard' && !empty($app->get('subdomain')) ) {
-//WE are loading an event
-//HERE WE CAN CHECK THIS IT IS A VALID EVENT REGISTERED AND SUCH
-$app->set('event.database', $app->get('subdomain'));
-$model = new \Dash\Models\Events;
-$item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();
-\Dsc\System::instance()->get('session')->set('event', $item);
+    //WE are loading an event
+    //HERE WE CAN CHECK THIS IT IS A VALID EVENT REGISTERED AND SUCH
+    $app->set('db.mongo.database', $app->get('subdomain'));
+    $model = new \Dash\Models\Events;
+    $item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();
+    \Dsc\System::instance()->get('session')->set('event', $item);
 }
 
 $logger = new \Log( $app->get('application.logfile') );
@@ -67,7 +69,6 @@ if ($app->get('DEBUG')) {
 
  
 $app->route('POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
-        
 
 $app->run();
 
