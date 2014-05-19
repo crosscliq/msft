@@ -49,7 +49,7 @@ class Attendees extends \Dsc\Controller
 
         $url = parse_url($object->Url);
 
-        $tag = new \Msft\Models\Tags;
+        $tag = new \Api\Models\Tags;
         $peices = explode('/', $url['path']);
         $tag->tagid = end($peices);
         $tag->eventid = $f3->get('event.database');
