@@ -39,7 +39,7 @@
             <tr>
               
                 <th data-sortable="metadata.title">Band URL</th>
-                <th>Created Date</th>
+                
                 <th>State</th>
                 <th>Assigned</th>
                 
@@ -61,16 +61,14 @@
                     </a>             
                 </td>
                 
+              
+                
                 <td class="">
-                    <?php echo $item->{'last_name'}; ?>
+                    Active
                 </td>
                 
                 <td class="">
-                    <?php echo $item->{'phone'}; ?>
-                </td>
-                
-                <td class="">
-                    <?php echo $item->{'email'}; ?>
+                    <?php echo $item->{'attendee.name'}; ?>
                 </td>
                                 
                 <td class="text-center">

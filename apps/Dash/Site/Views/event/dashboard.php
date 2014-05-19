@@ -23,7 +23,7 @@ $maps = new \Dash\Site\Models\Bingmap;?>
               		</div>
               		<div class="row" style="margin:0px;">
 			         <div class="col-xs-4"><h3 class="text-info" style="margin:0px;">#HASHTAG</h3></div>
-                		  <div class="col-xs-8">Event URL:<br/><A class="text-info" href="http://<?php echo $event['details']->event_id; ?>.msft.cc/home"><i class="icon-link"></i>  http://<?php echo $event['details']->event_id; ?>.msft.css/home</a></div></div>
+                		  <div class="col-xs-8">Event URL:<br/><a class="text-info" href="https://<?php echo $event['details']->event_id; ?>.msft.cc/home"><i class="icon-link"></i> https://<?php echo $event['details']->event_id; ?>.msft.cc/home</a></div></div>
             		</div>
            		  <div class="">
 			   <div class="text-center padder m-t">  <img style="width:100%;opacity:0.6;" src="<?php echo $maps->width('400')->height('181')->location($event['details']['address']['city'] . ', ' . $event['details']['address']['state'])->getImageURL(); ?>" >

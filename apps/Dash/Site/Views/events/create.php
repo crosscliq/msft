@@ -27,27 +27,6 @@
                     </div>
                     </div>
         </div>
-      <div class="row">
-                 <div class="col-md-3">
-                    <label for="normal-field" class="control-label">Theme</label>
-                 </div>
-                    <div class="col-md-9">
-                      <div class="form-group">
-                      <select name="theme">
-                        <option value="">Default</option>
-                         <?php 
-                        $array = Dsc\Filesystem\Folder::folders( \Base::instance()->get('PATH_ROOT').'apps/Themes' );
-                       foreach ($array as $key => $value) {
-
-                        echo '<option value="'.$value.'">'.$value.'</option>';
-                       } 
-                      ?>
-                      </select>
-                      
-                      </div>
-                    </div>
-        </div>    
-
 		<div class="row">
 
                   <div class="col-md-3">
@@ -56,12 +35,12 @@
 
                   <div class="col-md-4">
 		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
-                    <input type="text" placeholder="Start Date" value="<?php echo $flash->old('dates.start_date' ); ?>" size="16" class="form-control datepicker" id="dates[start_date]" data-inputmask="'alias': 'date'">
+                    <input type="text" name="dates['start_date']" placeholder="Start Date" value="<?php echo $flash->old('dates.start_date' ); ?>" size="16" class="form-control datepicker" id="dates[start_date]" data-inputmask="'alias': 'date'">
                    </div>
                   </div>
                  <div class="col-md-4">
 		     <div class="input-group"> <span class="input-group-addon"><i class="icon-calendar"></i></span>
-                    <input type="text" placeholder="End Date" value="<?php echo $flash->old('dates.end_date' ); ?>" size="16" class="form-control datepicker" id="dates[end_date]" data-inputmask="'alias': 'date'">
+                    <input type="text" name="dates['end_date']" placeholder="End Date" value="<?php echo $flash->old('dates.end_date' ); ?>" size="16" class="form-control datepicker" id="dates[end_date]" data-inputmask="'alias': 'date'">
                    </div>
                   </div>
 	</div>

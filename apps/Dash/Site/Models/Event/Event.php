@@ -29,14 +29,15 @@ Class Event {
         $event['emailoptin'] = $model->getTotal();
 
         $model = new \Dash\Site\Models\Event\Tags;
-        
+        $event['wristbands']['used'] = $model->getTotal();
         $event['wristbands'] = array();
         $event['wristbands']['withTicketsOnly'] = (int) $model->withTicketsOnly();
         $event['wristbands']['withAttendeesOnly'] = (int) $model->withAttendeesOnly();
         $event['wristbands']['withAttendeesAndTickets'] = (int) $model->withAttendeesAndTickets();
         $event['wristbands']['withNOAttendeesAndTickets'] = (int) $model->withNOAttendeesAndTickets();
         $event['wristbands']['total'] =  $event['details']->wristbands['ordered'];
-        $event['wristbands']['used'] = $event['wristbands']['withTicketsOnly'] + $event['wristbands']['withAttendeesOnly'] + $event['wristbands']['withAttendeesAndTickets'] + $event['wristbands']['withNOAttendeesAndTickets'];
+        $event['wristbands']['used'] = $model->getTotal();
+        //$event['wristbands']['used'] = $event['wristbands']['withTicketsOnly'] + $event['wristbands']['withAttendeesOnly'] + $event['wristbands']['withAttendeesAndTickets'] + $event['wristbands']['withNOAttendeesAndTickets'];
         $event['wristbands']['available'] = (int) $event['wristbands']['total'] - (int) $event['wristbands']['used'];
 
 
