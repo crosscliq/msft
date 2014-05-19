@@ -21,8 +21,6 @@ $app->set('AUTOLOAD',
 $app->config( $app->get('PATH_ROOT') . 'config/common.config.ini');
 $app->set('subdomain', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
 $app->set('db.mongo.database', $app->get('subdomain'));
-$app->set('db.mongo.server', $app->get('db.mongo.base') .'/'. $app->get('db.mongo.database'));
-
 
 
 $app->set('APP_NAME', 'site');
@@ -39,7 +37,9 @@ if ($app->get('subdomain') == 'admin') {
 if ($app->get('subdomain') == 'api') {
     $app->set('APP_NAME', 'api');
     $app->set('db.mongo.database', 'msft');
+
 }
+$app->set('db.mongo.server', $app->get('db.mongo.base') .'/'. $app->get('db.mongo.database'));
 require $app->get('PATH_ROOT') . 'vendor/autoload.php';
 if($app->get('subdomain') != 'api' &&$app->get('subdomain') != 'admin' && $app->get('subdomain') != 'dashboard' && !empty($app->get('subdomain')) ) {
     //WE are loading an event
