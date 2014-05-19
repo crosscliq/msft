@@ -12,7 +12,7 @@ class Module extends \Modules\Abstracts\Module
         $f3->set('UI', $temp_ui);
         
         $f3->set('module', $this);
-         \Dsc\System::instance()->get('theme')->registerViewPath( __dir__ . '/Views/', 'Modules/Menu/Views' );
+         \Dsc\System::instance()->get('theme')->registerViewPath( __dir__ . '/Views/', 'Dash/Site/Modules/Eventsmenu/Views' );
         $string = \Dsc\System::instance()->get('theme')->renderLayout('Dash/Site/Modules/Eventsmenu/Views::default.php');        
         
         
