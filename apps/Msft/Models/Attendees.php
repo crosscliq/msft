@@ -166,38 +166,39 @@ Class Attendees Extends Eventbase {
 
     }
 
+    protected function beforeSave()
+    {   
+
+        if (empty($this->created)) {
+           $this->set('created', \Dsc\Mongo\Metastamp::getDate('now') ); 
+        }
+        
+        return parent::beforeSave();
+    }
+
     function getTotalCount() {
         $this->emptyState();
         return $this->getTotal();
     }
 
-
-      public function getRandomItem( $refresh=false )
-    {
-        $filters = $this->getFilters();
-        $options = $this->getOptions();
-        
-        $total = (int) $this->getTotal();
-        $skip = rand(0,$total);
-
-        $mapper = $this->getMapper();
-        $options['limit'] = 1;
-        if($skip !=0 || $skip !=1){
-           $options['offset'] = $skip; 
-        }
-        
-        $items = $mapper->find($filters, $options);
-        if(@$items[0]){
-             $item = $items[0];
-            $item = $this->prepareItem($item);
-
-        return $item;
-        } else {
-            return $items ;
-        }
-       
-        
-       
+     /**
+     * Fetches an item from the collection using set conditions
+     * 
+     * @return Ambigous <NULL, \Dsc\Mongo\Collection>
+     */
+    public function getRandomItem()
+    {   
+        $total = $this->collection()->find()->count();
+        $skip = rand(0,$total);   
+        $this->setParam('limit',1);
+        $this->setParam('skip',$skip);   
+        $items = $this->fetchItems();
+        if(empty($items)) {
+            return null;
+        } 
+        //using internal fetchItems to do the decrypting, and allow skipping
+        return $items[0];
+      
     }
 
 }

@@ -1,7 +1,7 @@
 <?php 
 namespace Msft\Site\Controllers\Games;
 
-class Raffle extends \Msft\Controllers\BaseAuth 
+class Raffle extends \Msft\Site\Controllers\BaseAuth 
 {	
 
     public function winners() {
@@ -36,8 +36,8 @@ class Raffle extends \Msft\Controllers\BaseAuth
        $winner = $this->pickWinner();
        $prize = $this->pickPrize();
 
-        $activity = new \Msft\Models\Activity;
-        $activity->create(array('type'=> 'raffle', 'action' => 'play', 'winner' => $winner->cast(), 'prize' => $prize  ));
+        //$activity = new \Msft\Models\Activity;
+        //$activity->create(array('type'=> 'raffle', 'action' => 'play', 'winner' => $winner->cast(), 'prize' => $prize  ));
        
 
 
@@ -52,10 +52,10 @@ class Raffle extends \Msft\Controllers\BaseAuth
 
         $yday = getdate();
        
-        $model->setState('filter.yearday', $yday['yday']);
-
+       echo  $yday['yday']; die();
         $model->setState('filter.profile.complete', 1);
-        $winner =  $model->setFilter('games.raffle.winner', null)->getRandomItem();
+         $model->setCondition('created.yday', $yday['yday']);
+        $winner =  $model->setCondition('games.raffle.winner', null)->getRandomItem();
         if(!$winner) {
                 \Base::instance()->reroute('/games/raffle/nomorewinners');
         }

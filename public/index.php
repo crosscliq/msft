@@ -19,13 +19,15 @@ $app->set('AUTOLOAD',
 
 // common config
 $app->config( $app->get('PATH_ROOT') . 'config/common.config.ini');
-$app->set('db.mongo.server', $app->get('db.mongo.server') .'/'. $app->get('db.mongo.database'));
+$app->set('subdomain', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
+$app->set('db.mongo.database', $app->get('subdomain'));
+$app->set('db.mongo.server', $app->get('db.mongo.base') .'/'. $app->get('db.mongo.database'));
 require $app->get('PATH_ROOT') . 'vendor/autoload.php';
 
 
 $app->set('APP_NAME', 'site');
 //TODO maybe we query the event model, and get the event object from the main DB and load it. so than we can  let the DB be controlled by the dash
-$app->set('subdomain', strtolower(explode(".",$_SERVER['HTTP_HOST'])[0]));
+
 if ($app->get('subdomain') == 'dashboard') {
     $app->set('APP_NAME', 'dash');
     $app->set('db.mongo.database', 'msft');
@@ -41,10 +43,19 @@ if ($app->get('subdomain') == 'api') {
 if($app->get('subdomain') != 'api' &&$app->get('subdomain') != 'admin' && $app->get('subdomain') != 'dashboard' && !empty($app->get('subdomain')) ) {
     //WE are loading an event
     //HERE WE CAN CHECK THIS IT IS A VALID EVENT REGISTERED AND SUCH
+
     $app->set('db.mongo.database', $app->get('subdomain'));
     $model = new \Dash\Models\Events;
-    $item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();
+ 
+    try {
+         $item = $model->setState('filter.eventid', $app->get('subdomain'))->getItem();  
+    } catch (Exception $e) {
+        echo $e->getMessage(); 
+    }
+   
+    
     \Dsc\System::instance()->get('session')->set('event', $item);
+ 
 }
 
 $logger = new \Log( $app->get('application.logfile') );

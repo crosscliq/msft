@@ -15,6 +15,8 @@ class Login extends \Users\Site\Controllers\Login
         {
             $f3->reroute( '/roles' );
         }
+
+    
         
         $view = \Dsc\System::instance()->get( 'theme' );
         echo $view->render( 'Users/Site/Views::login/dual.php' );
@@ -66,7 +68,8 @@ class Login extends \Users\Site\Controllers\Login
      * Authenticates the user (performs the login)
      */
     public function auth()
-    {
+    {   
+
         /*
          * Let $this->auth->check() set the error, in case we want to pass social logins through this auth method $username_input = $this->input->getAlnum('login-username'); $password_input = $this->input->getString('login-password'); if (empty($username_input) || empty($password_input)) { \Dsc\System::instance()->addMessage('Login failed - Incomplete Form', 'error'); \Base::instance()->reroute("/login"); return; }
          */
