@@ -57,7 +57,7 @@
                             
                 <td class="">
                     <a href="./<?php echo $PARAMS['eventid'] ?>/wristband/edit/<?php echo $item->id; ?>">
-                    http://ryst.cc/b/<?php echo $item->{'tagid'}; ?>
+                    http://<?php echo $PARAMS['eventid'] ?>.msft.cc/band/<?php echo $item->{'tagid'}; ?>
                     </a>             
                 </td>
                 
