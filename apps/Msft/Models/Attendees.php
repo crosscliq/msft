@@ -62,9 +62,9 @@ Class Attendees Extends Eventbase {
         $filter_profile_complete = $this->getState('filter.profile.complete');
 
         if (strlen($filter_profile_complete))
-        {   $this->setCondition('first_name',array('$ne' => null));
-            $this->setCondition('last_name',array('$ne' => null));
-            $this->setCondition('phone',array('$ne' => null));
+        {   $this->setCondition('first_name', array('$ne' => null));
+            $this->setCondition('last_name', array('$ne' => null));
+            $this->setCondition('phone', array('$ne' => null));
         }
 
 
@@ -188,10 +188,11 @@ Class Attendees Extends Eventbase {
      */
     public function getRandomItem()
     {   
-        $total = $this->collection()->find()->count();
+        $total = $this->collection()->find($this->conditions(), $this->fields())->count();
         $skip = rand(0,$total);   
         $this->setParam('limit',1);
-        $this->setParam('skip',$skip);   
+        $this->setParam('skip',$skip);  
+       
         $items = $this->fetchItems();
         if(empty($items)) {
             return null;

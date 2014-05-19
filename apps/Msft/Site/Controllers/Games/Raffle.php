@@ -52,17 +52,19 @@ class Raffle extends \Msft\Site\Controllers\BaseAuth
 
         $yday = getdate();
        
-       echo  $yday['yday']; die();
-        $model->setState('filter.profile.complete', 1);
-         $model->setCondition('created.yday', $yday['yday']);
-        $winner =  $model->setCondition('games.raffle.winner', null)->getRandomItem();
+        $model->setCondition('first_name', array('$ne' => null));
+        $model->setCondition('last_name', array('$ne' => null));
+        $model->setCondition('phone', array('$ne' => null));
+        $model->setCondition('created.yday', $yday['yday']);
+        $model->setCondition('games.raffle.winner', array('$exists' => false));
+        $winner =  $model->getRandomItem();
+
         if(!$winner) {
                 \Base::instance()->reroute('/games/raffle/nomorewinners');
         }
+
         $winner->set('games.raffle.winner', \Dsc\Mongo\Metastamp::getDate('now'));
-        $winner->save();
-
-
+       // $winner->save();
         
         return $winner;
      
@@ -74,10 +76,9 @@ class Raffle extends \Msft\Site\Controllers\BaseAuth
 
 
     public function nomorewinners() {
-       
+    
         $view = \Dsc\System::instance()->get( 'theme' );
         echo $view->render('/games/raffle/nomorewinners.php');
-
 
     }
 
