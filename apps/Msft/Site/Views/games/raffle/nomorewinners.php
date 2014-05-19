@@ -8,7 +8,8 @@
                 <div id="role" style="text-align:center;">
 			
 			<h2 class="fg-white">There are no more valid contestants</h2>
-			
+			 <a href="/roles"  class="button large inverse fg-white" style="width:80%; margin-bottom:25px;background:rgba(0,0,0,0.6)!important">Go Back</a>
+
 
                 </div>
 
