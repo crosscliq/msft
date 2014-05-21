@@ -35,8 +35,6 @@ class Attendees extends \Dsc\Controller
      public function Sync($f3)
     {
 
-
-
       $body = $f3->get('BODY');
 
         $object = json_decode($body);
