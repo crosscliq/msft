@@ -83,6 +83,26 @@ if ($app->get('DEBUG')) {
              \Base::instance()->reroute($reroute);
         });
 
+
+ $app->route('GET /@eventid/msftevent', function() { 
+           
+        $model = new \Dash\Site\Models\Event\Attendees;
+        $items = $model->getItems();
+
+        $output = fopen("php://output",'w') or die("Can't open php://output");
+        header("Content-Type:application/csv"); 
+        header("Content-Disposition:attachment;filename=msft.csv"); 
+        fputcsv($output, array('first_name','last_name','phone','email','howdidyouhear','StaffNumber', 'sms', 'email','products'));
+        
+        foreach($list as $attendee) {
+            $a = [@$attendee->first_name,@$attendee->last_name,@$attendee->phone,@$attendee->email,@$attendee->howdidyouhear,@$attendee->StaffNumber,@$attendee->{'offers.sms'},@$attendee->{'offers.email'},implode('|', @$attendee->{'products'})];
+            fputcsv($output, $a);
+        }
+        
+        fclose($output) or die("Can't close php://output");
+         
+
+        });
  
 $app->route('POST /attendees/sync', '\Api\Site\Controllers\Attendees->Sync');    
 
